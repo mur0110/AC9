@@ -1,11 +1,11 @@
 let interDuration = .15;
 
 function modInterDuration(){
-    const possibleDeviations=[.13, .15, .18, .21];
+    const possibleDeviations=[.15, .20, .21, .23];
     interDuration = possibleDeviations[Math.floor(Math.random()*4)];
 }
 
-const songPath = 'riptide.mp3';
+const songPath = 'psasr.mp3';
 
 
 const volArr=[3, 5, 7];
