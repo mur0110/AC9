@@ -5,7 +5,7 @@ function modInterDuration(){
     interDuration = possibleDeviations[Math.floor(Math.random()*4)];
 }
 
-const songPath = 'psasr.mp3';
+const songPath = 'riptide.mp3';
 
 
 const volArr=[3, 5, 7];
