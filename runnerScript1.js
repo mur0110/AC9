@@ -8,12 +8,11 @@ function modInterDuration(){
 const songPath = 'riptide.mp3';
 
 
-const volArr=[2, 4, 7];
-const speedArr=[2, 4, 7];
+const volArr=[3, 5, 7, 7, 5, 3];
+const speedArr=[3, 5, 7, 7, 5, 3];
 
 const multVolArr = [.445, .46, .465, .475, .5, .525, .535, .54, .555];
 const multSpeedArr = [.89, .92 ,.93, .95, 1, 1.05, 1.07, 1.08, 1.11];
-
 
 const randomsForVol=[];
 const randomsForSpeed=[];
@@ -45,7 +44,7 @@ function pickAmongNine(){
 }
 
 function nextVolIntervalIter(){
-    if (presVolIntervalIter < 3){
+    if (presVolIntervalIter < 5){
         presVolIntervalIter++;
     }
     else{
@@ -54,14 +53,12 @@ function nextVolIntervalIter(){
 }
 
 function nextSpeedIntervalIter(){
-    if (presSpeedIntervalIter < 3){
+    if (presSpeedIntervalIter < 5){
         presSpeedIntervalIter++;
     }
     else{
         presSpeedIntervalIter=0;
     }
-    console.log(presSpeedIntervalIter);
-    console.log(presSpeedInterval);
 }
 
 
@@ -83,8 +80,6 @@ function runner(){
     let volInterval = presVolInterval;
     let speedInterval = presSpeedInterval;
 
-
-    console.log(speedInterval);
 
     songAudio.play();
     advanceVolume();
