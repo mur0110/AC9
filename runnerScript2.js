@@ -4,6 +4,9 @@ function modInterDuration(){
     const possibleDeviations=[.15, .20, .21, .23];
     interDuration = possibleDeviations[Math.floor(Math.random()*4)];
 }
+function rngBin(){
+    return Math.floor(Math.random()*2);
+}
 
 const songPath = 'starlight.mp3';
 
@@ -96,7 +99,9 @@ function runner(){
           volInterval = presVolInterval;
           randomForVolVal = multVolArr[randomsForVol[randomsForVolIter]];
           randomsForVolIter++;
-          modInterDuration();
+          if (rngBin()===0){
+              modInterDuration();
+          }
     }
 
     function advanceSpeed(){
@@ -110,6 +115,8 @@ function runner(){
           speedInterval = presSpeedInterval;
           randomForSpeedVal = multSpeedArr[randomsForSpeed[randomsForSpeedIter]];
           randomsForSpeedIter++;
-          modInterDuration();
+          if (rngBin()===0){
+              modInterDuration();
+          }
     }
 }
