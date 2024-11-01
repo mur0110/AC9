@@ -7,6 +7,9 @@ function modInterDuration(){
 function rngBin(){
     return Math.floor(Math.random()*2);
 }
+function rngTrio(){
+    return Math.floor(Math.random()*3);
+}
 
 const songPath = 'starlight.mp3';
 
@@ -100,7 +103,14 @@ function runner(){
           randomForVolVal = multVolArr[randomsForVol[randomsForVolIter]];
           randomsForVolIter++;
           if (rngBin()===0){
-              modInterDuration();
+            if (rngBin()===0){
+                modInterDuration();
+            }
+          }
+          else{
+            if (rngTrio()===0){
+                modInterDuration();
+            }
           }
     }
 
@@ -116,7 +126,14 @@ function runner(){
           randomForSpeedVal = multSpeedArr[randomsForSpeed[randomsForSpeedIter]];
           randomsForSpeedIter++;
           if (rngBin()===0){
-              modInterDuration();
+            if (rngBin()===0){
+                modInterDuration();
+            }
+          }
+          else{
+            if (rngTrio()===0){
+                modInterDuration();
+            }
           }
     }
 }
