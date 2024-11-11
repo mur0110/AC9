@@ -14,7 +14,7 @@ function rngQuat(){
     return Math.floor(Math.random()*4);
 }
 
-const songPath = 'starlight.mp3';
+const songPath = 'songs/starlight.mp3';
 
 
 const volArr=[3, 5, 7, 7, 5, 3];
