@@ -2,7 +2,7 @@ let interDuration = .15;
 
 function modInterDuration(){
     const possibleDeviations=[.13, .17, .19, .23, .29];
-    interDuration = possibleDeviations[Math.floor(Math.random()*4)];
+    interDuration = possibleDeviations[Math.floor(Math.random()*5)];
 }
 function rngBin(){
     return Math.floor(Math.random()*2);
