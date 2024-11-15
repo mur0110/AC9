@@ -11,7 +11,7 @@ function rngTrio(){
     return Math.floor(Math.random()*3);
 }
 
-const songPath = 'songs/ecs.mp3';
+const songPath = 'songs/intheairton.mp3';
 
 
 const volArr=[3, 5, 7, 7, 5, 3];
