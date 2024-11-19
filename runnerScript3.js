@@ -1,8 +1,8 @@
 let interDuration = .15;
 
 function modInterDuration(){
-    const possibleDeviations=[.13, .17, .23, .29];
-    interDuration = possibleDeviations[Math.floor(Math.random()*4)];
+    const possibleDeviations=[.13, .17, .19, .23, .29];
+    interDuration = possibleDeviations[Math.floor(Math.random()*5)];
 }
 function rngBin(){
     return Math.floor(Math.random()*2);
@@ -10,8 +10,11 @@ function rngBin(){
 function rngTrio(){
     return Math.floor(Math.random()*3);
 }
+function rngQuat(){
+    return Math.floor(Math.random()*4);
+}
 
-const songPath = 'songs/anotherday.mp3';
+const songPath = 'songs/forevery.mp3';
 
 
 const volArr=[3, 5, 7, 7, 5, 3];
@@ -103,7 +106,7 @@ function runner(){
           randomForVolVal = multVolArr[randomsForVol[randomsForVolIter]];
           randomsForVolIter++;
           if (rngBin()===0){
-            if (rngBin()===0){
+            if (rngQuat()===0){
                 modInterDuration();
             }
           }
@@ -126,7 +129,7 @@ function runner(){
           randomForSpeedVal = multSpeedArr[randomsForSpeed[randomsForSpeedIter]];
           randomsForSpeedIter++;
           if (rngBin()===0){
-            if (rngBin()===0){
+            if (rngQuat()===0){
                 modInterDuration();
             }
           }
