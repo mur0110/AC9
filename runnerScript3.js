@@ -20,8 +20,8 @@ const songPath = 'songs/forevery.mp3';
 const volArr=[3, 5, 7, 7, 5, 3];
 const speedArr=[3, 5, 7, 7, 5, 3];
 
-const multVolArr = [.445, .46, .465, .475, .5, .525, .535, .54, .555];
-const multSpeedArr = [.89, .92 ,.93, .95, 1, 1.05, 1.07, 1.08, 1.11];
+const multVolArr = [.435, .445, .46, .465, .475, .5, .525, .535, .54, .555, .565];
+const multSpeedArr = [.87, .89, .92 ,.93, .95, 1, 1.05, 1.07, 1.08, 1.11, 1.13];
 
 const randomsForVol=[];
 const randomsForSpeed=[];
@@ -30,8 +30,8 @@ let randomsForVolIter = 0;
 let randomsForSpeedIter = 0;
 
 for (let i=0; i<600; i++){
-    randomsForVol.push(pickAmongNine());
-    randomsForSpeed.push(pickAmongNine());
+    randomsForVol.push(pickAmongEleven());
+    randomsForSpeed.push(pickAmongEleven());
 }
 
 let presVolIntervalIter = 0;
@@ -48,8 +48,8 @@ function redefineSpeedInterval(){
     presSpeedInterval = speedArr[presSpeedIntervalIter];
 }
 
-function pickAmongNine(){
-    return Math.floor(Math.random() * 9);
+function pickAmongEleven(){
+    return Math.floor(Math.random() * 11);
 }
 
 function nextVolIntervalIter(){
