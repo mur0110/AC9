@@ -21,7 +21,7 @@ const volArr=[3, 5, 7, 7, 5, 3];
 const speedArr=[3, 5, 7, 7, 5, 3];
 
 const multVolArr = [.435, .445, .46, .465, .475, .5, .525, .535, .54, .555, .565];
-const multSpeedArr = [.80 ,.82 ,.86, .87, .88, .92 ,.94, 1, 1.06, 1.08, 1.12, 1.13, 1.14, 1.18, 1.20]; // 5,7,1 off of +-.13
+const multSpeedArr = [.76, .80 ,.82 ,.86, .87, .88, .92 ,.94, .98, 1, 1.02, 1.06, 1.08, 1.12, 1.13, 1.14, 1.18, 1.20, 1.24]; // 5,7,1 off of +-.13
 
 const randomsForVol=[];
 const randomsForSpeed=[];
@@ -29,9 +29,9 @@ const randomsForSpeed=[];
 let randomsForVolIter = 0;
 let randomsForSpeedIter = 0;
 
-for (let i=0; i<600; i++){
+for (let i=0; i<900; i++){
     randomsForVol.push(pickAmongEleven());
-    randomsForSpeed.push(pickAmong16());
+    randomsForSpeed.push(pickAmong19());
 }
 
 let presVolIntervalIter = 0;
@@ -52,8 +52,8 @@ function pickAmongEleven(){
     return Math.floor(Math.random() * 11);
 }
 
-function pickAmong16(){
-    return Math.floor(Math.random() * 15);
+function pickAmong19(){
+    return Math.floor(Math.random() * 19);
 }
 
 function nextVolIntervalIter(){
