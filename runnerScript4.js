@@ -17,8 +17,8 @@ function rngQuat(){
 const songPath = 'songs/lato.mp3';
 
 
-const volArr=[2, 4, 7, 7, 4, 2];
-const speedArr=[2, 4, 7, 7, 4, 2];
+const volArr=[2.5, 3.5, 5, 2.5, 5, 3.5];
+const speedArr=[2.5, 3.5, 5, 2.5, 5, 3.5];
 
 const multVolArr = [.435, .445, .46, .465, .475, .5, .525, .535, .54, .555, .565];
 const multSpeedArr = [.76, .80 ,.82 ,.86, .87, .88, .92 ,.94, .98, 1, 1.02, 1.06, 1.08, 1.12, 1.13, 1.14, 1.18, 1.20, 1.24]; // 5,7,1 off of +-.13
