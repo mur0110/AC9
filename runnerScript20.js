@@ -20,8 +20,8 @@ const songPath = 'songs/children.mp3';
 const volArr=[2.5, 3.5, 5, 2.5, 5, 3.5];
 const speedArr=[2.5, 3.5, 5, 2.5, 5, 3.5];
 
-const multVolArr = [.435, .445, .46, .465, .475, .5, .525, .535, .54, .555, .565];
-const multSpeedArr = [.76, .80 ,.82 ,.86, .87, .88, .92 ,.94, .98, 1, 1.02, 1.06, 1.08, 1.12, 1.13, 1.14, 1.18, 1.20, 1.24]; // 5,7,1 off of +-.13
+const multVolArr = [.45, .4575, .4625, .475, .4825, .4875, .5, .5125, .5175, .525, .5375, .5425, .55];
+const multSpeedArr = [.9, .915, .925, .95, .965, .975, 1, 1.025, 1.035, 1.05, 1.075, 1.085, 1.1]; // 5,7,1,11 off of +-.13
 
 const randomsForVol=[];
 const randomsForSpeed=[];
@@ -30,8 +30,8 @@ let randomsForVolIter = 0;
 let randomsForSpeedIter = 0;
 
 for (let i=0; i<600; i++){
-    randomsForVol.push(pickAmongEleven());
-    randomsForSpeed.push(pickAmong16());
+    randomsForVol.push(pickAmong13());
+    randomsForSpeed.push(pickAmong13());
 }
 
 let presVolIntervalIter = 0;
@@ -48,12 +48,12 @@ function redefineSpeedInterval(){
     presSpeedInterval = speedArr[presSpeedIntervalIter];
 }
 
-function pickAmongEleven(){
-    return Math.floor(Math.random() * 11);
+function pickAmong13(){
+    return Math.floor(Math.random() * 13);
 }
 
-function pickAmong16(){
-    return Math.floor(Math.random() * 15);
+function pickAmong19(){
+    return Math.floor(Math.random() * 19);
 }
 
 function nextVolIntervalIter(){
