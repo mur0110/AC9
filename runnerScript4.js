@@ -110,12 +110,12 @@ function runner(){
           randomForVolVal = multVolArr[randomsForVol[randomsForVolIter]];
           randomsForVolIter++;
           if (rngBin()===0){
-            if (rngQuat()===0){
+            if (rngQuat()!==0){
                 modInterDuration();
             }
           }
           else{
-            if (rngTrio()===0){
+            if (rngTrio()!==0){
                 modInterDuration();
             }
           }
@@ -133,12 +133,12 @@ function runner(){
           randomForSpeedVal = multSpeedArr[randomsForSpeed[randomsForSpeedIter]];
           randomsForSpeedIter++;
           if (rngBin()===0){
-            if (rngQuat()===0){
+            if (rngQuat()!==0){
                 modInterDuration();
             }
           }
           else{
-            if (rngTrio()===0){
+            if (rngTrio()!==0){
                 modInterDuration();
             }
           }
