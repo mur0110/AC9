@@ -1,7 +1,7 @@
 let interDuration = .15;
 
 function modInterDuration(){
-    const possibleDeviations=[.17, .18, .25, .35, .36];
+    const possibleDeviations=[.17, .18, .25, .34, .37];
     interDuration = possibleDeviations[Math.floor(Math.random()*5)];
 }
 function rngBin(){
