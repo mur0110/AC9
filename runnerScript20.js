@@ -14,6 +14,33 @@ function rngQuat(){
     return Math.floor(Math.random()*4);
 }
 
+function decide13(){
+    if (rngBin()===0){
+        if (rngQuat()==0){
+            modInterDuration();
+        }
+      }
+      else{
+        if (rngTrio()==0){
+            modInterDuration();
+        }
+      }
+}
+
+function decide23(){
+    if (rngBin()===0){
+        if (rngQuat()!==0){
+            modInterDuration();
+        }
+      }
+      else{
+        if (rngTrio()!==0){
+            modInterDuration();
+        }
+      }
+}
+
+
 const songPath = 'songs/children.mp3';
 
 
@@ -106,15 +133,12 @@ function runner(){
           volInterval = presVolInterval;
           randomForVolVal = multVolArr[randomsForVol[randomsForVolIter]];
           randomsForVolIter++;
-          if (rngBin()===0){
-            if (rngQuat()!==0){
-                modInterDuration();
-            }
+          
+          if (nextVolIntervalIter%0===0){
+            decide13();
           }
           else{
-            if (rngTrio()!==0){
-                modInterDuration();
-            }
+            decide23();
           }
     }
 
@@ -129,15 +153,12 @@ function runner(){
           speedInterval = presSpeedInterval;
           randomForSpeedVal = multSpeedArr[randomsForSpeed[randomsForSpeedIter]];
           randomsForSpeedIter++;
-          if (rngBin()===0){
-            if (rngQuat()!==0){
-                modInterDuration();
-            }
+          
+          if (nextSpeedIntervalIter%0===0){
+            decide13();
           }
           else{
-            if (rngTrio()!==0){
-                modInterDuration();
-            }
+            decide23();
           }
     }
 }
