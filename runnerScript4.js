@@ -98,6 +98,36 @@ function nextSpeedIntervalIter(){
     }
 }
 
+let ab1=1;
+function eitherVol(){
+    let nextVal = 4;
+    if (presVolInterval === nextVal && ab1===1){
+        decide13();
+        nextVal = nextVal+7;
+        ab1=2;
+    }
+    else if (presVolInterval === nextVal && ab1===2){
+        decide23();
+        nextVal = nextVal + 5;
+        ab1 = 1; 
+    }
+
+}
+
+let ab2=1;
+function eitherSpeed(){
+    let nextVal = 4;
+    if (presSpeedInterval === nextVal && ab1===1){
+        decide13();
+        nextVal = nextVal+7;
+        ab2=2;
+    }
+    else if (presSpeedInterval === nextVal && ab1===2){
+        decide23();
+        nextVal = nextVal + 5;
+        ab2 = 1; 
+    }
+}
 
 
 function runner(){
@@ -134,12 +164,7 @@ function runner(){
           randomForVolVal = multVolArr[randomsForVol[randomsForVolIter]];
           randomsForVolIter++;
           
-          if (nextVolIntervalIter%2===0){
-            decide13();
-          }
-          else{
-            decide23();
-          }
+          eitherVol();
     }
 
     function advanceSpeed(){
@@ -154,11 +179,6 @@ function runner(){
           randomForSpeedVal = multSpeedArr[randomsForSpeed[randomsForSpeedIter]];
           randomsForSpeedIter++;
           
-          if (nextSpeedIntervalIter%2===0){
-            decide13();
-          }
-          else{
-            decide23();
-          }
+          eitherSpeed();
     }
 }
