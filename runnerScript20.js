@@ -134,7 +134,7 @@ function runner(){
           randomForVolVal = multVolArr[randomsForVol[randomsForVolIter]];
           randomsForVolIter++;
           
-          if (nextVolIntervalIter%0===0){
+          if (nextVolIntervalIter%2===0){
             decide13();
           }
           else{
@@ -154,7 +154,7 @@ function runner(){
           randomForSpeedVal = multSpeedArr[randomsForSpeed[randomsForSpeedIter]];
           randomsForSpeedIter++;
           
-          if (nextSpeedIntervalIter%0===0){
+          if (nextSpeedIntervalIter%2===0){
             decide13();
           }
           else{
