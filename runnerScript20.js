@@ -99,32 +99,32 @@ function nextSpeedIntervalIter(){
 }
 
 let ab1=1;
+let nextValV = 4;
 function eitherVol(){
-    let nextVal = 4;
     if (presVolInterval === nextVal && ab1===1){
         decide13();
-        nextVal = nextVal+7;
+        nextValV = nextValV+7;
         ab1=2;
     }
     else if (presVolInterval === nextVal && ab1===2){
         decide23();
-        nextVal = nextVal + 5;
+        nextValV = nextValV + 5;
         ab1 = 1; 
     }
 
 }
 
 let ab2=1;
+let nextValS = 4;
 function eitherSpeed(){
-    let nextVal = 4;
     if (presSpeedInterval === nextVal && ab1===1){
         decide13();
-        nextVal = nextVal+7;
+        nextValS = nextValS+7;
         ab2=2;
     }
     else if (presSpeedInterval === nextVal && ab1===2){
         decide23();
-        nextVal = nextVal + 5;
+        nextValS = nextValS + 5;
         ab2 = 1; 
     }
 }
