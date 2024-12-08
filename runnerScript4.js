@@ -47,8 +47,8 @@ const songPath = 'songs/lato.mp3';
 const volArr=[2.5, 3.5, 5, 2.5, 5, 3.5];
 const speedArr=[2.5, 3.5, 5, 2.5, 5, 3.5];
 
-const multVolArr = [.4, .4075, .4125, .425, .4325, .4375, .45, .4575, .4625, .475, .4825, .4875, .5, .5125, .5175, .525, .5375, .5425, .55, .5625, .5675, .575, .5875, .5925, .6];
-const multSpeedArr = [.8, .815, .825, .85, .865, .875, .9, .915, .925, .95, .965, .975, 1, 1.025, 1.035, 1.05, 1.075, 1.085, 1.1, 1.125, 1.135, 1.15, 1.75, 1.85, 1.2]; // 5,7,1,11 off of +-.13
+const multVolArr = [.435 ,.445, .465, .475, .485, .495, .5, .505, .515, .525, .535, .555, .565];
+const multSpeedArr = [.87 , .89, .93, .95, .97, .99, 1, 1.01, 1.03, 1.05, 1.07, 1.11, 1.13]; // 5,7,1,11 off of +-.13
 
 const randomsForVol=[];
 const randomsForSpeed=[];
@@ -57,8 +57,8 @@ let randomsForVolIter = 0;
 let randomsForSpeedIter = 0;
 
 for (let i=0; i<900; i++){
-    randomsForVol.push(pickAmong25());
-    randomsForSpeed.push(pickAmong25());
+    randomsForVol.push(pickAmong13());
+    randomsForSpeed.push(pickAmong13());
 }
 
 let presVolIntervalIter = 0;
@@ -76,8 +76,8 @@ function redefineSpeedInterval(){
 }
 
 
-function pickAmong25(){
-    return Math.floor(Math.random() * 25);
+function pickAmong13(){
+    return Math.floor(Math.random() * 13);
 }
 
 function nextVolIntervalIter(){
@@ -98,34 +98,24 @@ function nextSpeedIntervalIter(){
     }
 }
 
-let ab1=1;
-let nextValV = 4;
+
 function eitherVol(){
-    if (randomsForVolIter === nextValV && ab1===1){
+    if (rngBin()===0){
         decide23();
-        nextValV = nextValV+7;
-        ab1=2;
     }
-    else if (randomsForVolIter === nextValV && ab1===2){
+    else {
         decide13();
-        nextValV = nextValV + 5;
-        ab1 = 1; 
     }
 
 }
 
-let ab2=1;
-let nextValS = 4;
+
 function eitherSpeed(){
-    if (randomsForSpeedIter === nextValS && ab1===1){
+    if (rngBin()===0){
         decide23();
-        nextValS = nextValS+7;
-        ab2=2;
     }
-    else if (randomsForSpeedIter === nextValS && ab1===2){
+    else {
         decide13();
-        nextValS = nextValS + 5;
-        ab2 = 1; 
     }
 }
 
