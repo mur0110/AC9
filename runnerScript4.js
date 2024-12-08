@@ -102,12 +102,12 @@ let ab1=1;
 let nextValV = 4;
 function eitherVol(){
     if (presVolInterval === nextVal && ab1===1){
-        decide13();
+        decide23();
         nextValV = nextValV+7;
         ab1=2;
     }
     else if (presVolInterval === nextVal && ab1===2){
-        decide23();
+        decide13();
         nextValV = nextValV + 5;
         ab1 = 1; 
     }
@@ -118,12 +118,12 @@ let ab2=1;
 let nextValS = 4;
 function eitherSpeed(){
     if (presSpeedInterval === nextVal && ab1===1){
-        decide13();
+        decide23();
         nextValS = nextValS+7;
         ab2=2;
     }
     else if (presSpeedInterval === nextVal && ab1===2){
-        decide23();
+        decide13();
         nextValS = nextValS + 5;
         ab2 = 1; 
     }
