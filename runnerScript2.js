@@ -1,7 +1,7 @@
 let interDuration = .15;
 
 function modInterDuration(){
-    const possibleDeviations=[.13, .17, .19, .23, .29];
+    const possibleDeviations=[.17, .18, .25, .34, .37];
     interDuration = possibleDeviations[Math.floor(Math.random()*5)];
 }
 function rngBin(){
@@ -14,14 +14,43 @@ function rngQuat(){
     return Math.floor(Math.random()*4);
 }
 
-const songPath = 'songs/music.mp3';
+function decide13(){
+    if (rngBin()===0){
+        if (rngQuat()==0){
+            modInterDuration();
+        }
+      }
+      else{
+        if (rngTrio()==0){
+            modInterDuration();
+        }
+      }
+}
+
+function decide23(){
+    if (rngBin()===0){
+        if (rngQuat()!==0){
+            modInterDuration();
+        }
+      }
+      else{
+        if (rngTrio()!==0){
+            modInterDuration();
+        }
+      }
+}
 
 
-const volArr=[2, 3, 8, 2, 8, 3];
-const speedArr=[2, 3, 8, 2, 8, 3];
+const songPath = 'songs/middle.mp3';
 
-const multVolArr = [.435, .445, .46, .465, .475, .5, .525, .535, .54, .555, .565];
-const multSpeedArr = [.76, .80 ,.82 ,.86, .87, .88, .92 ,.94, .98, 1, 1.02, 1.06, 1.08, 1.12, 1.13, 1.14, 1.18, 1.20, 1.24]; // 5,7,1 off of +-.13
+
+const volArr=[2.5, 3.5, 5, 2.5, 5, 3.5];
+const speedArr=[2.5, 3.5, 5, 2.5, 5, 3.5];
+
+const primeRaw = [13, 11, 7, 5, 3, 1, 0, 1, 3, 5, 7, 11, 13];
+
+const multVolArr = [.435 ,.445, .465, .475, .485, .495, .5, .505, .515, .525, .535, .555, .565];
+const multSpeedArr = [.87 , .89, .93, .95, .97, .99, 1, 1.01, 1.03, 1.05, 1.07, 1.11, 1.13]; // 5,7,1,11 off of +-.13
 
 const randomsForVol=[];
 const randomsForSpeed=[];
@@ -29,9 +58,9 @@ const randomsForSpeed=[];
 let randomsForVolIter = 0;
 let randomsForSpeedIter = 0;
 
-for (let i=0; i<600; i++){
-    randomsForVol.push(pickAmongEleven());
-    randomsForSpeed.push(pickAmong16());
+for (let i=0; i<900; i++){
+    randomsForVol.push(pickAmong13());
+    randomsForSpeed.push(pickAmong13());
 }
 
 let presVolIntervalIter = 0;
@@ -48,12 +77,9 @@ function redefineSpeedInterval(){
     presSpeedInterval = speedArr[presSpeedIntervalIter];
 }
 
-function pickAmongEleven(){
-    return Math.floor(Math.random() * 11);
-}
 
-function pickAmong16(){
-    return Math.floor(Math.random() * 15);
+function pickAmong13(){
+    return Math.floor(Math.random() * 13);
 }
 
 function nextVolIntervalIter(){
@@ -74,6 +100,39 @@ function nextSpeedIntervalIter(){
     }
 }
 
+
+function eitherVol(){
+    if (rngBin()===0){
+        decide23();
+    }
+    else {
+        decide13();
+    }
+
+    if (primeRaw[randomsForVol[randomsForVolIter]]+primeRaw[randomsForSpeed[randomsForSpeedIter]]>11){
+        interDuration=interDuration*(7/5);
+    }
+    else if (primeRaw[randomsForVol[randomsForVolIter]]+primeRaw[randomsForSpeed[randomsForSpeedIter]]<11){
+        interDuration=interDuration*(5/7);
+    }
+}
+
+
+function eitherSpeed(){
+    if (rngBin()===0){
+        decide23();
+    }
+    else {
+        decide13();
+    }
+
+    if (primeRaw[randomsForSpeed[randomsForSpeedIter]]+primeRaw[randomsForSpeed[randomsForSpeedIter]]>11){
+        interDuration=interDuration*(7/5);
+    }
+    else if (primeRaw[randomsForSpeed[randomsForSpeedIter]]+primeRaw[randomsForSpeed[randomsForSpeedIter]]<11){
+        interDuration=interDuration*(5/7);
+    }
+}
 
 
 function runner(){
@@ -109,16 +168,8 @@ function runner(){
           volInterval = presVolInterval;
           randomForVolVal = multVolArr[randomsForVol[randomsForVolIter]];
           randomsForVolIter++;
-          if (rngBin()===0){
-            if (rngQuat()===0){
-                modInterDuration();
-            }
-          }
-          else{
-            if (rngTrio()===0){
-                modInterDuration();
-            }
-          }
+          
+          eitherVol();
     }
 
     function advanceSpeed(){
@@ -132,15 +183,7 @@ function runner(){
           speedInterval = presSpeedInterval;
           randomForSpeedVal = multSpeedArr[randomsForSpeed[randomsForSpeedIter]];
           randomsForSpeedIter++;
-          if (rngBin()===0){
-            if (rngQuat()===0){
-                modInterDuration();
-            }
-          }
-          else{
-            if (rngTrio()===0){
-                modInterDuration();
-            }
-          }
+          
+          eitherSpeed();
     }
 }
