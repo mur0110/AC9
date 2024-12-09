@@ -110,10 +110,10 @@ function eitherVol(){
     }
 
     if (primeRaw[randomsForVol[randomsForVolIter]]+primeRaw[randomsForSpeed[randomsForSpeedIter]]>11){
-        interDuration=interDuration*(5/7);
+        interDuration=interDuration*(7/5);
     }
     else if (primeRaw[randomsForVol[randomsForVolIter]]+primeRaw[randomsForSpeed[randomsForSpeedIter]]<11){
-        interDuration=interDuration*(7/5);
+        interDuration=interDuration*(5/7);
     }
 }
 
@@ -127,10 +127,10 @@ function eitherSpeed(){
     }
 
     if (primeRaw[randomsForSpeed[randomsForSpeedIter]]+primeRaw[randomsForSpeed[randomsForSpeedIter]]>11){
-        interDuration=interDuration*(5/7);
+        interDuration=interDuration*(7/5);
     }
     else if (primeRaw[randomsForSpeed[randomsForSpeedIter]]+primeRaw[randomsForSpeed[randomsForSpeedIter]]<11){
-        interDuration=interDuration*(7/5);
+        interDuration=interDuration*(5/7);
     }
 }
 
