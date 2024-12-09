@@ -42,6 +42,9 @@ function decide23(){
 
 function rng5(){
     if (Math.floor(Math.random()*12)<5){
+        return 1;
+    }
+    else{
         return 0;
     }
 }
