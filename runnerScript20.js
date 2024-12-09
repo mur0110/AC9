@@ -47,6 +47,8 @@ const songPath = 'songs/children.mp3';
 const volArr=[2.5, 3.5, 5, 2.5, 5, 3.5];
 const speedArr=[2.5, 3.5, 5, 2.5, 5, 3.5];
 
+const primeRaw = [13, 11, 7, 5, 3, 1, 0, 1, 3, 5, 7, 11, 13];
+
 const multVolArr = [.435 ,.445, .465, .475, .485, .495, .5, .505, .515, .525, .535, .555, .565];
 const multSpeedArr = [.87 , .89, .93, .95, .97, .99, 1, 1.01, 1.03, 1.05, 1.07, 1.11, 1.13]; // 5,7,1,11 off of +-.13
 
@@ -107,6 +109,12 @@ function eitherVol(){
         decide13();
     }
 
+    if (primeRaw[randomsForVol[randomsForVolIter]]+primeRaw[randomsForSpeed[randomsForSpeedIter]]>11){
+        interDuration=interDuration*(5/7);
+    }
+    else if (primeRaw[randomsForVol[randomsForVolIter]]+primeRaw[randomsForSpeed[randomsForSpeedIter]]<11){
+        interDuration=interDuration*(7/5);
+    }
 }
 
 
@@ -116,6 +124,13 @@ function eitherSpeed(){
     }
     else {
         decide13();
+    }
+
+    if (primeRaw[randomsForSpeed[randomsForSpeedIter]]+primeRaw[randomsForSpeed[randomsForSpeedIter]]>11){
+        interDuration=interDuration*(5/7);
+    }
+    else if (primeRaw[randomsForSpeed[randomsForSpeedIter]]+primeRaw[randomsForSpeed[randomsForSpeedIter]]<11){
+        interDuration=interDuration*(7/5);
     }
 }
 
