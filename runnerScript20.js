@@ -40,6 +40,12 @@ function decide23(){
       }
 }
 
+function rng5(){
+    if (Math.floor(Math.random()*12)<5){
+        return 0;
+    }
+}
+
 
 const songPath = 'songs/children.mp3';
 
@@ -110,10 +116,14 @@ function eitherVol(){
     }
 
     if (primeRaw[randomsForVol[randomsForVolIter]]+primeRaw[randomsForSpeed[randomsForSpeedIter]]>11){
+        if (rng5()){
         interDuration=interDuration*(7/5);
+        }
     }
     else if (primeRaw[randomsForVol[randomsForVolIter]]+primeRaw[randomsForSpeed[randomsForSpeedIter]]<11){
+        if (!rng5()){
         interDuration=interDuration*(5/7);
+        }
     }
 }
 
@@ -127,10 +137,14 @@ function eitherSpeed(){
     }
 
     if (primeRaw[randomsForSpeed[randomsForSpeedIter]]+primeRaw[randomsForSpeed[randomsForSpeedIter]]>11){
+        if (rng5()){
         interDuration=interDuration*(7/5);
+        }
     }
     else if (primeRaw[randomsForSpeed[randomsForSpeedIter]]+primeRaw[randomsForSpeed[randomsForSpeedIter]]<11){
+        if (!rng5()){
         interDuration=interDuration*(5/7);
+        }
     }
 }
 
