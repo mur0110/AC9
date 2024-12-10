@@ -40,12 +40,21 @@ function decide23(){
       }
 }
 
+function rng5(){
+    if (Math.floor(Math.random()*12)<5){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
+
 
 const songPath = 'songs/lato.mp3';
 
 
-const volArr=[2.5, 3.5, 5, 2.5, 5, 3.5];
-const speedArr=[2.5, 3.5, 5, 2.5, 5, 3.5];
+const volArr=[2.5, 3.5, 5, 3.5, 2.5];
+const speedArr=[2.5, 3.5, 5, 3.5, 2.5];
 
 const primeRaw = [13, 11, 7, 5, 3, 1, 0, 1, 3, 5, 7, 11, 13];
 
@@ -83,7 +92,7 @@ function pickAmong13(){
 }
 
 function nextVolIntervalIter(){
-    if (presVolIntervalIter < 5){
+    if (presVolIntervalIter < 4){
         presVolIntervalIter++;
     }
     else{
@@ -92,7 +101,7 @@ function nextVolIntervalIter(){
 }
 
 function nextSpeedIntervalIter(){
-    if (presSpeedIntervalIter < 5){
+    if (presSpeedIntervalIter < 4){
         presSpeedIntervalIter++;
     }
     else{
@@ -110,10 +119,14 @@ function eitherVol(){
     }
 
     if (primeRaw[randomsForVol[randomsForVolIter]]+primeRaw[randomsForSpeed[randomsForSpeedIter]]>11){
-        interDuration=interDuration*(7/5);
+        if (!rng5()){
+        interDuration=interDuration*(5/7);
+        }
     }
     else if (primeRaw[randomsForVol[randomsForVolIter]]+primeRaw[randomsForSpeed[randomsForSpeedIter]]<11){
-        interDuration=interDuration*(5/7);
+        if (rng5()){
+        interDuration=interDuration*(7/5);
+        }
     }
 }
 
@@ -127,10 +140,14 @@ function eitherSpeed(){
     }
 
     if (primeRaw[randomsForSpeed[randomsForSpeedIter]]+primeRaw[randomsForSpeed[randomsForSpeedIter]]>11){
-        interDuration=interDuration*(7/5);
+        if (!rng5()){
+        interDuration=interDuration*(5/7);
+        }
     }
     else if (primeRaw[randomsForSpeed[randomsForSpeedIter]]+primeRaw[randomsForSpeed[randomsForSpeedIter]]<11){
-        interDuration=interDuration*(5/7);
+        if (rng5()){
+        interDuration=interDuration*(7/5);
+        }
     }
 }
 
