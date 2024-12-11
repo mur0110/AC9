@@ -62,7 +62,7 @@ function rng5(){
 }
 
 
-const songPath = 'songs/middle.mp3';
+const songPath = 'middle.mp3';
 
 
 const volArr=[2.5, 3.5, 5, 3.5, 2.5];
@@ -230,7 +230,7 @@ function runner(){
 
           const rngDecide=rng5();
 
-          if (rngDecide<4){
+          if (rngDecide<5){
             randomForVolVal = multVolArr1[randomsForVol1[randomsForVolIter]];
           }
           else{
@@ -239,7 +239,7 @@ function runner(){
 
           randomsForVolIter++;
           
-          if (rngDecide < 4){
+          if (rngDecide < 5){
             eitherVol();
           }
           else{
@@ -260,7 +260,7 @@ function runner(){
 
           const rngDecide=rng5();
 
-          if (rngDecide<4){
+          if (rngDecide<5){
             randomForSpeedVal = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
           }
           else{
@@ -269,7 +269,7 @@ function runner(){
 
           randomsForSpeedIter++;
           
-          if (rngDecide < 4){
+          if (rngDecide < 5){
             eitherSpeed();
           }
           else{
