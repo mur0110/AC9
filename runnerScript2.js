@@ -1,8 +1,14 @@
 let interDuration = .15;
 
 function modInterDuration(){
-    const possibleDeviations=[.5, 0.4225, .447, .46, .467, .473, .357];
-    interDuration = possibleDeviations[Math.floor(Math.random()*7)];
+    const possibleDeviations1=[.5, 0.4225, .447, .46, .467, .473, .357];
+    const possibleDeviations2=[.714, .510, .364, .260, .186, .133, .095];
+    if (rngBin()===0){
+        interDuration = possibleDeviations1[Math.floor(Math.random()*7)];
+    }
+    else{
+        interDuration = possibleDeviations2[Math.floor(Math.random()*7)];
+    }
 }
 function rngBin(){
     return Math.floor(Math.random()*2);
