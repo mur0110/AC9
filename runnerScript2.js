@@ -62,7 +62,7 @@ function rng5(){
 }
 
 
-const songPath = 'middle.mp3';
+const songPath = 'songs/middle.mp3';
 
 
 const volArr=[2.5, 3.5, 5, 3.5, 2.5];
