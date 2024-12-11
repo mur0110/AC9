@@ -228,9 +228,9 @@ function runner(){
           redefineVolInterval();
           volInterval = presVolInterval;
 
-          const rngDecide=rngBin();
+          const rngDecide=rng5();
 
-          if (rngDecide===0){
+          if (rngDecide<4){
             randomForVolVal = multVolArr1[randomsForVol1[randomsForVolIter]];
           }
           else{
@@ -239,7 +239,7 @@ function runner(){
 
           randomsForVolIter++;
           
-          if (rngDecide === 0){
+          if (rngDecide < 4){
             eitherVol();
           }
           else{
@@ -258,9 +258,9 @@ function runner(){
           redefineSpeedInterval();
           speedInterval = presSpeedInterval;
 
-          const rngDecide=rngBin();
+          const rngDecide=rng5();
 
-          if (rngDecide===0){
+          if (rngDecide<4){
             randomForSpeedVal = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
           }
           else{
@@ -269,7 +269,7 @@ function runner(){
 
           randomsForSpeedIter++;
           
-          if (rngDecide === 0){
+          if (rngDecide < 4){
             eitherSpeed();
           }
           else{
