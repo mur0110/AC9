@@ -253,11 +253,13 @@ function runner(){
               dp4 = dp1 + dp2;
 
               if (rngBin()===0){
-                  rngVS1=dp3;
+                  rngVS1=dp3*(.5/1.695);
               }
               else{
-                  rngVS1=dp4;
+                  rngVS1=dp4*(.5/1.35845);
               }
+
+
               randomForVolVal = rngVS1;
               eitherVolPlain();
           }
@@ -320,11 +322,11 @@ function runner(){
           }
         else if(randomToDecide<(17/24)){
             randomForSpeedVal = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
-            eitherVol();
+            eitherSpeed();
         }
         else{
             randomForSpeedVal = multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
-            eitherVolPlain();
+            eitherSpeedPlain();
         }
 
             
