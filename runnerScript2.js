@@ -233,15 +233,30 @@ function runner(){
           redefineVolInterval();
           volInterval = presVolInterval;
 
-          const rngDecide=rng5();
+          let randomToDecide=Math.random()*12;
 
-          if (rngDecide<5){
-            randomForVolVal = multVolArr1[randomsForVol1[randomsForVolIter]];
+          
+
+          let randomOf2 = rngBin();
+
+          let dp1=0, dp2=0, dp3=0;
+
+          if (randomOf2 === 0)
+          {
+              // vector is same size grouping
+              dp1 = multVolArr1[randomsForVol[randomsForVolIter]] * multVolArr2[randomsForVol[randomsForVolIter]];
+              dp2 = multSpeedArr1[randomsForSpeed[randomsForSpeedIter]] * multSpeedArr2[randomsForSpeed[randomsForSpeedIter]];
+              dp3 = dp1 + dp2;
+              
           }
-          else{
-            randomForVolVal = multVolArr2[randomsForVol2[randomsForVolIter]];
+          else {
+              dp1 = multVolArr1[randomsForVol[randomsForVolIter]] * multSpeedArr1[randomsForSpeed[randomsForSpeedIter]];
+              dp2 = multVolArr2[randomsForVol[randomsForVolIter]] * multSpeedArr2[randomsForSpeed[randomsForSpeedIter]];
+              dp3 = dp1 + dp2;
+              
           }
 
+          
           randomsForVolIter++;
           
           if (rngDecide < 5){
