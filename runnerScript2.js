@@ -259,10 +259,15 @@ function runner(){
                   rngVS1=dp4;
               }
               randomForVolVal = rngVS1;
-              
+              eitherVolPlain();
           }
         else if(randomToDecide<(17/24)){
-            
+            randomForVolVal = multVolArr1[randomsForVol1[randomsForVolIter]];
+            eitherVol();
+        }
+        else{
+            randomForVolVal = multVolArr2[randomsForVol2[randomsForVolIter]];
+            eitherVolPlain();
         }
 
             
