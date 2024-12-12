@@ -243,13 +243,13 @@ function runner(){
           
           
               // vector is same size grouping
-              dp1 = multVolArr1[randomsForVol[randomsForVolIter]] * multVolArr2[randomsForVol[randomsForVolIter]];
-              dp2 = multSpeedArr1[randomsForSpeed[randomsForSpeedIter]] * multSpeedArr2[randomsForSpeed[randomsForSpeedIter]];
+              dp1 = multVolArr1[randomsForVol1[randomsForVolIter]] * multVolArr2[randomsForVol2[randomsForVolIter]];
+              dp2 = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]] * multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
               dp3 = dp1 + dp2;
               
           
-              dp1 = multVolArr1[randomsForVol[randomsForVolIter]] * multSpeedArr1[randomsForSpeed[randomsForSpeedIter]];
-              dp2 = multVolArr2[randomsForVol[randomsForVolIter]] * multSpeedArr2[randomsForSpeed[randomsForSpeedIter]];
+              dp1 = multVolArr1[randomsForVol1[randomsForVolIter]] * multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
+              dp2 = multVolArr2[randomsForVol2[randomsForVolIter]] * multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
               dp4 = dp1 + dp2;
 
               if (rngBin()===0){
@@ -290,22 +290,49 @@ function runner(){
           redefineSpeedInterval();
           speedInterval = presSpeedInterval;
 
-          const rngDecide=rng5();
+          let randomToDecide=Math.random();
 
-          if (rngDecide<5){
-            randomForSpeedVal = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
-          }
-          else{
-            randomForSpeedVal = multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
-          }
+          if (randomToDecide<(5/12){
+            
 
-          randomsForSpeedIter++;
+          let dp1=0, dp2=0, dp3=0, dp4=0, rngVS1=0;
+
           
-          if (rngDecide < 5){
-            eitherSpeed();
+          
+              // vector is same size grouping
+              dp1 = multVolArr1[randomsForVol1[randomsForVolIter]] * multVolArr2[randomsForVol2[randomsForVolIter]];
+              dp2 = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]] * multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
+              dp3 = dp1 + dp2;
+              
+          
+              dp1 = multVolArr1[randomsForVol1[randomsForVolIter]] * multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
+              dp2 = multVolArr2[randomsForVol2[randomsForVolIter]] * multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
+              dp4 = dp1 + dp2;
+
+              if (rngBin()===0){
+                  rngVS1=dp3;
+              }
+              else{
+                  rngVS1=dp4;
+              }
+              randomForSpeedVal = rngVS1;
+              eitherSpeedPlain();
           }
-          else{
-            eitherSpeedPlain();
-          }
-    }
+        else if(randomToDecide<(17/24)){
+            randomForSpeedVal = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
+            eitherVol();
+        }
+        else{
+            randomForSpeedVal = multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
+            eitherVolPlain();
+        }
+
+            
+        
+
+          
+          randomsForSpeedIter++;
+
+          
+    
 }
