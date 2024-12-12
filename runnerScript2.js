@@ -235,7 +235,7 @@ function runner(){
 
           let randomToDecide=Math.random();
 
-          if (randomToDecide<(5/12){
+          if (randomToDecide<(5/12)){
             
 
           let dp1=0, dp2=0, dp3=0, dp4=0, rngVS1=0;
@@ -292,7 +292,7 @@ function runner(){
 
           let randomToDecide=Math.random();
 
-          if (randomToDecide<(5/12){
+          if (randomToDecide<(5/12)){
             
 
           let dp1=0, dp2=0, dp3=0, dp4=0, rngVS1=0;
