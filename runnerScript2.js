@@ -1,3 +1,5 @@
+const songPath = 'songs/middle.mp3';
+
 let interDuration = .15;
 
 function modInterDuration(){
@@ -67,7 +69,7 @@ function rng5(){
 }
 
 
-const songPath = 'songs/middle.mp3';
+
 
 
 const volArr=[2.5, 3.5, 5, 3.5, 2.5];
@@ -253,10 +255,10 @@ function runner(){
               dp4 = dp1 + dp2;
 
               if (rngBin()===0){
-                  rngVS1=dp3*(.5/1.695);
+                  rngVS1=dp3*(.5825/1.695);
               }
               else{
-                  rngVS1=dp4*(.5/1.35845);
+                  rngVS1=dp4*(.5825/1.35845);
               }
 
 
