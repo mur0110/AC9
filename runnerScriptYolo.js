@@ -5,18 +5,14 @@ let interDuration = .15;
 function modInterDuration(){
     const possibleDeviations1=[.5, 0.4225, .447, .46, .467, .473, .357];
     const possibleDeviations2=[.714, .510, .364, .260, .186, .133, .095];
-    const possibleDeviations3=[.17, .18, .25, .34, .37];
     const possibleDeviations4 = [.13, .17, .19, .23, .29, .31];
-
-    const randomInt3=rngQuat();
+    
+    const randomInt3=rngTrio();
     if (randomInt3===0){
         interDuration = possibleDeviations1[Math.floor(Math.random()*7)];
     }
     else if (randomInt3===1){
         interDuration = possibleDeviations2[Math.floor(Math.random()*7)];
-    }
-    else if (randomInt3===2){
-        interDuration = possibleDeviations3[Math.floor(Math.random()*5)];
     }
     else{
         interDuration = possibleDeviations4[Math.floor(Math.random()*6)];
@@ -237,7 +233,7 @@ function runner(){
 
           let randomToDecide=Math.random();
 
-          if (randomToDecide<(5/12)){
+          if (randomToDecide<(1/3)){
             
 
           let dp1=0, dp2=0, dp3=0, dp4=0, rngVS1=0;
@@ -265,7 +261,7 @@ function runner(){
               randomForVolVal = rngVS1;
               eitherVolPlain();
           }
-        else if(randomToDecide<(17/24)){
+        else if(randomToDecide<(2/3)){
             randomForVolVal = multVolArr1[randomsForVol1[randomsForVolIter]];
             eitherVol();
         }
@@ -296,7 +292,7 @@ function runner(){
 
           let randomToDecide=Math.random();
 
-          if (randomToDecide<(5/12)){
+          if (randomToDecide<(1/3)){
             
 
           let dp1=0, dp2=0, dp3=0, dp4=0, rngVS1=0;
@@ -322,7 +318,7 @@ function runner(){
               randomForSpeedVal = rngVS1;
               eitherSpeedPlain();
           }
-        else if(randomToDecide<(17/24)){
+        else if(randomToDecide<(2/3)){
             randomForSpeedVal = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
             eitherSpeed();
         }
