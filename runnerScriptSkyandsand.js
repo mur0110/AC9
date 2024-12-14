@@ -1,23 +1,18 @@
 const songPath = 'songs/skyandsand.mp3';
 
-
 let interDuration = .15;
 
 function modInterDuration(){
     const possibleDeviations1=[.5, 0.4225, .447, .46, .467, .473, .357];
     const possibleDeviations2=[.714, .510, .364, .260, .186, .133, .095];
-    const possibleDeviations3=[.17, .18, .25, .34, .37];
     const possibleDeviations4 = [.13, .17, .19, .23, .29, .31];
-
-    const randomInt3=rngQuat();
+    
+    const randomInt3=rngTrio();
     if (randomInt3===0){
         interDuration = possibleDeviations1[Math.floor(Math.random()*7)];
     }
     else if (randomInt3===1){
         interDuration = possibleDeviations2[Math.floor(Math.random()*7)];
-    }
-    else if (randomInt3===2){
-        interDuration = possibleDeviations3[Math.floor(Math.random()*5)];
     }
     else{
         interDuration = possibleDeviations4[Math.floor(Math.random()*6)];
@@ -68,6 +63,7 @@ function rng5(){
         return 0;
     }
 }
+
 
 
 
