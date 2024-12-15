@@ -6,7 +6,7 @@ function modInterDuration(){
     const possibleDeviations1=[.5, 0.4225, .447, .46, .467, .473, .357];
     const possibleDeviations2=[.714, .510, .364, .260, .186, .133, .095];
     const possibleDeviations4 = [.13, .17, .19, .23, .29, .31];
-    
+
     const randomInt3=rngTrio();
     if (randomInt3===0){
         interDuration = possibleDeviations1[Math.floor(Math.random()*7)];
@@ -222,18 +222,23 @@ function runner(){
 
 
     function advanceVolume(){
-          setTimeout(function(){
-              songAudio.volume = randomForVolVal;
-              volIntervalIter += volArr[presVolIntervalIter];
-              advanceVolume();
-          }, interDuration * volInterval * 1000);
-          nextVolIntervalIter();
-          redefineVolInterval();
-          volInterval = presVolInterval;
+        let randomToDecide=Math.random();
+        let diff1=0, diff2=0, diff3=0;
 
-          let randomToDecide=Math.random();
+        setTimeout(function(){
+            // console.log(randomToDecide);
+            // console.log('diff1: ' + diff1, ' diff2: ' + diff2, ' diff3: ' + diff3);
+            // console.log('volVal:' + randomForVolVal);
+            songAudio.volume = randomForVolVal;
+            volIntervalIter += volArr[presVolIntervalIter];
+            advanceVolume();
+        }, interDuration * volInterval * 1000);
+        nextVolIntervalIter();
+        redefineVolInterval();
+        volInterval = presVolInterval;
 
-          if (randomToDecide<(1/3)){
+
+          if (randomToDecide<(1/5)){
             
 
           let dp1=0, dp2=0, dp3=0, dp4=0, rngVS1=0;
@@ -261,7 +266,24 @@ function runner(){
               randomForVolVal = rngVS1;
               eitherVolPlain();
           }
-        else if(randomToDecide<(2/3)){
+        else if(randomToDecide<(2/5)){
+            diff1 = multVolArr1[randomsForVol1[randomsForVolIter]] - multVolArr2[randomsForVol2[randomsForVolIter]];
+            diff2 = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
+            diff3 = Math.sqrt(diff1**2 + diff2**2) * .65;
+            
+            randomForVolVal = diff3;
+            eitherVolPlain();
+
+        }
+        else if(randomToDecide<(3/5)){
+            diff1 = multVolArr1[randomsForVol1[randomsForVolIter]] - multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
+            diff2 = multVolArr2[randomsForVol2[randomsForVolIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
+            diff3 = Math.sqrt(diff1**2 + diff2**2)/1.06 * .65;
+
+            randomForVolVal = diff3;
+            eitherVolPlain();
+        }
+        else if(randomToDecide<(4/5)){
             randomForVolVal = multVolArr1[randomsForVol1[randomsForVolIter]];
             eitherVol();
         }
@@ -282,6 +304,8 @@ function runner(){
 
     function advanceSpeed(){
           setTimeout(function(){
+              // console.log(randomToDecide);
+              // console.log('speedVal:' + randomForSpeedVal);
               songAudio.playbackRate = randomForSpeedVal;
               speedIntervalIter += speedArr[presSpeedIntervalIter];
               advanceSpeed();
@@ -292,7 +316,7 @@ function runner(){
 
           let randomToDecide=Math.random();
 
-          if (randomToDecide<(1/3)){
+          if (randomToDecide<(1/5)){
             
 
           let dp1=0, dp2=0, dp3=0, dp4=0, rngVS1=0;
@@ -318,7 +342,34 @@ function runner(){
               randomForSpeedVal = rngVS1;
               eitherSpeedPlain();
           }
-        else if(randomToDecide<(2/3)){
+          else if(randomToDecide<(2/5)){
+            let diff1=0, diff2=0, diff3=0;
+            diff1 = multVolArr1[randomsForVol1[randomsForVolIter]] - multVolArr2[randomsForVol2[randomsForVolIter]];
+            diff2 = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
+            diff3 = Math.sqrt(diff1**2 + diff2**2);
+            
+            if (diff3<.25){
+                diff3 = 1-diff3;
+            }
+
+            randomForSpeedVal = diff3;
+            eitherSpeedPlain();
+
+        }
+        else if(randomToDecide<(3/5)){
+            let diff1=0, diff2=0, diff3=0;
+            diff1 = multVolArr1[randomsForVol1[randomsForVolIter]] - multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
+            diff2 = multVolArr2[randomsForVol2[randomsForVolIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
+            diff3 = Math.sqrt(diff1**2 + diff2**2);
+
+            if (diff3<.25){
+                diff3 = 1-diff3;
+            }
+            
+            randomForSpeedVal = diff3;
+            eitherSpeedPlain();
+        }
+        else if(randomToDecide<(4/5)){
             randomForSpeedVal = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
             eitherSpeed();
         }
