@@ -329,7 +329,7 @@ function runner(){
 
           let randomToDecide=Math.random();
 
-          if (randomToDecide<(1/4)){
+          if (randomToDecide<(1/5)){
             
 
           let dp1=0, dp2=0, dp3=0, dp4=0, rngVS1=0;
