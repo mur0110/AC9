@@ -237,7 +237,7 @@ function runner(){
         volInterval = presVolInterval;
 
 
-          if (randomToDecide<(1/4)){
+          if (randomToDecide<(1/5)){
             
 
           let dp1=0, dp2=0, dp3=0, dp4=0, rngVS1=0;
@@ -266,7 +266,7 @@ function runner(){
               eitherVolPlain();
           }
 
-        else if(randomToDecide<(2/4)){
+        else if(randomToDecide<(2/5)){
             let diff1=0, diff2=0, diff3=0, diff4=0, diffTotal=0;
 
             diff1 = multVolArr1[randomsForVol1[randomsForVolIter]] - multVolArr2[randomsForVol2[randomsForVolIter]];
@@ -275,13 +275,28 @@ function runner(){
             diff3 = multVolArr1[randomsForVol1[randomsForVolIter]] - multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
             diff4 = multVolArr2[randomsForVol2[randomsForVolIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
             
-            diffT = Math.sqrt(diff1**2 + diff2**2 + diff3**2 + diff4**2)/1.12 * .65;
+            diffT = ((diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/3))/1.08 * .65;
 
             randomForVolVal = diffT;
             eitherVolPlain();
 
         }
-        else if(randomToDecide<(3/4)){
+        else if(randomToDecide<(3/5)){
+            let diff1=0, diff2=0, diff3=0, diff4=0, diffTotal=0;
+
+            diff1 = multVolArr1[randomsForVol1[randomsForVolIter]] - multVolArr2[randomsForVol2[randomsForVolIter]];
+            diff2 = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
+
+            diff3 = multVolArr1[randomsForVol1[randomsForVolIter]] - multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
+            diff4 = multVolArr2[randomsForVol2[randomsForVolIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
+            
+            diffT = ((diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/2))/1.12 * .65;
+
+            randomForVolVal = diffT;
+            eitherVolPlain();
+
+        }
+        else if(randomToDecide<(4/5)){
             randomForVolVal = multVolArr1[randomsForVol1[randomsForVolIter]];
             eitherVol();
         }
@@ -340,7 +355,7 @@ function runner(){
               randomForSpeedVal = rngVS1;
               eitherSpeedPlain();
           }
-          else if(randomToDecide<(2/4)){
+          else if(randomToDecide<(2/5)){
             let diff1=0, diff2=0, diff3=0, diff4=0, diffTotal=0;
 
             diff1 = multVolArr1[randomsForVol1[randomsForVolIter]] - multVolArr2[randomsForVol2[randomsForVolIter]];
@@ -355,7 +370,22 @@ function runner(){
             eitherSpeedPlain();
 
         }
-        else if(randomToDecide<(3/4)){
+        else if(randomToDecide<(3/5)){
+            let diff1=0, diff2=0, diff3=0, diff4=0, diffTotal=0;
+
+            diff1 = multVolArr1[randomsForVol1[randomsForVolIter]] - multVolArr2[randomsForVol2[randomsForVolIter]];
+            diff2 = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
+
+            diff3 = multVolArr1[randomsForVol1[randomsForVolIter]] - multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
+            diff4 = multVolArr2[randomsForVol2[randomsForVolIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
+            
+            diffT = ((diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/3));
+
+            randomForSpeedVal = diffT;
+            eitherSpeedPlain();
+
+        }
+        else if(randomToDecide<(4/5)){
             randomForSpeedVal = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
             eitherSpeed();
         }
