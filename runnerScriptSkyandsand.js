@@ -68,8 +68,8 @@ function rng5(){
 
 
 
-const volArr=[2.5, 3.5, 5, 3.5, 2.5];
-const speedArr=[2.5, 3.5, 5, 3.5, 2.5];
+const volArr=[2, 3, 3, 4, 4, 3, 3, 2];
+const speedArr=[2, 3, 3, 4, 4, 3, 3, 2];
 
 const primeRaw = [13, 11, 7, 5, 3, 1, 0, 1, 3, 5, 7, 11, 13];
 
@@ -120,7 +120,7 @@ function pickAmong25(){
 }
 
 function nextVolIntervalIter(){
-    if (presVolIntervalIter < 4){
+    if (presVolIntervalIter < 7){
         presVolIntervalIter++;
     }
     else{
@@ -129,7 +129,7 @@ function nextVolIntervalIter(){
 }
 
 function nextSpeedIntervalIter(){
-    if (presSpeedIntervalIter < 4){
+    if (presSpeedIntervalIter < 7){
         presSpeedIntervalIter++;
     }
     else{
