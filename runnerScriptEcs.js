@@ -87,8 +87,8 @@ function rng5(){
 
 
 
-const volArr=[2, 3, 3, 4, 4, 3, 3, 2];
-const speedArr=[2, 3, 3, 4, 4, 3, 3, 2];
+const volArr=[1, 1.5, 1.5, 2, 2, 1.5, 1.5, 1];
+const speedArr=[1, 1.5, 1.5, 2, 2, 1.5, 1.5, 1];
 
 const primeRaw = [13, 11, 7, 5, 3, 1, 0, 1, 3, 5, 7, 11, 13];
 
