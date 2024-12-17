@@ -93,6 +93,9 @@ const speedArr=[2/3, 1, 1, 4/3, 4/3, 1, 1, 2/3];
 const volArr1=[2,3,3,4,4,3,2];
 const speedArr1=[2,3,3,4,4,3,2];
 
+const volArr2=[1,1.5,1.5,2,2,1.5,1.5,1];
+const speedArr2=[1,1.5,1.5,2,2,1.5,1.5,1];
+
 const primeRaw = [13, 11, 7, 5, 3, 1, 0, 1, 3, 5, 7, 11, 13];
 
 const multVolArr1 = [.435 ,.445, .465, .475, .485, .495, .5, .505, .515, .525, .535, .555, .565];
@@ -125,20 +128,30 @@ let presVolInterval = 0;
 let presSpeedInterval = 0;
 
 function redefineVolInterval(){
-    if (rngBin()===0){
+    let decideArrayInc=rngTrio();
+
+    if (decideArrayInc===0){
         presVolInterval = volArr[presVolIntervalIter];
     }
-    else{
+    else if (decideArrayInc===1){
         presVolInterval = volArr1[presVolIntervalIter];
+    }
+    else{
+        presVOlInterval = volArr2[presVolInterval];
     }
 }
 
 function redefineSpeedInterval(){
-    if (rngBin()===0){
+    let decideArrayInc=rngTrio();
+
+    if (decideArrayInc===0){
         presSpeedInterval = speedArr[presSpeedIntervalIter];
     }
-    else{
+    else if (decideArrayInc===1){
         presSpeedInterval = speedArr1[presSpeedIntervalIter];
+    }
+    else{
+        presSpeedInterval = speedArr2[presSpeedInterval];
     }
 }
 
