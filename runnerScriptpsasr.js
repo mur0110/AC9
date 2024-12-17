@@ -5,9 +5,9 @@ let interDuration = .15;
 function modInterDuration(){
     const possibleDeviations1=[.5, 0.4225, .447, .46, .467, .473, .357];
     const possibleDeviations2=[.714, .510, .364, .260, .186, .133, .095];
-    const possibleDeviations3=[0.17, .18, .25, .33, .37];
+    const possibleDeviations3=[0.17, .18, .25, .33, .34, .37];
     const possibleDeviations4 = [.13, .17, .19, .23, .29, .31];
-    const possibleDeviations5 = [.1, .2, .3, .4, .5, .6, .7];
+    const possibleDeviations5 = [.15, .2, .3, .4, .5, .7];
 
     const randomInt3=rngPent();
 
@@ -18,10 +18,10 @@ function modInterDuration(){
         interDuration = possibleDeviations2[Math.floor(Math.random()*7)];
     }
     else if (randomInt3===2){
-        interDuration = possibleDeviations3[Math.floor(Math.random()*5)];
+        interDuration = possibleDeviations3[Math.floor(Math.random()*6)];
     }
     else if (randomInt3===3){
-        interDuration = possibleDeviations5[Math.floor(Math.random()*7)];
+        interDuration = possibleDeviations5[Math.floor(Math.random()*6)];
     }
     else{
         interDuration = possibleDeviations4[Math.floor(Math.random()*6)];
