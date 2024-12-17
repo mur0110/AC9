@@ -18,7 +18,7 @@ function modInterDuration(){
         interDuration = possibleDeviations2[Math.floor(Math.random()*7)];
     }
     else if (randomInt3===2){
-        interDuration = possibleDeviations3[Math.floor(Math.random()*5)];
+        interDuration = possibleDeviations3[Math.floor(Math.random()*6)];
     }
     else if (randomInt3===3){
         interDuration = possibleDeviations5[Math.floor(Math.random()*5)];
