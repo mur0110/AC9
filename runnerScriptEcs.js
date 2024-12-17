@@ -90,6 +90,9 @@ function rng5(){
 const volArr=[2/3, 1, 1, 4/3, 4/3, 1, 1, 2/3];
 const speedArr=[2/3, 1, 1, 4/3, 4/3, 1, 1, 2/3];
 
+const volArr1=[2,3,3,4,4,3,2];
+const speedArr1=[2,3,3,4,4,3,2];
+
 const primeRaw = [13, 11, 7, 5, 3, 1, 0, 1, 3, 5, 7, 11, 13];
 
 const multVolArr1 = [.435 ,.445, .465, .475, .485, .495, .5, .505, .515, .525, .535, .555, .565];
@@ -122,11 +125,21 @@ let presVolInterval = 0;
 let presSpeedInterval = 0;
 
 function redefineVolInterval(){
-    presVolInterval = volArr[presVolIntervalIter];
+    if (rngBin()===0){
+        presVolInterval = volArr[presVolIntervalIter];
+    }
+    else{
+        presVolInterval = volArr1[presVolIntervalIter];
+    }
 }
 
 function redefineSpeedInterval(){
-    presSpeedInterval = speedArr[presSpeedIntervalIter];
+    if (rngBin()===0){
+        presSpeedInterval = speedArr[presSpeedIntervalIter];
+    }
+    else{
+        presSpeedInterval = speedArr1[presSpeedIntervalIter];
+    }
 }
 
 
