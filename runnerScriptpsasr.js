@@ -7,8 +7,10 @@ function modInterDuration(){
     const possibleDeviations2=[.714, .510, .364, .260, .186, .133, .095];
     const possibleDeviations3=[0.17, .18, .25, .33, .34, .37];
     const possibleDeviations4 = [.13, .17, .19, .23, .29, .31];
+    const possibleDeviations5 = [.1, .2, .3, .4, .5];
 
-    const randomInt3=rngQuat();
+    const randomInt3=rngPent();
+
     if (randomInt3===0){
         interDuration = possibleDeviations1[Math.floor(Math.random()*7)];
     }
@@ -17,6 +19,9 @@ function modInterDuration(){
     }
     else if (randomInt3===2){
         interDuration = possibleDeviations3[Math.floor(Math.random()*6)];
+    }
+    else if (randomInt3===3){
+        interDuration = possibleDeviations5[Math.floor(Math.random()*5)];
     }
     else{
         interDuration = possibleDeviations4[Math.floor(Math.random()*6)];
@@ -31,6 +36,9 @@ function rngTrio(){
 }
 function rngQuat(){
     return Math.floor(Math.random()*4);
+}
+function rngPent(){
+    return Math.floor(Math.random()*5);
 }
 
 function decide13(){
