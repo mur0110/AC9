@@ -6,7 +6,7 @@ function modInterDuration(){
     const possibleDeviations1=[.5, 0.4225, .447, .46, .467, .473, .357];
     const possibleDeviations2=[.714, .510, .364, .260, .186, .133, .095];
     const possibleDeviations6=[.7, .592, .56, .544];
-    const possibleDeviations3=[0.17, .18, .25, .33, .37];
+    const possibleDeviations3=[0.17, .18, .25, .33, .34, .37];
     const possibleDeviations4 = [.13, .17, .19, .23, .29, .31];
     const possibleDeviations5 = [.15, .2, .3, .4, .9];
     const possibleDeviations7=[0,.2,.4,.6,.8,1];
