@@ -3,20 +3,49 @@ const songPath = 'songs/ecs.mp3';
 let interDuration = .15;
 
 function modInterDuration(){
-    const possibleDeviations3=[0.17, .18, .25, .33, .37];
+    let possibleDeviations3=[0.17, .18, .25, .33, .37];
     let pd3m=5;
+    let setHex=rng12();
 
-    if (rngBin()===0){
-        if (possibleDeviations3.indexOf(.34)===-1){
-            possibleDeviations3.push(.34);
-            pd3m=6;
-        }
-        else{
-            possibleDeviations3.pop();
-            pd3m=5;
-        }
+    if (setHex===0){
+       possibleDeviations3=[0.17, .18, .25, .33, .37];
+    }
+    else if (setHex===1){
+        possibleDeviations3=[0.17, .18, .25, .33, .34, .37];
+    }
+    else if (setHex===2){
+        possibleDeviations3=[0.17, .25, .33, .37];
+    }
+    else if (setHex===3){
+        possibleDeviations3=[0.18, .25, .33, .37];
+    }
+    else if (setHex===4){
+        possibleDeviations3=[0.17, .175, .25, .33, .37];
+    }
+    else if (setHex===5){
+        possibleDeviations3=[0.18, .175, .25, .33, .37];
+    }
+    else if (setHex===6){
+        possibleDeviations3=[0.17, .175, .18, .25, .33, .37];
+    }
+    else if (setHex===7){
+        possibleDeviations3=[0.17, .25, .33, .34, .37];
+    }
+    else if (setHex===8){
+        possibleDeviations3=[0.18, .25, .33, .34, .37];
+    }
+    else if (setHex===9){
+        possibleDeviations3=[0.17, .175, .25, .33, .34, .37];
+    }
+    else if (setHex===10){
+        possibleDeviations3=[0.18, .175, .25, .33, .34, .37];
+    }
+    else if (setHex===11){
+        possibleDeviations3=[0.17, .175, .18, .25, .33, .37];
     }
 
+
+    pd3m=possibleDeviations3.length;
 
     const possibleDeviations1=[.5, 0.4225, .447, .46, .467, .473, .357];
     const possibleDeviations2=[.714, .510, .364, .260, .186, .133, .095];
@@ -101,7 +130,9 @@ function rngSept(){
 function rngNon(){
     return Math.floor(Math.random()*9);
 }
-
+function rng12(){
+    return Math.floor(Math.random()*12);
+}
 function rng14(){
     return Math.floor(Math.random()*14);
 }
