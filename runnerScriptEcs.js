@@ -110,8 +110,8 @@ const volArr1=[2,3,3,4,4,3,2];
 const speedArr1=[2,3,3,4,4,3,2];
 
 
-const volArr1A=[5,7,10,7,5];
-const speedArr1A=[5,7,10,7,5];
+const volArr1A=[2.5,3.5,5,3.5,2.5];
+const speedArr1A=[2.5,3.5,5,3.5,2.5];
 
 
 let incTypeVol=0;
