@@ -105,14 +105,19 @@ function rng5(){
 
 
 
-const volArr=[2/3, 1, 1, 4/3, 4/3, 1, 1, 2/3];
-const speedArr=[2/3, 1, 1, 4/3, 4/3, 1, 1, 2/3];
 
 const volArr1=[2,3,3,4,4,3,2];
 const speedArr1=[2,3,3,4,4,3,2];
 
-const volArr2=[1,1.5,1.5,2,2,1.5,1.5,1];
-const speedArr2=[1,1.5,1.5,2,2,1.5,1.5,1];
+
+const volArr1A=[5,7,10,7];
+const speedArr1A=[5,7,10,7];
+
+
+let incTypeVol=0;
+let incTypeSpeed=0;
+
+
 
 const primeRaw = [13, 11, 7, 5, 3, 1, 0, 1, 3, 5, 7, 11, 13];
 
@@ -147,29 +152,43 @@ let presSpeedInterval = 0;
 
 function redefineVolInterval(){
     let decideArrayInc=rngTrio();
-
+    let multiplier=0;
     if (decideArrayInc===0){
-        presVolInterval = volArr[presVolIntervalIter];
+        multiplier=1;
     }
     else if (decideArrayInc===1){
-        presVolInterval = volArr1[presVolIntervalIter];
+        multiplier=.5;
     }
     else{
-        presVOlInterval = volArr2[presVolInterval];
+        multiplier=1/3;
+    }
+
+    if (incTypeVol===0){
+        presVolInterval = volArr1[presVolIntervalIter] * multiplier;
+    }
+    else{
+        presVolInterval = volArr1A[presVolIntervalIter] * multiplier;
     }
 }
 
 function redefineSpeedInterval(){
     let decideArrayInc=rngTrio();
-
+    let multiplier=0;
     if (decideArrayInc===0){
-        presSpeedInterval = speedArr[presSpeedIntervalIter];
+        multiplier=1;
     }
     else if (decideArrayInc===1){
-        presSpeedInterval = speedArr1[presSpeedIntervalIter];
+        multiplier=.5;
     }
     else{
-        presSpeedInterval = speedArr2[presSpeedInterval];
+        multiplier=1/3;
+    }
+
+    if (incTypeVol===0){
+        presSpeedInterval = speedArr1[presSpeedIntervalIter] * multiplier;
+    }
+    else{
+        presSpeedInterval = speedArr1A[presSpeedIntervalIter] * multiplier;
     }
 }
 
@@ -183,20 +202,71 @@ function pickAmong25(){
 }
 
 function nextVolIntervalIter(){
-    if (presVolIntervalIter < 7){
-        presVolIntervalIter++;
+    if (incTypeVol===0){
+        if (presVolIntervalIter < 7){
+            presVolIntervalIter++;
+        }
+        else{
+            presVolIntervalIter=0;
+            if (rngBin()===0){
+                incTypeVol=0;
+            }
+            else{
+                incTypeVol=1;
+            }
+        }
     }
+
     else{
-        presVolIntervalIter=0;
+        if (presVolIntervalIter < 3){
+            presVolIntervalIter++;
+        }
+        else{
+            presVolIntervalIter=0;
+            if (rngBin()===0){
+                incTypeVol=0;
+            }
+            else{
+                incTypeVol=1;
+            }
+        }
     }
+
+
+
+    
 }
 
 function nextSpeedIntervalIter(){
-    if (presSpeedIntervalIter < 7){
-        presSpeedIntervalIter++;
+
+    if (incTypeSpeed===0){
+        if (presSpeedIntervalIter < 7){
+            presSpeedIntervalIter++;
+        }
+        else{
+            presSpeedIntervalIter=0;
+            if (rngBin()===0){
+                incTypeSpeed=0;
+            }
+            else{
+                incTypeSpeed=1;
+            }
+        }
     }
+
     else{
-        presSpeedIntervalIter=0;
+        if (presSpeedIntervalIter < 3){
+            presSpeedIntervalIter++;
+        }
+        else{
+            presSpeedIntervalIter=0;
+            if (rngBin()===0){
+                incTypeSpeed=0;
+            }
+            else{
+                incTypeSpeed=1;
+            }
+        }
     }
 }
 
@@ -289,7 +359,12 @@ function runner(){
 
         setTimeout(function(){
             songAudio.volume = randomForVolVal;
-            volIntervalIter += volArr[presVolIntervalIter];
+            if (incTypeVol===0){
+                volIntervalIter += volArr1[presVolIntervalIter];
+            }
+            else{
+                volIntervalIter += volArr1A[presVolIntervalIter];
+            }
             advanceVolume();
         }, interDuration * volInterval * 1000);
         nextVolIntervalIter();
@@ -371,7 +446,12 @@ function runner(){
     function advanceSpeed(){
           setTimeout(function(){
               songAudio.playbackRate = randomForSpeedVal;
-              speedIntervalIter += speedArr[presSpeedIntervalIter];
+              if (incTypeSpeed===0){
+                speedIntervalIter += speedArr1[presSpeedIntervalIter];
+              }
+              else{
+                speedIntervalIter += speedArr1A[presSpeedIntervalIter];
+              }
               advanceSpeed();
           }, interDuration * speedInterval * 1000);
           nextSpeedIntervalIter();
