@@ -151,16 +151,22 @@ let presVolInterval = 0;
 let presSpeedInterval = 0;
 
 function redefineVolInterval(){
-    let decideArrayInc=rngTrio();
+    let decideArrayInc=rngPent();
     let multiplier=0;
     if (decideArrayInc===0){
         multiplier=1;
     }
     else if (decideArrayInc===1){
+        multiplier=2/3;
+    }
+    else if (decideArrayInc===2){
         multiplier=.5;
     }
-    else{
+    else if (decideArrayInc===3){
         multiplier=1/3;
+    }
+    else{
+        multiplier=1/4;
     }
 
     if (incTypeVol===0){
@@ -172,16 +178,22 @@ function redefineVolInterval(){
 }
 
 function redefineSpeedInterval(){
-    let decideArrayInc=rngTrio();
+    let decideArrayInc=rngPent();
     let multiplier=0;
     if (decideArrayInc===0){
         multiplier=1;
     }
     else if (decideArrayInc===1){
+        multiplier=2/3;
+    }
+    else if (decideArrayInc===2){
         multiplier=.5;
     }
-    else{
+    else if (decideArrayInc===3){
         multiplier=1/3;
+    }
+    else{
+        multiplier=1/4;
     }
 
     if (incTypeVol===0){
