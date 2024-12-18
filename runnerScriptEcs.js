@@ -13,7 +13,7 @@ function modInterDuration(){
     const possibleDeviations8=[.15,.3,.45,.6,.75,.9];
     const possibleDeviations9=[.25, .33, .5, .66,.75];
 
-    const possibleDeviations10=[.333, .408, .437];
+    const possibleDeviations10=[.3333, .408, .437];
     const possibleDeviations11=[.6667, .4444, .296, .1975, .1317, .0878];
     const possibleDeviations12=[.375, .433, .4543];
     const possibleDeviations13=[.75, .5625, .422, .3164, .2373, .1778, .1335, .1001];
