@@ -11,7 +11,7 @@ function modInterDuration(){
     const possibleDeviations5 = [.15, .2, .3, .4, .9];
     const possibleDeviations7=[.2,.4,.6,.8,1];
     const possibleDeviations8=[.15,.3,.45,.6,.75,.9];
-    const possibleDeviations9=[.33,.66,.75];
+    const possibleDeviations9=[.25, .33, .5, .66,.75];
 
     const randomInt3=rngNon();
 
@@ -37,7 +37,7 @@ function modInterDuration(){
         interDeviations = possibleDeviations8[Math.floor(Math.random()*6)];
     }
     else if (randomInt3===7){
-        interDeviations = possibleDeviations9[Math.floor(Math.random()*3)];
+        interDeviations = possibleDeviations9[Math.floor(Math.random()*5)];
     }
     else{
         interDuration = possibleDeviations4[Math.floor(Math.random()*6)];
