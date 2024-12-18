@@ -6,10 +6,11 @@ function modInterDuration(){
     const possibleDeviations1=[.5, 0.4225, .447, .46, .467, .473, .357];
     const possibleDeviations2=[.714, .510, .364, .260, .186, .133, .095];
     const possibleDeviations6=[.7, .592, .56, .544];
-    const possibleDeviations3=[0.17, .18, .25, .33, .37];
+    const possibleDeviations3=[0.17, .18, .25, .33, .34, .37];
     const possibleDeviations4 = [.13, .17, .19, .23, .29, .31];
     const possibleDeviations5 = [.15, .2, .3, .4, .9];
     const possibleDeviations7=[.2,.4,.6,.8,1];
+    const possibleDeviations8=[.15,.3,.45,.6,.75,.9];
 
     const randomInt3=rngSept();
 
@@ -20,7 +21,7 @@ function modInterDuration(){
         interDuration = possibleDeviations2[Math.floor(Math.random()*7)];
     }
     else if (randomInt3===2){
-        interDuration = possibleDeviations3[Math.floor(Math.random()*5)];
+        interDuration = possibleDeviations3[Math.floor(Math.random()*6)];
     }
     else if (randomInt3===3){
         interDuration = possibleDeviations5[Math.floor(Math.random()*5)];
@@ -30,6 +31,9 @@ function modInterDuration(){
     }
     else if (randomInt3===5){
         interDuration = possibleDeviations7[Math.floor(Math.random()*5)]
+    }
+    else if (randomInt3===6){
+        interDeviations = possibleDeviations8[Math.floor(Math.random()*6)]
     }
     else{
         interDuration = possibleDeviations4[Math.floor(Math.random()*6)];
@@ -53,6 +57,9 @@ function rngSix(){
 }
 function rngSept(){
     return Math.floor(Math.random()*7);
+}
+function rngOct(){
+    return Math.floor(Math.random()*8);
 }
 
 function decide13(){
