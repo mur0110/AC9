@@ -6,12 +6,17 @@ function modInterDuration(){
     const possibleDeviations1=[.5, 0.4225, .447, .46, .467, .473, .357];
     const possibleDeviations2=[.714, .510, .364, .260, .186, .133, .095];
     const possibleDeviations6=[.7, .592, .56, .544];
-    const possibleDeviations3=[0.17, .18, .25, .33, .37];
+    const possibleDeviations3=[0.17, .18, .25, .33, .34, .37];
     const possibleDeviations4 = [.13, .17, .19, .23, .29, .31];
     const possibleDeviations5 = [.15, .2, .3, .4, .9];
-    const possibleDeviations7=[0,.2,.4,.6,.8,1];
+    const possibleDeviations7=[.2,.4,.6,.8,1];
     const possibleDeviations8=[.15,.3,.45,.6,.75,.9];
     const possibleDeviations9=[.25, .33, .5, .66,.75];
+
+    const possibleDeviations10=[.333, .408, .437];
+    const possibleDeviations11=[.6667, .4444, .296, .1975, .1317, .0878];
+    const possibleDeviations12=[.375, .433, .4543];
+    const possibleDeviations13=[.75, .5625, .422, .3164, .2373, .1778, .1335, .1001];
 
     const randomInt3=rngNon();
 
@@ -31,13 +36,25 @@ function modInterDuration(){
         interDuration = possibleDeviations6[Math.floor(Math.random()*4)];
     }
     else if (randomInt3===5){
-        interDuration = possibleDeviations7[Math.floor(Math.random()*6)];
+        interDuration = possibleDeviations7[Math.floor(Math.random()*5)];
     }
     else if (randomInt3===6){
         interDeviations = possibleDeviations8[Math.floor(Math.random()*6)];
     }
     else if (randomInt3===7){
         interDeviations = possibleDeviations9[Math.floor(Math.random()*5)];
+    }
+    else if (randomInt3===8){
+        interDuration = possibleDeviations10[Math.floor(Math.random()*3)];
+    }
+    else if (randomInt3===9){
+        interDuration = possibleDeviations11[Math.floor(Math.random()*6)];
+    }
+    else if (randomInt3===10){
+        interDuration = possibleDeviations12[Math.flooor(Math.random()*3)];
+    }
+    else if (randomInt3===11){
+        interDuration = possibleDeviations13[Math.floor(Math.random()*7)];
     }
     else{
         interDuration = possibleDeviations4[Math.floor(Math.random()*6)];
@@ -64,6 +81,10 @@ function rngSept(){
 }
 function rngNon(){
     return Math.floor(Math.random()*9);
+}
+
+function rng13(){
+    return Math.floor(Math.random()*13);
 }
 
 function decide13(){
