@@ -27,8 +27,14 @@ function modInterDuration(){
     const possibleDeviations8=[.15,.3,.45,.6,.75,.9];
     const possibleDeviations9=[.25, .33, .5, .66,.75];
     const possibleDeviations10=[.1,.2,.3,.4,.5,.6,.7,.8,.9,1];
+    const possibleDeviations11=[.3333, .408, .437];
+    const possibleDeviations12=[.6667, .4444, .296, .1975, .1317, .0878];
+    const possibleDeviations13=[.375, .433, .4543];
+    const possibleDeviations14=[.75, .5625, .422, .3164, .2373, .1778, .1335, .1001];
 
-    const randomInt3=rng10();
+
+
+    const randomInt3=rng14();
 
     if (randomInt3===0){
         interDuration = possibleDeviations1[Math.floor(Math.random()*7)];
@@ -57,6 +63,18 @@ function modInterDuration(){
     else if (randomInt3===8){
         interDuration = possibleDeviations10[Math.floor(Math.random()*10)];
     }
+    else if (randomInt3===9){
+        interDuration = possibleDeviations11[Math.floor(Math.random()*3)];
+    }
+    else if (randomInt3===10){
+        interDuration = possibleDeviations12[Math.floor(Math.random()*6)];
+    }
+    else if (randomInt3===11){
+        interDuration = possibleDeviations13[Math.floor(Math.random()*3)];
+    }
+    else if (randomInt3===12){
+        interDuration = possibleDeviations14[Math.floor(Math.random()*8)];
+    }
     else{
         interDuration = possibleDeviations4[Math.floor(Math.random()*6)];
     }
@@ -84,8 +102,8 @@ function rngNon(){
     return Math.floor(Math.random()*9);
 }
 
-function rng10(){
-    return Math.floor(Math.random()*10);
+function rng14(){
+    return Math.floor(Math.random()*14);
 }
 
 function decide13(){
