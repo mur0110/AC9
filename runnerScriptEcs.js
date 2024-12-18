@@ -110,8 +110,8 @@ const volArr1=[2,3,3,4,4,3,2];
 const speedArr1=[2,3,3,4,4,3,2];
 
 
-const volArr1A=[5,7,10,7];
-const speedArr1A=[5,7,10,7];
+const volArr1A=[5,7,10,7,5];
+const speedArr1A=[5,7,10,7,5];
 
 
 let incTypeVol=0;
@@ -218,7 +218,7 @@ function nextVolIntervalIter(){
     }
 
     else{
-        if (presVolIntervalIter < 3){
+        if (presVolIntervalIter < 4){
             presVolIntervalIter++;
         }
         else{
@@ -255,7 +255,7 @@ function nextSpeedIntervalIter(){
     }
 
     else{
-        if (presSpeedIntervalIter < 3){
+        if (presSpeedIntervalIter < 4){
             presSpeedIntervalIter++;
         }
         else{
