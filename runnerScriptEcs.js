@@ -1,4 +1,4 @@
-const songPath = 'songs/ecs.mp3';
+const songPath = 'songs/esc.mp3';
 
 let interDuration = .15;
 
@@ -187,6 +187,8 @@ const speedArr1A=[2.5,3.5,5,3.5,2.5];
 const volArr1B=[2.5,3.5,5,3.5];
 const speedArr1B=[2.5,3.5,5,3.5];
 
+const volArr1C=[3.5,5,3.5,2.5];
+const speedArr1C=[3.5,5,3.5,2.5];
 
 let incTypeVol=0;
 let incTypeSpeed=0;
@@ -249,8 +251,11 @@ function redefineVolInterval(){
     else if (incTypeVol===1){
         presVolInterval = volArr1A[presVolIntervalIter] * multiplier;
     }
-    else{
+    else if (incTypeVol===2){
         presVolInterval = volArr1B[presVolIntervalIter] * multiplier;
+    }
+    else{
+        presVolInterval = volArr1C[presVolIntervalIter] * multiplier;
     }
 }
 
@@ -273,14 +278,17 @@ function redefineSpeedInterval(){
         multiplier=1/4;
     }
 
-    if (incTypeVol===0){
+    if (incTypeSpeed===0){
         presSpeedInterval = speedArr1[presSpeedIntervalIter] * multiplier;
     }
-    else if (incTypeVol===1){
+    else if (incTypeSpeed===1){
         presSpeedInterval = speedArr1A[presSpeedIntervalIter] * multiplier;
     }
-    else{
+    else if (incTypeSpeed===2){
         presSpeedInterval = speedArr1B[presSpeedIntervalIter] * multiplier;
+    }
+    else{
+        presSpeedInterval = speedArr1C[presSpeedIntervalIter] * multiplier;
     }
 }
 
@@ -302,15 +310,18 @@ function nextVolIntervalIter(){
             presVolIntervalIter=0;
 
 
-            let incP=rngTrio();
+            let incP=rngQuat();
             if (incP===0){
                 incTypeVol=0;
             }
             else if (incP===1){
                 incTypeVol=1;
             }
-            else{
+            else if (incP===2){
                 incTypeVol=2;
+            }
+            else{
+                incTypeVol=3;
             }
         }
     }
@@ -322,15 +333,18 @@ function nextVolIntervalIter(){
         else{
             presVolIntervalIter=0;
 
-            let incP=rngTrio();
+            let incP=rngQuat();
             if (incP===0){
                 incTypeVol=0;
             }
             else if (incP===1){
                 incTypeVol=1;
             }
-            else{
+            else if (incP===2){
                 incTypeVol=2;
+            }
+            else{
+                incTypeVol=3;
             }
         }
     }
@@ -342,15 +356,18 @@ function nextVolIntervalIter(){
         else{
             presVolIntervalIter=0;
 
-            let incP=rngTrio();
+            let incP=rngQuat();
             if (incP===0){
                 incTypeVol=0;
             }
             else if (incP===1){
                 incTypeVol=1;
             }
-            else{
+            else if (incP===2){
                 incTypeVol=2;
+            }
+            else{
+                incTypeVol=3;
             }
         }
     }
@@ -370,15 +387,18 @@ function nextSpeedIntervalIter(){
             presSpeedIntervalIter=0;
 
 
-            let incP=rngTrio();
+            let incP=rngQuat();
             if (incP===0){
                 incTypeSpeed=0;
             }
             else if (incP===1){
                 incTypeSpeed=1;
             }
-            else{
+            else if (incP===2){
                 incTypeSpeed=2;
+            }
+            else{
+                incTypeSpeed=3;
             }
         }
     }
@@ -390,15 +410,18 @@ function nextSpeedIntervalIter(){
         else{
             presSpeedIntervalIter=0;
 
-            let incP=rngTrio();
+            let incP=rngQuat();
             if (incP===0){
                 incTypeSpeed=0;
             }
             else if (incP===1){
                 incTypeSpeed=1;
             }
-            else{
+            else if (incP===2){
                 incTypeSpeed=2;
+            }
+            else{
+                incTypeSpeed=3;
             }
         }
     }
@@ -410,15 +433,18 @@ function nextSpeedIntervalIter(){
         else{
             presSpeedIntervalIter=0;
 
-            let incP=rngTrio();
+            let incP=rngQuat();
             if (incP===0){
                 incTypeSpeed=0;
             }
             else if (incP===1){
                 incTypeSpeed=1;
             }
-            else{
+            else if (incP===2){
                 incTypeSpeed=2;
+            }
+            else{
+                incTypeSpeed=3;
             }
         }
     }
