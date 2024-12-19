@@ -1,4 +1,4 @@
-const songPath = 'songs/esc.mp3';
+const songPath = 'songs/ecs.mp3';
 
 let interDuration = .15;
 
