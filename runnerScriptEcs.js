@@ -315,14 +315,11 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                let incP=rngQuat();
+                let incP=rngTrio();
                 if (incP===0){
-                    incTypeVol=0;
-                }
-                else if (incP===1){
                     incTypeVol=1;
                 }
-                else if (incP===2){
+                else if (incP===1){
                     incTypeVol=2;
                 }
                 else{
@@ -350,17 +347,14 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                let incP=rngQuat();
+                let incP=rngTrio();
                 if (incP===0){
                     incTypeVol=0;
                 }
                 else if (incP===1){
-                    incTypeVol=1;
-                }
-                else if (incP===2){
                     incTypeVol=2;
                 }
-                else{
+                else {
                     incTypeVol=3;
                 }
                 repeatV=0;
@@ -382,21 +376,24 @@ function nextVolIntervalIter(){
         else{
             presVolIntervalIter=0;
 
+
+
+
             if (repeatV===1){
             }
             else{
-                let incP=rngQuat();
+                let incP=rngTrio();
                 if (incP===0){
                     incTypeVol=0;
                 }
                 else if (incP===1){
                     incTypeVol=1;
                 }
-                else if (incP===2){
-                    incTypeVol=2;
+                else if (incTypeVol===2){
+                    incTypeVol=3;
                 }
                 else{
-                    incTypeVol=3;
+                    incTypeVol=2;
                 }
                 repeatV=0;
             }
@@ -428,17 +425,14 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                let incP=rngQuat();
+                let incP=rngTrio();
                 if (incP===0){
-                    incTypeSpeed=0;
-                }
-                else if (incP===1){
                     incTypeSpeed=1;
                 }
-                else if (incP===2){
+                else if (incP===1){
                     incTypeSpeed=2;
                 }
-                else{
+                else {
                     incTypeSpeed=3;
                 }
                 repeatS=0;
@@ -463,14 +457,11 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                let incP=rngQuat();
+                let incP=rngTrio();
                 if (incP===0){
                     incTypeSpeed=0;
                 }
                 else if (incP===1){
-                    incTypeSpeed=1;
-                }
-                else if (incP===2){
                     incTypeSpeed=2;
                 }
                 else{
@@ -498,18 +489,18 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                let incP=rngQuat();
+                let incP=rngTrio();
                 if (incP===0){
                     incTypeSpeed=0;
                 }
                 else if (incP===1){
                     incTypeSpeed=1;
                 }
-                else if (incP===2){
-                    incTypeSpeed=2;
+                else if (incTypeVol===2){
+                    incTypeSpeed=3;
                 }
                 else{
-                    incTypeSpeed=3;
+                    incTypeSpeed=2;
                 }
                 repeatS=0;
             }
