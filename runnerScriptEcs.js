@@ -141,12 +141,12 @@ function rng14(){
 
 function decide13(){
     if (rngBin()===0){
-        if (rngQuat()==0){
+        if (rngQuat()===0){
             modInterDuration();
         }
       }
       else{
-        if (rngTrio()==0){
+        if (rngTrio()===0){
             modInterDuration();
         }
       }
@@ -526,12 +526,12 @@ function eitherVol(){
         decide13();
     }
 
-    if (primeRaw[randomsForVol1[randomsForVolIter]]+primeRaw[randomsForSpeed1[randomsForSpeedIter]]>11){
+    if (primeRaw[randomsForVol1[randomsForVolIter]]+primeRaw[randomsForSpeed1[randomsForSpeedIter]]>12){
         if (!rng5()){
         interDuration=interDuration*(5/7);
         }
     }
-    else if (primeRaw[randomsForVol1[randomsForVolIter]]+primeRaw[randomsForSpeed1[randomsForSpeedIter]]<11){
+    else if (primeRaw[randomsForVol1[randomsForVolIter]]+primeRaw[randomsForSpeed1[randomsForSpeedIter]]<12){
         if (rng5()){
         interDuration=interDuration*(7/5);
         }
@@ -547,12 +547,12 @@ function eitherSpeed(){
         decide13();
     }
 
-    if (primeRaw[randomsForSpeed1[randomsForSpeedIter]]+primeRaw[randomsForSpeed1[randomsForSpeedIter]]>11){
+    if (primeRaw[randomsForSpeed1[randomsForSpeedIter]]+primeRaw[randomsForSpeed1[randomsForSpeedIter]]>12){
         if (!rng5()){
         interDuration=interDuration*(5/7);
         }
     }
-    else if (primeRaw[randomsForSpeed1[randomsForSpeedIter]]+primeRaw[randomsForSpeed1[randomsForSpeedIter]]<11){
+    else if (primeRaw[randomsForSpeed1[randomsForSpeedIter]]+primeRaw[randomsForSpeed1[randomsForSpeedIter]]<12){
         if (rng5()){
         interDuration=interDuration*(7/5);
         }
