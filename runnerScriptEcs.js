@@ -100,7 +100,7 @@ const randomsForSpeed2=[];
 let randomsForVolIter = 0;
 let randomsForSpeedIter = 0;
 
-for (let i=0; i<900; i++){
+for (let i=0; i<2000; i++){
     randomsForVol1.push(pickAmong13());
     randomsForSpeed1.push(pickAmong13());
     randomsForVol2.push(pickAmong37());
