@@ -22,11 +22,6 @@ function rngPent(){
     return Math.floor(Math.random()*5)
 }
 
-function truncate(num=0){
-    let numString=num.toString();
-    numstring=numString.slice(0,7);
-    return parseFloat(numString);
-}
 
 
 function decide13(){
@@ -125,13 +120,13 @@ function redefineVolInterval(){
         multiplier=1;
     }
     else if (decideArrayInc===1){
-        multiplier=.6667;
+        multiplier=2/3;
     }
     else if (decideArrayInc===2){
         multiplier=.5;
     }
     else if (decideArrayInc===3){
-        multiplier=.3333;
+        multiplier=1/3;
     }
     else{
         multiplier=1/4;
@@ -158,13 +153,13 @@ function redefineSpeedInterval(){
         multiplier=1;
     }
     else if (decideArrayInc===1){
-        multiplier=.6667;
+        multiplier=2/3;
     }
     else if (decideArrayInc===2){
         multiplier=.5;
     }
     else if (decideArrayInc===3){
-        multiplier=.3333;
+        multiplier=1/3;
     }
     else{
         multiplier=1/4;
@@ -529,16 +524,16 @@ function runner(){
 
               const rngQuatOutput = rngQuat();
               if (rngQuatOutput === 0){
-                  rngVS1=truncate(dp3*(.5825/1.695));
+                  rngVS1=dp3*(.5825/1.695);
               }
               else if (rngQuatOutput === 1){
-                  rngVS1=truncate(dp4*(.5825/1.35845));
+                  rngVS1=dp4*(.5825/1.35845);
               }
               else if (rngQuatOutput === 2){
-                  rngVS1=truncate(Math.sqrt(dp3)*(.5825/1.302));
+                  rngVS1=Math.sqrt(dp3)*(.5825/1.302);
               }
               else{
-                  rngVS1=truncate(Math.sqrt(dp4)*(.5825/1.166));
+                  rngVS1=Math.sqrt(dp4)*(.5825/1.166);
               }
 
 
@@ -557,7 +552,7 @@ function runner(){
             
             diffT = ((diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/3))/1.08 * .5825;
 
-            randomForVolVal = truncate(diffT);
+            randomForVolVal = diffT;
             eitherVolPlain();
 
         }
@@ -616,16 +611,16 @@ function runner(){
 
               const rngQuatOutput = rngQuat();
               if (rngQuatOutput === 0){
-                  rngVS1=truncate(dp3*(.5825/1.695));
+                  rngVS1=dp3*(.5825/1.695);
               }
               else if (rngQuatOutput === 1){
-                  rngVS1=truncate(dp4*(.5825/1.35845));
+                  rngVS1=dp4*(.5825/1.35845);
               }
               else if (rngQuatOutput === 2){
-                  rngVS1=truncate(Math.sqrt(dp3)*(.5825/1.302));
+                  rngVS1=Math.sqrt(dp3)*(.5825/1.302);
               }
               else{
-                  rngVS1=truncate(Math.sqrt(dp4)*(.5825/1.166));
+                  rngVS1=Math.sqrt(dp4)*(.5825/1.166);
               }
               
               randomForSpeedVal = rngVS1;
@@ -642,7 +637,7 @@ function runner(){
             
             diffT = ((diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/3));
 
-            randomForSpeedVal = truncate(diffT);
+            randomForSpeedVal = diffT;
             eitherSpeedPlain();
 
         }
