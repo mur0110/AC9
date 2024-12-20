@@ -24,6 +24,9 @@ function rngPent(){
 function rngHex(){
     return Math.floor(Math.random()*6);
 }
+function rngOct(){
+    return Math.floor(Math.random()*8);
+}
 
 
 
@@ -117,25 +120,31 @@ let presVolInterval = 0;
 let presSpeedInterval = 0;
 
 function redefineVolInterval(){
-    let decideArrayInc=rngHex();
+    let decideArrayInc=rngOct();
     let multiplier=0;
     if (decideArrayInc===0){
         multiplier=1;
     }
-    else if(decideArrayInc===1){
+    else if (decideArrayInc===1){
+        multiplier=4/5;
+    }
+    else if(decideArrayInc===2){
         multiplier=3/4;
     }
-    else if (decideArrayInc===2){
+    else if (decideArrayInc===3){
         multiplier=2/3;
     }
-    else if (decideArrayInc===3){
+    else if (decideArrayInc===4){
         multiplier=.5;
     }
-    else if (decideArrayInc===4){
+    else if (decideArrayInc===5){
         multiplier=1/3;
     }
-    else{
+    else if(decideArrayInc===6){
         multiplier=1/4;
+    }
+    else{
+        multiplier=1/5;
     }
 
     if (incTypeVol===0){
@@ -153,25 +162,31 @@ function redefineVolInterval(){
 }
 
 function redefineSpeedInterval(){
-    let decideArrayInc=rngHex();
+    let decideArrayInc=rngOct();
     let multiplier=0;
     if (decideArrayInc===0){
         multiplier=1;
     }
-    else if(decideArrayInc===1){
+    else if (decideArrayInc===1){
+        multiplier=4/5;
+    }
+    else if(decideArrayInc===2){
         multiplier=3/4;
     }
-    else if (decideArrayInc===2){
+    else if (decideArrayInc===3){
         multiplier=2/3;
     }
-    else if (decideArrayInc===3){
+    else if (decideArrayInc===4){
         multiplier=.5;
     }
-    else if (decideArrayInc===4){
+    else if (decideArrayInc===5){
         multiplier=1/3;
     }
-    else{
+    else if(decideArrayInc===6){
         multiplier=1/4;
+    }
+    else{
+        multiplier=1/5;
     }
 
     if (incTypeSpeed===0){
