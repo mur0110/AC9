@@ -21,6 +21,9 @@ function rngQuat(){
 function rngPent(){
     return Math.floor(Math.random()*5)
 }
+function rngHex(){
+    return Math.floor(Math.random()*6);
+}
 
 
 
@@ -114,18 +117,21 @@ let presVolInterval = 0;
 let presSpeedInterval = 0;
 
 function redefineVolInterval(){
-    let decideArrayInc=rngPent();
+    let decideArrayInc=rngHex();
     let multiplier=0;
     if (decideArrayInc===0){
         multiplier=1;
     }
-    else if (decideArrayInc===1){
-        multiplier=2/3;
+    else if(decideArrayInc===1){
+        multiplier=3/4;
     }
     else if (decideArrayInc===2){
-        multiplier=.5;
+        multiplier=2/3;
     }
     else if (decideArrayInc===3){
+        multiplier=.5;
+    }
+    else if (decideArrayInc===4){
         multiplier=1/3;
     }
     else{
@@ -147,18 +153,21 @@ function redefineVolInterval(){
 }
 
 function redefineSpeedInterval(){
-    let decideArrayInc=rngPent();
+    let decideArrayInc=rngHex();
     let multiplier=0;
     if (decideArrayInc===0){
         multiplier=1;
     }
-    else if (decideArrayInc===1){
-        multiplier=2/3;
+    else if(decideArrayInc===1){
+        multiplier=3/4;
     }
     else if (decideArrayInc===2){
-        multiplier=.5;
+        multiplier=2/3;
     }
     else if (decideArrayInc===3){
+        multiplier=.5;
+    }
+    else if (decideArrayInc===4){
         multiplier=1/3;
     }
     else{
