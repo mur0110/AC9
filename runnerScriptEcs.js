@@ -193,10 +193,10 @@ let incTypeSpeed=0;
 
 
 
-const primeRaw = [13, 11, 7, 5, 3, 1, 0, 1, 3, 5, 7, 11, 13];
+const primeRaw = [17, 13, 11, 7, 5, 3, 1, 0, 1, 3, 5, 7, 11, 13, 17];
 
-const multVolArr1 = [.435 ,.445, .465, .475, .485, .495, .5, .505, .515, .525, .535, .555, .565];
-const multSpeedArr1 = [.87 , .89, .93, .95, .97, .99, 1, 1.01, 1.03, 1.05, 1.07, 1.11, 1.13]; // 5,7,1,11 off of +-.13
+const multVolArr1 = [.415, .435 ,.445, .465, .475, .485, .495, .5, .505, .515, .525, .535, .555, .565, .585];
+const multSpeedArr1 = [.83, .87, .89, .93, .95, .97, .99, 1, 1.01, 1.03, 1.05, 1.07, 1.11, 1.13, 1.17]; // 5,7,1,11 off of +-.13
 
 const multVolArr2 = [.35, .3575, .3625, .375, .3825, .3875, .4, .4075, .4125, .425, .4325, .4375, .45, .4575, .4625, .475, .4825, .4875, .5, .5125, .5175, .525, .5375, .5425, .55, .5625, .5675, .575, .5875, .5925, .6, .6125, .6175, .625, .6375, .6425, .65];
 const multSpeedArr2 = [.7, .715, .725, .75, .765, .775, .8, .815, .825, .85, .865, .875, .9, .915, .925, .95, .965, .975, 1, 1.025, 1.035, 1.05, 1.075, 1.085, 1.1, 1.125, 1.135, 1.15, 1.75, 1.85, 1.2, 1.225, 1.235, 1.25, 1.275, 1.285, 1.3];
@@ -212,8 +212,8 @@ let randomsForVolIter = 0;
 let randomsForSpeedIter = 0;
 
 for (let i=0; i<900; i++){
-    randomsForVol1.push(pickAmong13());
-    randomsForSpeed1.push(pickAmong13());
+    randomsForVol1.push(pickAmong15());
+    randomsForSpeed1.push(pickAmong15());
     randomsForVol2.push(pickAmong37());
     randomsForSpeed2.push(pickAmong37());
 }
@@ -333,8 +333,8 @@ function redefineSpeedInterval(){
 }
 
 
-function pickAmong13(){
-    return Math.floor(Math.random() * 13);
+function pickAmong15(){
+    return Math.floor(Math.random() * 15);
 }
 
 function pickAmong37(){
@@ -564,12 +564,12 @@ function eitherVol(){
         decide13();
     }
 
-    if (primeRaw[randomsForVol1[randomsForVolIter]]+primeRaw[randomsForSpeed1[randomsForSpeedIter]]>12){
+    if (primeRaw[randomsForVol1[randomsForVolIter]]+primeRaw[randomsForSpeed1[randomsForSpeedIter]]>15){
         if (!rng5()){
         interDuration=interDuration*(5/7);
         }
     }
-    else if (primeRaw[randomsForVol1[randomsForVolIter]]+primeRaw[randomsForSpeed1[randomsForSpeedIter]]<12){
+    else if (primeRaw[randomsForVol1[randomsForVolIter]]+primeRaw[randomsForSpeed1[randomsForSpeedIter]]<15){
         if (rng5()){
         interDuration=interDuration*(7/5);
         }
@@ -585,12 +585,12 @@ function eitherSpeed(){
         decide13();
     }
 
-    if (primeRaw[randomsForSpeed1[randomsForSpeedIter]]+primeRaw[randomsForSpeed1[randomsForSpeedIter]]>12){
+    if (primeRaw[randomsForSpeed1[randomsForSpeedIter]]+primeRaw[randomsForSpeed1[randomsForSpeedIter]]>15){
         if (!rng5()){
         interDuration=interDuration*(5/7);
         }
     }
-    else if (primeRaw[randomsForSpeed1[randomsForSpeedIter]]+primeRaw[randomsForSpeed1[randomsForSpeedIter]]<12){
+    else if (primeRaw[randomsForSpeed1[randomsForSpeedIter]]+primeRaw[randomsForSpeed1[randomsForSpeedIter]]<15){
         if (rng5()){
         interDuration=interDuration*(7/5);
         }
