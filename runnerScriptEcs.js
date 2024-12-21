@@ -211,7 +211,7 @@ const randomsForSpeed2=[];
 let randomsForVolIter = 0;
 let randomsForSpeedIter = 0;
 
-for (let i=0; i<2000; i++){
+for (let i=0; i<900; i++){
     randomsForVol1.push(pickAmong13());
     randomsForSpeed1.push(pickAmong13());
     randomsForVol2.push(pickAmong37());
@@ -644,12 +644,7 @@ function runner(){
 
         setTimeout(function(){
             songAudio.volume = randomForVolVal;
-            if (incTypeVol===0){
-                volIntervalIter += volArr1[presVolIntervalIter];
-            }
-            else{
-                volIntervalIter += volArr1A[presVolIntervalIter];
-            }
+            volIntervalIter++;
             advanceVolume();
         }, interDuration * volInterval * 1000);
         nextVolIntervalIter();
@@ -731,12 +726,7 @@ function runner(){
     function advanceSpeed(){
           setTimeout(function(){
               songAudio.playbackRate = randomForSpeedVal;
-              if (incTypeSpeed===0){
-                speedIntervalIter += speedArr1[presSpeedIntervalIter];
-              }
-              else{
-                speedIntervalIter += speedArr1A[presSpeedIntervalIter];
-              }
+              speedIntervalIter++;
               advanceSpeed();
           }, interDuration * speedInterval * 1000);
           nextSpeedIntervalIter();
