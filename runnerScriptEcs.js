@@ -592,19 +592,27 @@ function runner(){
               dp4 = dp1 + dp2;
 
 
-              const rngQuatOutput = rngQuat();
-              if (rngQuatOutput === 0){
-                  rngVS1=dp3*(.5825/1.695);
+              const rngOutput=rng5();
+
+              if (!rngOutput){
+                if (rngBin() === 0){
+                    rngVS1=dp3*(.5825/1.695);
+                }
+                else {
+                    rngVS1=dp4*(.5825/1.35845);
+                }
               }
-              else if (rngQuatOutput === 1){
-                  rngVS1=dp4*(.5825/1.35845);
+
+              
+              else {
+                if (rngBin() === 0){
+                    rngVS1=Math.sqrt(dp3)*(.5825/1.302);
+                }
+                else{
+                    rngVS1=Math.sqrt(dp4)*(.5825/1.166);
+                }
               }
-              else if (rngQuatOutput === 2){
-                  rngVS1=Math.sqrt(dp3)*(.5825/1.302);
-              }
-              else{
-                  rngVS1=Math.sqrt(dp4)*(.5825/1.166);
-              }
+              
 
 
               randomForVolVal = rngVS1;
@@ -674,18 +682,25 @@ function runner(){
               dp2 = multVolArr2[randomsForVol2[randomsForVolIter]] * multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
               dp4 = dp1 + dp2;
 
-              const rngQuatOutput = rngQuat();
-              if (rngQuatOutput === 0){
-                  rngVS1=dp3*(.5825/1.695);
+              const rngOutput=rng5();
+
+              if (!rngOutput){
+                if (rngBin() === 0){
+                    rngVS1=dp3*(.5825/1.695);
+                }
+                else {
+                    rngVS1=dp4*(.5825/1.35845);
+                }
               }
-              else if (rngQuatOutput === 1){
-                  rngVS1=dp4*(.5825/1.35845);
-              }
-              else if (rngQuatOutput === 2){
-                  rngVS1=Math.sqrt(dp3)*(.5825/1.302);
-              }
-              else{
-                  rngVS1=Math.sqrt(dp4)*(.5825/1.166);
+
+              
+              else {
+                if (rngBin() === 0){
+                    rngVS1=Math.sqrt(dp3)*(.5825/1.302);
+                }
+                else{
+                    rngVS1=Math.sqrt(dp4)*(.5825/1.166);
+                }
               }
               
               randomForSpeedVal = rngVS1;
