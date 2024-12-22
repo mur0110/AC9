@@ -594,7 +594,7 @@ function runner(){
 
               const rngOutput=rng5();
 
-              if (!rngOutput){
+              if (rngOutput){
                 if (rngBin() === 0){
                     rngVS1=dp3*(.595/1.695);
                 }
@@ -684,7 +684,7 @@ function runner(){
 
               const rngOutput=rng5();
 
-              if (!rngOutput){
+              if (rngOutput){
                 if (rngBin() === 0){
                     rngVS1=dp3*(1.19/1.695);
                 }
