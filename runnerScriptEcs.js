@@ -596,20 +596,20 @@ function runner(){
 
               if (!rngOutput){
                 if (rngBin() === 0){
-                    rngVS1=dp3*(.5825/1.695);
+                    rngVS1=dp3*(.595/1.695);
                 }
                 else {
-                    rngVS1=dp4*(.5825/1.35845);
+                    rngVS1=dp4*(.595/1.35845);
                 }
               }
 
               
               else {
                 if (rngBin() === 0){
-                    rngVS1=Math.sqrt(dp3)*(.5825/1.302);
+                    rngVS1=Math.sqrt(dp3)*(.595/1.302);
                 }
                 else{
-                    rngVS1=Math.sqrt(dp4)*(.5825/1.166);
+                    rngVS1=Math.sqrt(dp4)*(.595/1.166);
                 }
               }
               
@@ -628,7 +628,7 @@ function runner(){
             diff3 = multVolArr1[randomsForVol1[randomsForVolIter]] - multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
             diff4 = multVolArr2[randomsForVol2[randomsForVolIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
             
-            diffT = ((diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/3))/1.08 * .5825;
+            diffT = ((diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/3))/1.08 * .595;
 
             randomForVolVal = diffT;
             eitherVolPlain();
