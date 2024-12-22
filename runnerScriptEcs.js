@@ -592,7 +592,6 @@ function runner(){
               dp4 = dp1 + dp2;
 
 
-              const rngOutput=rng5();
 
               if (rngBin()===0){
                 if (rngBin() === 0){
@@ -682,7 +681,6 @@ function runner(){
               dp2 = multVolArr2[randomsForVol2[randomsForVolIter]] * multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
               dp4 = dp1 + dp2;
 
-              const rngOutput=rng5();
 
               if (rngBin()===0){
                 if (rngBin() === 0){
