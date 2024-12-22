@@ -594,7 +594,7 @@ function runner(){
 
               const rngOutput=rng5();
 
-              if (!rngOutput){
+              if (rngBin()===0){
                 if (rngBin() === 0){
                     rngVS1=dp3*(.595/1.695);
                 }
@@ -606,10 +606,10 @@ function runner(){
               
               else {
                 if (rngBin() === 0){
-                    rngVS1=dp3**(1/3)*(.595/1.302);
+                    rngVS1=((dp3**(1/3)+dp3**(1/2))/2)*(.595/1.302);
                 }
                 else{
-                    rngVS1=dp4**(1/3)*(.595/1.166);
+                    rngVS1=((dp4**(1/3)+dp4**(1/2))/2)*(.595/1.166);
                 }
               }
               
@@ -684,7 +684,7 @@ function runner(){
 
               const rngOutput=rng5();
 
-              if (!rngOutput){
+              if (rngBin()===0){
                 if (rngBin() === 0){
                     rngVS1=dp3*(1.19/1.695);
                 }
@@ -696,10 +696,10 @@ function runner(){
               
               else {
                 if (rngBin() === 0){
-                    rngVS1=dp3**(1/3)*(1.19/1.302);
+                    rngVS1=((dp3**(1/3)+dp3**(1/2))/2)*(.595/1.302);
                 }
                 else{
-                    rngVS1=dp4**(1/3)*(1.19/1.166);
+                    rngVS1=((dp4**(1/3)+dp4**(1/2))/2)*(.595/1.166);
                 }
               }
               
