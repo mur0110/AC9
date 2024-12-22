@@ -686,20 +686,20 @@ function runner(){
 
               if (!rngOutput){
                 if (rngBin() === 0){
-                    rngVS1=dp3*(.595/1.695);
+                    rngVS1=dp3*(1.19/1.695);
                 }
                 else {
-                    rngVS1=dp4*(.595/1.35845);
+                    rngVS1=dp4*(1.19/1.35845);
                 }
               }
 
               
               else {
                 if (rngBin() === 0){
-                    rngVS1=Math.sqrt(dp3)*(.595/1.302);
+                    rngVS1=Math.sqrt(dp3)*(1.19/1.302);
                 }
                 else{
-                    rngVS1=Math.sqrt(dp4)*(.595/1.166);
+                    rngVS1=Math.sqrt(dp4)*(1.19/1.166);
                 }
               }
               
