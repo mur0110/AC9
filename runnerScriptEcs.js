@@ -1,12 +1,12 @@
-const songPath = 'songs/ecs.mp3';
+const songPath = 'ecs.mp3';
 
 let interDuration = .15;
 let repeatV=0;
 let repeatS=0;
 
 function modInterDuration(){
-    let possibleDeviations=[.1,.11,.12,.13,.14,.16,.17,.18,.19,.2,.22,.23,.24,.26,.28,.29,.3,.31,.32, .33, .34, .36, .37, .38, .40, .41, .42, .43];
-    interDuration = possibleDeviations[Math.floor(Math.random()*28)];
+    let possibleDeviations=[.1,.11,.12,.13,.14,.16,.17,.18,.19,.2,.22,.23,.24,.26,.28,.29,.3,.31,.32, .33, .34, .36, .37, .38, .40, .41, .42, .43, .44, .46, .47, .48, .5, .52, .53, .54, .56, .57];
+    interDuration = possibleDeviations[Math.floor(Math.random()*38)];
 
 }
 function rngBin(){
