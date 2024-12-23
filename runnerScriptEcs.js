@@ -1,4 +1,4 @@
-const songPath = 'ecs.mp3';
+const songPath = 'somgs/ecs.mp3';
 
 let interDuration = .15;
 let repeatV=0;
