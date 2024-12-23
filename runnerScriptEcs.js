@@ -486,16 +486,7 @@ function eitherVol(){
         decide13();
     }
 
-    if (primeRaw[multVolArr1.indexOf(randomsForVol1[randomsForVolIter])]+primeRaw[multSpeedArr1.indexOf(randomsForSpeed1[randomsForSpeedIter])]>13){
-        if (!rng5()){
-        interDuration=interDuration*(5/7);
-        }
-    }
-    else if (primeRaw[multVolArr1.indexOf(randomsForVol1[randomsForVolIter])]+primeRaw[multSpeedArr1.indexOf(randomsForSpeed1[randomsForSpeedIter])]<13){
-        if (rng5()){
-        interDuration=interDuration*(7/5);
-        }
-    }
+    
 }
 
 
@@ -507,16 +498,7 @@ function eitherSpeed(){
         decide13();
     }
 
-    if (primeRaw[multVolArr1.indexOf(randomsForVol1[randomsForVolIter])]+primeRaw[multSpeedArr1.indexOf(randomsForSpeed1[randomsForSpeedIter])]>13){
-        if (!rng5()){
-        interDuration=interDuration*(5/7);
-        }
-    }
-    else if (primeRaw[multVolArr1.indexOf(randomsForVol1[randomsForVolIter])]+primeRaw[multSpeedArr1.indexOf(randomsForSpeed1[randomsForSpeedIter])]<13){
-        if (rng5()){
-        interDuration=interDuration*(7/5);
-        }
-    }
+    
 }
 
 function eitherVolPlain(){
