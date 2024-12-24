@@ -73,8 +73,8 @@ function rng5(){
 
 
 
-const volArr1=[2,3,3,4,4,3,2];
-const speedArr1=[2,3,3,4,4,3,2];
+const volArr1=[2,3,3,4,4,3,3,2];
+const speedArr1=[2,3,3,4,4,3,3,2];
 
 const volArr2=[4,3,3,2,2,3,3,4];
 const speedArr2=[4,3,3,2,2,3,3,4];
