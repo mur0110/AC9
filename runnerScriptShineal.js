@@ -5,8 +5,8 @@ let repeatV=0;
 let repeatS=0;
 
 function modInterDuration(){
-    let possibleDeviations=[.11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53, .57];
-    interDuration = possibleDeviations[Math.floor(Math.random()*13)];
+    let possibleDeviations=[.07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53, .57];
+    interDuration = possibleDeviations[Math.floor(Math.random()*14)];
 
 }
 function rngBin(){
