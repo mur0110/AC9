@@ -27,8 +27,8 @@ else{
     speedArr=samplingDefiningArrays[1];
 }
 
-const setPointsVol = [.4, .45, .5, .55, .6];
-const setPointsSpeed = [.8, .9, 1, 1.1, 1.2];
+const setPointsVol = [.405, .455, .5, .555, .595];
+const setPointsSpeed = [.81, .89, 1, 1.11, 1.19];
 
 
 let presVolIntervalIter = 0;
