@@ -578,20 +578,20 @@ function runner(){
 
               if (rngBin()===0){
                 if (rngBin() === 0){
-                    rngVS1=dp3*(.595/1.695);
+                    rngVS1=dp3*(.595/1.828);
                 }
                 else {
-                    rngVS1=dp4*(.595/1.35845);
+                    rngVS1=dp4*(.595/1.4657);
                 }
               }
 
               
               else {
                 if (rngBin() === 0){
-                    rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(.595/1.10);
+                    rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(.595/1.2459);
                 }
                 else{
-                    rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(.595/1.057);
+                    rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(.595/1.1489);
                 }
               }
               
@@ -610,7 +610,7 @@ function runner(){
             diff3 = multVolArr1[randomsForVol1[randomsForVolIter]] - multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
             diff4 = multVolArr2[randomsForVol2[randomsForVolIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
             
-            diffT = (((diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/3)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/2)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/4))/3)/1.087 * .595;
+            diffT = (((diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/3)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/2)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/4))/3)/1.1744 * .595;
 
             randomForVolVal = diffT;
             eitherVolPlain();
