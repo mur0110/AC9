@@ -5,9 +5,10 @@ let repeatV=0;
 let repeatS=0;
 
 function modInterDuration(){
-    let possibleDeviations=[.07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53, .57];
-    interDuration = possibleDeviations[Math.floor(Math.random()*14)];
-
+    let possibleDeviations=[.11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53, .57];
+    if (rngBin()===0){
+        interDuration = possibleDeviations[Math.floor(Math.random()*13)];
+    }
 }
 function rngBin(){
     return Math.floor(Math.random()*2);
@@ -73,8 +74,8 @@ function rng5(){
 
 
 
-const volArr1=[2,3,3,4,4,3,3,2];
-const speedArr1=[2,3,3,4,4,3,3,2];
+const volArr1=[2,3,3,4,4,3,2];
+const speedArr1=[2,3,3,4,4,3,2];
 
 const volArr2=[4,3,3,2,2,3,3,4];
 const speedArr2=[4,3,3,2,2,3,3,4];
@@ -92,6 +93,9 @@ const speedArr1C=[3.5,5,3.5,2.5];
 let incTypeVol=0;
 let incTypeSpeed=0;
 
+
+
+const primeRaw = [17, 13, 11, 7, 5, 3, 1, 0, 1, 3, 5, 7, 11, 13, 17];
 
 const multVolArr1 = [.385, .405, .415, .435 ,.445, .465, .475, .485, .495, .5, .505, .515, .525, .535, .555, .565, .585, .595, .615];
 const multSpeedArr1 = [.77, .81, .83, .87, .89, .93, .95, .97, .99, 1, 1.01, 1.03, 1.05, 1.07, 1.11, 1.13, 1.17, 1.19, 1.23]; // 5,7,1,11 off of +-.13
@@ -483,7 +487,7 @@ function eitherVol(){
         decide13();
     }
 
-    
+
 }
 
 
@@ -495,7 +499,7 @@ function eitherSpeed(){
         decide13();
     }
 
-    
+
 }
 
 function eitherVolPlain(){
@@ -574,20 +578,20 @@ function runner(){
 
               if (rngBin()===0){
                 if (rngBin() === 0){
-                    rngVS1=dp3*(5/7);
+                    rngVS1=dp3*(.62/1.922) * (5/7);
                 }
                 else {
-                    rngVS1=dp4*(5/7);
+                    rngVS1=dp4*(.62/1.5377) * (5/7);
                 }
               }
 
               
               else {
                 if (rngBin() === 0){
-                    rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(5/7);
+                    rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(.62/1.269) * (5/7);
                 }
                 else{
-                    rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(5/7);
+                    rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(.62/1.169) * (5/7);
                 }
               }
               
@@ -606,7 +610,7 @@ function runner(){
             diff3 = multVolArr1[randomsForVol1[randomsForVolIter]] - multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
             diff4 = multVolArr2[randomsForVol2[randomsForVolIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
             
-            diffT = (((diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/3)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/2)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/4))/3)/1.087 * .595;
+            diffT = (((diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/3)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/2)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/4))/3)/1.23 * .62 * (5/7);
 
             randomForVolVal = diffT;
             eitherVolPlain();
@@ -663,20 +667,20 @@ function runner(){
 
               if (rngBin()===0){
                 if (rngBin() === 0){
-                    rngVS1=dp3*(5/7);
+                    rngVS1=dp3*(1.24/1.922) * (7/5);
                 }
                 else {
-                    rngVS1=dp4*(5/7);
+                    rngVS1=dp4*(1.24/1.5377) * (7/5);
                 }
               }
 
               
               else {
                 if (rngBin() === 0){
-                    rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3);
+                    rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(1.24/1.269) * (7/5);
                 }
                 else{
-                    rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3);
+                    rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(1.24/1.169) * (7/5);
                 }
               }
               
@@ -692,7 +696,7 @@ function runner(){
             diff3 = multVolArr1[randomsForVol1[randomsForVolIter]] - multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
             diff4 = multVolArr2[randomsForVol2[randomsForVolIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
             
-            diffT = (((diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/3)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/2)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/4))/3);
+            diffT = (((diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/3)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/2)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/4))/3) * (7/5);
 
             randomForSpeedVal = diffT;
             eitherSpeedPlain();
