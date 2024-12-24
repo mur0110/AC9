@@ -72,7 +72,6 @@ function nextSpeedIntervalIter(){
 function runner(){
     const songAudio = new Audio(songPath);
     const songDuration = 232;
-    console.log(songDuration);
     let randomForVolVal = setPointsVol[pickAmongFive()];
     let randomForSpeedVal = setPointsSpeed[pickAmongFive()];
 
@@ -92,10 +91,8 @@ function runner(){
 
     function advanceVolume(){
         if (0===0){
-            console.log('advanceV');
             setTimeout(function(){
                 songAudio.volume = randomForVolVal;
-                console.log(songAudio.volume);
                 volIntervalIter += volArr[presVolIntervalIter];
                 
                 advanceVolume();
@@ -112,7 +109,6 @@ function runner(){
         if (0===0){
             setTimeout(function(){
                 songAudio.playbackRate = randomForSpeedVal;
-                console.log(songAudio.playbackRate);
                 speedIntervalIter += speedArr[presSpeedIntervalIter];
                 
                 advanceSpeed();
@@ -126,5 +122,3 @@ function runner(){
 
 
 }
-
-
