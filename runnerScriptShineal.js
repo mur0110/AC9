@@ -127,8 +127,4 @@ function runner(){
 
 }
 
-window.addEventListener("keydown", (event) => {
-    if (event.code === "KeyT"){
-        runner();
-    }
-})
+
