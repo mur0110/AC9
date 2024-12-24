@@ -7,7 +7,7 @@ const setpointDuration = .25;
 // 1, 2, 3 combo/perm of random, sequenced array style
 let globalIterator=0;
 
-const songPath = './songs/shineal.mp3'; // maybe last unaware halluc typo was .mpg
+const songPath = 'songs/shineal.mp3'; // maybe last unaware halluc typo was .mpg
 
 
 let volArr=[];
