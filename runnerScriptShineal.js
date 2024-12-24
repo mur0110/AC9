@@ -93,11 +93,8 @@ let incTypeVol=0;
 let incTypeSpeed=0;
 
 
-
-const primeRaw = [17, 13, 11, 7, 5, 3, 1, 0, 1, 3, 5, 7, 11, 13, 17];
-
-const multVolArr1 = [.415, .435 ,.445, .465, .475, .485, .495, .5, .505, .515, .525, .535, .555, .565, .585];
-const multSpeedArr1 = [.83, .87, .89, .93, .95, .97, .99, 1, 1.01, 1.03, 1.05, 1.07, 1.11, 1.13, 1.17]; // 5,7,1,11 off of +-.13
+const multVolArr1 = [.385, .405, .415, .435 ,.445, .465, .475, .485, .495, .5, .505, .515, .525, .535, .555, .565, .585, .595, .615];
+const multSpeedArr1 = [.77, .81, .83, .87, .89, .93, .95, .97, .99, 1, 1.01, 1.03, 1.05, 1.07, 1.11, 1.13, 1.17, 1.19, 1.23]; // 5,7,1,11 off of +-.13
 
 const multVolArr2 = [ .375, .3825, .3875, .4, .4075, .4125, .425, .4325, .4375, .45, .4575, .4625, .475, .4825, .4875, .5, .5125, .5175, .525, .5375, .5425, .55, .5625, .5675, .575, .5875, .5925, .6, .6125, .6175, .625];
 const multSpeedArr2 = [ .75, .765, .775, .8, .815, .825, .85, .865, .875, .9, .915, .925, .95, .965, .975, 1, 1.025, 1.035, 1.05, 1.075, 1.085, 1.1, 1.125, 1.135, 1.15, 1.75, 1.85, 1.2, 1.225, 1.235, 1.25];
@@ -113,8 +110,8 @@ let randomsForVolIter = 0;
 let randomsForSpeedIter = 0;
 
 for (let i=0; i<2000; i++){
-    randomsForVol1.push(pickAmong15());
-    randomsForSpeed1.push(pickAmong15());
+    randomsForVol1.push(pickAmong19());
+    randomsForSpeed1.push(pickAmong19());
     randomsForVol2.push(pickAmong31());
     randomsForSpeed2.push(pickAmong31());
 }
@@ -240,8 +237,8 @@ function redefineSpeedInterval(){
 }
 
 
-function pickAmong15(){
-    return Math.floor(Math.random() * 15);
+function pickAmong19(){
+    return Math.floor(Math.random() * 19);
 }
 
 function pickAmong31(){
@@ -577,20 +574,20 @@ function runner(){
 
               if (rngBin()===0){
                 if (rngBin() === 0){
-                    rngVS1=dp3*(.595/1.695);
+                    rngVS1=dp3*(5/7);
                 }
                 else {
-                    rngVS1=dp4*(.595/1.35845);
+                    rngVS1=dp4*(5/7);
                 }
               }
 
               
               else {
                 if (rngBin() === 0){
-                    rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(.595/1.10);
+                    rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(5/7);
                 }
                 else{
-                    rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(.595/1.057);
+                    rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(5/7);
                 }
               }
               
@@ -666,20 +663,20 @@ function runner(){
 
               if (rngBin()===0){
                 if (rngBin() === 0){
-                    rngVS1=dp3*(1.19/1.695);
+                    rngVS1=dp3*(5/7);
                 }
                 else {
-                    rngVS1=dp4*(1.19/1.35845);
+                    rngVS1=dp4*(5/7);
                 }
               }
 
               
               else {
                 if (rngBin() === 0){
-                    rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(1.19/1.10);
+                    rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(7/5);
                 }
                 else{
-                    rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(1.19/1.057);
+                    rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(7/5);
                 }
               }
               
