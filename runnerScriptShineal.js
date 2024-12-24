@@ -1,7 +1,12 @@
 const CONF_ORDER = 1; // 0 or 1 // -< if 0, start @ 2 vol @ 4 pitch -< if 1, start @ 4 pitch @ 2 vol
 const CONF_LINK = 0; 
 const CONF_LEAD = -1; // so either perma detach or update only on update, either volume or pitch define which leads
-const setpointDuration = .19;
+let setpointDuration = .19;
+function modspd(){
+    const possibilities=[.07,.11,.13,.17,.19,.23,.29,.31,.37,.41,.43,.47,.53,.57];
+    setpointDuration=possibilities[Math.floor(Math.random()*14)];
+}
+
 // what if we vary one duration rng // -< let's not init
 // then we can try proportioned setpoints ratehr than rng but I doubt it
 // 1, 2, 3 combo/perm of random, sequenced array style
@@ -101,7 +106,7 @@ function runner(){
             redefineSpeedInterval();
             volInterval = presVolInterval;
             randomForVolVal = setPointsVol[pickAmongFive()];
-            
+            modspd();
         }
     }
 
@@ -117,6 +122,7 @@ function runner(){
             redefineSpeedInterval();
             speedInterval = presSpeedInterval;
             randomForSpeedVal = setPointsSpeed[pickAmongFive()];
+            modspd();
         }
     }
 
