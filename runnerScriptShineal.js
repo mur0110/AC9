@@ -584,10 +584,10 @@ function runner(){
               
               else {
                 if (rngBin() === 0){
-                    rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(5/7);
+                    rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(5/7)*.5;
                 }
                 else{
-                    rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(5/7);
+                    rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(5/7)*.5;
                 }
               }
               
@@ -606,7 +606,7 @@ function runner(){
             diff3 = multVolArr1[randomsForVol1[randomsForVolIter]] - multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
             diff4 = multVolArr2[randomsForVol2[randomsForVolIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
             
-            diffT = (((diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/3)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/2)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/4))/3)/(25/17);
+            diffT = (((diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/3)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/2)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/4))/3)*(5/7);
 
             randomForVolVal = diffT;
             eitherVolPlain();
@@ -663,20 +663,20 @@ function runner(){
 
               if (rngBin()===0){
                 if (rngBin() === 0){
-                    rngVS1=dp3*(5/7);
+                    rngVS1=dp3*(7/24);
                 }
                 else {
-                    rngVS1=dp4*(5/7);
+                    rngVS1=dp4*(7/24);
                 }
               }
 
               
               else {
                 if (rngBin() === 0){
-                    rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(7/5);
+                    rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(5/7);
                 }
                 else{
-                    rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(7/5);
+                    rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(5/7);
                 }
               }
               
