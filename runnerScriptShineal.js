@@ -1,7 +1,7 @@
 const CONF_ORDER = 1; // 0 or 1 // -< if 0, start @ 2 vol @ 4 pitch -< if 1, start @ 4 pitch @ 2 vol
 const CONF_LINK = 0; 
 const CONF_LEAD = -1; // so either perma detach or update only on update, either volume or pitch define which leads
-const setpointDuration = .25;
+const setpointDuration = .19;
 // what if we vary one duration rng // -< let's not init
 // then we can try proportioned setpoints ratehr than rng but I doubt it
 // 1, 2, 3 combo/perm of random, sequenced array style
@@ -13,7 +13,7 @@ const songPath = 'songs/shineal.mp3'; // maybe last unaware halluc typo was .mpg
 let volArr=[];
 let speedArr=[];
 
-const samplingDefiningArrays = [ [2, 3, 3, 4, 4, 3, 3, 2] , [4, 3, 3, 2, 2, 3, 3, 4] ];
+const samplingDefiningArrays = [ [2, 3, 3, 4, 4, 3, 3, 2] , [2, 3, 3, 4, 4, 3, 3, 2] ];
 if (CONF_ORDER === 0){
     volArr=samplingDefiningArrays[0];
     speedArr=samplingDefiningArrays[1];
