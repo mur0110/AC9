@@ -5,8 +5,8 @@ let repeatV=0;
 let repeatS=0;
 
 function modInterDuration(){
-    let possibleDeviations=[.11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53, .57];
-    interDuration = possibleDeviations[Math.floor(Math.random()*13)];
+    let possibleDeviations=[.07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53, .57];
+    interDuration = possibleDeviations[Math.floor(Math.random()*14)];
 
 }
 function rngBin(){
@@ -73,8 +73,8 @@ function rng5(){
 
 
 
-const volArr1=[2,3,3,4,4,3,2];
-const speedArr1=[2,3,3,4,4,3,2];
+const volArr1=[2,3,3,4,4,3,3,2];
+const speedArr1=[2,3,3,4,4,3,3,2];
 
 const volArr2=[4,3,3,2,2,3,3,4];
 const speedArr2=[4,3,3,2,2,3,3,4];
