@@ -42,12 +42,8 @@ function rng18(){
 }
 
 function rngR(){
-    if (rngBin()===0)
-    {
-        if (rngBin()===0){
-            return 1;
-        }
-    }
+    if (Math.random()*5<1)
+        return 1;
     else{
         return 0;
     }
