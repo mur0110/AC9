@@ -42,7 +42,7 @@ function rng18(){
 }
 
 function rngR(){
-    if (rngBin()===0)
+    if (Math.random()*24>7)
     {
         return 1;
     }
