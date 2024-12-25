@@ -42,7 +42,7 @@ function rng18(){
 }
 
 function rngR(){
-    if (Math.random()*9<3)
+    if (rngBin()===0)
     {
         return 1;
     }
