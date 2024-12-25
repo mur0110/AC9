@@ -753,16 +753,13 @@ function runner(){
           if (randomToDecide<(29/100)){
 
             let multVal=0;
-            let rngDet=rngQuat();
+            let rngDet=rngTrio();
             if (rngDet===0){
               multVal=5/7;
             }
             else if (rngDet===1){
               multVal=7/5;
-            }
-            else  if (rngDet===2){
-              multVal=2/7;
-            }  
+            } 
             else{
                 multVal=1;
             }
@@ -808,16 +805,13 @@ function runner(){
           }
         else if(randomToDecide<(52.667/100)){
             let multVal=0;
-            let rngDet=rngQuat();
+            let rngDet=rngTrio();
             if (rngDet===0){
               multVal=5/7;
             }
             else if (rngDet===1){
               multVal=7/5;
             }
-            else  if (rngDet===2){
-              multVal=2/7;
-            }  
             else{
                 multVal=1;
             }
