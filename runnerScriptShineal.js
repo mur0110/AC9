@@ -642,12 +642,17 @@ function runner(){
           if (randomToDecide<(29/100)){
             
             let multVal=0;
-            if (rngBin()===0){
+            let rngDet=rngTrio();
+            if (rngDet===0){
               multVal=5/7;
             }
-            else{
+            else if (rngDet===1){
               multVal=2/7;
             }
+            else  if (rngDet===2){
+              multVal=1;
+            }  
+
 
           let dp1=0, dp2=0, dp3=0, dp4=0, rngVS1=0;
 
@@ -694,12 +699,17 @@ function runner(){
         else if(randomToDecide<((52.667/100))){
 
             let multVal=0;
-            if (rngBin()===0){
+            let rngDet=rngTrio();
+            if (rngDet===0){
               multVal=5/7;
             }
-            else{
+            else if (rngDet===1){
               multVal=2/7;
             }
+            else  if (rngDet===2){
+              multVal=1;
+            }  
+
 
             let diff1=0, diff2=0, diff3=0, diff4=0, diffTotal=0;
 
@@ -749,16 +759,19 @@ function runner(){
           if (randomToDecide<(29/100)){
 
             let multVal=0;
-            let rngDet=rngTrio();
+            let rngDet=rngQuat();
             if (rngDet===0){
               multVal=5/7;
             }
             else if (rngDet===1){
               multVal=7/5;
             }
-            else{
+            else  if (rngDet===2){
               multVal=2/7;
             }  
+            else{
+                multVal=1;
+            }
 
           let dp1=0, dp2=0, dp3=0, dp4=0, rngVS1=0;
 
@@ -801,16 +814,19 @@ function runner(){
           }
         else if(randomToDecide<(52.667/100)){
             let multVal=0;
-            let rngDet=rngTrio();
+            let rngDet=rngQuat();
             if (rngDet===0){
               multVal=5/7;
             }
             else if (rngDet===1){
               multVal=7/5;
             }
-            else{
+            else  if (rngDet===2){
               multVal=2/7;
             }  
+            else{
+                multVal=1;
+            }
 
             let diff1=0, diff2=0, diff3=0, diff4=0, diffTotal=0;
 
