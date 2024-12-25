@@ -36,7 +36,7 @@ function rng16(){
 }
 
 function rngR(){
-    if (Math.random()*24<7)
+    if (rngBin()===0)
     {
         return 1;
     }
