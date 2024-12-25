@@ -42,7 +42,7 @@ function rng18(){
 }
 
 function rngR(){
-    if (Math.random()*5<1)
+    if (Math.random()*5>1)
         return 1;
     else{
         return 0;
