@@ -25,6 +25,9 @@ function rngPent(){
 function rngHex(){
     return Math.floor(Math.random()*6);
 }
+function rngSep(){
+    return Math.floor(Math.random()*7);
+}
 function rng12(){
     return Math.floor(Math.random()*12);
 }
@@ -102,6 +105,12 @@ const speedArr1B=[2.5,3.5,5,3.5];
 
 const volArr1C=[3.5,5,3.5,2.5];
 const speedArr1C=[3.5,5,3.5,2.5];
+
+const volArr1D=[2.5, 3.5, 3.5, 5, 5, 3.5, 3.5, 2.5];
+const speedArr1D=[2.5, 3.5, 3.5, 5, 5, 3.5, 3.5, 2.5];
+
+const volArr1E=[5, 3.5, 3.5, 2.5, 2.5, 3.5, 3.5, 5];
+const speedArr1E=[5, 3.5, 3.5, 2.5, 2.5, 3.5, 3.5, 5];
 
 let incTypeVol=0;
 let incTypeSpeed=0;
@@ -204,8 +213,14 @@ function redefineVolInterval(){
     else if (incTypeVol===3){
         presVolInterval = volArr1C[presVolIntervalIter] * multiplier;
     }
-    else{
+    else if (incTypeVol===4){
         presVolInterval = volArr2[presVolIntervalIter] * multiplier;
+    }
+    else if (incTypeVol===5){
+        presVolInterval=volArr1D[presVolIntervalIter]*multiplier;
+    }
+    else{
+        presVolInterval=volArr1E[presVolIntervalIter]*multiplier;
     }
 }
 
@@ -274,8 +289,14 @@ function redefineSpeedInterval(){
     else if (incTypeSpeed===3){
         presSpeedInterval = speedArr1C[presSpeedIntervalIter] * multiplier;
     }
-    else{
+    else if (incTypeSpeed===4){
         presSpeedInterval = speedArr2[presSpeedIntervalIter] * multiplier;
+    }
+    else if (incTypeSpeed===5){
+        presSpeedInterval=speedArr1D[presSpeedIntervalIter]*multiplier;
+    }
+    else{
+        presSpeedInterval=speedArr1E[presSpeedIntervalIter]*multiplier;
     }
 }
 
@@ -289,7 +310,7 @@ function pickAmong31(){
 }
 
 function nextVolIntervalIter(){
-    if (incTypeVol===0||incTypeVol===4){
+    if (incTypeVol===0||incTypeVol===4||incTypeVol===5||incTypeVol===6){
         if (presVolIntervalIter < 7){
             presVolIntervalIter++;
         }
@@ -304,22 +325,91 @@ function nextVolIntervalIter(){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
-                    let incP=rngQuat();
-                    if (incP===0){
-                        incTypeVol=0;
+                    if (incTypeVol===0){
+                        let decider=rngHex();
+                        if (decider===0){
+                            incTypeVol=1;
+                        }
+                        else if (decider===1){
+                            incTypeVol=2;
+                        }
+                        else if (decider===2){
+                            incTypeVol=3;
+                        }
+                        else if (decider===3){
+                            incTypeVol=4;
+                        }
+                        else if (decider===4){
+                            incTypeVol=5;
+                        }
+                        else {
+                            incTypeVol=6;
+                        }
                     }
-                    else if (incP===3){
-                        incTypeVol=4;
+                    else if (incTypeVol===4){
+                        let decider=rngHex();
+                        if (decider===0){
+                            incTypeVol=0;
+                        }
+                        else if (decider===1){
+                            incTypeVol=2;
+                        }
+                        else if (decider===2){
+                            incTypeVol=3;
+                        }
+                        else if (decider===3){
+                            incTypeVol=1;
+                        }
+                        else if (decider===4){
+                            incTypeVol=5;
+                        }
+                        else {
+                            incTypeVol=6;
+                        }
                     }
-                    else if (incP===1){
-                        incTypeVol=1;
-                    }
-                    else if (incTypeVol===2){
-                        incTypeVol=3;
+                    else if (incTypeVol===5){
+                        let decider=rngHex();
+                        if (decider===0){
+                            incTypeVol=0;
+                        }
+                        else if (decider===1){
+                            incTypeVol=2;
+                        }
+                        else if (decider===2){
+                            incTypeVol=3;
+                        }
+                        else if (decider===3){
+                            incTypeVol=4;
+                        }
+                        else if (decider===4){
+                            incTypeVol=1;
+                        }
+                        else {
+                            incTypeVol=6;
+                        }
                     }
                     else{
-                        incTypeVol=2;
+                        let decider=rngHex();
+                        if (decider===0){
+                            incTypeVol=0;
+                        }
+                        else if (decider===1){
+                            incTypeVol=2;
+                        }
+                        else if (decider===2){
+                            incTypeVol=3;
+                        }
+                        else if (decider===3){
+                            incTypeVol=4;
+                        }
+                        else if (decider===4){
+                            incTypeVol=1;
+                        }
+                        else {
+                            incTypeVol=5;
+                        }
                     }
+                    
             }
             }
 
@@ -332,6 +422,7 @@ function nextVolIntervalIter(){
         }
     }
 
+    
     else if (incTypeVol===1){
         if (presVolIntervalIter < 4){
             presVolIntervalIter++;
@@ -347,22 +438,27 @@ function nextVolIntervalIter(){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
-                    let incP=rngQuat();
-                    if (incP===0){
-                        incTypeVol=0;
-                    }
-                    else if (incP===3){
-                        incTypeVol=4;
-                    }
-                    else if (incP===1){
-                        incTypeVol=1;
-                    }
-                    else if (incTypeVol===2){
-                        incTypeVol=3;
-                    }
-                    else{
-                        incTypeVol=2;
-                    }
+                        let decider=rngHex();
+                        if (decider===0){
+                            incTypeVol=0;
+                        }
+                        else if (decider===1){
+                            incTypeVol=2;
+                        }
+                        else if (decider===2){
+                            incTypeVol=3;
+                        }
+                        else if (decider===3){
+                            incTypeVol=4;
+                        }
+                        else if (decider===4){
+                            incTypeVol=5;
+                        }
+                        else {
+                            incTypeVol=6;
+                        }
+                  
+                    
             }
             }
 
@@ -375,15 +471,12 @@ function nextVolIntervalIter(){
         }
     }
 
-    else{
+    else if (incTypeVol===2||incTypeVol===3){
         if (presVolIntervalIter < 3){
             presVolIntervalIter++;
         }
         else{
             presVolIntervalIter=0;
-
-
-
 
             if (repeatV===1){
             }
@@ -392,22 +485,49 @@ function nextVolIntervalIter(){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
-                    let incP=rngQuat();
-                    if (incP===0){
-                        incTypeVol=0;
+                    if (incTypeVol===2){
+                        let decider=rngHex();
+                        if (decider===0){
+                            incTypeVol=1;
+                        }
+                        else if (decider===1){
+                            incTypeVol=0;
+                        }
+                        else if (decider===2){
+                            incTypeVol=3;
+                        }
+                        else if (decider===3){
+                            incTypeVol=4;
+                        }
+                        else if (decider===4){
+                            incTypeVol=5;
+                        }
+                        else {
+                            incTypeVol=6;
+                        }
                     }
-                    else if (incP===3){
-                        incTypeVol=4;
+                    else if (incTypeVol===3){
+                        let decider=rngHex();
+                        if (decider===0){
+                            incTypeVol=0;
+                        }
+                        else if (decider===1){
+                            incTypeVol=2;
+                        }
+                        else if (decider===2){
+                            incTypeVol=4;
+                        }
+                        else if (decider===3){
+                            incTypeVol=1;
+                        }
+                        else if (decider===4){
+                            incTypeVol=5;
+                        }
+                        else {
+                            incTypeVol=6;
+                        }
                     }
-                    else if (incP===1){
-                        incTypeVol=1;
-                    }
-                    else if (incTypeVol===2){
-                        incTypeVol=3;
-                    }
-                    else{
-                        incTypeVol=2;
-                    }
+                    
             }
             }
 
@@ -426,8 +546,7 @@ function nextVolIntervalIter(){
 }
 
 function nextSpeedIntervalIter(){
-
-    if (incTypeSpeed===0){
+    if (incTypeSpeed===0||incTypeSpeed===4||incTypeSpeed===5||incTypeSpeed===6){
         if (presSpeedIntervalIter < 7){
             presSpeedIntervalIter++;
         }
@@ -435,42 +554,111 @@ function nextSpeedIntervalIter(){
             presSpeedIntervalIter=0;
 
 
-            if (repeatS===1){
-            
+            if (repeatV===1){
             }
             else{
                 if (rngBin()===0){
-                    incTypeSpeed=incTypeVol;
+                    incTypeSpeed=incTypeSpeed;
                 }
                 else{
-                    let incP=rngQuat();
-                    if (incP===0){
-                        incTypeSpeed=0;
+                    if (incTypeSpeed===0){
+                        let decider=rngHex();
+                        if (decider===0){
+                            incTypeSpeed=1;
+                        }
+                        else if (decider===1){
+                            incTypeSpeed=2;
+                        }
+                        else if (decider===2){
+                            incTypeSpeed=3;
+                        }
+                        else if (decider===3){
+                            incTypeSpeed=4;
+                        }
+                        else if (decider===4){
+                            incTypeSpeed=5;
+                        }
+                        else {
+                            incTypeSpeed=6;
+                        }
                     }
-                    else if (incP===3){
-                        incTypeSpeed=4;
+                    else if (incTypeSpeed===4){
+                        let decider=rngHex();
+                        if (decider===0){
+                            incTypeSpeed=0;
+                        }
+                        else if (decider===1){
+                            incTypeSpeed=2;
+                        }
+                        else if (decider===2){
+                            incTypeSpeed=3;
+                        }
+                        else if (decider===3){
+                            incTypeSpeed=1;
+                        }
+                        else if (decider===4){
+                            incTypeSpeed=5;
+                        }
+                        else {
+                            incTypeSpeed=6;
+                        }
                     }
-                    else if (incP===1){
-                        incTypeSpeed=1;
-                    }
-                    else if (incTypeSpeed===2){
-                        incTypeSpeed=3;
+                    else if (incTypeSpeed===5){
+                        let decider=rngHex();
+                        if (decider===0){
+                            incTypeSpeed=0;
+                        }
+                        else if (decider===1){
+                            incTypeSpeed=2;
+                        }
+                        else if (decider===2){
+                            incTypeSpeed=3;
+                        }
+                        else if (decider===3){
+                            incTypeSpeed=4;
+                        }
+                        else if (decider===4){
+                            incTypeSpeed=1;
+                        }
+                        else {
+                            incTypeSpeed=6;
+                        }
                     }
                     else{
-                        incTypeSpeed=2;
+                        let decider=rngHex();
+                        if (decider===0){
+                            incTypeSpeed=0;
+                        }
+                        else if (decider===1){
+                            incTypeSpeed=2;
+                        }
+                        else if (decider===2){
+                            incTypeSpeed=3;
+                        }
+                        else if (decider===3){
+                            incTypeSpeed=4;
+                        }
+                        else if (decider===4){
+                            incTypeSpeed=1;
+                        }
+                        else {
+                            incTypeSpeed=5;
+                        }
                     }
+                    
             }
             }
 
             if (!rngR()){
-                repeatS=1;
+                repeatV=1;
             }
             else{
-                repeatS=0;
+                repeatV=0;
             }
         }
     }
 
+    
     else if (incTypeSpeed===1){
         if (presSpeedIntervalIter < 4){
             presSpeedIntervalIter++;
@@ -478,86 +666,119 @@ function nextSpeedIntervalIter(){
         else{
             presSpeedIntervalIter=0;
 
-            if (repeatS===1){
-                
+            if (repeatV===1){
+    
             }
             else{
                 if (rngBin()===0){
-                    incTypeSpeed=incTypeVol;
+                    incTypeSpeed=incTypeSpeed;
                 }
                 else{
-                    let incP=rngQuat();
-                    if (incP===0){
-                        incTypeSpeed=0;
-                    }
-                    else if (incP===3){
-                        incTypeSpeed=4;
-                    }
-                    else if (incP===1){
-                        incTypeSpeed=1;
-                    }
-                    else if (incTypeSpeed===2){
-                        incTypeSpeed=3;
-                    }
-                    else{
-                        incTypeSpeed=2;
-                    }
+                        let decider=rngHex();
+                        if (decider===0){
+                            incTypeSpeed=0;
+                        }
+                        else if (decider===1){
+                            incTypeSpeed=2;
+                        }
+                        else if (decider===2){
+                            incTypeSpeed=3;
+                        }
+                        else if (decider===3){
+                            incTypeSpeed=4;
+                        }
+                        else if (decider===4){
+                            incTypeSpeed=5;
+                        }
+                        else {
+                            incTypeSpeed=6;
+                        }
+                  
+                    
             }
             }
 
             if (!rngR()){
-                repeatS=1;
+                repeatV=1;
             }
             else{
-                repeatS=0;
+                repeatV=0;
             }
         }
     }
 
-    else{
+    else if (incTypeSpeed===2||incTypeSpeed===3){
         if (presSpeedIntervalIter < 3){
             presSpeedIntervalIter++;
         }
         else{
             presSpeedIntervalIter=0;
 
-            if (repeatS===1){
-                
+            if (repeatV===1){
             }
             else{
                 if (rngBin()===0){
-                    incTypeSpeed=incTypeVol;
+                    incTypeSpeed=incTypeSpeed;
                 }
                 else{
-                    let incP=rngQuat();
-                    if (incP===0){
-                        incTypeSpeed=0;
+                    if (incTypeSpeed===2){
+                        let decider=rngHex();
+                        if (decider===0){
+                            incTypeSpeed=1;
+                        }
+                        else if (decider===1){
+                            incTypeSpeed=0;
+                        }
+                        else if (decider===2){
+                            incTypeSpeed=3;
+                        }
+                        else if (decider===3){
+                            incTypeSpeed=4;
+                        }
+                        else if (decider===4){
+                            incTypeSpeed=5;
+                        }
+                        else {
+                            incTypeSpeed=6;
+                        }
                     }
-                    else if (incP===3){
-                        incTypeSpeed=4;
+                    else if (incTypeSpeed===3){
+                        let decider=rngHex();
+                        if (decider===0){
+                            incTypeSpeed=0;
+                        }
+                        else if (decider===1){
+                            incTypeSpeed=2;
+                        }
+                        else if (decider===2){
+                            incTypeSpeed=4;
+                        }
+                        else if (decider===3){
+                            incTypeSpeed=1;
+                        }
+                        else if (decider===4){
+                            incTypeSpeed=5;
+                        }
+                        else {
+                            incTypeSpeed=6;
+                        }
                     }
-                    else if (incP===1){
-                        incTypeSpeed=1;
-                    }
-                    else if (incTypeSpeed===2){
-                        incTypeSpeed=3;
-                    }
-                    else{
-                        incTypeSpeed=2;
-                    }
+                    
             }
             }
 
             if (!rngR()){
-                repeatS=1;
+                repeatV=1;
             }
             else{
-                repeatS=0;
+                repeatV=0;
             }
-            
-            
         }
     }
+
+
+
+    
 }
 
 
