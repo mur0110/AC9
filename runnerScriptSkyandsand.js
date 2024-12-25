@@ -42,7 +42,7 @@ function rng18(){
 }
 
 function rngR(){
-    if (Math.random()*24>7)
+    if (Math.random()*9<3)
     {
         return 1;
     }
