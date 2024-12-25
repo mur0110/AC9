@@ -5,9 +5,9 @@ let repeatV=0;
 let repeatS=0;
 
 function modInterDuration(){
-    let possibleDeviations=[.07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53, .57, .59, .61, .67, .71, .73];
+    let possibleDeviations=[.07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53, .57, .59, .61, .67, .71, .73, .79, .83, .87, .89, .91, .97];
     if (rngBin()===0){
-        interDuration = possibleDeviations[Math.floor(Math.random()*19)];
+        interDuration = possibleDeviations[Math.floor(Math.random()*25)];
     }
 }
 function rngBin(){
@@ -42,7 +42,7 @@ function rng18(){
 }
 
 function rngR(){
-    if (rngTrio()===0){
+    if (rngBin()===0){
         return 1;
     }
     else{
