@@ -42,7 +42,7 @@ function rng18(){
 }
 
 function rngR(){
-    if (rngBin()===0){
+    if (rngTrio()===0){
         return 1;
     }
     else{
