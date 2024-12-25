@@ -42,7 +42,7 @@ function rng18(){
 }
 
 function rngR(){
-    if (Math.random()*100>23){
+    if (rngBin()===0){
         return 1;
     }
     else{
