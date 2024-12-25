@@ -37,9 +37,12 @@ function rng14(){
 function rng16(){
     return Math.floor(Math.random()*16);
 }
+function rng18(){
+    return Math.floor(Math.random()*18);
+}
 
 function rngR(){
-    if (rngBin()===0)
+    if (Math.random()*24>7)
     {
         return 1;
     }
@@ -149,7 +152,7 @@ let presVolInterval = 0;
 let presSpeedInterval = 0;
 
 function redefineVolInterval(){
-    let decideArrayInc=rng16();
+    let decideArrayInc=rng18();
     let multiplier=0;
     if (decideArrayInc===0){
         multiplier=1;
@@ -195,6 +198,12 @@ function redefineVolInterval(){
     }
     else if(decideArrayInc===14){
         multiplier=8/9;
+    }
+    else if(decideArrayInc===15){
+        multiplier=1/10;
+    }
+    else if(decideArrayInc===16){
+        multiplier=9/10;
     }
     else{
         multiplier=1/7;
@@ -225,7 +234,7 @@ function redefineVolInterval(){
 }
 
 function redefineSpeedInterval(){
-    let decideArrayInc=rng16();
+    let decideArrayInc=rng18();
     let multiplier=0;
     if (decideArrayInc===0){
         multiplier=1;
@@ -271,6 +280,12 @@ function redefineSpeedInterval(){
     }
     else if(decideArrayInc===14){
         multiplier=8/9;
+    }
+    else if(decideArrayInc===15){
+        multiplier=1/10;
+    }
+    else if(decideArrayInc===16){
+        multiplier=9/10;
     }
     else{
         multiplier=1/7;
