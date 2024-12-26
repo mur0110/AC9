@@ -5,9 +5,9 @@ let repeatV=0;
 let repeatS=0;
 
 function modInterDuration(){
-    let possibleDeviations=[.07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53, .57, .59, .61];
+    let possibleDeviations=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53, .57, .59, .61];
     if (rngBin()===0){
-        interDuration = possibleDeviations[Math.floor(Math.random()*16)];
+        interDuration = possibleDeviations[Math.floor(Math.random()*17)];
     }
 }
 function rngBin(){
