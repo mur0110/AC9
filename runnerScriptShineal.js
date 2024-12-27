@@ -7,8 +7,14 @@ let repeatS=0;
 const rngs=[];
 let rngIter=0;
 
+function truncate(x){
+    let y=String(x);
+    y=y.slice(0,5);
+    return parseFloat(y);
+}
+
 for (let i=0; i<5000; i++){
-    rngs.push(Math.random());
+    rngs.push(truncate(Math.random()));
 }
 
 
