@@ -7,13 +7,13 @@ let repeatS=0;
 const rngs=[];
 let rngIter=0;
 
-for (let i=0; i<10000; i++){
+for (let i=0; i<5000; i++){
     rngs.push(Math.random());
 }
 
 
 function modInterDuration(){
-    let possibleDeviations=[.07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53, .59, .61, .67, .71];
+    let possibleDeviations=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53, .59, .61, .67];
     if (rngBin()===0){
         interDuration = possibleDeviations[Math.floor(rngs[rngIter]*17)];
         rngIter++;
@@ -59,8 +59,8 @@ function rng16(){
     return Math.floor(rngs[rngIter]*16);
     rngIter++;
 }
-function rng18(){
-    return Math.floor(rngs[rngIter]*18);
+function rng10(){
+    return Math.floor(rngs[rngIter]*10);
     rngIter++;
 }
 
@@ -113,34 +113,135 @@ function rng5(){
 }
 
 
+function pickArrayVol(x){
+    const volArr1=[2,3,3,4,4,3,3,2];
+    const volArr1r=[4,3,3,2,2,3,3,4];
 
+    const volArr2=[2,3,4,3,2];
+    const volArr2r=[4,3,2,3,4];
 
+    const volArr3=[2.5, 3.5, 3.5, 5, 5, 3.5, 3.5, 2.5];
+    const volArr3r=[5, 3.5, 3.5, 2.5, 2.5, 3.5, 3.5, 5];
 
+    const volArr4=[2.5,3.5,5,3.5,2.5];
+    const volArr4r=[5,3.5,2.5,3.5,5];
 
-const volArr1=[2,3,3,4,4,3,2];
-const speedArr1=[2,3,3,4,4,3,2];
+    const volArr5=[2.5,3.5,5,3.5];
+    const volArr5r=[3.5,5,3.5,2.5];
 
-const volArr2=[4,3,3,2,2,3,3,4];
-const speedArr2=[4,3,3,2,2,3,3,4];
+    if (x===0){
+        return volArr1;
+    }
+    else if (x===1){
+        return volArr1r;
+    }
+    else if (x===2){
+        return volArr2;
+    }
+    else if (x===3){
+        return volArr2r;
+    }
+    else if (x===4){
+        return volArr3;
+    }
+    else if (x===5){
+        return volArr3r;
+    }
+    else if (x===6){
+        return volArr4;
+    }
+    else if (x===7){
+        return volArr4r;
+    }
+    else if (x===8){
+        return volArr5;
+    }
+    else{
+        return volArr5r;
+    }
+}
 
+function pickArraySpeed(x){
+    const speedArr1=[2,3,3,4,4,3,3,2];
+    const speedArr1r=[4,3,3,2,2,3,3,4];
 
-const volArr1A=[2.5,3.5,5,3.5,2.5];
-const speedArr1A=[2.5,3.5,5,3.5,2.5];
+    const speedArr2=[2,3,4,3,2];
+    const speedArr2r=[4,3,2,3,4];
 
-const volArr1B=[2.5,3.5,5,3.5];
-const speedArr1B=[2.5,3.5,5,3.5];
+    const speedArr3=[2.5, 3.5, 3.5, 5, 5, 3.5, 3.5, 2.5];
+    const speedArr3r=[5, 3.5, 3.5, 2.5, 2.5, 3.5, 3.5, 5];
 
-const volArr1C=[3.5,5,3.5,2.5];
-const speedArr1C=[3.5,5,3.5,2.5];
+    const speedArr4=[2.5,3.5,5,3.5,2.5];
+    const speedArr4r=[5,3.5,2.5,3.5,5];
 
-const volArr1D=[2.5, 3.5, 3.5, 5, 5, 3.5, 3.5, 2.5];
-const speedArr1D=[2.5, 3.5, 3.5, 5, 5, 3.5, 3.5, 2.5];
+    const speedArr5=[2.5,3.5,5,3.5];
+    const speedArr5r=[3.5,5,3.5,2.5];
 
-const volArr1E=[5, 3.5, 3.5, 2.5, 2.5, 3.5, 3.5, 5];
-const speedArr1E=[5, 3.5, 3.5, 2.5, 2.5, 3.5, 3.5, 5];
+    if (x===0){
+        return speedArr1;
+    }
+    else if (x===1){
+        return speedArr1r;
+    }
+    else if (x===2){
+        return speedArr2;
+    }
+    else if (x===3){
+        return speedArr2r;
+    }
+    else if (x===4){
+        return speedArr3;
+    }
+    else if (x===5){
+        return speedArr3r;
+    }
+    else if (x===6){
+        return speedArr4;
+    }
+    else if (x===7){
+        return speedArr4r;
+    }
+    else if (x===8){
+        return speedArr5;
+    }
+    else{
+        return speedArr5r;
+    }
+}
 
 let incTypeVol=0;
 let incTypeSpeed=0;
+
+function selectNextVolArray(presVolInc){
+    let possibles=[0,1,2,3,4,5,6,7,8,9];
+    let where=possibles.indexOf(presVolInc);
+    if (where<9){
+        possibles=possibles.slice(0,where) + possibles.slice(where+1);
+    }
+    else{
+        possibles=possibles.slice(0,9);
+    }
+
+    const rngSelector=Math.floor(Math.random()*9);
+    incTypeVol=possibles[rngSelector];
+}
+
+function selectNextSpeedArray(presSpeedInc){
+    let possibles=[0,1,2,3,4,5,6,7,8,9];
+    let where=possibles.indexOf(presSpeedInc);
+    if (where<9){
+        possibles=possibles.slice(0,where) + possibles.slice(where+1);
+    }
+    else{
+        possibles=possibles.slice(0,9);
+    }
+
+    const rngSelector=Math.floor(Math.random()*9);
+    incTypeSpeed=possibles[rngSelector];
+}
+
+
+
 
 
 
@@ -176,167 +277,82 @@ let presVolInterval = 0;
 let presSpeedInterval = 0;
 
 function redefineVolInterval(){
-    let decideArrayInc=rng18();
+    let decideArrayInc=rng10();
     let multiplier=0;
     if (decideArrayInc===0){
         multiplier=1;
     }
     else if (decideArrayInc===1){
-        multiplier=6/7;
+        multiplier=5/6
     }
     else if (decideArrayInc===2){
-        multiplier=5/6;
-    }
-    else if (decideArrayInc===3){
         multiplier=4/5;
     }
-    else if(decideArrayInc===4){
+    else if (decideArrayInc===3){
         multiplier=3/4;
     }
-    else if (decideArrayInc===5){
+    else if(decideArrayInc===4){
         multiplier=2/3;
     }
+    else if (decideArrayInc===5){
+        multiplier=1/2;
+    }
     else if (decideArrayInc===6){
-        multiplier=.5;
+        multiplier=1/3
     }
     else if (decideArrayInc===7){
-        multiplier=1/3;
-    }
-    else if(decideArrayInc===8){
         multiplier=1/4;
     }
-    else if (decideArrayInc===9){
+    else if(decideArrayInc===8){
         multiplier=1/5;
     }
-    else if(decideArrayInc===10){
+    else {
         multiplier=1/6;
-    }
-    else if(decideArrayInc===11){
-        multiplier=1/8;
-    }
-    else if(decideArrayInc===12){
-        multiplier=7/8;
-    }
-    else if(decideArrayInc===13){
-        multiplier=1/9;
-    }
-    else if(decideArrayInc===14){
-        multiplier=8/9;
-    }
-    else if(decideArrayInc===15){
-        multiplier=1/10;
-    }
-    else if(decideArrayInc===16){
-        multiplier=9/10;
-    }
-    else{
-        multiplier=1/7;
     }
     
 
-    if (incTypeVol===0){
-        presVolInterval = volArr1[presVolIntervalIter] * multiplier;
-    }
-    else if (incTypeVol===1){
-        presVolInterval = volArr1A[presVolIntervalIter] * multiplier;
-    }
-    else if (incTypeVol===2){
-        presVolInterval = volArr1B[presVolIntervalIter] * multiplier;
-    }
-    else if (incTypeVol===3){
-        presVolInterval = volArr1C[presVolIntervalIter] * multiplier;
-    }
-    else if (incTypeVol===4){
-        presVolInterval = volArr2[presVolIntervalIter] * multiplier;
-    }
-    else if (incTypeVol===5){
-        presVolInterval=volArr1D[presVolIntervalIter]*multiplier;
-    }
-    else{
-        presVolInterval=volArr1E[presVolIntervalIter]*multiplier;
-    }
+    presVolInterval = pickArrayVol(incTypeVol)[presVolIntervalIter] * multiplier;
+
 }
 
 function redefineSpeedInterval(){
-    let decideArrayInc=rng18();
+    let decideArrayInc=rng10();
     let multiplier=0;
     if (decideArrayInc===0){
         multiplier=1;
     }
     else if (decideArrayInc===1){
-        multiplier=6/7;
+        multiplier=5/6
     }
     else if (decideArrayInc===2){
-        multiplier=5/6;
-    }
-    else if (decideArrayInc===3){
         multiplier=4/5;
     }
-    else if(decideArrayInc===4){
+    else if (decideArrayInc===3){
         multiplier=3/4;
     }
-    else if (decideArrayInc===5){
+    else if(decideArrayInc===4){
         multiplier=2/3;
     }
+    else if (decideArrayInc===5){
+        multiplier=1/2;
+    }
     else if (decideArrayInc===6){
-        multiplier=.5;
+        multiplier=1/3
     }
     else if (decideArrayInc===7){
-        multiplier=1/3;
-    }
-    else if(decideArrayInc===8){
         multiplier=1/4;
     }
-    else if (decideArrayInc===9){
+    else if(decideArrayInc===8){
         multiplier=1/5;
     }
-    else if(decideArrayInc===10){
+    else {
         multiplier=1/6;
-    }
-    else if(decideArrayInc===11){
-        multiplier=1/8;
-    }
-    else if(decideArrayInc===12){
-        multiplier=7/8;
-    }
-    else if(decideArrayInc===13){
-        multiplier=1/9;
-    }
-    else if(decideArrayInc===14){
-        multiplier=8/9;
-    }
-    else if(decideArrayInc===15){
-        multiplier=1/10;
-    }
-    else if(decideArrayInc===16){
-        multiplier=9/10;
-    }
-    else{
-        multiplier=1/7;
     }
     
 
-    if (incTypeSpeed===0){
-        presSpeedInterval = speedArr1[presSpeedIntervalIter] * multiplier;
-    }
-    else if (incTypeSpeed===1){
-        presSpeedInterval = speedArr1A[presSpeedIntervalIter] * multiplier;
-    }
-    else if (incTypeSpeed===2){
-        presSpeedInterval = speedArr1B[presSpeedIntervalIter] * multiplier;
-    }
-    else if (incTypeSpeed===3){
-        presSpeedInterval = speedArr1C[presSpeedIntervalIter] * multiplier;
-    }
-    else if (incTypeSpeed===4){
-        presSpeedInterval = speedArr2[presSpeedIntervalIter] * multiplier;
-    }
-    else if (incTypeSpeed===5){
-        presSpeedInterval=speedArr1D[presSpeedIntervalIter]*multiplier;
-    }
-    else{
-        presSpeedInterval=speedArr1E[presSpeedIntervalIter]*multiplier;
-    }
+    presSpeedInterval = pickArraySpeed(incTypeSpeed)[presSpeedIntervalIter] * multiplier;
+
+
 }
 
 
@@ -353,7 +369,7 @@ function pickAmong31(){
 }
 
 function nextVolIntervalIter(){
-    if (incTypeVol===0||incTypeVol===4||incTypeVol===5||incTypeVol===6){
+    if (pickArrayVol(incTypeVol).length===8){
         if (presVolIntervalIter < 7){
             presVolIntervalIter++;
         }
@@ -368,92 +384,8 @@ function nextVolIntervalIter(){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
-                    if (incTypeVol===0){
-                        let decider=rngHex();
-                        if (decider===0){
-                            incTypeVol=1;
-                        }
-                        else if (decider===1){
-                            incTypeVol=2;
-                        }
-                        else if (decider===2){
-                            incTypeVol=3;
-                        }
-                        else if (decider===3){
-                            incTypeVol=4;
-                        }
-                        else if (decider===4){
-                            incTypeVol=5;
-                        }
-                        else {
-                            incTypeVol=6;
-                        }
-                    }
-                    else if (incTypeVol===4){
-                        let decider=rngHex();
-                        if (decider===0){
-                            incTypeVol=0;
-                        }
-                        else if (decider===1){
-                            incTypeVol=2;
-                        }
-                        else if (decider===2){
-                            incTypeVol=3;
-                        }
-                        else if (decider===3){
-                            incTypeVol=1;
-                        }
-                        else if (decider===4){
-                            incTypeVol=5;
-                        }
-                        else {
-                            incTypeVol=6;
-                        }
-                    }
-                    else if (incTypeVol===5){
-                        let decider=rngHex();
-                        if (decider===0){
-                            incTypeVol=0;
-                        }
-                        else if (decider===1){
-                            incTypeVol=2;
-                        }
-                        else if (decider===2){
-                            incTypeVol=3;
-                        }
-                        else if (decider===3){
-                            incTypeVol=4;
-                        }
-                        else if (decider===4){
-                            incTypeVol=1;
-                        }
-                        else {
-                            incTypeVol=6;
-                        }
-                    }
-                    else{
-                        let decider=rngHex();
-                        if (decider===0){
-                            incTypeVol=0;
-                        }
-                        else if (decider===1){
-                            incTypeVol=2;
-                        }
-                        else if (decider===2){
-                            incTypeVol=3;
-                        }
-                        else if (decider===3){
-                            incTypeVol=4;
-                        }
-                        else if (decider===4){
-                            incTypeVol=1;
-                        }
-                        else {
-                            incTypeVol=5;
-                        }
-                    }
-                    
-            }
+                    selectNextVolArray();
+                }
             }
 
             if (rngR()){
@@ -466,7 +398,7 @@ function nextVolIntervalIter(){
     }
 
     
-    else if (incTypeVol===1){
+    else if (pickArrayVol(incTypeVol).length===5){
         if (presVolIntervalIter < 4){
             presVolIntervalIter++;
         }
@@ -481,28 +413,8 @@ function nextVolIntervalIter(){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
-                        let decider=rngHex();
-                        if (decider===0){
-                            incTypeVol=0;
-                        }
-                        else if (decider===1){
-                            incTypeVol=2;
-                        }
-                        else if (decider===2){
-                            incTypeVol=3;
-                        }
-                        else if (decider===3){
-                            incTypeVol=4;
-                        }
-                        else if (decider===4){
-                            incTypeVol=5;
-                        }
-                        else {
-                            incTypeVol=6;
-                        }
-                  
-                    
-            }
+                    selectNextVolArray();
+                }
             }
 
             if (rngR()){
@@ -514,7 +426,7 @@ function nextVolIntervalIter(){
         }
     }
 
-    else if (incTypeVol===2||incTypeVol===3){
+    else if (pickArrayVol(incTypeVol).length===4){
         if (presVolIntervalIter < 3){
             presVolIntervalIter++;
         }
@@ -528,50 +440,8 @@ function nextVolIntervalIter(){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
-                    if (incTypeVol===2){
-                        let decider=rngHex();
-                        if (decider===0){
-                            incTypeVol=1;
-                        }
-                        else if (decider===1){
-                            incTypeVol=0;
-                        }
-                        else if (decider===2){
-                            incTypeVol=3;
-                        }
-                        else if (decider===3){
-                            incTypeVol=4;
-                        }
-                        else if (decider===4){
-                            incTypeVol=5;
-                        }
-                        else {
-                            incTypeVol=6;
-                        }
-                    }
-                    else if (incTypeVol===3){
-                        let decider=rngHex();
-                        if (decider===0){
-                            incTypeVol=0;
-                        }
-                        else if (decider===1){
-                            incTypeVol=2;
-                        }
-                        else if (decider===2){
-                            incTypeVol=4;
-                        }
-                        else if (decider===3){
-                            incTypeVol=1;
-                        }
-                        else if (decider===4){
-                            incTypeVol=5;
-                        }
-                        else {
-                            incTypeVol=6;
-                        }
-                    }
-                    
-            }
+                    selectNextVolArray();  
+                }
             }
 
             if (rngR()){
@@ -589,7 +459,7 @@ function nextVolIntervalIter(){
 }
 
 function nextSpeedIntervalIter(){
-    if (incTypeSpeed===0||incTypeSpeed===4||incTypeSpeed===5||incTypeSpeed===6){
+    if (pickArraySpeed(incTypeSpeed).length===8){
         if (presSpeedIntervalIter < 7){
             presSpeedIntervalIter++;
         }
@@ -604,92 +474,8 @@ function nextSpeedIntervalIter(){
                     incTypeSpeed=incTypeSpeed;
                 }
                 else{
-                    if (incTypeSpeed===0){
-                        let decider=rngHex();
-                        if (decider===0){
-                            incTypeSpeed=1;
-                        }
-                        else if (decider===1){
-                            incTypeSpeed=2;
-                        }
-                        else if (decider===2){
-                            incTypeSpeed=3;
-                        }
-                        else if (decider===3){
-                            incTypeSpeed=4;
-                        }
-                        else if (decider===4){
-                            incTypeSpeed=5;
-                        }
-                        else {
-                            incTypeSpeed=6;
-                        }
-                    }
-                    else if (incTypeSpeed===4){
-                        let decider=rngHex();
-                        if (decider===0){
-                            incTypeSpeed=0;
-                        }
-                        else if (decider===1){
-                            incTypeSpeed=2;
-                        }
-                        else if (decider===2){
-                            incTypeSpeed=3;
-                        }
-                        else if (decider===3){
-                            incTypeSpeed=1;
-                        }
-                        else if (decider===4){
-                            incTypeSpeed=5;
-                        }
-                        else {
-                            incTypeSpeed=6;
-                        }
-                    }
-                    else if (incTypeSpeed===5){
-                        let decider=rngHex();
-                        if (decider===0){
-                            incTypeSpeed=0;
-                        }
-                        else if (decider===1){
-                            incTypeSpeed=2;
-                        }
-                        else if (decider===2){
-                            incTypeSpeed=3;
-                        }
-                        else if (decider===3){
-                            incTypeSpeed=4;
-                        }
-                        else if (decider===4){
-                            incTypeSpeed=1;
-                        }
-                        else {
-                            incTypeSpeed=6;
-                        }
-                    }
-                    else{
-                        let decider=rngHex();
-                        if (decider===0){
-                            incTypeSpeed=0;
-                        }
-                        else if (decider===1){
-                            incTypeSpeed=2;
-                        }
-                        else if (decider===2){
-                            incTypeSpeed=3;
-                        }
-                        else if (decider===3){
-                            incTypeSpeed=4;
-                        }
-                        else if (decider===4){
-                            incTypeSpeed=1;
-                        }
-                        else {
-                            incTypeSpeed=5;
-                        }
-                    }
-                    
-            }
+                    selectNextSpeedArray();
+                }
             }
 
             if (rngR()){
@@ -702,7 +488,7 @@ function nextSpeedIntervalIter(){
     }
 
     
-    else if (incTypeSpeed===1){
+    else if (pickArraySpeed(incTypeSpeed).length===5){
         if (presSpeedIntervalIter < 4){
             presSpeedIntervalIter++;
         }
@@ -717,28 +503,8 @@ function nextSpeedIntervalIter(){
                     incTypeSpeed=incTypeSpeed;
                 }
                 else{
-                        let decider=rngHex();
-                        if (decider===0){
-                            incTypeSpeed=0;
-                        }
-                        else if (decider===1){
-                            incTypeSpeed=2;
-                        }
-                        else if (decider===2){
-                            incTypeSpeed=3;
-                        }
-                        else if (decider===3){
-                            incTypeSpeed=4;
-                        }
-                        else if (decider===4){
-                            incTypeSpeed=5;
-                        }
-                        else {
-                            incTypeSpeed=6;
-                        }
-                  
-                    
-            }
+                    selectNextSpeedArray();
+                }
             }
 
             if (rngR()){
@@ -750,7 +516,7 @@ function nextSpeedIntervalIter(){
         }
     }
 
-    else if (incTypeSpeed===2||incTypeSpeed===3){
+    else if (pickArraySpeed(incTypeSpeed).length===4){
         if (presSpeedIntervalIter < 3){
             presSpeedIntervalIter++;
         }
@@ -764,50 +530,8 @@ function nextSpeedIntervalIter(){
                     incTypeSpeed=incTypeSpeed;
                 }
                 else{
-                    if (incTypeSpeed===2){
-                        let decider=rngHex();
-                        if (decider===0){
-                            incTypeSpeed=1;
-                        }
-                        else if (decider===1){
-                            incTypeSpeed=0;
-                        }
-                        else if (decider===2){
-                            incTypeSpeed=3;
-                        }
-                        else if (decider===3){
-                            incTypeSpeed=4;
-                        }
-                        else if (decider===4){
-                            incTypeSpeed=5;
-                        }
-                        else {
-                            incTypeSpeed=6;
-                        }
-                    }
-                    else if (incTypeSpeed===3){
-                        let decider=rngHex();
-                        if (decider===0){
-                            incTypeSpeed=0;
-                        }
-                        else if (decider===1){
-                            incTypeSpeed=2;
-                        }
-                        else if (decider===2){
-                            incTypeSpeed=4;
-                        }
-                        else if (decider===3){
-                            incTypeSpeed=1;
-                        }
-                        else if (decider===4){
-                            incTypeSpeed=5;
-                        }
-                        else {
-                            incTypeSpeed=6;
-                        }
-                    }
-                    
-            }
+                    selectNextSpeedArray();  
+                }
             }
 
             if (rngR()){
