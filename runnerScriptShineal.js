@@ -13,7 +13,7 @@ function truncate(x){
     return parseFloat(y);
 }
 
-for (let i=0; i<20000; i++){
+for (let i=0; i<25000; i++){
     rngs.push(truncate(Math.random()));
 }
 
@@ -21,7 +21,7 @@ for (let i=0; i<20000; i++){
 function modInterDuration(){
     let possibleDeviations=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53, .59, .61, .67];
     if (rngBin()===0){
-        interDuration = 2*possibleDeviations[Math.floor(rngs[rngIter]*17)];
+        interDuration = possibleDeviations[Math.floor(rngs[rngIter]*17)];
         rngIter++;
     }
 }
@@ -316,6 +316,9 @@ function redefineVolInterval(){
         multiplier=1/6;
     }
     
+    if (rngBin()===0){
+        multiplier=1/multiplier;
+    }
 
     presVolInterval = pickArrayVol(incTypeVol)[presVolIntervalIter] * multiplier;
 
@@ -355,6 +358,9 @@ function redefineSpeedInterval(){
         multiplier=1/6;
     }
     
+    if (rngBin()===0){
+        multiplier=1/multiplier;
+    }
 
     presSpeedInterval = pickArraySpeed(incTypeSpeed)[presSpeedIntervalIter] * multiplier;
 
