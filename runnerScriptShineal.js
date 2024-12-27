@@ -13,7 +13,7 @@ for (let i=0; i<10000; i++){
 
 
 function modInterDuration(){
-    let possibleDeviations=[.07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53, .59, .61, .67, .71];
+    let possibleDeviations=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53, .59, .61, .67];
     if (rngBin()===0){
         interDuration = possibleDeviations[Math.floor(rngs[rngIter]*17)];
         rngIter++;
