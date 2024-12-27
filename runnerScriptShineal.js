@@ -7,7 +7,7 @@ let repeatS=0;
 const rngs=[];
 let rngIter=0;
 
-for (let i=0; i<10000; i++){
+for (let i=0; i<5000; i++){
     rngs.push(Math.random());
 }
 
