@@ -13,7 +13,7 @@ function truncate(x){
     return parseFloat(y);
 }
 
-for (let i=0; i<5000; i++){
+for (let i=0; i<20000; i++){
     rngs.push(truncate(Math.random()));
 }
 
