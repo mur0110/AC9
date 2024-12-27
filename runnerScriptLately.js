@@ -4,41 +4,64 @@ let interDuration = .15;
 let repeatV=0;
 let repeatS=0;
 
+const rngs=[];
+let rngIter=0;
+
+for (let i=0; i<10000; i++){
+    rngs.push(Math.random());
+}
+
+
 function modInterDuration(){
-    let possibleDeviations=[.07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53, .57, .59, .61];
+    let possibleDeviations=[.07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53, .59, .61, .67, .71];
     if (rngBin()===0){
-        interDuration = possibleDeviations[Math.floor(Math.random()*16)];
+        interDuration = possibleDeviations[Math.floor(rngs[rngIter]*17)];
+        rngIter++;
     }
 }
+
+
+
+
 function rngBin(){
-    return Math.floor(Math.random()*2);
+    return Math.floor(rngs[rngIter]*2);
+    rngIter++;
 }
 function rngTrio(){
-    return Math.floor(Math.random()*3);
+    return Math.floor(rngs[rngIter]*3);
+    rngIter++;
 }
 function rngQuat(){
-    return Math.floor(Math.random()*4);
+    return Math.floor(rngs[rngIter]*4);
+    rngiter++;
 }
 function rngPent(){
-    return Math.floor(Math.random()*5)
+    return Math.floor(rngs[rngIter]*5);
+    rngIter++;
 }
 function rngHex(){
-    return Math.floor(Math.random()*6);
+    return Math.floor(rngs[rngIter]*6);
+    rngIter++;
 }
 function rngSep(){
-    return Math.floor(Math.random()*7);
+    return Math.floor(rngs[rngIter]*7);
+    rngIter++;
 }
 function rng12(){
-    return Math.floor(Math.random()*12);
+    return Math.floor(rngs[rngIter]*12);
+    rngIter++;
 }
 function rng14(){
-    return Math.floor(Math.random()*14);
+    return Math.floor(rngs[rngIter]*14);
+    rngIter++;
 }
 function rng16(){
-    return Math.floor(Math.random()*16);
+    return Math.floor(rngs[rngIter]*16);
+    rngIter++;
 }
 function rng18(){
-    return Math.floor(Math.random()*18);
+    return Math.floor(rngs[rngIter]*18);
+    rngIter++;
 }
 
 function rngR(){
@@ -79,11 +102,13 @@ function decide23(){
 }
 
 function rng5(){
-    if (Math.floor(Math.random()*12)<5){
+    if (Math.floor(rngs[rngIter]*12)<5){
         return 1;
+        rngIter++;
     }
     else{
         return 0;
+        rngIter++;
     }
 }
 
@@ -316,11 +341,15 @@ function redefineSpeedInterval(){
 
 
 function pickAmong19(){
-    return Math.floor(Math.random() * 19);
+    const val = Math.floor(rngs[rngIter] * 19);
+    rngIter++;
+    return val;
 }
 
 function pickAmong31(){
-    return Math.floor(Math.random() * 31);
+    const val = Math.floor(rngs[rngIter] * 31);
+    rngIter++;
+    return val;
 }
 
 function nextVolIntervalIter(){
@@ -862,7 +891,8 @@ function runner(){
 
 
     function advanceVolume(){
-        let randomToDecide=Math.random();
+        let randomToDecide=rngs[rngIter];
+        rngIter++;
 
         setTimeout(function(){
             songAudio.volume = randomForVolVal;
@@ -974,6 +1004,8 @@ function runner(){
     }
 
     function advanceSpeed(){
+          let randomToDecide=rngs[rngIter];
+          rngIter++;
           setTimeout(function(){
               songAudio.playbackRate = randomForSpeedVal;
               speedIntervalIter++;
@@ -983,7 +1015,7 @@ function runner(){
           redefineSpeedInterval();
           speedInterval = presSpeedInterval;
 
-          let randomToDecide=Math.random();
+          
 
           if (randomToDecide<(29/100)){
 
