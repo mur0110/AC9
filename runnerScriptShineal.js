@@ -75,7 +75,7 @@ function rng10(){
 }
 
 function rngR(){
-    if (rngs[rngIter]*7<2){
+    if (rngBin()===0){
         return 1;
     }
     else{
@@ -289,25 +289,31 @@ let presVolInterval = 0;
 let presSpeedInterval = 0;
 
 function redefineVolInterval(){
-    let decideArrayInc=rngHex();
+    let decideArrayInc=rngOct();
     let multiplier=0;
     if (decideArrayInc===0){
         multiplier=1;
     }
     else if (decideArrayInc===1){
+        multiplier=3/4;
+    }
+    else if (decideArrayInc===2){
         multiplier=17/24;
     }
-    else if(decideArrayInc===2){
+    else if(decideArrayInc===3){
         multiplier=2/3;
     }
-    else if (decideArrayInc===3){
+    else if (decideArrayInc===4){
         multiplier=1/2;
     }
-    else if (decideArrayInc===4){
+    else if (decideArrayInc===5){
         multiplier=1/3
     }
-    else {
+    else if (decideArrayInc===6){
         multiplier=7/24;
+    }
+    else{
+        multiplier=1/4;
     }
     
     if (rngBin()===0){
@@ -319,25 +325,31 @@ function redefineVolInterval(){
 }
 
 function redefineSpeedInterval(){
-    let decideArrayInc=rngHex();
+    let decideArrayInc=rngOct();
     let multiplier=0;
     if (decideArrayInc===0){
         multiplier=1;
     }
     else if (decideArrayInc===1){
+        multiplier=3/4;
+    }
+    else if (decideArrayInc===2){
         multiplier=17/24;
     }
-    else if(decideArrayInc===2){
+    else if(decideArrayInc===3){
         multiplier=2/3;
     }
-    else if (decideArrayInc===3){
+    else if (decideArrayInc===4){
         multiplier=1/2;
     }
-    else if (decideArrayInc===4){
+    else if (decideArrayInc===5){
         multiplier=1/3
     }
-    else {
+    else if (decideArrayInc===6){
         multiplier=7/24;
+    }
+    else{
+        multiplier=1/4;
     }
     
     if (rngBin()===0){
