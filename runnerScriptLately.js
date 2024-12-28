@@ -13,15 +13,15 @@ function truncate(x){
     return parseFloat(y);
 }
 
-for (let i=0; i<5000; i++){
+for (let i=0; i<25000; i++){
     rngs.push(truncate(Math.random()));
 }
 
 
 function modInterDuration(){
-    let possibleDeviations=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53, .59, .61, .67];
+    let possibleDeviations=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53];
     if (rngBin()===0){
-        interDuration = possibleDeviations[Math.floor(rngs[rngIter]*17)];
+        interDuration = possibleDeviations[Math.floor(rngs[rngIter]*14)];
         rngIter++;
     }
 }
@@ -39,7 +39,7 @@ function rngTrio(){
 }
 function rngQuat(){
     return Math.floor(rngs[rngIter]*4);
-    rngiter++;
+    rngIter++;
 }
 function rngPent(){
     return Math.floor(rngs[rngIter]*5);
@@ -53,8 +53,12 @@ function rngSep(){
     return Math.floor(rngs[rngIter]*7);
     rngIter++;
 }
-function rng12(){
-    return Math.floor(rngs[rngIter]*12);
+function rngOct(){
+    return Math.floor(rngs[rngIter]*8);
+    rngIter++;
+}
+function rng10(){
+    return Math.floor(rngs[rngIter]*10);
     rngIter++;
 }
 function rng14(){
@@ -71,7 +75,7 @@ function rng10(){
 }
 
 function rngR(){
-    if (rngBin()===0){
+    if (rngs[rngIter]*7<2){
         return 1;
     }
     else{
@@ -134,6 +138,8 @@ function pickArrayVol(x){
 
     const volArr5=[2.5,3.5,5,3.5];
     const volArr5r=[3.5,5,3.5,2.5];
+
+
 
     if (x===0){
         return volArr1;
@@ -283,78 +289,60 @@ let presVolInterval = 0;
 let presSpeedInterval = 0;
 
 function redefineVolInterval(){
-    let decideArrayInc=rng10();
+    let decideArrayInc=rngHex();
     let multiplier=0;
     if (decideArrayInc===0){
         multiplier=1;
     }
     else if (decideArrayInc===1){
-        multiplier=5/6
+        multiplier=17/24;
     }
-    else if (decideArrayInc===2){
-        multiplier=4/5;
-    }
-    else if (decideArrayInc===3){
-        multiplier=3/4;
-    }
-    else if(decideArrayInc===4){
+    else if(decideArrayInc===2){
         multiplier=2/3;
     }
-    else if (decideArrayInc===5){
+    else if (decideArrayInc===3){
         multiplier=1/2;
     }
-    else if (decideArrayInc===6){
+    else if (decideArrayInc===4){
         multiplier=1/3
     }
-    else if (decideArrayInc===7){
-        multiplier=1/4;
-    }
-    else if(decideArrayInc===8){
-        multiplier=1/5;
-    }
     else {
-        multiplier=1/6;
+        multiplier=7/24;
     }
     
+    if (rngBin()===0){
+        multiplier=1/multiplier;
+    }
 
     presVolInterval = pickArrayVol(incTypeVol)[presVolIntervalIter] * multiplier;
 
 }
 
 function redefineSpeedInterval(){
-    let decideArrayInc=rng10();
+    let decideArrayInc=rngHex();
     let multiplier=0;
     if (decideArrayInc===0){
         multiplier=1;
     }
     else if (decideArrayInc===1){
-        multiplier=5/6
+        multiplier=17/24;
     }
-    else if (decideArrayInc===2){
-        multiplier=4/5;
-    }
-    else if (decideArrayInc===3){
-        multiplier=3/4;
-    }
-    else if(decideArrayInc===4){
+    else if(decideArrayInc===2){
         multiplier=2/3;
     }
-    else if (decideArrayInc===5){
+    else if (decideArrayInc===3){
         multiplier=1/2;
     }
-    else if (decideArrayInc===6){
+    else if (decideArrayInc===4){
         multiplier=1/3
     }
-    else if (decideArrayInc===7){
-        multiplier=1/4;
-    }
-    else if(decideArrayInc===8){
-        multiplier=1/5;
-    }
     else {
-        multiplier=1/6;
+        multiplier=7/24;
     }
     
+    if (rngBin()===0){
+        multiplier=1/multiplier;
+    }
 
     presSpeedInterval = pickArraySpeed(incTypeSpeed)[presSpeedIntervalIter] * multiplier;
 
@@ -395,10 +383,17 @@ function nextVolIntervalIter(){
             }
 
             if (rngR()){
-                repeatV=1;
+                if (rngR()){
+                    repeatV=repeatS;
+                }
             }
             else{
-                repeatV=0;
+                if (rngR()){
+                    repeatV=1;
+                }
+                else{
+                    repeatV=0;
+                }
             }
         }
     }
@@ -423,12 +418,21 @@ function nextVolIntervalIter(){
                 }
             }
 
+
             if (rngR()){
-                repeatV=1;
+                if (rngR()){
+                    repeatV=repeatS;
+                }
             }
             else{
-                repeatV=0;
+                if (rngR()){
+                    repeatV=1;
+                }
+                else{
+                    repeatV=0;
+                }
             }
+            
         }
     }
 
@@ -451,10 +455,17 @@ function nextVolIntervalIter(){
             }
 
             if (rngR()){
-                repeatV=1;
+                if (rngR()){
+                    repeatV=repeatS;
+                }
             }
             else{
-                repeatV=0;
+                if (rngR()){
+                    repeatV=1;
+                }
+                else{
+                    repeatV=0;
+                }
             }
         }
     }
@@ -485,10 +496,17 @@ function nextSpeedIntervalIter(){
             }
 
             if (rngR()){
-                repeatV=1;
+                if (rngR()){
+                    repeatS=repeatV;
+                }
             }
             else{
-                repeatV=0;
+                if (rngR()){
+                    repeatS=1;
+                }
+                else{
+                    repeatS=0;
+                }
             }
         }
     }
@@ -514,10 +532,17 @@ function nextSpeedIntervalIter(){
             }
 
             if (rngR()){
-                repeatV=1;
+                if (rngR()){
+                    repeatS=repeatV;
+                }
             }
             else{
-                repeatV=0;
+                if (rngR()){
+                    repeatS=1;
+                }
+                else{
+                    repeatS=0;
+                }
             }
         }
     }
@@ -541,10 +566,17 @@ function nextSpeedIntervalIter(){
             }
 
             if (rngR()){
-                repeatV=1;
+                if (rngR()){
+                    repeatS=repeatV;
+                }
             }
             else{
-                repeatV=0;
+                if (rngR()){
+                    repeatS=1;
+                }
+                else{
+                    repeatS=0;
+                }
             }
         }
     }
@@ -634,7 +666,7 @@ function runner(){
         volInterval = presVolInterval;
 
 
-          if (randomToDecide<(29/100)){
+          if (randomToDecide<1/3){
             
             let multVal=0;
             let rngDet=rngBin();
@@ -663,58 +695,34 @@ function runner(){
               
 
 
+             
               if (rngBin()===0){
                 if (rngBin() === 0){
-                    rngVS1=dp3*(.62/1.922) * multVal;
+                    rngVS1=dp3*(1.24/1.922) * multVal;
                 }
                 else {
-                    rngVS1=dp4*(.62/1.5377) * multVal;
+                    rngVS1=dp4*(1.24/1.5377) * multVal;
                 }
               }
 
               
               else {
                 if (rngBin() === 0){
-                    rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(.62/1.269) * multVal;
+                    rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(1.24/1.269) * multVal;
                 }
                 else{
-                    rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(.62/1.169) * multVal;
+                    rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(1.24/1.169) * multVal;
                 }
               }
               
+
 
 
               randomForVolVal = rngVS1;
               eitherVolPlain();
           }
 
-        else if(randomToDecide<((52.667/100))){
-
-            let multVal=0;
-            let rngDet=rngBin();
-            if (rngDet===0){
-              multVal=5/7;
-            }
-            else {
-              multVal=1;
-            }  
-
-
-            let diff1=0, diff2=0, diff3=0, diff4=0, diffTotal=0;
-
-            diff1 = multVolArr1[randomsForVol1[randomsForVolIter]] - multVolArr2[randomsForVol2[randomsForVolIter]];
-            diff2 = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
-
-            diff3 = multVolArr1[randomsForVol1[randomsForVolIter]] - multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
-            diff4 = multVolArr2[randomsForVol2[randomsForVolIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
-            
-            diffT = (((diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/3)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/2)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/4))/3)/1.23 * .62 * multVal;
-
-            randomForVolVal = diffT;
-            eitherVolPlain();
-
-        }
-        else if(randomToDecide<(76.33333/100)){
+        else if(randomToDecide<2/3){
             randomForVolVal = multVolArr1[randomsForVol1[randomsForVolIter]];
             eitherVol();
         }
@@ -747,7 +755,7 @@ function runner(){
 
           
 
-          if (randomToDecide<(29/100)){
+          if (randomToDecide<1/3){
 
             let multVal=0;
             let rngDet=rngTrio();
@@ -796,38 +804,14 @@ function runner(){
                     rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(1.24/1.169) * multVal;
                 }
               }
+
+
+            
               
               randomForSpeedVal = rngVS1;
               eitherSpeedPlain();
           }
-        else if(randomToDecide<(52.667/100)){
-            let multVal=0;
-            let rngDet=rngTrio();
-            if (rngDet===0){
-              multVal=5/7;
-            }
-            else if (rngDet===1){
-              multVal=7/5;
-            }
-            else{
-                multVal=1;
-            }
-
-            let diff1=0, diff2=0, diff3=0, diff4=0, diffTotal=0;
-
-            diff1 = multVolArr1[randomsForVol1[randomsForVolIter]] - multVolArr2[randomsForVol2[randomsForVolIter]];
-            diff2 = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
-
-            diff3 = multVolArr1[randomsForVol1[randomsForVolIter]] - multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
-            diff4 = multVolArr2[randomsForVol2[randomsForVolIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
-            
-            diffT = (((diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/3)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/2)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/4))/3) * multVal;
-
-            randomForSpeedVal = diffT;
-            eitherSpeedPlain();
-
-        }
-        else if(randomToDecide<((76.33333/100))){
+        else if(randomToDecide<2/3){
             randomForSpeedVal = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
             eitherSpeed();
         }
