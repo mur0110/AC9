@@ -75,7 +75,7 @@ function rng12(){
 }
 
 function rngR(){
-    if (rngs[rngIter]<.361){
+    if (rngBin()===0){
         return 1;
     }
     else{
