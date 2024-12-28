@@ -75,7 +75,7 @@ function rng10(){
 }
 
 function rngR(){
-    if (rngBin()===0){
+    if (rngs[rngIter]*7<5){
         return 1;
     }
     else{
@@ -138,6 +138,8 @@ function pickArrayVol(x){
 
     const volArr5=[2.5,3.5,5,3.5];
     const volArr5r=[3.5,5,3.5,2.5];
+
+
 
     if (x===0){
         return volArr1;
