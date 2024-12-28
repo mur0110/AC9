@@ -1,4 +1,4 @@
-const songPath = 'songs/shineal.mp3';
+const songPath = 'songs/shineal.mp3'; //first tested on riptide vj
 
 let interDuration = .15;
 let repeatV=0;
@@ -75,7 +75,7 @@ function rng12(){
 }
 
 function rngR(){
-    if (rngBin()===0){
+    if (rngs[rngIter]<.361){
         return 1;
     }
     else{
