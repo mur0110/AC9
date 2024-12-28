@@ -75,7 +75,7 @@ function rng10(){
 }
 
 function rngR(){
-    if (rngs[rngIter]*12>5){
+    if (rngs[rngIter]<.361){
         return 1;
     }
     else{
