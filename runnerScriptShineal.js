@@ -69,8 +69,8 @@ function rng16(){
     return Math.floor(rngs[rngIter]*16);
     rngIter++;
 }
-function rng10(){
-    return Math.floor(rngs[rngIter]*10);
+function rng12(){
+    return Math.floor(rngs[rngIter]*12);
     rngIter++;
 }
 
@@ -289,37 +289,43 @@ let presVolInterval = 0;
 let presSpeedInterval = 0;
 
 function redefineVolInterval(){
-    let decideArrayInc=rng10();
+    let decideArrayInc=rng12();
     let multiplier=0;
     if (decideArrayInc===0){
         multiplier=1;
     }
     else if (decideArrayInc===1){
-        multiplier=4/5;
-    }
-    else if (decideArrayInc===1){
-        multiplier=3/4;
+        multiplier=5/6;
     }
     else if (decideArrayInc===2){
-        multiplier=17/24;
+        multiplier=4/5;
     }
-    else if(decideArrayInc===3){
-        multiplier=2/3;
+    else if (decideArrayInc===3){
+        multiplier=3/4;
     }
     else if (decideArrayInc===4){
-        multiplier=1/2;
+        multiplier=17/24;
     }
-    else if (decideArrayInc===5){
-        multiplier=1/3
+    else if(decideArrayInc===5){
+        multiplier=2/3;
     }
     else if (decideArrayInc===6){
-        multiplier=7/24;
+        multiplier=1/2;
     }
     else if (decideArrayInc===7){
+        multiplier=1/3
+    }
+    else if (decideArrayInc===8){
+        multiplier=7/24;
+    }
+    else if (decideArrayInc===9){
         multiplier=1/4;
     }
-    else{
+    else if (decideArrayInc===10){
         multiplier=1/5;
+    }
+    else{
+        multiplier=1/6;
     }
     
     if (rngBin()===0){
@@ -331,37 +337,43 @@ function redefineVolInterval(){
 }
 
 function redefineSpeedInterval(){
-    let decideArrayInc=rng10();
+    let decideArrayInc=rng12();
     let multiplier=0;
     if (decideArrayInc===0){
         multiplier=1;
     }
     else if (decideArrayInc===1){
-        multiplier=4/5;
-    }
-    else if (decideArrayInc===1){
-        multiplier=3/4;
+        multiplier=5/6;
     }
     else if (decideArrayInc===2){
-        multiplier=17/24;
+        multiplier=4/5;
     }
-    else if(decideArrayInc===3){
-        multiplier=2/3;
+    else if (decideArrayInc===3){
+        multiplier=3/4;
     }
     else if (decideArrayInc===4){
-        multiplier=1/2;
+        multiplier=17/24;
     }
-    else if (decideArrayInc===5){
-        multiplier=1/3
+    else if(decideArrayInc===5){
+        multiplier=2/3;
     }
     else if (decideArrayInc===6){
-        multiplier=7/24;
+        multiplier=1/2;
     }
     else if (decideArrayInc===7){
+        multiplier=1/3
+    }
+    else if (decideArrayInc===8){
+        multiplier=7/24;
+    }
+    else if (decideArrayInc===9){
         multiplier=1/4;
     }
-    else{
+    else if (decideArrayInc===10){
         multiplier=1/5;
+    }
+    else{
+        multiplier=1/6;
     }
     
     if (rngBin()===0){
