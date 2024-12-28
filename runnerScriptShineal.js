@@ -75,7 +75,7 @@ function rng10(){
 }
 
 function rngR(){
-    if (rngs[rngIter]*7<2){
+    if (rngBin()===0){
         return 1;
     }
     else{
