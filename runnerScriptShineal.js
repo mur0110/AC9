@@ -331,13 +331,10 @@ function redefineVolInterval(){
 }
 
 function redefineSpeedInterval(){
-    let decideArrayInc=rng10();
+    let decideArrayInc=rngOct();
     let multiplier=0;
     if (decideArrayInc===0){
         multiplier=1;
-    }
-    else if (decideArrayInc===1){
-        multiplier=4/5;
     }
     else if (decideArrayInc===1){
         multiplier=3/4;
@@ -357,11 +354,8 @@ function redefineSpeedInterval(){
     else if (decideArrayInc===6){
         multiplier=7/24;
     }
-    else if (decideArrayInc===7){
+    else {
         multiplier=1/4;
-    }
-    else{
-        multiplier=1/5;
     }
     
     if (rngBin()===0){
