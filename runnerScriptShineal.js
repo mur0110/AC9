@@ -666,7 +666,7 @@ function runner(){
         volInterval = presVolInterval;
 
 
-          if (randomToDecide<1/3){
+          if (randomToDecide<.361){
             
             let multVal=0;
             let rngDet=rngBin();
@@ -722,7 +722,7 @@ function runner(){
               eitherVolPlain();
           }
 
-        else if(randomToDecide<2/3){
+        else if(randomToDecide<.6805){
             randomForVolVal = multVolArr1[randomsForVol1[randomsForVolIter]];
             eitherVol();
         }
@@ -755,7 +755,7 @@ function runner(){
 
           
 
-          if (randomToDecide<1/3){
+          if (randomToDecide<.361){
 
             let multVal=0;
             let rngDet=rngTrio();
@@ -811,7 +811,7 @@ function runner(){
               randomForSpeedVal = rngVS1;
               eitherSpeedPlain();
           }
-        else if(randomToDecide<2/3){
+        else if(randomToDecide<.6805){
             randomForSpeedVal = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
             eitherSpeed();
         }
