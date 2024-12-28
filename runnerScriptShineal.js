@@ -75,7 +75,7 @@ function rng10(){
 }
 
 function rngR(){
-    if (rngs[rngIter]<.361){
+    if (rngBin()===0){
         return 1;
     }
     else{
@@ -383,10 +383,17 @@ function nextVolIntervalIter(){
             }
 
             if (rngR()){
-                repeatV=1;
+                if (rngR()){
+                    repeatV=repeatS;
+                }
             }
             else{
-                repeatV=0;
+                if (rngR()){
+                    repeatV=1;
+                }
+                else{
+                    repeatV=0;
+                }
             }
         }
     }
@@ -411,12 +418,21 @@ function nextVolIntervalIter(){
                 }
             }
 
+
             if (rngR()){
-                repeatV=1;
+                if (rngR()){
+                    repeatV=repeatS;
+                }
             }
             else{
-                repeatV=0;
+                if (rngR()){
+                    repeatV=1;
+                }
+                else{
+                    repeatV=0;
+                }
             }
+            
         }
     }
 
@@ -439,10 +455,17 @@ function nextVolIntervalIter(){
             }
 
             if (rngR()){
-                repeatV=1;
+                if (rngR()){
+                    repeatV=repeatS;
+                }
             }
             else{
-                repeatV=0;
+                if (rngR()){
+                    repeatV=1;
+                }
+                else{
+                    repeatV=0;
+                }
             }
         }
     }
@@ -473,10 +496,17 @@ function nextSpeedIntervalIter(){
             }
 
             if (rngR()){
-                repeatV=1;
+                if (rngR()){
+                    repeatS=repeatV;
+                }
             }
             else{
-                repeatV=0;
+                if (rngR()){
+                    repeatS=1;
+                }
+                else{
+                    repeatS=0;
+                }
             }
         }
     }
@@ -502,10 +532,17 @@ function nextSpeedIntervalIter(){
             }
 
             if (rngR()){
-                repeatV=1;
+                if (rngR()){
+                    repeatS=repeatV;
+                }
             }
             else{
-                repeatV=0;
+                if (rngR()){
+                    repeatS=1;
+                }
+                else{
+                    repeatS=0;
+                }
             }
         }
     }
@@ -529,10 +566,17 @@ function nextSpeedIntervalIter(){
             }
 
             if (rngR()){
-                repeatV=1;
+                if (rngR()){
+                    repeatS=repeatV;
+                }
             }
             else{
-                repeatV=0;
+                if (rngR()){
+                    repeatS=1;
+                }
+                else{
+                    repeatS=0;
+                }
             }
         }
     }
