@@ -698,20 +698,20 @@ function runner(){
              
               if (rngBin()===0){
                 if (rngBin() === 0){
-                    rngVS1=dp3*(1.24/1.922) * multVal;
+                    rngVS1=dp3*(.62/1.922) * multVal;
                 }
                 else {
-                    rngVS1=dp4*(1.24/1.5377) * multVal;
+                    rngVS1=dp4*(.62/1.5377) * multVal;
                 }
               }
 
               
               else {
                 if (rngBin() === 0){
-                    rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(1.24/1.269) * multVal;
+                    rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(.62/1.269) * multVal;
                 }
                 else{
-                    rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(1.24/1.169) * multVal;
+                    rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(.62/1.169) * multVal;
                 }
               }
               
