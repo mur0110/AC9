@@ -1,4 +1,4 @@
-const songPath = 'songs/shineal.mp3';
+const songPath = 'songs/shineal.mp3'; //ifeelgoodaboutthis was first
 
 let interDuration = .15;
 let repeatV=0;
@@ -291,7 +291,8 @@ let presSpeedInterval = 0;
 function redefineVolInterval(){
     let multiplier=0;
     if (rngBin()===0){
-        let decideArrayInc=rngOct();
+        if (rngBin()===0){
+            let decideArrayInc=rngOct();
         if (decideArrayInc===0){
             multiplier=1;
         }
@@ -354,6 +355,64 @@ function redefineVolInterval(){
         }
         else{
             multiplier=1/6;
+        }
+        }
+        
+    }
+    else{
+        if (rngBin()===0){
+            let decideArrayInc=rngHex();
+        if (decideArrayInc===0){
+            multiplier=1;
+        }
+        else if (decideArrayInc===1){
+            multiplier=3/4;
+        }
+        else if(decideArrayInc===2){
+            multiplier=2/3;
+        }
+        else if (decideArrayInc===3){
+            multiplier=1/2;
+        }
+        else if (decideArrayInc===4){
+            multiplier=1/3
+        }
+        else {
+            multiplier=1/4;
+        }
+    }
+    else{
+        let decideArrayInc=rng10();
+        if (decideArrayInc===0){
+            multiplier=1;
+        }
+        else if (decideArrayInc===1){
+            multiplier=5/6;
+        }
+        else if (decideArrayInc===2){
+            multiplier=4/5;
+        }
+        else if (decideArrayInc===3){
+            multiplier=3/4;
+        }
+        else if(decideArrayInc===4){
+            multiplier=2/3;
+        }
+        else if (decideArrayInc===5){
+            multiplier=1/2;
+        }
+        else if (decideArrayInc===6){
+            multiplier=1/3
+        }
+        else if (decideArrayInc===7){
+            multiplier=1/4;
+        }
+        else if (decideArrayInc===8){
+            multiplier=1/5;
+        }
+        else{
+            multiplier=1/6;
+        }
         }
     }
     
@@ -368,7 +427,8 @@ function redefineVolInterval(){
 function redefineSpeedInterval(){
     let multiplier=0;
     if (rngBin()===0){
-        let decideArrayInc=rngOct();
+        if (rngBin()===0){
+            let decideArrayInc=rngOct();
         if (decideArrayInc===0){
             multiplier=1;
         }
@@ -431,6 +491,64 @@ function redefineSpeedInterval(){
         }
         else{
             multiplier=1/6;
+        }
+        }
+        
+    }
+    else{
+        if (rngBin()===0){
+            let decideArrayInc=rngHex();
+        if (decideArrayInc===0){
+            multiplier=1;
+        }
+        else if (decideArrayInc===1){
+            multiplier=3/4;
+        }
+        else if(decideArrayInc===2){
+            multiplier=2/3;
+        }
+        else if (decideArrayInc===3){
+            multiplier=1/2;
+        }
+        else if (decideArrayInc===4){
+            multiplier=1/3
+        }
+        else {
+            multiplier=1/4;
+        }
+    }
+    else{
+        let decideArrayInc=rng10();
+        if (decideArrayInc===0){
+            multiplier=1;
+        }
+        else if (decideArrayInc===1){
+            multiplier=5/6;
+        }
+        else if (decideArrayInc===2){
+            multiplier=4/5;
+        }
+        else if (decideArrayInc===3){
+            multiplier=3/4;
+        }
+        else if(decideArrayInc===4){
+            multiplier=2/3;
+        }
+        else if (decideArrayInc===5){
+            multiplier=1/2;
+        }
+        else if (decideArrayInc===6){
+            multiplier=1/3
+        }
+        else if (decideArrayInc===7){
+            multiplier=1/4;
+        }
+        else if (decideArrayInc===8){
+            multiplier=1/5;
+        }
+        else{
+            multiplier=1/6;
+        }
         }
     }
     
