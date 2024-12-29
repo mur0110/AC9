@@ -7,6 +7,9 @@ let repeatS=0;
 const rngs=[];
 let rngIter=0;
 
+let wasRepeatVol=0;
+let wasRepeatSpeed=0;
+
 function truncate(x){
     let y=String(x);
     y=y.slice(0,5);
@@ -75,7 +78,7 @@ function rng12(){
 }
 
 function rngR(){
-    if (rngs[rngIter]<.639){
+    if (rngBin()===0){
         return 1;
     }
     else{
@@ -817,7 +820,7 @@ function nextSpeedIntervalIter(){
             presSpeedIntervalIter=0;
 
 
-            if (repeatV===1){
+            if (repeatS===1){
             }
             else{
                 if (rngBin()===0){
@@ -852,8 +855,8 @@ function nextSpeedIntervalIter(){
         else{
             presSpeedIntervalIter=0;
 
-            if (repeatV===1){
-    
+            if (repeatS===1){
+                
             }
             else{
                 if (rngBin()===0){
@@ -887,7 +890,7 @@ function nextSpeedIntervalIter(){
         else{
             presSpeedIntervalIter=0;
 
-            if (repeatV===1){
+            if (repeatS===1){
             }
             else{
                 if (rngBin()===0){
