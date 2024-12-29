@@ -423,7 +423,7 @@ function redefineVolInterval(){
         multiplier=1/multiplier;
     }
 
-    if (rngBin()===0){
+    if (rngs[rngIter]>7/24){
         presVolInterval = pickArrayVol(incTypeVol)[presVolIntervalIter] * multiplier;
     }
     else{
@@ -570,7 +570,7 @@ function redefineSpeedInterval(){
         multiplier=1/multiplier;
     }
 
-    if (rngBin()===0){
+    if (rngs[rngIter]>7/24){
         presSpeedInterval = pickArraySpeed(incTypeSpeed)[presSpeedIntervalIter] * multiplier;
     }
     else{
