@@ -1,4 +1,4 @@
-const songPath = 'songs/shineal.mp3'; //middle was first
+const songPath = 'songs/shineal.mp3'; //ifeelgoodaboutthis was first
 
 let interDuration = .15;
 let repeatV=0;
@@ -626,7 +626,13 @@ function nextVolIntervalIter(){
             }
             else{
                 if (rngR()){
-                    repeatV=1;
+                    if (rngR()){
+                        repeatV=1;
+                    }
+                    else{
+                        repeatV=1;
+                        repeatS=1;
+                    }
                 }
                 else{
                     repeatV=0;
@@ -663,10 +669,13 @@ function nextVolIntervalIter(){
             }
             else{
                 if (rngR()){
-                    repeatV=1;
-                }
-                else{
-                    repeatV=0;
+                    if (rngR()){
+                        repeatV=1;
+                    }
+                    else{
+                        repeatV=1;
+                        repeatS=1;
+                    }
                 }
             }
             
@@ -698,10 +707,13 @@ function nextVolIntervalIter(){
             }
             else{
                 if (rngR()){
-                    repeatV=1;
-                }
-                else{
-                    repeatV=0;
+                    if (rngR()){
+                        repeatV=1;
+                    }
+                    else{
+                        repeatV=1;
+                        repeatS=1;
+                    }
                 }
             }
         }
@@ -739,10 +751,13 @@ function nextSpeedIntervalIter(){
             }
             else{
                 if (rngR()){
-                    repeatS=1;
-                }
-                else{
-                    repeatS=0;
+                    if (rngR()){
+                        repeatS=1;
+                    }
+                    else{
+                        repeatV=1;
+                        repeatS=1;
+                    }
                 }
             }
         }
@@ -775,10 +790,13 @@ function nextSpeedIntervalIter(){
             }
             else{
                 if (rngR()){
-                    repeatS=1;
-                }
-                else{
-                    repeatS=0;
+                    if (rngR()){
+                        repeatS=1;
+                    }
+                    else{
+                        repeatV=1;
+                        repeatS=1;
+                    }
                 }
             }
         }
@@ -809,10 +827,13 @@ function nextSpeedIntervalIter(){
             }
             else{
                 if (rngR()){
-                    repeatS=1;
-                }
-                else{
-                    repeatS=0;
+                    if (rngR()){
+                        repeatS=1;
+                    }
+                    else{
+                        repeatV=1;
+                        repeatS=1;
+                    }
                 }
             }
         }
