@@ -293,7 +293,7 @@ let presSpeedInterval = 0;
 
 function redefineVolInterval(){
     let multiplier=0;
-    let rngh=rngHex();
+    let rngh=rngQuat();
     if (rngh===0){
 
     let decideArrayInc=rngOct();
@@ -384,7 +384,7 @@ function redefineVolInterval(){
             multiplier=1/4;
         }
     }
-    else if (rngh===3){
+    else {
         let decideArrayInc=rng10();
         if (decideArrayInc===0){
             multiplier=1;
@@ -417,67 +417,7 @@ function redefineVolInterval(){
             multiplier=1/6;
         }
         }
-        else if (rngh===4){
-        let decideArrayInc=rngOct();
-        if (decideArrayInc===0){
-            multiplier=1;
-        }
-        else if (decideArrayInc===1){
-            multiplier=4/5;
-        }
-        else if (decideArrayInc===2){
-            multiplier=3/4;
-        }
-        else if(decideArrayInc===3){
-            multiplier=2/3;
-        }
-        else if (decideArrayInc===4){
-            multiplier=1/2;
-        }
-        else if (decideArrayInc===5){
-            multiplier=1/3
-        }
-        else if (decideArrayInc===6){
-            multiplier=1/4;
-        }
-        else {
-            multiplier=1/5;
-        }
-        }
-        else{
-            let decideArrayInc=rng10();
-            if (decideArrayInc===0){
-                multiplier=1;
-            }
-            else if (decideArrayInc===1){
-                multiplier=4/5;
-            }
-            else if (decideArrayInc==2){
-                multiplier=3/4;
-            }
-            else if (decideArrayInc===3){
-                multiplier=17/24;
-            }
-            else if(decideArrayInc===4){
-                multiplier=2/3;
-            }
-            else if (decideArrayInc===5){
-                multiplier=1/2;
-            }
-            else if (decideArrayInc===6){
-                multiplier=1/3
-            }
-            else if (decideArrayInc===7){
-                multiplier=7/24;
-            }
-            else if (decideArrayInc===8){
-                multiplier=1/4;
-            }
-            else {
-                multiplier=1/5;
-            }
-        
-    }
+
     
     if (rngBin()===0){
         multiplier=1/multiplier;
@@ -498,7 +438,7 @@ function redefineVolInterval(){
 
 function redefineSpeedInterval(){
     let multiplier=0;
-    let rngh=rngHex();
+    let rngh=rngQuat();
     if (rngh===0){
 
     let decideArrayInc=rngOct();
@@ -589,7 +529,7 @@ function redefineSpeedInterval(){
             multiplier=1/4;
         }
     }
-    else if (rngh===3){
+    else {
         let decideArrayInc=rng10();
         if (decideArrayInc===0){
             multiplier=1;
@@ -621,66 +561,7 @@ function redefineSpeedInterval(){
         else{
             multiplier=1/6;
         }
-        }
-        else if (rngh===4){
-        let decideArrayInc=rngOct();
-        if (decideArrayInc===0){
-            multiplier=1;
-        }
-        else if (decideArrayInc===1){
-            multiplier=4/5;
-        }
-        else if (decideArrayInc===2){
-            multiplier=3/4;
-        }
-        else if(decideArrayInc===3){
-            multiplier=2/3;
-        }
-        else if (decideArrayInc===4){
-            multiplier=1/2;
-        }
-        else if (decideArrayInc===5){
-            multiplier=1/3
-        }
-        else if (decideArrayInc===6){
-            multiplier=1/4;
-        }
-        else {
-            multiplier=1/5;
-        }
-        }
-        else{
-            let decideArrayInc=rng10();
-            if (decideArrayInc===0){
-                multiplier=1;
-            }
-            else if (decideArrayInc===1){
-                multiplier=4/5;
-            }
-            else if (decideArrayInc==2){
-                multiplier=3/4;
-            }
-            else if (decideArrayInc===3){
-                multiplier=17/24;
-            }
-            else if(decideArrayInc===4){
-                multiplier=2/3;
-            }
-            else if (decideArrayInc===5){
-                multiplier=1/2;
-            }
-            else if (decideArrayInc===6){
-                multiplier=1/3
-            }
-            else if (decideArrayInc===7){
-                multiplier=7/24;
-            }
-            else if (decideArrayInc===8){
-                multiplier=1/4;
-            }
-            else {
-                multiplier=1/5;
-            }
+        
         
     }
     
@@ -1022,7 +903,7 @@ function runner(){
         volInterval = presVolInterval;
 
 
-          if (randomToDecide<.361){
+          if (randomToDecide<1/3){
             
             let multVal=0;
             let rngDet=rngBin();
@@ -1078,7 +959,7 @@ function runner(){
               eitherVolPlain();
           }
 
-        else if(randomToDecide<.6805){
+        else if(randomToDecide<2/3){
             randomForVolVal = multVolArr1[randomsForVol1[randomsForVolIter]];
             eitherVol();
         }
@@ -1111,7 +992,7 @@ function runner(){
 
           
 
-          if (randomToDecide<.361){
+          if (randomToDecide<1/3){
 
             let multVal=0;
             let rngDet=rngTrio();
@@ -1167,7 +1048,7 @@ function runner(){
               randomForSpeedVal = rngVS1;
               eitherSpeedPlain();
           }
-        else if(randomToDecide<.6805){
+        else if(randomToDecide<2/3){
             randomForSpeedVal = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
             eitherSpeed();
         }
