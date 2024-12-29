@@ -483,8 +483,17 @@ function redefineVolInterval(){
         multiplier=1/multiplier;
     }
 
-    presVolInterval = pickArrayVol(incTypeVol)[presVolIntervalIter] * multiplier;
-
+    if (rngBin()===0){
+        presVolInterval = pickArrayVol(incTypeVol)[presVolIntervalIter] * multiplier;
+    }
+    else{
+        if (rngBin()){
+            presVolInterval = presSpeedInterval * multiplier;
+        }
+        else{
+            presVolInterval = presSpeedInterval;
+        }
+    }
 }
 
 function redefineSpeedInterval(){
@@ -680,7 +689,18 @@ function redefineSpeedInterval(){
         multiplier=1/multiplier;
     }
 
-    presSpeedInterval = pickArraySpeed(incTypeSpeed)[presSpeedIntervalIter] * multiplier;
+    if (rngBin()===0){
+        presSpeedInterval = pickArraySpeed(incTypeSpeed)[presSpeedIntervalIter] * multiplier;
+    }
+    else{
+        if (rngBin()){
+            presSpeedInterval = presVolInterval * multiplier;
+        }
+        else{
+            presSpeedInterval = presVolInterval;
+        }
+    }
+
 
 
 }
