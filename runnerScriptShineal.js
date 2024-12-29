@@ -1,5 +1,7 @@
 const songPath = 'songs/shineal.mp3'; //shineal was first
 
+
+
 let interDuration = .15;
 let repeatV=0;
 let repeatS=0;
@@ -268,6 +270,8 @@ const multSpeedArr1 = [.77, .81, .83, .87, .89, .93, .95, .97, .99, 1, 1.01, 1.0
 const multVolArr2 = [ .375, .3825, .3875, .4, .4075, .4125, .425, .4325, .4375, .45, .4575, .4625, .475, .4825, .4875, .5, .5125, .5175, .525, .5375, .5425, .55, .5625, .5675, .575, .5875, .5925, .6, .6125, .6175, .625];
 const multSpeedArr2 = [ .75, .765, .775, .8, .815, .825, .85, .865, .875, .9, .915, .925, .95, .965, .975, 1, 1.025, 1.035, 1.05, 1.075, 1.085, 1.1, 1.125, 1.135, 1.15, 1.75, 1.85, 1.2, 1.225, 1.235, 1.25];
 
+
+
 const randomsForVol1=[];
 const randomsForSpeed1=[];
 
@@ -277,6 +281,9 @@ const randomsForSpeed2=[];
 
 let randomsForVolIter = 0;
 let randomsForSpeedIter = 0;
+
+let randomForVolVal = multVolArr1[randomsForVol1[randomsForVolIter]];
+let randomForSpeedVal = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
 
 for (let i=0; i<2000; i++){
     randomsForVol1.push(pickAmong19());
@@ -889,8 +896,7 @@ function eitherSpeedPlain(){
 function runner(){
     const songAudio = new Audio(songPath);
     
-    let randomForVolVal = multVolArr1[randomsForVol1[randomsForVolIter]];
-    let randomForSpeedVal = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
+    
 
 
 
@@ -923,6 +929,11 @@ function runner(){
         redefineVolInterval();
         volInterval = presVolInterval;
 
+        if (rngs[rngIter]*24<7){
+            randomForVolVal = randomForSpeedVal/2;
+            eitherVolPlain();
+        }
+        else{
 
           if (randomToDecide<(29/100)){
             
@@ -1015,7 +1026,7 @@ function runner(){
         }
 
             
-        
+    }
 
           
           randomsForVolIter++;
@@ -1036,7 +1047,11 @@ function runner(){
           redefineSpeedInterval();
           speedInterval = presSpeedInterval;
 
-          
+          if (rngs[rngIter]*24<7){
+            randomForSpeedVal = randomForVolVal*2;
+            eitherSpeedPlain();
+          }
+          else{
 
           if (randomToDecide<(29/100)){
 
@@ -1130,7 +1145,7 @@ function runner(){
         }
 
             
-        
+    }
 
           
           randomsForSpeedIter++;
