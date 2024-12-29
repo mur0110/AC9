@@ -290,7 +290,7 @@ let presSpeedInterval = 0;
 
 function redefineVolInterval(){
     let multiplier=0;
-    let rngh=rngHex()
+    let rngh=rngHex();
     if (rngh===0){
 
     let decideArrayInc=rngOct();
@@ -486,7 +486,7 @@ function redefineVolInterval(){
 
 function redefineSpeedInterval(){
     let multiplier=0;
-    let rngh=rngHex()
+    let rngh=rngHex();
     if (rngh===0){
 
     let decideArrayInc=rngOct();
