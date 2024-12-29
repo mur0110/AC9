@@ -1,4 +1,4 @@
-const songPath = 'songs/shineal.mp3'; //ifeelgoodaboutthis was first
+const songPath = 'songs/shineal.mp3'; //lately was first
 
 let interDuration = .15;
 let repeatV=0;
@@ -75,7 +75,7 @@ function rng12(){
 }
 
 function rngR(){
-    if (rngBin()===0){
+    if (rngs[rngIter]<.361){
         return 1;
     }
     else{
