@@ -18,7 +18,7 @@ function truncate(x){
     return parseFloat(y);
 }
 
-for (let i=0; i<25000; i++){
+for (let i=0; i<75000; i++){
     rngs.push(truncate(Math.random()));
 }
 
@@ -270,20 +270,11 @@ const multSpeedArr1 = [.77, .81, .83, .87, .89, .93, .95, .97, .99, 1, 1.01, 1.0
 const multVolArr2 = [ .375, .3825, .3875, .4, .4075, .4125, .425, .4325, .4375, .45, .4575, .4625, .475, .4825, .4875, .5, .5125, .5175, .525, .5375, .5425, .55, .5625, .5675, .575, .5875, .5925, .6, .6125, .6175, .625];
 const multSpeedArr2 = [ .75, .765, .775, .8, .815, .825, .85, .865, .875, .9, .915, .925, .95, .965, .975, 1, 1.025, 1.035, 1.05, 1.075, 1.085, 1.1, 1.125, 1.135, 1.15, 1.75, 1.85, 1.2, 1.225, 1.235, 1.25];
 
-
-
 const randomsForVol1=[];
 const randomsForSpeed1=[];
 
 const randomsForVol2=[];
 const randomsForSpeed2=[];
-
-
-let randomsForVolIter = 0;
-let randomsForSpeedIter = 0;
-
-let randomForVolVal = multVolArr1[randomsForVol1[randomsForVolIter]];
-let randomForSpeedVal = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
 
 for (let i=0; i<2000; i++){
     randomsForVol1.push(pickAmong19());
@@ -292,11 +283,31 @@ for (let i=0; i<2000; i++){
     randomsForSpeed2.push(pickAmong31());
 }
 
+
+
+
+let randomsForVolIter = 0;
+let randomsForSpeedIter = 0;
+
+let randomForVolVal = multVolArr1[randomsForVol1[randomsForVolIter]];
+let randomForSpeedVal = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
+
 let presVolIntervalIter = 0;
 let presSpeedIntervalIter = 0;
 
 let presVolInterval = 0;
 let presSpeedInterval = 0;
+
+let volIntervalIter = 0;
+let speedIntervalIter = 0;
+
+let volInterval = presVolInterval;
+let speedInterval = presSpeedInterval;
+
+
+
+
+
 
 function redefineVolInterval(){
     let multiplier=0;
@@ -431,6 +442,7 @@ function redefineVolInterval(){
     }
 
     if (rngs[rngIter]>7/24){
+        rngIter++;
         presVolInterval = pickArrayVol(incTypeVol)[presVolIntervalIter] * multiplier;
     }
     else{
@@ -578,6 +590,7 @@ function redefineSpeedInterval(){
     }
 
     if (rngs[rngIter]>7/24){
+        rngIter++;
         presSpeedInterval = pickArraySpeed(incTypeSpeed)[presSpeedIntervalIter] * multiplier;
     }
     else{
@@ -619,6 +632,7 @@ function nextVolIntervalIter(){
             }
             else{
                 if (rngs[rngIter]*24<7){
+                    rngIter++;
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -634,6 +648,7 @@ function nextVolIntervalIter(){
             else{
                 if (rngR()){
                     if (rngs[rngIter]*24>7){
+                        rngIter++;
                         repeatV=1;
                     }
                     else{
@@ -661,6 +676,7 @@ function nextVolIntervalIter(){
             }
             else{
                 if (rngs[rngIter]*24<7){
+                    rngIter++;
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -677,6 +693,7 @@ function nextVolIntervalIter(){
             else{
                 if (rngR()){
                     if (rngs[rngIter]*24>7){
+                        rngIter++;
                         repeatV=1;
                     }
                     else{
@@ -700,6 +717,7 @@ function nextVolIntervalIter(){
             }
             else{
                 if (rngs[rngIter]*24<7){
+                    rngIter++;
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -715,6 +733,7 @@ function nextVolIntervalIter(){
             else{
                 if (rngR()){
                     if (rngs[rngIter]*24>7){
+                        rngIter++;
                         repeatV=1;
                     }
                     else{
@@ -744,6 +763,7 @@ function nextSpeedIntervalIter(){
             }
             else{
                 if (rngs[rngIter]*24<7){
+                    rngIter++;
                     incTypeSpeed=incTypeSpeed;
                 }
                 else{
@@ -759,6 +779,7 @@ function nextSpeedIntervalIter(){
             else{
                 if (rngR()){
                     if (rngs[rngIter]*24>7){
+                        rngIter++;
                         repeatS=1;
                     }
                     else{
@@ -783,6 +804,7 @@ function nextSpeedIntervalIter(){
             }
             else{
                 if (rngs[rngIter]*24<7){
+                    rngIter++;
                     incTypeSpeed=incTypeSpeed;
                 }
                 else{
@@ -798,6 +820,7 @@ function nextSpeedIntervalIter(){
             else{
                 if (rngR()){
                     if (rngs[rngIter]*24>7){
+                        rngIter++;
                         repeatS=1;
                     }
                     else{
@@ -820,6 +843,7 @@ function nextSpeedIntervalIter(){
             }
             else{
                 if (rngs[rngIter]*24<7){
+                    rngIter++;
                     incTypeSpeed=incTypeSpeed;
                 }
                 else{
@@ -835,6 +859,7 @@ function nextSpeedIntervalIter(){
             else{
                 if (rngR()){
                     if (rngs[rngIter]*24>7){
+                        rngIter++;
                         repeatS=1;
                     }
                     else{
@@ -900,14 +925,12 @@ function runner(){
 
 
 
-    let volIntervalIter = 0;
-    let speedIntervalIter = 0;
+    
     redefineVolInterval();
     redefineSpeedInterval();
 
 
-    let volInterval = presVolInterval;
-    let speedInterval = presSpeedInterval;
+    
 
 
     songAudio.play();
@@ -930,6 +953,7 @@ function runner(){
         volInterval = presVolInterval;
 
         if (rngs[rngIter]*24<7){
+            rngIter++;
             randomForVolVal = randomForSpeedVal/2;
             eitherVolPlain();
         }
@@ -1048,6 +1072,7 @@ function runner(){
           speedInterval = presSpeedInterval;
 
           if (rngs[rngIter]*24<7){
+            rngIter++;
             randomForSpeedVal = randomForVolVal*2;
             eitherSpeedPlain();
           }
