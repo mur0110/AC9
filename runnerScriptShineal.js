@@ -1,4 +1,4 @@
-const songPath = 'songs/shineal.mp3'; //ifeelgoodaboutthis was first
+const songPath = 'songs/shineal.mp3'; //shineal was first
 
 let interDuration = .15;
 let repeatV=0;
@@ -611,7 +611,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (rngBin()===0){
+                if (rngs[rngIter]*24<7){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -653,7 +653,7 @@ function nextVolIntervalIter(){
     
             }
             else{
-                if (rngBin()===0){
+                if (rngs[rngIter]*24<7){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -692,7 +692,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (rngBin()===0){
+                if (rngs[rngIter]*24<7){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -736,7 +736,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (rngBin()===0){
+                if (rngs[rngIter]*24<7){
                     incTypeSpeed=incTypeSpeed;
                 }
                 else{
@@ -775,7 +775,7 @@ function nextSpeedIntervalIter(){
                 
             }
             else{
-                if (rngBin()===0){
+                if (rngs[rngIter]*24<7){
                     incTypeSpeed=incTypeSpeed;
                 }
                 else{
@@ -812,7 +812,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (rngBin()===0){
+                if (rngs[rngIter]*24<7){
                     incTypeSpeed=incTypeSpeed;
                 }
                 else{
