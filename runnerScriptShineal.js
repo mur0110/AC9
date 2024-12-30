@@ -1,4 +1,4 @@
-const songPath = 'songs/shineal.mp3'; //shineal was first
+const songPath = 'songs/shineal.mp3'; //idk was first
 
 
 let interDuration = .15;
@@ -126,16 +126,7 @@ function decide23(){
       }
 }
 
-function rng5(){
-    if (Math.floor(rngs[rngIter]*12)<5){
-        return 1;
-        rngIter++;
-    }
-    else{
-        return 0;
-        rngIter++;
-    }
-}
+
 
 
 function pickArrayVol(x){
