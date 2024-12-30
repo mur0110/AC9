@@ -1,4 +1,4 @@
-const songPath = 'songs/shineal.mp3'; //idk was first
+const songPath = 'songs/shineal.mp3'; //shineal was first
 
 
 let interDuration = .15;
@@ -145,6 +145,9 @@ function pickArrayVol(x){
     const volArr5=[2.5,3.5,5,3.5];
     const volArr5r=[3.5,5,3.5,2.5];
 
+    const volArr6=[2,3,4,3];
+    const volArr6r=[3,4,3,2];
+
 
 
     if (x===0){
@@ -174,8 +177,14 @@ function pickArrayVol(x){
     else if (x===8){
         return volArr5;
     }
-    else{
+    else if (x===9){
         return volArr5r;
+    }
+    else if(x===10){
+        return volArr6;
+    }
+    else{
+        return volArr6r;
     }
 }
 
@@ -194,6 +203,9 @@ function pickArraySpeed(x){
 
     const speedArr5=[2.5,3.5,5,3.5];
     const speedArr5r=[3.5,5,3.5,2.5];
+
+    const speedArr6=[2,3,4,3];
+    const speedArr6r=[3,4,3,2];
 
     if (x===0){
         return speedArr1;
@@ -222,8 +234,14 @@ function pickArraySpeed(x){
     else if (x===8){
         return speedArr5;
     }
-    else{
+    else if (x===9){
         return speedArr5r;
+    }
+    else if(x===10){
+        return speedArr6;
+    }
+    else{
+        return speedArr6r;
     }
 }
 
@@ -231,13 +249,13 @@ let incTypeVol=0;
 let incTypeSpeed=0;
 
 function selectNextVolArray(presVolInc){
-    let possibles=[0,1,2,3,4,5,6,7,8,9];
+    let possibles=[0,1,2,3,4,5,6,7,8,9,10,11];
     let where=possibles.indexOf(presVolInc);
-    if (where<9){
+    if (where<11){
         possibles=possibles.slice(0,where) + possibles.slice(where+1);
     }
     else{
-        possibles=possibles.slice(0,9);
+        possibles=possibles.slice(0,11);
     }
 
     const rngSelector=rngs[rngIter];
@@ -246,13 +264,13 @@ function selectNextVolArray(presVolInc){
 }
 
 function selectNextSpeedArray(presSpeedInc){
-    let possibles=[0,1,2,3,4,5,6,7,8,9];
-    let where=possibles.indexOf(presSpeedInc);
-    if (where<9){
+    let possibles=[0,1,2,3,4,5,6,7,8,9,10,11];
+    let where=possibles.indexOf(presVolInc);
+    if (where<11){
         possibles=possibles.slice(0,where) + possibles.slice(where+1);
     }
     else{
-        possibles=possibles.slice(0,9);
+        possibles=possibles.slice(0,11);
     }
 
     const rngSelector=rngs[rngIter];
