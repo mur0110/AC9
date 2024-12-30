@@ -329,6 +329,11 @@ function redefineVolInterval(){
     rngIter++;
     multiplier=randomInt;
 
+    if (rngs[rngIter]*7<2){
+        rngIter++;
+        multiplier=5/7;
+    }
+
     if (rngBin()===0){
         multiplier=1/multiplier;
     }
@@ -355,6 +360,10 @@ function redefineSpeedInterval(){
     rngIter++;
     multiplier=randomInt;
     
+    if (rngs[rngIter]*7<2){
+        rngIter++;
+        multiplier=5/7;
+    }
     
     if (rngBin()===0){
         multiplier=1/multiplier;
@@ -412,16 +421,12 @@ function nextVolIntervalIter(){
             }
 
             if (rngR()){
-                rngIter++;
                 if (rngR()){
-                    rngIter++;
                     repeatV=repeatS;
                 }
             }
             else{
-                rngIter++;
                 if (rngR()){
-                    rngIter++;
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatV=1;
@@ -458,16 +463,12 @@ function nextVolIntervalIter(){
             }
 
             if (rngR()){
-                rngIter++;
                 if (rngR()){
-                    rngIter++;
                     repeatV=repeatS;
                 }
             }
             else{
-                rngIter++;
                 if (rngR()){
-                    rngIter++;
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatV=1;
@@ -503,16 +504,12 @@ function nextVolIntervalIter(){
             }
 
             if (rngR()){
-                rngIter++;
                 if (rngR()){
-                    rngIter++;
                     repeatV=repeatS;
                 }
             }
             else{
-                rngIter++;
                 if (rngR()){
-                    rngIter++;
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatV=1;
@@ -554,16 +551,13 @@ function nextSpeedIntervalIter(){
             }
 
             if (rngR()){
-                rngIter++;
                 if (rngR()){
                     rngIter++;
                     repeatS=repeatV;
                 }
             }
             else{
-                rngIter++;
                 if (rngR()){
-                    rngIter++;
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatS=1;
@@ -600,16 +594,12 @@ function nextSpeedIntervalIter(){
             }
 
             if (rngR()){
-                rngIter++;
                 if (rngR()){
-                    rngIter++;
                     repeatS=repeatV;
                 }
             }
             else{
-                rngIter++;
                 if (rngR()){
-                    rngIter++;
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatS=1;
@@ -645,16 +635,12 @@ function nextSpeedIntervalIter(){
             }
 
             if (rngR()){
-                rngIter++;
                 if (rngR()){
-                    rngIter++;
                     repeatS=repeatV;
                 }
             }
             else{
-                rngIter++;
                 if (rngR()){
-                    rngIter++;
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatS=1;
