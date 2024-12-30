@@ -740,7 +740,7 @@ function runner(){
             eitherVolPlain();
         }
         else{
-
+           rngIter++;
           if (randomToDecide<(29/100)){
             
             let multVal=0;
@@ -859,7 +859,7 @@ function runner(){
             eitherSpeedPlain();
           }
           else{
-
+            rngIter++;
           if (randomToDecide<(29/100)){
 
             let multVal=0;
