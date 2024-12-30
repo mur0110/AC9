@@ -1,4 +1,4 @@
-const songPath = 'songs/shineal.mp3'; //lately was first
+const songPath = 'shineal.mp3'; //shineal was first
 
 
 
@@ -314,7 +314,9 @@ let speedInterval = presSpeedInterval;
 function redefineVolInterval(){
     let multiplier=0;
     let arrayHold=pickArrayVol(Math.floor(rngs[rngIter]*10));
-    let randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)])
+    rngIter++;
+    let randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
+    rngIter++;
     multiplier=randomInt;
 
     if (rngBin()===0){
@@ -338,7 +340,9 @@ function redefineVolInterval(){
 function redefineSpeedInterval(){
     let multiplier=0;
     let arrayHold=pickArrayVol(Math.floor(rngs[rngIter]*10));
-    let randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)])
+    rngIter++;
+    let randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
+    rngIter++;
     multiplier=randomInt;
     
     
