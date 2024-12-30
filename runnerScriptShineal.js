@@ -265,7 +265,7 @@ function selectNextVolArray(presVolInc){
 
 function selectNextSpeedArray(presSpeedInc){
     let possibles=[0,1,2,3,4,5,6,7,8,9,10,11];
-    let where=possibles.indexOf(presVolInc);
+    let where=possibles.indexOf(presSpeedInc);
     if (where<11){
         possibles=possibles.slice(0,where) + possibles.slice(where+1);
     }
