@@ -239,7 +239,8 @@ function selectNextVolArray(presVolInc){
         possibles=possibles.slice(0,9);
     }
 
-    const rngSelector=Math.floor(Math.random()*9);
+    const rngSelector=rngs[rngIter];
+    rngIter++;
     incTypeVol=possibles[rngSelector];
 }
 
@@ -253,7 +254,8 @@ function selectNextSpeedArray(presSpeedInc){
         possibles=possibles.slice(0,9);
     }
 
-    const rngSelector=Math.floor(Math.random()*9);
+    const rngSelector=rngs[rngIter];
+    rngIter++;
     incTypeSpeed=possibles[rngSelector];
 }
 
@@ -311,8 +313,8 @@ let speedInterval = presSpeedInterval;
 
 function redefineVolInterval(){
     let multiplier=0;
-    let arrayHold=pickArrayVol(Math.floor(Math.random()*10));
-    let randomInt=Math.floor(arrayHold[Math.floor(Math.random()*arrayHold.length)])
+    let arrayHold=pickArrayVol(Math.floor(rngs[rngIter]*10));
+    let randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)])
     multiplier=randomInt;
 
     if (rngBin()===0){
@@ -335,8 +337,8 @@ function redefineVolInterval(){
 
 function redefineSpeedInterval(){
     let multiplier=0;
-    let arrayHold=pickArrayVol(Math.floor(Math.random()*10));
-    let randomInt=Math.floor(arrayHold[Math.floor(Math.random()*arrayHold.length)])
+    let arrayHold=pickArrayVol(Math.floor(rngs[rngIter]*10));
+    let randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)])
     multiplier=randomInt;
     
     
