@@ -1,5 +1,4 @@
-const songPath = 'shineal.mp3'; //shineal was first
-
+const songPath = 'songs/shineal.mp3'; //shineal was first
 
 
 let interDuration = .15;
@@ -35,48 +34,59 @@ function modInterDuration(){
 
 
 function rngBin(){
-    return Math.floor(rngs[rngIter]*2);
+    const val = Math.floor(rngs[rngIter]*2);
     rngIter++;
+    return val;
 }
 function rngTrio(){
-    return Math.floor(rngs[rngIter]*3);
+    const val = Math.floor(rngs[rngIter]*3);
     rngIter++;
+    return val;
 }
 function rngQuat(){
-    return Math.floor(rngs[rngIter]*4);
+    const val = Math.floor(rngs[rngIter]*4);
     rngIter++;
+    return val;
 }
 function rngPent(){
-    return Math.floor(rngs[rngIter]*5);
+    const val = Math.floor(rngs[rngIter]*5);
     rngIter++;
+    return val;
 }
 function rngHex(){
-    return Math.floor(rngs[rngIter]*6);
+    const val = Math.floor(rngs[rngIter]*6);
     rngIter++;
+    return val;
 }
 function rngSep(){
-    return Math.floor(rngs[rngIter]*7);
+    const val = Math.floor(rngs[rngIter]*7);
     rngIter++;
+    return val;
 }
 function rngOct(){
-    return Math.floor(rngs[rngIter]*8);
+    const val = Math.floor(rngs[rngIter]*8);
     rngIter++;
+    return val;
 }
 function rng10(){
-    return Math.floor(rngs[rngIter]*10);
+    const val = Math.floor(rngs[rngIter]*10);
     rngIter++;
+    return val;
 }
 function rng14(){
-    return Math.floor(rngs[rngIter]*14);
+    const val = Math.floor(rngs[rngIter]*14);
     rngIter++;
+    return val;
 }
 function rng16(){
-    return Math.floor(rngs[rngIter]*16);
+    const val = Math.floor(rngs[rngIter]*16);
     rngIter++;
+    return val;
 }
 function rng12(){
-    return Math.floor(rngs[rngIter]*12);
+    const val = Math.floor(rngs[rngIter]*12);
     rngIter++;
+    return val;
 }
 
 function rngR(){
