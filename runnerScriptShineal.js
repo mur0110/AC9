@@ -1,4 +1,4 @@
-const songPath = 'songs/shineal.mp3'; //shineal was first
+const songPath = 'songs/shineal.mp3'; //lately was first
 
 
 
@@ -382,7 +382,6 @@ function nextVolIntervalIter(){
         else{
             presVolIntervalIter=0;
 
-
             if (repeatV===1){
             }
             else{
@@ -391,28 +390,31 @@ function nextVolIntervalIter(){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
-                    selectNextVolArray();
+                    rngIter++;
+                    selectNextVolArray();  
                 }
             }
 
             if (rngR()){
+                rngIter++;
                 if (rngR()){
+                    rngIter++;
                     repeatV=repeatS;
                 }
             }
             else{
+                rngIter++;
                 if (rngR()){
+                    rngIter++;
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatV=1;
                     }
                     else{
+                        rngIter++;
                         repeatV=1;
                         repeatS=1;
                     }
-                }
-                else{
-                    repeatV=0;
                 }
             }
         }
@@ -427,7 +429,6 @@ function nextVolIntervalIter(){
             presVolIntervalIter=0;
 
             if (repeatV===1){
-    
             }
             else{
                 if (rngs[rngIter]*24<7){
@@ -435,29 +436,33 @@ function nextVolIntervalIter(){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
-                    selectNextVolArray();
+                    rngIter++;
+                    selectNextVolArray();  
                 }
             }
 
-
             if (rngR()){
+                rngIter++;
                 if (rngR()){
+                    rngIter++;
                     repeatV=repeatS;
                 }
             }
             else{
+                rngIter++;
                 if (rngR()){
+                    rngIter++;
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatV=1;
                     }
                     else{
+                        rngIter++;
                         repeatV=1;
                         repeatS=1;
                     }
                 }
             }
-            
         }
     }
 
@@ -476,22 +481,28 @@ function nextVolIntervalIter(){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
+                    rngIter++;
                     selectNextVolArray();  
                 }
             }
 
             if (rngR()){
+                rngIter++;
                 if (rngR()){
+                    rngIter++;
                     repeatV=repeatS;
                 }
             }
             else{
+                rngIter++;
                 if (rngR()){
+                    rngIter++;
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatV=1;
                     }
                     else{
+                        rngIter++;
                         repeatV=1;
                         repeatS=1;
                     }
@@ -513,7 +524,6 @@ function nextSpeedIntervalIter(){
         else{
             presSpeedIntervalIter=0;
 
-
             if (repeatS===1){
             }
             else{
@@ -522,22 +532,28 @@ function nextSpeedIntervalIter(){
                     incTypeSpeed=incTypeSpeed;
                 }
                 else{
-                    selectNextSpeedArray();
+                    rngIter++;
+                    selectNextSpeedArray();  
                 }
             }
 
             if (rngR()){
+                rngIter++;
                 if (rngR()){
+                    rngIter++;
                     repeatS=repeatV;
                 }
             }
             else{
+                rngIter++;
                 if (rngR()){
+                    rngIter++;
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatS=1;
                     }
                     else{
+                        rngIter++;
                         repeatV=1;
                         repeatS=1;
                     }
@@ -555,7 +571,6 @@ function nextSpeedIntervalIter(){
             presSpeedIntervalIter=0;
 
             if (repeatS===1){
-                
             }
             else{
                 if (rngs[rngIter]*24<7){
@@ -563,22 +578,28 @@ function nextSpeedIntervalIter(){
                     incTypeSpeed=incTypeSpeed;
                 }
                 else{
-                    selectNextSpeedArray();
+                    rngIter++;
+                    selectNextSpeedArray();  
                 }
             }
 
             if (rngR()){
+                rngIter++;
                 if (rngR()){
+                    rngIter++;
                     repeatS=repeatV;
                 }
             }
             else{
+                rngIter++;
                 if (rngR()){
+                    rngIter++;
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatS=1;
                     }
                     else{
+                        rngIter++;
                         repeatV=1;
                         repeatS=1;
                     }
@@ -602,22 +623,28 @@ function nextSpeedIntervalIter(){
                     incTypeSpeed=incTypeSpeed;
                 }
                 else{
+                    rngIter++;
                     selectNextSpeedArray();  
                 }
             }
 
             if (rngR()){
+                rngIter++;
                 if (rngR()){
+                    rngIter++;
                     repeatS=repeatV;
                 }
             }
             else{
+                rngIter++;
                 if (rngR()){
+                    rngIter++;
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatS=1;
                     }
                     else{
+                        rngIter++;
                         repeatV=1;
                         repeatS=1;
                     }
