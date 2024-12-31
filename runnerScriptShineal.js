@@ -1,4 +1,23 @@
-const songPath = 'songs/shineal.mp3'; //lately was first
+const songPath = 'songs/shineal.mp3'; //fysteve was first
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 let interDuration = .15;
@@ -17,7 +36,7 @@ function truncate(x){
     return parseFloat(y);
 }
 
-for (let i=0; i<10000; i++){
+for (let i=0; i<20000; i++){
     rngs.push(truncate(Math.random()));
 }
 
