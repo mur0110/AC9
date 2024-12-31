@@ -1,4 +1,4 @@
-const songPath = 'songs/shineal.mp3'; //shineal was first
+const songPath = 'songs/shineal.mp3'; //lately was first
 
 
 let interDuration = .15;
@@ -23,9 +23,19 @@ for (let i=0; i<10000; i++){
 
 
 function modInterDuration(){
-    let possibleDeviations=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53];
+    let mVal=0;
+    let mArray=[];
     if (rngBin()===0){
-        interDuration = possibleDeviations[Math.floor(rngs[rngIter]*14)];
+        mArray=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53];
+        mVal=14;
+    }
+    else{
+        mArray=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53, .59, .61, .67];
+        mVal=17;
+    }
+
+    if (rngBin()===0){
+        interDuration = mArray[Math.floor(rngs[rngIter]*mVal)];
         rngIter++;
     }
 }
