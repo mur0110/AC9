@@ -1,12 +1,14 @@
-const songPath = 'songs/shineal.mp3'; //cool was first
+const songPath = 'songs/shineal.mp3'; //lately was first
 
 
 
 
 
+const multVolArr1 = [.385, .405, .415, .435 ,.445, .465, .475, .485, .495, .5, .505, .515, .525, .535, .555, .565, .585, .595, .615];
+const multSpeedArr1 = [.77, .81, .83, .87, .89, .93, .95, .97, .99, 1, 1.01, 1.03, 1.05, 1.07, 1.11, 1.13, 1.17, 1.19, 1.23]; // 5,7,1,11 off of +-.13
 
-
-
+const multVolArr2 = [ .375, .3825, .3875, .4, .4075, .4125, .425, .4325, .4375, .45, .4575, .4625, .475, .4825, .4875, .5, .5125, .5175, .525, .5375, .5425, .55, .5625, .5675, .575, .5875, .5925, .6, .6125, .6175, .625];
+const multSpeedArr2 = [ .75, .765, .775, .8, .815, .825, .85, .865, .875, .9, .915, .925, .95, .965, .975, 1, 1.025, 1.035, 1.05, 1.075, 1.085, 1.1, 1.125, 1.135, 1.15, 1.75, 1.85, 1.2, 1.225, 1.235, 1.25];
 
 
 
@@ -36,7 +38,7 @@ function truncate(x){
     return parseFloat(y);
 }
 
-for (let i=0; i<30000; i++){
+for (let i=0; i<20000; i++){
     rngs.push(truncate(Math.random()));
 }
 
@@ -324,11 +326,7 @@ function selectNextSpeedArray(presSpeedInc){
 
 const primeRaw = [17, 13, 11, 7, 5, 3, 1, 0, 1, 3, 5, 7, 11, 13, 17];
 
-const multVolArr1 = [.385, .405, .415, .435 ,.445, .465, .475, .485, .495, .5, .505, .515, .525, .535, .555, .565, .585, .595, .615];
-const multSpeedArr1 = [.77, .81, .83, .87, .89, .93, .95, .97, .99, 1, 1.01, 1.03, 1.05, 1.07, 1.11, 1.13, 1.17, 1.19, 1.23]; // 5,7,1,11 off of +-.13
 
-const multVolArr2 = [ .375, .3825, .3875, .4, .4075, .4125, .425, .4325, .4375, .45, .4575, .4625, .475, .4825, .4875, .5, .5125, .5175, .525, .5375, .5425, .55, .5625, .5675, .575, .5875, .5925, .6, .6125, .6175, .625];
-const multSpeedArr2 = [ .75, .765, .775, .8, .815, .825, .85, .865, .875, .9, .915, .925, .95, .965, .975, 1, 1.025, 1.035, 1.05, 1.075, 1.085, 1.1, 1.125, 1.135, 1.15, 1.75, 1.85, 1.2, 1.225, 1.235, 1.25];
 
 const randomsForVol1=[];
 const randomsForSpeed1=[];
@@ -832,17 +830,38 @@ function runner(){
               dp1 = multVolArr1[randomsForVol1[randomsForVolIter]] * multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
               dp2 = multVolArr2[randomsForVol2[randomsForVolIter]] * multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
               dp4 = dp1 + dp2;
-            if (rngDecider===0){
-
- 
+              if (rngDecider===0){
+                
                 if (rngBin() === 0){
-                rngVS1=dp3*(.62/1.922) * multVal;
+                    let rngTr=rngTrio();
+
+                    if (rngTr===0){
+                        rngVS1=dp3*(.62/1.922) * multVal;
+                    }
+                    else if (rngTr){
+                        rngVS1=dp3**(5/7) * (.62/1.594) * multVal;
+                    }
+                    else{
+                        rngVS1=dp3**(7/5) * (.62/2.496) * multVal;
+                    }
                 }
                 else {
-                rngVS1=dp4*(.62/1.5377) * multVal;
+                    let rngTr=rngTrio();
+
+                    if (rngTr===0){
+                        rngVS1=dp4*(.62/1.5377) * multVal;
+                    }
+                    else if (rngTr){
+                        rngVS1=dp4**(5/7) * (.62/1.3598) * multVal;
+                    }
+                    else{
+                        rngVS1=dp4**(7/5) * (.62/1.8265) * multVal;
+                    }
+
+
+                    rngVS1=dp4*(.62/1.5377) * multVal;
                 }
-              
-            }
+              }
               
               else if (rngDecider===1){
                 if (rngBin() === 0){
@@ -861,7 +880,18 @@ function runner(){
                 diff3 = multVolArr1[randomsForVol1[randomsForVolIter]] - multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
                 diff4 = multVolArr2[randomsForVol2[randomsForVolIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
                 
-                let diffT = (((diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/3)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/2)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/4))/3)/1.23 * .62 * multVal;
+                let diffT = 0;
+                let rngTr=rngTrio();
+                diffT=(diff1**2 + diff2**2 + diff3**2 + diff4**2);
+                if (rngTr===0){
+                    diffT = ((diffT**(1/2) + diffT**(1/3) + diffT**(1/4))/3)/1.23 * .62 * multVal;
+                }
+                else if (rngTr===1){
+                    diffT=diffT**(5/7)/2.54191480831 * .62 * multVal;
+                }
+                else{
+                    diffT=diffT**(7/5)/6.2246586828 * .62 * multVal;
+                }
     
                 rngVS1 = diffT;
               }
@@ -937,9 +967,32 @@ function runner(){
               if (rngDecider===0){
                 
                 if (rngBin() === 0){
-                    rngVS1=dp3*(1.24/1.922) * multVal;
+                    let rngTr=rngTrio();
+
+                    if (rngTr===0){
+                        rngVS1=dp3*(1.24/1.922) * multVal;
+                    }
+                    else if (rngTr){
+                        rngVS1=dp3**(5/7) * (1.24/1.594) * multVal;
+                    }
+                    else{
+                        rngVS1=dp3**(7/5) * (1.24/2.496) * multVal;
+                    }
                 }
                 else {
+                    let rngTr=rngTrio();
+
+                    if (rngTr===0){
+                        rngVS1=dp4*(1.24/1.5377) * multVal;
+                    }
+                    else if (rngTr){
+                        rngVS1=dp4**(5/7) * (1.24/1.3598) * multVal;
+                    }
+                    else{
+                        rngVS1=dp4**(7/5) * (1.24/1.8265) * multVal;
+                    }
+
+
                     rngVS1=dp4*(1.24/1.5377) * multVal;
                 }
               }
@@ -963,7 +1016,19 @@ function runner(){
                 diff3 = multVolArr1[randomsForVol1[randomsForVolIter]] - multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
                 diff4 = multVolArr2[randomsForVol2[randomsForVolIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
                 
-                let diffT = (((diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/3)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/2)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/4))/3)/1.23 * 1.24 * multVal;
+                let diffT = 0;
+                let rngTr=rngTrio();
+                diffT=(diff1**2 + diff2**2 + diff3**2 + diff4**2);
+                if (rngTr===0){
+                    diffT = ((diffT**(1/2) + diffT**(1/3) + diffT**(1/4))/3)/1.23 * 1.24 * multVal;
+                }
+                else if (rngTr===1){
+                    diffT=diffT**(5/7)/2.54191480831 * 1.24 * multVal;
+                }
+                else{
+                    diffT=diffT**(7/5)/6.2246586828 * 1.24 * multVal;
+                }
+
     
                 rngVS1 = diffT;
 
