@@ -1,4 +1,4 @@
-const songPath = 'songs/shineal.mp3'; //withaspirit was first
+const songPath = 'songs/shineal.mp3'; //cool was first
 
 
 
@@ -382,8 +382,14 @@ function redefineVolInterval(){
         multiplier=5/7;
     }
 
-    if (rngBin()===0){
-        multiplier=multiplier**(5/7)
+    let rngTr=rngTrio();
+
+    if (rngTr===0){
+        multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
+    }
+    else if (rngTr===1)
+    {
+        multiplier=multiplier**(5/7);
     }
 
     if (rngBin()===0){
@@ -417,8 +423,14 @@ function redefineSpeedInterval(){
         multiplier=5/7;
     }
     
-    if (rngBin()===0){
-        multiplier=multiplier**(5/7)
+    let rngTr=rngTrio();
+
+    if (rngTr===0){
+        multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
+    }
+    else if (rngTr===1)
+    {
+        multiplier=multiplier**(5/7);
     }
 
     if (rngBin()===0){
