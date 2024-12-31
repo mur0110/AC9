@@ -4,9 +4,11 @@ const songPath = 'songs/nite.mp3'; //lately was first
 
 
 
+const multVolArr1 = [.385, .405, .415, .435 ,.445, .465, .475, .485, .495, .5, .505, .515, .525, .535, .555, .565, .585, .595, .615];
+const multSpeedArr1 = [.77, .81, .83, .87, .89, .93, .95, .97, .99, 1, 1.01, 1.03, 1.05, 1.07, 1.11, 1.13, 1.17, 1.19, 1.23]; // 5,7,1,11 off of +-.13
 
-
-
+const multVolArr2 = [ .375, .3825, .3875, .4, .4075, .4125, .425, .4325, .4375, .45, .4575, .4625, .475, .4825, .4875, .5, .5125, .5175, .525, .5375, .5425, .55, .5625, .5675, .575, .5875, .5925, .6, .6125, .6175, .625];
+const multSpeedArr2 = [ .75, .765, .775, .8, .815, .825, .85, .865, .875, .9, .915, .925, .95, .965, .975, 1, 1.025, 1.035, 1.05, 1.075, 1.085, 1.1, 1.125, 1.135, 1.15, 1.75, 1.85, 1.2, 1.225, 1.235, 1.25];
 
 
 
@@ -36,7 +38,7 @@ function truncate(x){
     return parseFloat(y);
 }
 
-for (let i=0; i<20000; i++){
+for (let i=0; i<25000; i++){
     rngs.push(truncate(Math.random()));
 }
 
@@ -53,7 +55,7 @@ function modInterDuration(){
         mVal=17;
     }
 
-    if (rngBin()===0){
+    if (!rngRx()){
         interDuration = mArray[Math.floor(rngs[rngIter]*mVal)];
         rngIter++;
     }
@@ -324,11 +326,7 @@ function selectNextSpeedArray(presSpeedInc){
 
 const primeRaw = [17, 13, 11, 7, 5, 3, 1, 0, 1, 3, 5, 7, 11, 13, 17];
 
-const multVolArr1 = [.385, .405, .415, .435 ,.445, .465, .475, .485, .495, .5, .505, .515, .525, .535, .555, .565, .585, .595, .615];
-const multSpeedArr1 = [.77, .81, .83, .87, .89, .93, .95, .97, .99, 1, 1.01, 1.03, 1.05, 1.07, 1.11, 1.13, 1.17, 1.19, 1.23]; // 5,7,1,11 off of +-.13
 
-const multVolArr2 = [ .375, .3825, .3875, .4, .4075, .4125, .425, .4325, .4375, .45, .4575, .4625, .475, .4825, .4875, .5, .5125, .5175, .525, .5375, .5425, .55, .5625, .5675, .575, .5875, .5925, .6, .6125, .6175, .625];
-const multSpeedArr2 = [ .75, .765, .775, .8, .815, .825, .85, .865, .875, .9, .915, .925, .95, .965, .975, 1, 1.025, 1.035, 1.05, 1.075, 1.085, 1.1, 1.125, 1.135, 1.15, 1.75, 1.85, 1.2, 1.225, 1.235, 1.25];
 
 const randomsForVol1=[];
 const randomsForSpeed1=[];
@@ -377,14 +375,51 @@ function redefineVolInterval(){
     rngIter++;
     multiplier=randomInt;
 
-    if (rngBin()===0){
-        rngIter++;
-        multiplier=5/7;
+    let when=rngBin();
+    let when2=rngBin();
+
+    if (when===0){
+        if (rngs[rngIter]*7<2){
+            rngIter++;
+            multiplier=5/7;
+        }
     }
 
-    if (rngBin()===0){
-        multiplier=1/multiplier;
+    if (when2===0){
+        if (rngBin()===0){
+            multiplier=1/multiplier;
+        }
     }
+
+    let rngTr=rngQuat();
+
+    if (rngTr===0){
+        multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
+    }
+    else if (rngTr===1)
+    {
+        multiplier=multiplier**(5/7);
+    }
+    else if (rngTr===2){
+        multiplier=multiplier**(7/5);
+    }
+    else{
+        
+    }
+
+    if (when2===1){
+        if (rngBin()===0){
+            multiplier=1/multiplier;
+        }
+    }
+
+    if (when===1){
+        if (rngs[rngIter]*7<2){
+            rngIter++;
+            multiplier=5/7;
+        }
+    }
+
 
     if (rngs[rngIter]>7/24){
         rngIter++;
@@ -408,14 +443,52 @@ function redefineSpeedInterval(){
     rngIter++;
     multiplier=randomInt;
     
-    if (rngBin()===0){
-        rngIter++;
-        multiplier=5/7;
+    let when=rngBin();
+    let when2=rngBin();
+
+    if (when===0){
+        if (rngs[rngIter]*7<2){
+            rngIter++;
+            multiplier=5/7;
+        }
     }
-    
-    if (rngBin()===0){
-        multiplier=1/multiplier;
+
+    if (when2===0){
+        if (rngBin()===0){
+            multiplier=1/multiplier;
+        }
     }
+
+    let rngTr=rngQuat();
+
+    if (rngTr===0){
+        multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
+    }
+    else if (rngTr===1)
+    {
+        multiplier=multiplier**(5/7);
+    }
+    else if (rngTr===2){
+        multiplier=multiplier**(7/5);
+    }
+    else{
+        
+    }
+
+    if (when2===1){
+        if (rngBin()===0){
+            multiplier=1/multiplier;
+        }
+    }
+
+    if (when===1){
+        if (rngs[rngIter]*7<2){
+            rngIter++;
+            multiplier=5/7;
+        }
+    }
+
+
 
     if (rngs[rngIter]>7/24){
         rngIter++;
@@ -752,26 +825,23 @@ function eitherSpeedPlain(){
 function runner(){
     const songAudio = new Audio(songPath);
     
-    
-
-
-
-    
+    // set initial vol and speed intervals
     redefineVolInterval();
     redefineSpeedInterval();
 
+    songAudio.play(); // begin playing song
 
-    
-
-
-    songAudio.play();
+    // set volumes and speeds for initialization
     advanceVolume();
     advanceSpeed();
 
 
 
     function advanceVolume(){
-        let randomToDecide=rngs[rngIter];
+
+
+        // rngWhich
+        let rngWhich=rngs[rngIter];
         rngIter++;
 
         setTimeout(function(){
@@ -790,22 +860,20 @@ function runner(){
         }
         else{
            rngIter++;
-          if (randomToDecide<(29/100)){
-            
-            let multVal=0;
+           let multVal=0;
             let rngDet=rngBin();
             if (rngDet===0){
-              multVal=5/7;
+              multVal=.7143;
             }
             else {
               multVal=1;
-            }  
+            } 
+          if (rngWhich<(1/3)){
+             
+            let rngDecider=rngBin();
 
+            let dp1=0, dp2=0, dp3=0, dp4=0, rngVS1=0;
 
-          let dp1=0, dp2=0, dp3=0, dp4=0, rngVS1=0;
-
-          
-          
               // vector is same size grouping
               dp1 = multVolArr1[randomsForVol1[randomsForVolIter]] * multVolArr2[randomsForVol2[randomsForVolIter]];
               dp2 = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]] * multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
@@ -815,68 +883,52 @@ function runner(){
               dp1 = multVolArr1[randomsForVol1[randomsForVolIter]] * multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
               dp2 = multVolArr2[randomsForVol2[randomsForVolIter]] * multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
               dp4 = dp1 + dp2;
-
-              
-
-
-             
-              if (rngBin()===0){
+              if (rngDecider===0){
+                
                 if (rngBin() === 0){
-                    rngVS1=dp3*(.62/1.922) * multVal;
+                    if (rngBin()===0){
+                        rngVS1=dp3*(.62/1.922) * multVal;
+                    }
+                    else{
+                        rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(.62/1.269) * multVal;
+                    }
                 }
                 else {
-                    rngVS1=dp4*(.62/1.5377) * multVal;
+                    if (rngBin===0){
+                        rngVS1=dp4*(.62/1.5377) * multVal;
+                    }
+                    else{
+                        rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(.62/1.169) * multVal;
+                    }
                 }
               }
+              else{
+                let diff1=0, diff2=0, diff3=0, diff4=0, diffTotal=0;
 
-              
-              else {
-                if (rngBin() === 0){
-                    rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(.62/1.269) * multVal;
-                }
-                else{
-                    rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(.62/1.169) * multVal;
-                }
+                diff1 = multVolArr1[randomsForVol1[randomsForVolIter]] - multVolArr2[randomsForVol2[randomsForVolIter]];
+                diff2 = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
+    
+                diff3 = multVolArr1[randomsForVol1[randomsForVolIter]] - multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
+                diff4 = multVolArr2[randomsForVol2[randomsForVolIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
+                
+                let diffT = 0;
+                diffT=(diff1**2 + diff2**2 + diff3**2 + diff4**2);
+
+                diffT = ((diffT**(1/2) + diffT**(1/3) + diffT**(1/4))/3)/1.23 * .62 * multVal;
+
+                rngVS1 = diffT;
               }
-              
-
-
-
               randomForVolVal = rngVS1;
               eitherVolPlain();
-          }
-          else if(randomToDecide<((52.667/100))){
 
-            let multVal=0;
-            let rngDet=rngBin();
-            if (rngDet===0){
-              multVal=5/7;
             }
-            else {
-              multVal=1;
-            }  
-
-
-            let diff1=0, diff2=0, diff3=0, diff4=0, diffTotal=0;
-
-            diff1 = multVolArr1[randomsForVol1[randomsForVolIter]] - multVolArr2[randomsForVol2[randomsForVolIter]];
-            diff2 = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
-
-            diff3 = multVolArr1[randomsForVol1[randomsForVolIter]] - multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
-            diff4 = multVolArr2[randomsForVol2[randomsForVolIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
             
-            let diffT = (((diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/3)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/2)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/4))/3)/1.23 * .62 * multVal;
-
-            randomForVolVal = diffT;
-            eitherVolPlain();
-
-        }
-        else if(randomToDecide<(76.33333/100)){
-            randomForVolVal = multVolArr1[randomsForVol1[randomsForVolIter]];
+        else if(rngWhich<(2/3)){
+            randomForVolVal = multVolArr1[randomsForVol1[randomsForVolIter]]*multVal;
             eitherVol();
         }
         else{
-            randomForVolVal = multVolArr2[randomsForVol2[randomsForVolIter]];
+            randomForVolVal = multVolArr2[randomsForVol2[randomsForVolIter]]*multVal;
             eitherVolPlain();
         }
 
@@ -886,12 +938,10 @@ function runner(){
           
           randomsForVolIter++;
 
-    
-          
     }
 
     function advanceSpeed(){
-          let randomToDecide=rngs[rngIter];
+          let rngWhich=rngs[rngIter];
           rngIter++;
           setTimeout(function(){
               songAudio.playbackRate = randomForSpeedVal;
@@ -909,8 +959,6 @@ function runner(){
           }
           else{
             rngIter++;
-          if (randomToDecide<(29/100)){
-
             let multVal=0;
             let rngDet=rngTrio();
             if (rngDet===0){
@@ -922,81 +970,72 @@ function runner(){
             else{
                 multVal=1;
             }
+          if (rngWhich<(1/3)){
+            
+            let rngDecider=rngBin();
 
-          let dp1=0, dp2=0, dp3=0, dp4=0, rngVS1=0;
-
+            let dp1=0, dp2=0, dp3=0, dp4=0, rngVS1=0;
           
-          
-              // vector is same size grouping
-              dp1 = multVolArr1[randomsForVol1[randomsForVolIter]] * multVolArr2[randomsForVol2[randomsForVolIter]];
-              dp2 = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]] * multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
-              dp3 = dp1 + dp2;
+            // vector is same size grouping
+            dp1 = multVolArr1[randomsForVol1[randomsForVolIter]] * multVolArr2[randomsForVol2[randomsForVolIter]];
+            dp2 = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]] * multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
+            dp3 = dp1 + dp2;
+            
+        
+            dp1 = multVolArr1[randomsForVol1[randomsForVolIter]] * multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
+            dp2 = multVolArr2[randomsForVol2[randomsForVolIter]] * multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
+            dp4 = dp1 + dp2;
               
-          
-              dp1 = multVolArr1[randomsForVol1[randomsForVolIter]] * multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
-              dp2 = multVolArr2[randomsForVol2[randomsForVolIter]] * multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
-              dp4 = dp1 + dp2;
 
-
-              
-
-              if (rngBin()===0){
+            if (rngDecider===0){
+                
                 if (rngBin() === 0){
-                    rngVS1=dp3*(1.24/1.922) * multVal;
+                    if (rngBin()===0){
+                        rngVS1=dp3*(1.24/1.922) * multVal;
+                    }
+                    else{
+                        rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(1.24/1.269) * multVal;
+                    }
                 }
                 else {
-                    rngVS1=dp4*(1.24/1.5377) * multVal;
+                    if (rngBin===0){
+                        rngVS1=dp4*(1.24/1.5377) * multVal;
+                    }
+                    else{
+                        rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(1.24/1.169) * multVal;
+                    }
                 }
               }
 
-              
-              else {
-                if (rngBin() === 0){
-                    rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(1.24/1.269) * multVal;
-                }
-                else{
-                    rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(1.24/1.169) * multVal;
-                }
-              }
+              else{
+                let diff1=0, diff2=0, diff3=0, diff4=0, diffTotal=0;
+
+                diff1 = multVolArr1[randomsForVol1[randomsForVolIter]] - multVolArr2[randomsForVol2[randomsForVolIter]];
+                diff2 = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
+    
+                diff3 = multVolArr1[randomsForVol1[randomsForVolIter]] - multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
+                diff4 = multVolArr2[randomsForVol2[randomsForVolIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
+                
+                let diffT = 0;
+                diffT=(diff1**2 + diff2**2 + diff3**2 + diff4**2);
+
+                diffT = ((diffT**(1/2) + diffT**(1/3) + diffT**(1/4))/3)/1.23 * 1.24 * multVal;
 
 
-            
-              
+
+    
+                rngVS1 = diffT;
+
+              } 
               randomForSpeedVal = rngVS1;
               eitherSpeedPlain();
-          }
-          else if(randomToDecide<((52.667/100))){
-
-            let multVal=0;
-            let rngDet=rngBin();
-            if (rngDet===0){
-              multVal=5/7;
             }
-            else {
-              multVal=1;
-            }  
-
-
-            let diff1=0, diff2=0, diff3=0, diff4=0, diffTotal=0;
-
-            diff1 = multVolArr1[randomsForVol1[randomsForVolIter]] - multVolArr2[randomsForVol2[randomsForVolIter]];
-            diff2 = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
-
-            diff3 = multVolArr1[randomsForVol1[randomsForVolIter]] - multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
-            diff4 = multVolArr2[randomsForVol2[randomsForVolIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
-            
-            let diffT = (((diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/3)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/2)+(diff1**2 + diff2**2 + diff3**2 + diff4**2)**(1/4))/3)/1.23 * 1.24 * multVal;
-
-            randomForSpeedVal = diffT;
-            eitherSpeedPlain();
-
-        }
-        else if(randomToDecide<(76.33333/100)){
-            randomForSpeedVal = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
+        else if(rngWhich<(2/3)){
+            randomForSpeedVal = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]]*multVal;
             eitherSpeed();
         }
         else{
-            randomForSpeedVal = multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
+            randomForSpeedVal = multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]]*multVal;
             eitherSpeedPlain();
         }
 
@@ -1005,8 +1044,6 @@ function runner(){
 
           
           randomsForSpeedIter++;
-
-          
     
 }
 }
