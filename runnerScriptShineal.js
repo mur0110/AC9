@@ -1,4 +1,4 @@
-const songPath = 'songs/shineal.mp3'; //ranaway was first
+const songPath = 'songs/shineal.mp3'; //lately was first
 
 
 
@@ -469,9 +469,9 @@ function nextVolIntervalIter(){
             }
 
             if (!rngRx()){
-                if (rngR()){
-                    repeatV=repeatS;
-                }
+
+                repeatV=repeatS;
+
             }
             else{
                 if (rngRx()){
@@ -511,9 +511,9 @@ function nextVolIntervalIter(){
             }
 
             if (!rngRx()){
-                if (rngR()){
-                    repeatV=repeatS;
-                }
+
+                repeatV=repeatS;
+
             }
             else{
                 if (rngRx()){
@@ -552,9 +552,9 @@ function nextVolIntervalIter(){
             }
 
             if (!rngRx()){
-                if (rngR()){
-                    repeatV=repeatS;
-                }
+
+                repeatV=repeatS;
+
             }
             else{
                 if (rngRx()){
@@ -599,9 +599,9 @@ function nextSpeedIntervalIter(){
             }
 
             if (!rngRx()){
-                if (rngR()){
-                    repeatS=repeatV;
-                }
+
+                repeatS=repeatV;
+
             }
             else{
                 if (rngRx()){
@@ -641,9 +641,9 @@ function nextSpeedIntervalIter(){
             }
 
             if (!rngRx()){
-                if (rngR()){
-                    repeatS=repeatV;
-                }
+
+                repeatS=repeatV;
+
             }
             else{
                 if (rngRx()){
@@ -682,9 +682,9 @@ function nextSpeedIntervalIter(){
             }
 
             if (!rngRx()){
-                if (rngR()){
-                    repeatS=repeatV;
-                }
+
+                repeatS=repeatV;
+
             }
             else{
                 if (rngRx()){
