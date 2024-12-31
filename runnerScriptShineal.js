@@ -383,6 +383,10 @@ function redefineVolInterval(){
     }
 
     if (rngBin()===0){
+        multiplier=multiplier**(5/7)
+    }
+
+    if (rngBin()===0){
         multiplier=1/multiplier;
     }
 
@@ -413,6 +417,10 @@ function redefineSpeedInterval(){
         multiplier=5/7;
     }
     
+    if (rngBin()===0){
+        multiplier=multiplier**(5/7)
+    }
+
     if (rngBin()===0){
         multiplier=1/multiplier;
     }
@@ -790,15 +798,16 @@ function runner(){
         }
         else{
            rngIter++;
-          if (randomToDecide<(1/3)){
-            let multVal=0;
+           let multVal=0;
             let rngDet=rngBin();
             if (rngDet===0){
               multVal=5/7;
             }
             else {
               multVal=1;
-            }  
+            } 
+          if (randomToDecide<(1/3)){
+             
             let rngDecider=rngTrio();
             let dp1=0, dp2=0, dp3=0, dp4=0, rngVS1=0;
 
@@ -850,11 +859,11 @@ function runner(){
             }
             
         else if(randomToDecide<(2/3)){
-            randomForVolVal = multVolArr1[randomsForVol1[randomsForVolIter]];
+            randomForVolVal = multVolArr1[randomsForVol1[randomsForVolIter]]*multVal;
             eitherVol();
         }
         else{
-            randomForVolVal = multVolArr2[randomsForVol2[randomsForVolIter]];
+            randomForVolVal = multVolArr2[randomsForVol2[randomsForVolIter]]*multVal;
             eitherVolPlain();
         }
 
@@ -864,8 +873,6 @@ function runner(){
           
           randomsForVolIter++;
 
-    
-          
     }
 
     function advanceSpeed(){
@@ -887,7 +894,6 @@ function runner(){
           }
           else{
             rngIter++;
-          if (randomToDecide<(1/3)){
             let rngDecider=rngTrio();
             let multVal=0;
             let rngDet=rngTrio();
@@ -900,6 +906,8 @@ function runner(){
             else{
                 multVal=1;
             }
+          if (randomToDecide<(1/3)){
+            
 
             let dp1=0, dp2=0, dp3=0, dp4=0, rngVS1=0;
           
@@ -952,11 +960,11 @@ function runner(){
               eitherSpeedPlain();
             }
         else if(randomToDecide<(2/3)){
-            randomForSpeedVal = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]];
+            randomForSpeedVal = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]]*multVal;
             eitherSpeed();
         }
         else{
-            randomForSpeedVal = multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
+            randomForSpeedVal = multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]]*multVal;
             eitherSpeedPlain();
         }
 
@@ -965,8 +973,6 @@ function runner(){
 
           
           randomsForSpeedIter++;
-
-          
     
 }
 }
