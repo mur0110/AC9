@@ -380,7 +380,11 @@ function redefineVolInterval(){
         multiplier=5/7;
     }
 
-    let rngTr=rngTrio();
+    if (rngBin()===0){
+        multiplier=1/multiplier;
+    }
+
+    let rngTr=rngQuat();
 
     if (rngTr===0){
         multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
@@ -389,10 +393,14 @@ function redefineVolInterval(){
     {
         multiplier=multiplier**(5/7);
     }
-
-    if (rngBin()===0){
-        multiplier=1/multiplier;
+    else if (rngTr===2){
+        multiplier=multiplier**(7/5);
     }
+    else{
+        
+    }
+
+
 
     if (rngs[rngIter]>7/24){
         rngIter++;
@@ -421,7 +429,11 @@ function redefineSpeedInterval(){
         multiplier=5/7;
     }
     
-    let rngTr=rngTrio();
+    if (rngBin()===0){
+        multiplier=1/multiplier;
+    }
+
+    let rngTr=rngQuat();
 
     if (rngTr===0){
         multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
@@ -430,10 +442,14 @@ function redefineSpeedInterval(){
     {
         multiplier=multiplier**(5/7);
     }
-
-    if (rngBin()===0){
-        multiplier=1/multiplier;
+    else if (rngTr===2){
+        multiplier=multiplier**(7/5);
     }
+    else{
+        
+    }
+
+
 
     if (rngs[rngIter]>7/24){
         rngIter++;
