@@ -55,7 +55,7 @@ function modInterDuration(){
         mVal=17;
     }
 
-    if (rngRx()===0){
+    if (rngRx()){
         interDuration = mArray[Math.floor(rngs[rngIter]*mVal)];
         rngIter++;
     }
