@@ -834,7 +834,7 @@ function runner(){
               if (rngDecider===0){
                 
                 if (rngBin() === 0){
-                    let rngQ=rngQuat();
+                    let rngQ=rngTrio();
 
                     if (rngQ===0){
                         rngVS1=dp3*(.62/1.922) * multVal;
@@ -842,24 +842,18 @@ function runner(){
                     else if (rngQ===1){
                         rngVS1=dp3**(5/7) * (.62/1.594) * multVal;
                     }
-                    else if (rngQ===2){
-                        rngVS1=dp3**(7/5) * (.62/2.496) * multVal;
-                    }
                     else{
                         rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(.62/1.269) * multVal;
                     }
                 }
                 else {
-                    let rngQ=rngQuat();
+                    let rngQ=rngTrio();
 
                     if (rngQ===0){
                         rngVS1=dp4*(.62/1.5377) * multVal;
                     }
                     else if (rngQ===1){
                         rngVS1=dp4**(5/7) * (.62/1.3598) * multVal;
-                    }
-                    else if (rngQ===2){
-                        rngVS1=dp4**(7/5) * (.62/1.8265) * multVal;
                     }
                     else{
                         rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(.62/1.169) * multVal;
@@ -878,16 +872,13 @@ function runner(){
                 diff4 = multVolArr2[randomsForVol2[randomsForVolIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
                 
                 let diffT = 0;
-                let rngTr=rngTrio();
+                let rngTr=rngBin();
                 diffT=(diff1**2 + diff2**2 + diff3**2 + diff4**2);
                 if (rngTr===0){
                     diffT = ((diffT**(1/2) + diffT**(1/3) + diffT**(1/4))/3)/1.23 * .62 * multVal;
                 }
                 else if (rngTr===1){
                     diffT=diffT**(5/7)/2.54191480831 * .62 * multVal;
-                }
-                else{
-                    diffT=diffT**(7/5)/6.2246586828 * .62 * multVal;
                 }
     
                 rngVS1 = diffT;
@@ -964,16 +955,13 @@ function runner(){
               if (rngDecider===0){
                 
                 if (rngBin() === 0){
-                    let rngQ=rngQuat();
+                    let rngQ=rngTrio();
 
                     if (rngQ===0){
                         rngVS1=dp3*(1.24/1.922) * multVal;
                     }
                     else if (rngQ===1){
                         rngVS1=dp3**(5/7) * (1.24/1.594) * multVal;
-                    }
-                    else if (rngQ===2){
-                        rngVS1=dp3**(7/5) * (1.24/2.496) * multVal;
                     }
                     else{
                         rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(1.24/1.269) * multVal;
@@ -987,9 +975,6 @@ function runner(){
                     }
                     else if (rngQ===1){
                         rngVS1=dp4**(5/7) * (1.24/1.3598) * multVal;
-                    }
-                    else if (rngQ===2){
-                        rngVS1=dp4**(7/5) * (1.24/1.8265) * multVal;
                     }
                     else{
                         rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(1.24/1.169) * multVal;
@@ -1009,16 +994,13 @@ function runner(){
                 diff4 = multVolArr2[randomsForVol2[randomsForVolIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
                 
                 let diffT = 0;
-                let rngTr=rngTrio();
+                let rngTr=rngBin();
                 diffT=(diff1**2 + diff2**2 + diff3**2 + diff4**2);
                 if (rngTr===0){
                     diffT = ((diffT**(1/2) + diffT**(1/3) + diffT**(1/4))/3)/1.23 * 1.24 * multVal;
                 }
                 else if (rngTr===1){
                     diffT=diffT**(5/7)/2.54191480831 * 1.24 * multVal;
-                }
-                else{
-                    diffT=diffT**(7/5)/6.2246586828 * 1.24 * multVal;
                 }
 
     
