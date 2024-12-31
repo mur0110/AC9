@@ -38,7 +38,7 @@ function truncate(x){
     return parseFloat(y);
 }
 
-for (let i=0; i<20000; i++){
+for (let i=0; i<30000; i++){
     rngs.push(truncate(Math.random()));
 }
 
@@ -375,13 +375,20 @@ function redefineVolInterval(){
     rngIter++;
     multiplier=randomInt;
 
-    if (rngs[rngIter]*7<2){
-        rngIter++;
-        multiplier=5/7;
+    let when=rngBin();
+    let when2=rngBin();
+
+    if (when===0){
+        if (rngs[rngIter]*7<2){
+            rngIter++;
+            multiplier=5/7;
+        }
     }
 
-    if (rngBin()===0){
-        multiplier=1/multiplier;
+    if (when2===0){
+        if (rngBin()===0){
+            multiplier=1/multiplier;
+        }
     }
 
     let rngTr=rngQuat();
@@ -400,6 +407,18 @@ function redefineVolInterval(){
         
     }
 
+    if (when2===1){
+        if (rngBin()===0){
+            multiplier=1/multiplier;
+        }
+    }
+
+    if (when===1){
+        if (rngs[rngIter]*7<2){
+            rngIter++;
+            multiplier=5/7;
+        }
+    }
 
 
     if (rngs[rngIter]>7/24){
@@ -424,13 +443,20 @@ function redefineSpeedInterval(){
     rngIter++;
     multiplier=randomInt;
     
-    if (rngs[rngIter]*7<2){
-        rngIter++;
-        multiplier=5/7;
+    let when=rngBin();
+    let when2=rngBin();
+
+    if (when===0){
+        if (rngs[rngIter]*7<2){
+            rngIter++;
+            multiplier=5/7;
+        }
     }
-    
-    if (rngBin()===0){
-        multiplier=1/multiplier;
+
+    if (when2===0){
+        if (rngBin()===0){
+            multiplier=1/multiplier;
+        }
     }
 
     let rngTr=rngQuat();
@@ -447,6 +473,19 @@ function redefineSpeedInterval(){
     }
     else{
         
+    }
+
+    if (when2===1){
+        if (rngBin()===0){
+            multiplier=1/multiplier;
+        }
+    }
+
+    if (when===1){
+        if (rngs[rngIter]*7<2){
+            rngIter++;
+            multiplier=5/7;
+        }
     }
 
 
