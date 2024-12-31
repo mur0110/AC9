@@ -825,26 +825,23 @@ function eitherSpeedPlain(){
 function runner(){
     const songAudio = new Audio(songPath);
     
-    
-
-
-
-    
+    // set initial vol and speed intervals
     redefineVolInterval();
     redefineSpeedInterval();
 
+    songAudio.play(); // begin playing song
 
-    
-
-
-    songAudio.play();
+    // set volumes and speeds for initialization
     advanceVolume();
     advanceSpeed();
 
 
 
     function advanceVolume(){
-        let randomToDecide=rngs[rngIter];
+
+
+        // rngWhich
+        let rngWhich=rngs[rngIter];
         rngIter++;
 
         setTimeout(function(){
@@ -866,12 +863,12 @@ function runner(){
            let multVal=0;
             let rngDet=rngBin();
             if (rngDet===0){
-              multVal=5/7;
+              multVal=.7143;
             }
             else {
               multVal=1;
             } 
-          if (randomToDecide<(1/3)){
+          if (rngWhich<(1/3)){
              
             let rngDecider=rngBin();
 
@@ -889,32 +886,20 @@ function runner(){
               if (rngDecider===0){
                 
                 if (rngBin() === 0){
-                    let rngQ=rngTrio();
-
-                    if (rngQ===0){
+                    if (rngBin()===0){
                         rngVS1=dp3*(.62/1.922) * multVal;
-                    }
-                    else if (rngQ===1){
-                        rngVS1=dp3**(5/7) * (.62/1.594) * multVal;
                     }
                     else{
                         rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(.62/1.269) * multVal;
                     }
                 }
                 else {
-                    let rngQ=rngTrio();
-
-                    if (rngQ===0){
+                    if (rngBin===0){
                         rngVS1=dp4*(.62/1.5377) * multVal;
-                    }
-                    else if (rngQ===1){
-                        rngVS1=dp4**(5/7) * (.62/1.3598) * multVal;
                     }
                     else{
                         rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(.62/1.169) * multVal;
                     }
-
-
                 }
               }
               else{
@@ -927,15 +912,10 @@ function runner(){
                 diff4 = multVolArr2[randomsForVol2[randomsForVolIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
                 
                 let diffT = 0;
-                let rngTr=rngBin();
                 diffT=(diff1**2 + diff2**2 + diff3**2 + diff4**2);
-                if (rngTr===0){
-                    diffT = ((diffT**(1/2) + diffT**(1/3) + diffT**(1/4))/3)/1.23 * .62 * multVal;
-                }
-                else if (rngTr===1){
-                    diffT=diffT**(5/7)/2.54191480831 * .62 * multVal;
-                }
-    
+
+                diffT = ((diffT**(1/2) + diffT**(1/3) + diffT**(1/4))/3)/1.23 * .62 * multVal;
+
                 rngVS1 = diffT;
               }
               randomForVolVal = rngVS1;
@@ -943,7 +923,7 @@ function runner(){
 
             }
             
-        else if(randomToDecide<(2/3)){
+        else if(rngWhich<(2/3)){
             randomForVolVal = multVolArr1[randomsForVol1[randomsForVolIter]]*multVal;
             eitherVol();
         }
@@ -961,7 +941,7 @@ function runner(){
     }
 
     function advanceSpeed(){
-          let randomToDecide=rngs[rngIter];
+          let rngWhich=rngs[rngIter];
           rngIter++;
           setTimeout(function(){
               songAudio.playbackRate = randomForSpeedVal;
@@ -990,7 +970,7 @@ function runner(){
             else{
                 multVal=1;
             }
-          if (randomToDecide<(1/3)){
+          if (rngWhich<(1/3)){
             
             let rngDecider=rngBin();
 
@@ -1007,35 +987,23 @@ function runner(){
             dp4 = dp1 + dp2;
               
 
-              if (rngDecider===0){
+            if (rngDecider===0){
                 
                 if (rngBin() === 0){
-                    let rngQ=rngTrio();
-
-                    if (rngQ===0){
+                    if (rngBin()===0){
                         rngVS1=dp3*(1.24/1.922) * multVal;
-                    }
-                    else if (rngQ===1){
-                        rngVS1=dp3**(5/7) * (1.24/1.594) * multVal;
                     }
                     else{
                         rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(1.24/1.269) * multVal;
                     }
                 }
                 else {
-                    let rngQ=rngQuat();
-
-                    if (rngQ===0){
+                    if (rngBin===0){
                         rngVS1=dp4*(1.24/1.5377) * multVal;
-                    }
-                    else if (rngQ===1){
-                        rngVS1=dp4**(5/7) * (1.24/1.3598) * multVal;
                     }
                     else{
                         rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(1.24/1.169) * multVal;
                     }
-
-
                 }
               }
 
@@ -1049,14 +1017,11 @@ function runner(){
                 diff4 = multVolArr2[randomsForVol2[randomsForVolIter]] - multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]];
                 
                 let diffT = 0;
-                let rngTr=rngBin();
                 diffT=(diff1**2 + diff2**2 + diff3**2 + diff4**2);
-                if (rngTr===0){
-                    diffT = ((diffT**(1/2) + diffT**(1/3) + diffT**(1/4))/3)/1.23 * 1.24 * multVal;
-                }
-                else if (rngTr===1){
-                    diffT=diffT**(5/7)/2.54191480831 * 1.24 * multVal;
-                }
+
+                diffT = ((diffT**(1/2) + diffT**(1/3) + diffT**(1/4))/3)/1.23 * 1.24 * multVal;
+
+
 
     
                 rngVS1 = diffT;
@@ -1065,7 +1030,7 @@ function runner(){
               randomForSpeedVal = rngVS1;
               eitherSpeedPlain();
             }
-        else if(randomToDecide<(2/3)){
+        else if(rngWhich<(2/3)){
             randomForSpeedVal = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]]*multVal;
             eitherSpeed();
         }
