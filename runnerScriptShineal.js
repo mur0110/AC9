@@ -818,7 +818,8 @@ function runner(){
             } 
           if (randomToDecide<(1/3)){
              
-            let rngDecider=rngTrio();
+            let rngDecider=rngBin();
+
             let dp1=0, dp2=0, dp3=0, dp4=0, rngVS1=0;
 
               // vector is same size grouping
@@ -833,42 +834,38 @@ function runner(){
               if (rngDecider===0){
                 
                 if (rngBin() === 0){
-                    let rngTr=rngTrio();
+                    let rngQ=rngQuat();
 
-                    if (rngTr===0){
+                    if (rngQ===0){
                         rngVS1=dp3*(.62/1.922) * multVal;
                     }
-                    else if (rngTr){
+                    else if (rngQ===1){
                         rngVS1=dp3**(5/7) * (.62/1.594) * multVal;
                     }
-                    else{
+                    else if (rngQ===2){
                         rngVS1=dp3**(7/5) * (.62/2.496) * multVal;
+                    }
+                    else{
+                        rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(.62/1.269) * multVal;
                     }
                 }
                 else {
-                    let rngTr=rngTrio();
+                    let rngQ=rngQuat();
 
-                    if (rngTr===0){
+                    if (rngQ===0){
                         rngVS1=dp4*(.62/1.5377) * multVal;
                     }
-                    else if (rngTr){
+                    else if (rngQ===1){
                         rngVS1=dp4**(5/7) * (.62/1.3598) * multVal;
                     }
-                    else{
+                    else if (rngQ===2){
                         rngVS1=dp4**(7/5) * (.62/1.8265) * multVal;
+                    }
+                    else{
+                        rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(.62/1.169) * multVal;
                     }
 
 
-                    rngVS1=dp4*(.62/1.5377) * multVal;
-                }
-              }
-              
-              else if (rngDecider===1){
-                if (rngBin() === 0){
-                    rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(.62/1.269) * multVal;
-                }
-                else{
-                    rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(.62/1.169) * multVal;
                 }
               }
               else{
@@ -936,7 +933,6 @@ function runner(){
           }
           else{
             rngIter++;
-            let rngDecider=rngTrio();
             let multVal=0;
             let rngDet=rngTrio();
             if (rngDet===0){
@@ -950,6 +946,7 @@ function runner(){
             }
           if (randomToDecide<(1/3)){
             
+            let rngDecider=rngBin();
 
             let dp1=0, dp2=0, dp3=0, dp4=0, rngVS1=0;
           
@@ -967,43 +964,38 @@ function runner(){
               if (rngDecider===0){
                 
                 if (rngBin() === 0){
-                    let rngTr=rngTrio();
+                    let rngQ=rngQuat();
 
-                    if (rngTr===0){
+                    if (rngQ===0){
                         rngVS1=dp3*(1.24/1.922) * multVal;
                     }
-                    else if (rngTr){
+                    else if (rngQ===1){
                         rngVS1=dp3**(5/7) * (1.24/1.594) * multVal;
                     }
-                    else{
+                    else if (rngQ===2){
                         rngVS1=dp3**(7/5) * (1.24/2.496) * multVal;
+                    }
+                    else{
+                        rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(1.24/1.269) * multVal;
                     }
                 }
                 else {
-                    let rngTr=rngTrio();
+                    let rngQ=rngQuat();
 
-                    if (rngTr===0){
+                    if (rngQ===0){
                         rngVS1=dp4*(1.24/1.5377) * multVal;
                     }
-                    else if (rngTr){
+                    else if (rngQ===1){
                         rngVS1=dp4**(5/7) * (1.24/1.3598) * multVal;
                     }
-                    else{
+                    else if (rngQ===2){
                         rngVS1=dp4**(7/5) * (1.24/1.8265) * multVal;
+                    }
+                    else{
+                        rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(1.24/1.169) * multVal;
                     }
 
 
-                    rngVS1=dp4*(1.24/1.5377) * multVal;
-                }
-              }
-
-              
-              else if (rngDecider===1){
-                if (rngBin() === 0){
-                    rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(1.24/1.269) * multVal;
-                }
-                else{
-                    rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(1.24/1.169) * multVal;
                 }
               }
 
