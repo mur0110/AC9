@@ -377,7 +377,7 @@ function redefineVolInterval(){
     rngIter++;
     multiplier=randomInt;
 
-    if (rngs[rngIter]*7<2){
+    if (rngBin()===0){
         rngIter++;
         multiplier=5/7;
     }
@@ -408,7 +408,7 @@ function redefineSpeedInterval(){
     rngIter++;
     multiplier=randomInt;
     
-    if (rngs[rngIter]*7<2){
+    if (rngBin()===0){
         rngIter++;
         multiplier=5/7;
     }
