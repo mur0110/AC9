@@ -1,4 +1,4 @@
-const songPath = 'songs/shineal.mp3'; //we own the night was first
+const songPath = 'songs/shineal.mp3'; //coolo was first
 
 
 
@@ -38,7 +38,7 @@ function truncate(x){
     return parseFloat(y);
 }
 
-for (let i=0; i<25000; i++){
+for (let i=0; i<100000; i++){
     rngs.push(truncate(Math.random()));
 }
 
