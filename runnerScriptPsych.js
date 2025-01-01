@@ -55,7 +55,7 @@ function modInterDuration(){
         mVal=17;
     }
 
-    if (rngRx()){
+    if (rngBin()){
         interDuration = mArray[Math.floor(rngs[rngIter]*mVal)];
         rngIter++;
     }
@@ -122,9 +122,11 @@ function rng12(){
 
 function rngR(){
     if (rngBin()===0){
+        rngIter++;
         return 1;
     }
     else{
+        rngIter++;
         return 0;
     }
 }
@@ -135,6 +137,7 @@ function rngRx(){
         return 1;
     }
     else{
+        rngIter++;
         return 0;
     }
 }
