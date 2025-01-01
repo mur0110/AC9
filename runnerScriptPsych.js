@@ -1,4 +1,4 @@
-const songPath = 'songs/psych.mp3'; //pyschic city classix was first
+const songPath = 'songs/psych.mp3'; //we own the night was first
 
 
 
@@ -55,7 +55,7 @@ function modInterDuration(){
         mVal=17;
     }
 
-    if (rngBin()){
+    if (!rngRx()){
         interDuration = mArray[Math.floor(rngs[rngIter]*mVal)];
         rngIter++;
     }
@@ -544,7 +544,7 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (!rngRx()){
+            if (rngR()){
 
                 repeatV=repeatS;
 
@@ -586,7 +586,7 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (!rngRx()){
+            if (rngR()){
 
                 repeatV=repeatS;
 
@@ -627,7 +627,7 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (!rngRx()){
+            if (rngR()){
 
                 repeatV=repeatS;
 
@@ -674,7 +674,7 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (!rngRx()){
+            if (rngR()){
 
                 repeatS=repeatV;
 
@@ -716,7 +716,7 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (!rngRx()){
+            if (rngR()){
 
                 repeatS=repeatV;
 
@@ -757,7 +757,7 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (!rngRx()){
+            if (rngR()){
 
                 repeatS=repeatV;
 
