@@ -1,4 +1,4 @@
-const songPath = 'songs/shineal.mp3'; //lately was first
+const songPath = 'songs/shineal.mp3'; //we own the night was first
 
 
 
@@ -547,7 +547,7 @@ function nextVolIntervalIter(){
 
             }
             else{
-                if (rngRx()){
+                if (rngR()){
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatV=1;
@@ -589,7 +589,7 @@ function nextVolIntervalIter(){
 
             }
             else{
-                if (rngRx()){
+                if (rngR()){
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatV=1;
@@ -630,7 +630,7 @@ function nextVolIntervalIter(){
 
             }
             else{
-                if (rngRx()){
+                if (rngR()){
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatV=1;
@@ -677,7 +677,7 @@ function nextSpeedIntervalIter(){
 
             }
             else{
-                if (rngRx()){
+                if (rngR()){
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatS=1;
@@ -719,7 +719,7 @@ function nextSpeedIntervalIter(){
 
             }
             else{
-                if (rngRx()){
+                if (rngR()){
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatS=1;
@@ -760,7 +760,7 @@ function nextSpeedIntervalIter(){
 
             }
             else{
-                if (rngRx()){
+                if (rngR()){
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatS=1;
