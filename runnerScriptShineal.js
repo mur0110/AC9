@@ -1014,37 +1014,37 @@ function runner(){
                     if (rngBin()===0){
                         if (rngBin()===0){
                             if (multVal===.7143){
-                                rngVS1=(dp3**multVal)*(.62/1.5947) * multVal;
+                                rngVS1=(dp3**multVal)*(1.24/1.5947) * multVal;
                             }
                             else{
-                                rngVS1=dp3*(.62/1.922) * multVal;
+                                rngVS1=dp3*(1.24/1.922) * multVal;
                             }
                         }
                         else{
-                            rngVS1=dp3*(.62/1.922) * multVal;
+                            rngVS1=dp3*(1.24/1.922) * multVal;
                         }
                     }
                     else{
-                        rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(.62/1.269) * multVal;
+                        rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(1.24/1.269) * multVal;
                     }
                 }
                 else {
                     if (rngBin()===0){
                         if (rngBin()===0){
                             if (multVal===.7143){
-                                rngVS1=(dp4**multVal)*(.62/1.3598) * multVal;
+                                rngVS1=(dp4**multVal)*(1.24/1.3598) * multVal;
                             }
                             else{
-                                rngVS1=dp4*(.62/1.5377) * multVal;
+                                rngVS1=dp4*(1.24/1.5377) * multVal;
                             }
                         }
                         else{
-                            rngVS1=dp4*(.62/1.5377) * multVal;
+                            rngVS1=dp4*(1.24/1.5377) * multVal;
 
                         }
                     }
                     else{
-                        rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(.62/1.169) * multVal;
+                        rngVS1=((dp4**(1/3)+dp4**(1/2)+dp4**(1/4))/3)*(1.24/1.169) * multVal;
                     }
                 }
               }
