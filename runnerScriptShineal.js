@@ -1,4 +1,4 @@
-const songPath = 'songs/shineal.mp3'; //pyschic city classix was first
+const songPath = 'songs/shineal.mp3'; //thewanted weownthenight was first
 
 
 
@@ -122,9 +122,11 @@ function rng12(){
 
 function rngR(){
     if (rngBin()===0){
+        rngIter++;
         return 1;
     }
     else{
+        rngIter++;
         return 0;
     }
 }
@@ -135,6 +137,7 @@ function rngRx(){
         return 1;
     }
     else{
+        rngIter++;
         return 0;
     }
 }
