@@ -1,4 +1,4 @@
-const songPath = 'songs/psych.mp3'; //middle was first to 1000k version
+const songPath = 'songs/psych.mp3'; //psych was first
 
 
 
@@ -377,8 +377,8 @@ function redefineVolInterval(){
     let randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
     rngIter++;
 
-    if (!rngRx()){
-        multiplier=1
+    if (rngR()){
+        multiplier=1;
     }
     else{
         multiplier=randomInt;
@@ -427,6 +427,10 @@ function redefineVolInterval(){
             rngIter++;
             multiplier=5/7;
         }
+    }
+
+    if (rngR()){
+        multiplier=1;
     }
 
 
@@ -451,8 +455,8 @@ function redefineSpeedInterval(){
     let randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
     rngIter++;
     
-    if (!rngRx()){
-        multiplier=1
+    if (rngR()){
+        multiplier=1;
     }
     else{
         multiplier=randomInt;
@@ -503,6 +507,9 @@ function redefineSpeedInterval(){
         }
     }
 
+    if (rngR()){
+        multiplier=1;
+    }
 
 
     if (rngs[rngIter]>7/24){
@@ -562,7 +569,7 @@ function nextVolIntervalIter(){
 
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatV=1;
@@ -604,7 +611,7 @@ function nextVolIntervalIter(){
 
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatV=1;
@@ -645,7 +652,7 @@ function nextVolIntervalIter(){
 
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatV=1;
@@ -692,7 +699,7 @@ function nextSpeedIntervalIter(){
 
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatS=1;
@@ -734,7 +741,7 @@ function nextSpeedIntervalIter(){
 
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatS=1;
@@ -775,7 +782,7 @@ function nextSpeedIntervalIter(){
 
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatS=1;
