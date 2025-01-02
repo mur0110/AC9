@@ -1,4 +1,4 @@
-const songPath = 'songs/alwayso.mp3'; //alwayso was first
+const songPath = 'songs/alwayso.mp3'; //middle was first to 300k, alwayso to 200k
 
 
 
@@ -38,7 +38,7 @@ function truncate(x){
     return parseFloat(y);
 }
 
-for (let i=0; i<200000; i++){
+for (let i=0; i<300000; i++){
     rngs.push(truncate(Math.random()));
 }
 
