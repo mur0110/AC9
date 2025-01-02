@@ -1,4 +1,4 @@
-const songPath = 'songs/psych.mp3'; //pyschic city classix was first
+const songPath = 'songs/psych.mp3'; //middle was first to 1000k version
 
 
 
@@ -38,7 +38,7 @@ function truncate(x){
     return parseFloat(y);
 }
 
-for (let i=0; i<100000; i++){
+for (let i=0; i<1000000; i++){
     rngs.push(truncate(Math.random()));
 }
 
