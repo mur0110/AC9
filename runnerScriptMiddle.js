@@ -1,4 +1,4 @@
-const songPath = 'middle.mp3'; //middle was first to 400k version
+const songPath = 'songs/middle.mp3'; //middle was first to 400k version (&300k, but alwayso to 200k)
 
 
 
