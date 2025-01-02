@@ -1,4 +1,5 @@
-const songPath = 'songs/alwayso.mp3'; //alwayso was first 
+const songPath = 'songs/alwayso.mp3'; //always (not o) was first
+
 
 
 
@@ -568,7 +569,7 @@ function nextVolIntervalIter(){
 
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatV=1;
@@ -610,7 +611,7 @@ function nextVolIntervalIter(){
 
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatV=1;
@@ -651,7 +652,7 @@ function nextVolIntervalIter(){
 
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatV=1;
@@ -698,7 +699,7 @@ function nextSpeedIntervalIter(){
 
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatS=1;
@@ -740,7 +741,7 @@ function nextSpeedIntervalIter(){
 
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatS=1;
@@ -781,7 +782,7 @@ function nextSpeedIntervalIter(){
 
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     if (rngs[rngIter]*24>7){
                         rngIter++;
                         repeatS=1;
