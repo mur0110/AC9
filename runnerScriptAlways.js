@@ -1,5 +1,4 @@
-const songPath = 'songs/alwayso.mp3'; //middle was first to 300k, alwayso to 200k
-
+const songPath = 'songs/alwayso.mp3'; //alwayso was first 
 
 
 
@@ -378,7 +377,7 @@ function redefineVolInterval(){
     rngIter++;
 
     if (!rngRx()){
-        multiplier=1
+        multiplier=1;
     }
     else{
         multiplier=randomInt;
@@ -427,6 +426,10 @@ function redefineVolInterval(){
             rngIter++;
             multiplier=5/7;
         }
+    }
+
+    if (!rngRx()){
+        multiplier=1;
     }
 
 
@@ -452,7 +455,7 @@ function redefineSpeedInterval(){
     rngIter++;
     
     if (!rngRx()){
-        multiplier=1
+        multiplier=1;
     }
     else{
         multiplier=randomInt;
@@ -503,6 +506,9 @@ function redefineSpeedInterval(){
         }
     }
 
+    if (!rngRx()){
+        multiplier=1;
+    }
 
 
     if (rngs[rngIter]>7/24){
