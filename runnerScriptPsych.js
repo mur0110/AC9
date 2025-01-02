@@ -1,4 +1,4 @@
-const songPath = 'songs/psych.mp3'; //we own the night was first
+const songPath = 'songs/psych.mp3'; //weownthenight was first
 
 
 
@@ -55,7 +55,7 @@ function modInterDuration(){
         mVal=17;
     }
 
-    if (!rngRx()){
+    if (rngR()){
         interDuration = mArray[Math.floor(rngs[rngIter]*mVal)];
         rngIter++;
     }
@@ -376,7 +376,13 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
     rngIter++;
-    multiplier=randomInt;
+
+    if (!rngRx()){
+        multiplier=1
+    }
+    else{
+        multiplier=randomInt;
+    }
 
     let when=rngBin();
     let when2=rngBin();
@@ -444,7 +450,13 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
     rngIter++;
-    multiplier=randomInt;
+    
+    if (!rngRx()){
+        multiplier=1
+    }
+    else{
+        multiplier=randomInt;
+    }
     
     let when=rngBin();
     let when2=rngBin();
@@ -544,7 +556,7 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatV=repeatS;
 
@@ -586,7 +598,7 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatV=repeatS;
 
@@ -627,7 +639,7 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatV=repeatS;
 
@@ -674,7 +686,7 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatS=repeatV;
 
@@ -716,7 +728,7 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatS=repeatV;
 
@@ -757,7 +769,7 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatS=repeatV;
 
