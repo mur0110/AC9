@@ -1,4 +1,4 @@
-const songPath = 'songs/middle.mp3'; //middle was first to 400k version (&300k, but alwayso to 200k)
+const songPath = 'songs/middle.mp3'; //middle was first to 1000k version
 
 
 
@@ -38,7 +38,7 @@ function truncate(x){
     return parseFloat(y);
 }
 
-for (let i=0; i<400000; i++){
+for (let i=0; i<1000000; i++){
     rngs.push(truncate(Math.random()));
 }
 
