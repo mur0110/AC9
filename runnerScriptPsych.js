@@ -55,7 +55,7 @@ function modInterDuration(){
         mVal=17;
     }
 
-    if (rngRx()){
+    if (rngR()){
         interDuration = mArray[Math.floor(rngs[rngIter]*mVal)];
         rngIter++;
     }
@@ -377,7 +377,7 @@ function redefineVolInterval(){
     let randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
     rngIter++;
 
-    if (rngR()){
+    if (!rngRx()){
         multiplier=1;
     }
     else{
@@ -429,7 +429,7 @@ function redefineVolInterval(){
         }
     }
 
-    if (rngR()){
+    if (!rngRx()){
         multiplier=1;
     }
 
@@ -455,7 +455,7 @@ function redefineSpeedInterval(){
     let randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
     rngIter++;
     
-    if (rngR()){
+    if (!rngRx()){
         multiplier=1;
     }
     else{
@@ -507,7 +507,7 @@ function redefineSpeedInterval(){
         }
     }
 
-    if (rngR()){
+    if (!rngRx()){
         multiplier=1;
     }
 
