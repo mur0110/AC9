@@ -1,4 +1,4 @@
-const songPath = 'songs/alwayso.mp3'; //psych was first
+const songPath = 'songs/alwayso.mp3'; //alwayso was first
 
 
 
@@ -46,16 +46,11 @@ for (let i=0; i<1000000; i++){
 function modInterDuration(){
     let mVal=0;
     let mArray=[];
-    if (rngBin()===0){
+
         mArray=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53];
         mVal=14;
-    }
-    else{
-        mArray=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53, .59, .61, .67];
-        mVal=17;
-    }
 
-    if (!rngRx()){
+    if (rngR()){
         interDuration = mArray[Math.floor(rngs[rngIter]*mVal)];
         rngIter++;
     }
@@ -377,12 +372,9 @@ function redefineVolInterval(){
     let randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
     rngIter++;
 
-    if (!rngRx()){
-        multiplier=1;
-    }
-    else{
-        multiplier=randomInt;
-    }
+
+    multiplier=randomInt;
+    
 
     let when=rngBin();
     let when2=rngBin();
@@ -455,12 +447,10 @@ function redefineSpeedInterval(){
     let randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
     rngIter++;
     
-    if (!rngRx()){
-        multiplier=1;
-    }
-    else{
-        multiplier=randomInt;
-    }
+
+
+    multiplier=randomInt;
+    
     
     let when=rngBin();
     let when2=rngBin();
@@ -563,7 +553,7 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngRx()){
+            if (rngR()){
 
                 repeatV=repeatS;
 
@@ -605,7 +595,7 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngRx()){
+            if (rngR()){
 
                 repeatV=repeatS;
 
@@ -646,7 +636,7 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngRx()){
+            if (rngR()){
 
                 repeatV=repeatS;
 
@@ -693,7 +683,7 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngRx()){
+            if (rngR()){
 
                 repeatS=repeatV;
 
@@ -735,7 +725,7 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngRx()){
+            if (rngR()){
 
                 repeatS=repeatV;
 
@@ -776,7 +766,7 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngRx()){
+            if (rngR()){
 
                 repeatS=repeatV;
 
