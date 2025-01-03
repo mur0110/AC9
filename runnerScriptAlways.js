@@ -50,7 +50,7 @@ function modInterDuration(){
         mArray=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53];
         mVal=14;
 
-    if (rngR()){
+    if (rngRx()){
         interDuration = mArray[Math.floor(rngs[rngIter]*mVal)];
         rngIter++;
     }
@@ -373,8 +373,12 @@ function redefineVolInterval(){
     rngIter++;
 
 
-    multiplier=randomInt;
-    
+    if (!rngRx()){
+        multiplier=1;
+    }
+    else{
+        multiplier=randomInt;
+    }    
 
     let when=rngBin();
     let when2=rngBin();
@@ -408,16 +412,18 @@ function redefineVolInterval(){
         
     }
 
-    if (when2===1){
-        if (rngBin()===0){
-            multiplier=1/multiplier;
-        }
-    }
+    
 
     if (when===1){
         if (rngs[rngIter]*7<2){
             rngIter++;
             multiplier=5/7;
+        }
+    }
+
+    if (when2===1){
+        if (rngBin()===0){
+            multiplier=1/multiplier;
         }
     }
 
@@ -449,7 +455,12 @@ function redefineSpeedInterval(){
     
 
 
-    multiplier=randomInt;
+    if (!rngRx()){
+        multiplier=1;
+    }
+    else{
+        multiplier=randomInt;
+    }    
     
     
     let when=rngBin();
@@ -484,16 +495,16 @@ function redefineSpeedInterval(){
         
     }
 
-    if (when2===1){
-        if (rngBin()===0){
-            multiplier=1/multiplier;
-        }
-    }
-
+   
     if (when===1){
         if (rngs[rngIter]*7<2){
             rngIter++;
             multiplier=5/7;
+        }
+    }
+    if (when2===1){
+        if (rngBin()===0){
+            multiplier=1/multiplier;
         }
     }
 
