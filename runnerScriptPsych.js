@@ -1,4 +1,4 @@
-const songPath = 'songs/psych.mp3'; //nygl was first
+const songPath = 'songs/psych.mp3'; //psych was first
 
 
 
@@ -50,7 +50,7 @@ function modInterDuration(){
         mArray=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53];
         mVal=14;
 
-    if (rngR()){
+    if (!rngRx()){
         interDuration = mArray[Math.floor(rngs[rngIter]*mVal)];
         rngIter++;
     }
@@ -372,12 +372,13 @@ function redefineVolInterval(){
     let randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
     rngIter++;
 
+
     if (!rngRx()){
         multiplier=1;
     }
     else{
         multiplier=randomInt;
-    }
+    }    
 
     let when=rngBin();
     let when2=rngBin();
@@ -411,11 +412,7 @@ function redefineVolInterval(){
         
     }
 
-    if (when2===1){
-        if (rngBin()===0){
-            multiplier=1/multiplier;
-        }
-    }
+    
 
     if (when===1){
         if (rngs[rngIter]*7<2){
@@ -424,12 +421,18 @@ function redefineVolInterval(){
         }
     }
 
+    if (when2===1){
+        if (rngBin()===0){
+            multiplier=1/multiplier;
+        }
+    }
+
     if (!rngRx()){
         multiplier=1;
     }
 
 
-    if (rngs[rngIter]>7/24){
+    if (rngBin()){
         rngIter++;
         presVolInterval = pickArrayVol(incTypeVol)[presVolIntervalIter] * multiplier;
     }
@@ -450,12 +453,15 @@ function redefineSpeedInterval(){
     let randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
     rngIter++;
     
+
+
     if (!rngRx()){
         multiplier=1;
     }
     else{
         multiplier=randomInt;
-    }
+    }    
+    
     
     let when=rngBin();
     let when2=rngBin();
@@ -489,16 +495,16 @@ function redefineSpeedInterval(){
         
     }
 
-    if (when2===1){
-        if (rngBin()===0){
-            multiplier=1/multiplier;
-        }
-    }
-
+   
     if (when===1){
         if (rngs[rngIter]*7<2){
             rngIter++;
             multiplier=5/7;
+        }
+    }
+    if (when2===1){
+        if (rngBin()===0){
+            multiplier=1/multiplier;
         }
     }
 
@@ -507,7 +513,7 @@ function redefineSpeedInterval(){
     }
 
 
-    if (rngs[rngIter]>7/24){
+    if (rngBin()){
         rngIter++;
         presSpeedInterval = pickArraySpeed(incTypeSpeed)[presSpeedIntervalIter] * multiplier;
     }
@@ -558,7 +564,7 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatV=repeatS;
 
@@ -600,7 +606,7 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatV=repeatS;
 
@@ -641,7 +647,7 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatV=repeatS;
 
@@ -688,7 +694,7 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatS=repeatV;
 
@@ -730,7 +736,7 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatS=repeatV;
 
@@ -771,7 +777,7 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatS=repeatV;
 
