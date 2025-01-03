@@ -563,7 +563,7 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (!rngRx()){
+            if (rngRx()){
 
                 repeatV=repeatS;
 
@@ -605,7 +605,7 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (!rngRx()){
+            if (rngRx()){
 
                 repeatV=repeatS;
 
@@ -646,7 +646,7 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (!rngRx()){
+            if (rngRx()){
 
                 repeatV=repeatS;
 
@@ -693,7 +693,7 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (!rngRx()){
+            if (rngRx()){
 
                 repeatS=repeatV;
 
@@ -735,7 +735,7 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (!rngRx()){
+            if (rngRx()){
 
                 repeatS=repeatV;
 
@@ -776,7 +776,7 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (!rngRx()){
+            if (rngRx()){
 
                 repeatS=repeatV;
 
