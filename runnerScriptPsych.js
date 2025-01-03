@@ -1,4 +1,4 @@
-const songPath = 'songs/psych.mp3'; //psych was first
+const songPath = 'songs/psych.mp3'; //nygl was first
 
 
 
@@ -46,16 +46,11 @@ for (let i=0; i<1000000; i++){
 function modInterDuration(){
     let mVal=0;
     let mArray=[];
-    if (rngBin()===0){
+
         mArray=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53];
         mVal=14;
-    }
-    else{
-        mArray=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53, .59, .61, .67];
-        mVal=17;
-    }
 
-    if (!rngRx()){
+    if (rngR()){
         interDuration = mArray[Math.floor(rngs[rngIter]*mVal)];
         rngIter++;
     }
@@ -563,7 +558,7 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngRx()){
+            if (rngR()){
 
                 repeatV=repeatS;
 
@@ -605,7 +600,7 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngRx()){
+            if (rngR()){
 
                 repeatV=repeatS;
 
@@ -646,7 +641,7 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngRx()){
+            if (rngR()){
 
                 repeatV=repeatS;
 
@@ -693,7 +688,7 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngRx()){
+            if (rngR()){
 
                 repeatS=repeatV;
 
@@ -735,7 +730,7 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngRx()){
+            if (rngR()){
 
                 repeatS=repeatV;
 
@@ -776,7 +771,7 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngRx()){
+            if (rngR()){
 
                 repeatS=repeatV;
 
