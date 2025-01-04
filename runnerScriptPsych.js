@@ -1,4 +1,4 @@
-const songPath = 'songs/psych.mp3'; //psych was first
+const songPath = 'songs/psych.mp3'; //always (classix) was first
 
 
 
@@ -50,7 +50,7 @@ function modInterDuration(){
         mArray=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53];
         mVal=14;
 
-    if (!rngRx()){
+    if (rngRx()){
         interDuration = mArray[Math.floor(rngs[rngIter]*mVal)];
         rngIter++;
     }
@@ -432,7 +432,7 @@ function redefineVolInterval(){
     }
 
 
-    if (!rngRx()){
+    if (rngR()){
         presVolInterval = pickArrayVol(incTypeVol)[presVolIntervalIter] * multiplier;
     }
     else{
@@ -512,7 +512,7 @@ function redefineSpeedInterval(){
     }
 
 
-    if (!rngRx()){
+    if (rngR()){
         presSpeedInterval = pickArraySpeed(incTypeSpeed)[presSpeedIntervalIter] * multiplier;
     }
     else{
