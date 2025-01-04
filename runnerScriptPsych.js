@@ -1,4 +1,4 @@
-const songPath = 'songs/psych.mp3'; //always (classix) was first
+const songPath = 'songs/psych.mp3'; //alwayso was first
 
 
 
@@ -50,10 +50,9 @@ function modInterDuration(){
         mArray=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53];
         mVal=14;
 
-    if (rngRx()){
         interDuration = mArray[Math.floor(rngs[rngIter]*mVal)];
         rngIter++;
-    }
+
 }
 
 
@@ -768,44 +767,24 @@ function nextSpeedIntervalIter(){
 
 
 function eitherVol(){
-    if (rngBin()===0){
-        decide23();
-    }
-    else {
-        decide13();
-    }
+    eitherVolPlain();
 
 
 }
 
 
 function eitherSpeed(){
-    if (rngBin()===0){
-        decide23();
-    }
-    else {
-        decide13();
-    }
+    eitherSpeedPlain();
 
 
 }
 
 function eitherVolPlain(){
-    if (rngBin()===0){
-        decide23();
-    }
-    else {
-        decide13();
-    }
+    decide23();
 }
 
 function eitherSpeedPlain(){
-    if (rngBin()===0){
-        decide23();
-    }
-    else {
-        decide13();
-    }
+    decide23();
 }
 
 function runner(){
