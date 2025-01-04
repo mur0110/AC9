@@ -50,10 +50,9 @@ function modInterDuration(){
         mArray=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53];
         mVal=14;
 
-    if (!rngRx()){
         interDuration = mArray[Math.floor(rngs[rngIter]*mVal)];
         rngIter++;
-    }
+
 }
 
 
@@ -432,8 +431,7 @@ function redefineVolInterval(){
     }
 
 
-    if (rngBin()){
-        rngIter++;
+    if (rngRx()){
         presVolInterval = pickArrayVol(incTypeVol)[presVolIntervalIter] * multiplier;
     }
     else{
@@ -513,8 +511,7 @@ function redefineSpeedInterval(){
     }
 
 
-    if (rngBin()){
-        rngIter++;
+    if (rngRx()){
         presSpeedInterval = pickArraySpeed(incTypeSpeed)[presSpeedIntervalIter] * multiplier;
     }
     else{
@@ -554,33 +551,28 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (rngs[rngIter]*24<7){
-                    rngIter++;
+                if (!rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
-                    rngIter++;
                     selectNextVolArray();  
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatV=repeatS;
 
             }
             else{
                 if (rngRx()){
-                    if (rngs[rngIter]*24>7){
-                        rngIter++;
-                        repeatV=1;
-                    }
-                    else{
-                        rngIter++;
-                        repeatV=1;
-                        repeatS=1;
-                    }
+                    repeatV=1;
                 }
+                else{
+                    repeatV=1;
+                    repeatS=1;
+                }
+                
             }
         }
     }
@@ -596,32 +588,26 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (rngs[rngIter]*24<7){
-                    rngIter++;
+                if (!rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
-                    rngIter++;
                     selectNextVolArray();  
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatV=repeatS;
 
             }
             else{
                 if (rngRx()){
-                    if (rngs[rngIter]*24>7){
-                        rngIter++;
-                        repeatV=1;
-                    }
-                    else{
-                        rngIter++;
-                        repeatV=1;
-                        repeatS=1;
-                    }
+                    repeatV=1;
+                }
+                else{
+                    repeatV=1;
+                    repeatS=1;
                 }
             }
         }
@@ -637,32 +623,26 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (rngs[rngIter]*24<7){
-                    rngIter++;
+                if (!rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
-                    rngIter++;
                     selectNextVolArray();  
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatV=repeatS;
 
             }
             else{
                 if (rngRx()){
-                    if (rngs[rngIter]*24>7){
-                        rngIter++;
-                        repeatV=1;
-                    }
-                    else{
-                        rngIter++;
-                        repeatV=1;
-                        repeatS=1;
-                    }
+                    repeatV=1;
+                }
+                else{
+                    repeatV=1;
+                    repeatS=1;
                 }
             }
         }
@@ -684,32 +664,26 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (rngs[rngIter]*24<7){
-                    rngIter++;
-                    incTypeSpeed=incTypeSpeed;
+                if (!rngRx()){
+                    incTypeSpeed=incTypeVol;
                 }
                 else{
-                    rngIter++;
                     selectNextSpeedArray();  
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatS=repeatV;
 
             }
             else{
                 if (rngRx()){
-                    if (rngs[rngIter]*24>7){
-                        rngIter++;
-                        repeatS=1;
-                    }
-                    else{
-                        rngIter++;
-                        repeatV=1;
-                        repeatS=1;
-                    }
+                    repeatS=1;
+                }
+                else{
+                    repeatV=1;
+                    repeatS=1;
                 }
             }
         }
@@ -726,32 +700,26 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (rngs[rngIter]*24<7){
-                    rngIter++;
-                    incTypeSpeed=incTypeSpeed;
+                if (!rngRx()){
+                    incTypeSpeed=incTypeVol;
                 }
                 else{
-                    rngIter++;
                     selectNextSpeedArray();  
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatS=repeatV;
 
             }
             else{
                 if (rngRx()){
-                    if (rngs[rngIter]*24>7){
-                        rngIter++;
-                        repeatS=1;
-                    }
-                    else{
-                        rngIter++;
-                        repeatV=1;
-                        repeatS=1;
-                    }
+                    repeatS=1;
+                }
+                else{
+                    repeatV=1;
+                    repeatS=1;
                 }
             }
         }
@@ -767,32 +735,26 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (rngs[rngIter]*24<7){
-                    rngIter++;
-                    incTypeSpeed=incTypeSpeed;
+                if (!rngRx()){
+                    incTypeSpeed=incTypeVol;
                 }
                 else{
-                    rngIter++;
                     selectNextSpeedArray();  
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatS=repeatV;
 
             }
             else{
                 if (rngRx()){
-                    if (rngs[rngIter]*24>7){
-                        rngIter++;
-                        repeatS=1;
-                    }
-                    else{
-                        rngIter++;
-                        repeatV=1;
-                        repeatS=1;
-                    }
+                    repeatS=1;
+                }
+                else{
+                    repeatV=1;
+                    repeatS=1;
                 }
             }
         }
@@ -805,44 +767,24 @@ function nextSpeedIntervalIter(){
 
 
 function eitherVol(){
-    if (rngBin()===0){
-        decide23();
-    }
-    else {
-        decide13();
-    }
+    eitherVolPlain();
 
 
 }
 
 
 function eitherSpeed(){
-    if (rngBin()===0){
-        decide23();
-    }
-    else {
-        decide13();
-    }
+    eitherSpeedPlain();
 
 
 }
 
 function eitherVolPlain(){
-    if (rngBin()===0){
-        decide23();
-    }
-    else {
-        decide13();
-    }
+    decide23();
 }
 
 function eitherSpeedPlain(){
-    if (rngBin()===0){
-        decide23();
-    }
-    else {
-        decide13();
-    }
+    decide23();
 }
 
 function runner(){
@@ -876,12 +818,18 @@ function runner(){
         redefineVolInterval();
         volInterval = presVolInterval;
 
-        if (rngs[rngIter]*24<7){
-            rngIter++;
-            randomForVolVal = randomForSpeedVal/2;
-            eitherVolPlain();
+
+        if (!rngRx()){
+            if (rngBin()){
+                randomForVolVal=randomForVolVal;
+                eitherVolPlain();
+            }
+            else{
+                randomForVolVal = randomForSpeedVal/2;
+                eitherVolPlain();
+            }
         }
-        else{
+           else{
            rngIter++;
            let multVal=0;
             let rngDet=rngBin();
@@ -975,12 +923,10 @@ function runner(){
             randomForVolVal = multVolArr2[randomsForVol2[randomsForVolIter]]*multVal;
             eitherVolPlain();
         }
-
-            
+        randomsForVolIter++;
     }
 
           
-          randomsForVolIter++;
 
     }
 
@@ -996,12 +942,18 @@ function runner(){
           redefineSpeedInterval();
           speedInterval = presSpeedInterval;
 
-          if (rngs[rngIter]*24<7){
-            rngIter++;
-            randomForSpeedVal = randomForVolVal*2;
-            eitherSpeedPlain();
-          }
-          else{
+          if (!rngRx()){
+            if (rngBin()){
+                randomForSpeedVal=randomForSpeedVal;
+                eitherSpeedPlain();
+            }
+            else{
+                randomForSpeedVal = randomForVolVal*2;
+                eitherSpeedPlain();
+            }
+        }
+            else{
+
             rngIter++;
             let multVal=0;
             let rngDet=rngTrio();
@@ -1103,12 +1055,11 @@ function runner(){
             randomForSpeedVal = multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]]*multVal;
             eitherSpeedPlain();
         }
-
+        randomsForSpeedIter++;
             
     }
 
           
-          randomsForSpeedIter++;
     
 }
 }
