@@ -1,4 +1,4 @@
-const songPath = 'psych.mp3'; //psych was first
+const songPath = 'songs/psych.mp3'; //psych was first
 
 
 
