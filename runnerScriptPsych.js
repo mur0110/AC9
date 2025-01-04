@@ -566,12 +566,10 @@ function nextVolIntervalIter(){
 
             }
             else{
-                if (rngs[rngIter]*24>7){
-                    rngIter++;
+                if (rngR()){
                     repeatV=1;
                 }
                 else{
-                    rngIter++;
                     repeatV=1;
                     repeatS=1;
                 }
@@ -605,12 +603,10 @@ function nextVolIntervalIter(){
 
             }
             else{
-                if (rngs[rngIter]*24>7){
-                    rngIter++;
+                if (rngR()){
                     repeatV=1;
                 }
                 else{
-                    rngIter++;
                     repeatV=1;
                     repeatS=1;
                 }
@@ -642,12 +638,10 @@ function nextVolIntervalIter(){
 
             }
             else{
-                if (rngs[rngIter]*24>7){
-                    rngIter++;
+                if (rngR()){
                     repeatV=1;
                 }
                 else{
-                    rngIter++;
                     repeatV=1;
                     repeatS=1;
                 }
@@ -685,12 +679,10 @@ function nextSpeedIntervalIter(){
 
             }
             else{
-                if (rngs[rngIter]*24>7){
-                    rngIter++;
+                if (rngR()){
                     repeatS=1;
                 }
                 else{
-                    rngIter++;
                     repeatV=1;
                     repeatS=1;
                 }
@@ -723,12 +715,10 @@ function nextSpeedIntervalIter(){
 
             }
             else{
-                if (rngs[rngIter]*24>7){
-                    rngIter++;
+                if (rngR()){
                     repeatS=1;
                 }
                 else{
-                    rngIter++;
                     repeatV=1;
                     repeatS=1;
                 }
@@ -760,12 +750,10 @@ function nextSpeedIntervalIter(){
 
             }
             else{
-                if (rngs[rngIter]*24>7){
-                    rngIter++;
+                if (rngR()){
                     repeatS=1;
                 }
                 else{
-                    rngIter++;
                     repeatV=1;
                     repeatS=1;
                 }
