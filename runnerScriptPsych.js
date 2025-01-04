@@ -851,12 +851,16 @@ function runner(){
         redefineVolInterval();
         volInterval = presVolInterval;
 
-        if (rngs[rngIter]*24<7){
-            rngIter++;
-            randomForVolVal = randomForSpeedVal/2;
-            eitherVolPlain();
+        if (!rngRx()){
+            randomForVolVal=randomForVolVal;
         }
         else{
+           if (!rngRx()){
+                randomForVolVal = randomForSpeedVal/2;
+                eitherVolPlain();
+           }
+
+           else{
            rngIter++;
            let multVal=0;
             let rngDet=rngBin();
@@ -950,12 +954,12 @@ function runner(){
             randomForVolVal = multVolArr2[randomsForVol2[randomsForVolIter]]*multVal;
             eitherVolPlain();
         }
-
+        randomsForVolIter++;
+    }
             
     }
 
           
-          randomsForVolIter++;
 
     }
 
@@ -971,12 +975,16 @@ function runner(){
           redefineSpeedInterval();
           speedInterval = presSpeedInterval;
 
-          if (rngs[rngIter]*24<7){
-            rngIter++;
-            randomForSpeedVal = randomForVolVal*2;
-            eitherSpeedPlain();
+          if (!rngRx()){
+            randomForSpeedVal=randomForSpeedVal;
           }
           else{
+            if (!rngRx()){
+                randomForSpeedVal = randomForVolVal*2;
+                eitherSpeedPlain();
+            }
+            else{
+
             rngIter++;
             let multVal=0;
             let rngDet=rngTrio();
@@ -1078,12 +1086,13 @@ function runner(){
             randomForSpeedVal = multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]]*multVal;
             eitherSpeedPlain();
         }
+        randomsForSpeedIter++;
 
+    }
             
     }
 
           
-          randomsForSpeedIter++;
     
 }
 }
