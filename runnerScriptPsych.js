@@ -431,7 +431,7 @@ function redefineVolInterval(){
     }
 
 
-    if (rngRx()){
+    if (!rngRx()){
         presVolInterval = pickArrayVol(incTypeVol)[presVolIntervalIter] * multiplier;
     }
     else{
@@ -511,7 +511,7 @@ function redefineSpeedInterval(){
     }
 
 
-    if (rngRx()){
+    if (!rngRx()){
         presSpeedInterval = pickArraySpeed(incTypeSpeed)[presSpeedIntervalIter] * multiplier;
     }
     else{
@@ -551,7 +551,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (!rngRx()){
+                if (rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -565,7 +565,7 @@ function nextVolIntervalIter(){
 
             }
             else{
-                if (rngRx()){
+                if (!rngRx()){
                     repeatV=1;
                 }
                 else{
@@ -588,7 +588,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (!rngRx()){
+                if (rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -602,7 +602,7 @@ function nextVolIntervalIter(){
 
             }
             else{
-                if (rngRx()){
+                if (!rngRx()){
                     repeatV=1;
                 }
                 else{
@@ -623,7 +623,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (!rngRx()){
+                if (rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -637,7 +637,7 @@ function nextVolIntervalIter(){
 
             }
             else{
-                if (rngRx()){
+                if (!rngRx()){
                     repeatV=1;
                 }
                 else{
@@ -664,7 +664,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (!rngRx()){
+                if (rngRx()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
@@ -678,7 +678,7 @@ function nextSpeedIntervalIter(){
 
             }
             else{
-                if (rngRx()){
+                if (!rngRx()){
                     repeatS=1;
                 }
                 else{
@@ -700,7 +700,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (!rngRx()){
+                if (rngRx()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
@@ -714,7 +714,7 @@ function nextSpeedIntervalIter(){
 
             }
             else{
-                if (rngRx()){
+                if (!rngRx()){
                     repeatS=1;
                 }
                 else{
@@ -735,7 +735,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (!rngRx()){
+                if (rngRx()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
@@ -749,7 +749,7 @@ function nextSpeedIntervalIter(){
 
             }
             else{
-                if (rngRx()){
+                if (!rngRx()){
                     repeatS=1;
                 }
                 else{
@@ -780,11 +780,11 @@ function eitherSpeed(){
 }
 
 function eitherVolPlain(){
-    decide13();
+    decide23();
 }
 
 function eitherSpeedPlain(){
-    decide13();
+    decide23();
 }
 
 function runner(){
@@ -826,7 +826,7 @@ function runner(){
               multVal=1;
             } 
 
-        if (!rngRx()){
+        if (rngRx()){
             if (rngBin()){
                 if (rngBin()){
                     randomForVolVal=randomForVolVal;
@@ -963,7 +963,7 @@ function runner(){
           else{
             multVal=1;
           }
-          if (!rngRx()){
+          if (rngRx()){
             if (rngBin()){
                 if (rngBin()){
                     randomForSpeedVal=randomForSpeedVal;
