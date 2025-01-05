@@ -780,11 +780,11 @@ function eitherSpeed(){
 }
 
 function eitherVolPlain(){
-    decide13();
+    decide23();
 }
 
 function eitherSpeedPlain(){
-    decide13();
+    decide23();
 }
 
 function runner(){
