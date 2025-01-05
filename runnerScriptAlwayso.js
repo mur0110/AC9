@@ -140,28 +140,14 @@ function rngRx(){
 
 function decide13(){
     if (rngBin()===0){
-        if (rngQuat()===0){
             modInterDuration();
-        }
-      }
-      else{
-        if (rngTrio()===0){
-            modInterDuration();
-        }
       }
 }
 
 function decide23(){
     if (rngBin()===0){
-        if (rngQuat()!==0){
-            modInterDuration();
-        }
-      }
-      else{
-        if (rngTrio()!==0){
-            modInterDuration();
-        }
-      }
+        modInterDuration();
+  }
 }
 
 
