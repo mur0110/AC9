@@ -817,21 +817,7 @@ function runner(){
         nextVolIntervalIter();
         redefineVolInterval();
         volInterval = presVolInterval;
-
-
-        if (rngRx()){
-            if (rngBin()){
-                randomForVolVal=randomForVolVal;
-                eitherVolPlain();
-            }
-            else{
-                randomForVolVal = randomForSpeedVal/2;
-                eitherVolPlain();
-            }
-        }
-           else{
-           rngIter++;
-           let multVal=0;
+        let multVal=0;
             let rngDet=rngBin();
             if (rngDet===0){
               multVal=.7143;
@@ -839,6 +825,31 @@ function runner(){
             else {
               multVal=1;
             } 
+
+        if (rngRx()){
+            if (rngBin()){
+                if (rngBin()){
+                    randomForVolVal=randomForVolVal;
+                    eitherVolPlain();
+                }
+                else{
+                    randomForVolVal=randomForVolVal * multVal;
+                    eitherVolPlain();
+                }
+            }
+            else{
+                if (rngBin()){
+                    randomForVolVal = randomForSpeedVal/2;
+                    eitherVolPlain();
+                }
+                else{
+                    randomForVolVal = randomForSpeedVal/2 * multVal;
+                    eitherVolPlain();
+                }
+            }
+        }
+           else{
+           
           if (rngWhich<(1/3)){
              
             let rngDecider=rngBin();
@@ -941,31 +952,41 @@ function runner(){
           nextSpeedIntervalIter();
           redefineSpeedInterval();
           speedInterval = presSpeedInterval;
-
+          let multVal=0;
+          let rngDet=rngTrio();
+          if (rngDet===0){
+            multVal=.7143;
+          }
+          else if (rngDet===1){
+            multVal=7/5;
+          } 
+          else{
+            multVal=1;
+          }
           if (rngRx()){
             if (rngBin()){
-                randomForSpeedVal=randomForSpeedVal;
-                eitherSpeedPlain();
+                if (rngBin()){
+                    randomForSpeedVal=randomForSpeedVal;
+                    eitherSpeedPlain();
+                }
+                else{
+                    randomForSpeedVal=randomForSpeedVal * multVal;
+                    eitherSpeedPlain();
+                }
             }
             else{
-                randomForSpeedVal = randomForVolVal*2;
-                eitherSpeedPlain();
+                if (rngBin()){
+                    randomForSpeedVal = randomForVolVal*2;
+                    eitherSpeedPlain();
+                }
+                else{
+                    randomForSpeedVal = randomForVolVal*2 * multVal;
+                    eitherSpeedPlain();
+                }
             }
         }
             else{
-
-            rngIter++;
-            let multVal=0;
-            let rngDet=rngTrio();
-            if (rngDet===0){
-              multVal=.7143;
-            }
-            else if (rngDet===1){
-              multVal=7/5;
-            } 
-            else{
-                multVal=1;
-            }
+            
           if (rngWhich<(1/3)){
             
             let rngDecider=rngBin();
