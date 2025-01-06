@@ -298,14 +298,7 @@ function selectNextVolArray(presVolInc){
 
     const rngSelector=rngs[rngIter];
     rngIter++;
-    let possibles2=[2,3,4,2.5,3.5,5];
-    if (rngBin()){
-        incTypeVol=possibles[rngSelector];
-    }
-    else{
-        incTypeVol=possibles2[Math.floor(rngs[rngIter]*6)];
-        rngIter++;
-    }
+    incTypeVol=possibles[rngSelector];
 }
 
 function selectNextSpeedArray(presSpeedInc){
@@ -320,15 +313,7 @@ function selectNextSpeedArray(presSpeedInc){
 
     const rngSelector=rngs[rngIter];
     rngIter++;
-
-    let possibles2=[2,3,4,2.5,3.5,5];
-    if (rngBin()){
-        incTypeSpeed=possibles[rngSelector];
-    }
-    else{
-        incTypeSpeed=possibles2[Math.floor(rngs[rngIter]*6)];
-        rngIter++;
-    }
+    incTypeSpeed=possibles[rngSelector];
 }
 
 
@@ -381,10 +366,22 @@ let speedInterval = presSpeedInterval;
 
 function redefineVolInterval(){
     let multiplier=0;
-    let arrayHold=pickArrayVol(Math.floor(rngs[rngIter]*10));
+    let arrayHold=pickArrayVol(Math.floor(rngs[rngIter]*12));
     rngIter++;
-    let randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
-    rngIter++;
+    let randomInt=0;
+
+    if (rngBin()){
+        randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
+        rngIter++;
+    }
+    else{
+        let range1=[2,3,4,2.5,3.5,5];
+        randomInt=range1[Math.floor(rngs[rngIter]*6)];
+        rngIter++;
+    }
+
+    
+
 
 
     if (!rngRx()){
@@ -461,10 +458,19 @@ function redefineVolInterval(){
 
 function redefineSpeedInterval(){
     let multiplier=0;
-    let arrayHold=pickArrayVol(Math.floor(rngs[rngIter]*10));
+    let arrayHold=pickArrayVol(Math.floor(rngs[rngIter]*12));
     rngIter++;
-    let randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
-    rngIter++;
+    let randomInt=0;
+
+    if (rngBin()){
+        randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
+        rngIter++;
+    }
+    else{
+        let range1=[2,3,4,2.5,3.5,5];
+        randomInt=range1[Math.floor(rngs[rngIter]*6)];
+        rngIter++;
+    }
     
 
 
