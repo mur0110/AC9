@@ -1,7 +1,8 @@
-const songPath = 'songs/children.mp3'; //children was first
+const songPath = 'songs/children.mp3'; //middle was first
 
 
-
+let volumeLog=0;
+let speedLog=0;
 
 
 const multVolArr1 = [.385, .405, .415, .435 ,.445, .465, .475, .485, .495, .5, .505, .515, .525, .535, .555, .565, .585, .595, .615];
@@ -38,7 +39,7 @@ function truncate(x){
     return parseFloat(y);
 }
 
-for (let i=0; i<1000000; i++){
+for (let i=0; i<1500000; i++){
     rngs.push(truncate(Math.random()));
 }
 
@@ -370,7 +371,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngRx()){
+    if (rngR()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -462,7 +463,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngRx()){
+    if (rngR()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -580,7 +581,7 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngBin()){
+            if (rngRx()){
 
                 repeatV=repeatS;
 
@@ -617,7 +618,7 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngBin()){
+            if (rngRx()){
 
                 repeatV=repeatS;
 
@@ -652,7 +653,7 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngBin()){
+            if (rngRx()){
 
                 repeatV=repeatS;
 
@@ -693,7 +694,7 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngBin()){
+            if (rngRx()){
 
                 repeatS=repeatV;
 
@@ -729,7 +730,7 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngBin()){
+            if (rngRx()){
 
                 repeatS=repeatV;
 
@@ -764,7 +765,7 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngBin()){
+            if (rngRx()){
 
                 repeatS=repeatV;
 
@@ -801,16 +802,23 @@ function eitherSpeed(){
 }
 
 function eitherVolPlain(){
-    decide23();
+    if (rngBin()){
+        modInterDuration();
+    }
 }
 
 function eitherSpeedPlain(){
-    decide23();
+    if (rngBin()){
+        modInterDuration();
+    }
 }
 
 function runner(){
     const songAudio = new Audio(songPath);
-    
+    let duration1=0;
+    songAudio.onloadedmetadata = () => {
+        duration1=songAudio.duration; // Duration in seconds
+      };
     // set initial vol and speed intervals
     redefineVolInterval();
     redefineSpeedInterval();
@@ -822,9 +830,24 @@ function runner(){
     advanceSpeed();
 
 
+    
 
     function advanceVolume(){
+        if (volumeLog>10){
+            if (volumeLog<duration1-2){
+                av();
+            }
+            else{
+                songAudio.pause();
+            }
+        }
+        else{
+            av();
+        }
 
+        function av(){
+
+        
 
         // rngWhich
         let rngWhich=rngs[rngIter];
@@ -835,6 +858,7 @@ function runner(){
             volIntervalIter++;
             advanceVolume();
         }, interDuration * volInterval * 1000);
+        volumeLog+=interDuration*volInterval;
         volInterval = presVolInterval;
         let multVal=0;
             let rngDet=rngBin();
@@ -963,10 +987,26 @@ function runner(){
     }
 
           
-
+}
     }
 
     function advanceSpeed(){
+        if (speedLog>10){
+            if (speedLog<duration1-2){
+                as();
+            }
+            else{
+                songAudio.pause();
+            }
+        }
+        else{
+            as();
+        }
+
+        function as(){
+
+
+
           let rngWhich=rngs[rngIter];
           rngIter++;
           setTimeout(function(){
@@ -974,6 +1014,8 @@ function runner(){
               speedIntervalIter++;
               advanceSpeed();
           }, interDuration * speedInterval * 1000);
+          speedLog+=interDuration*speedInterval;
+
           speedInterval = presSpeedInterval;
           let multVal=0;
           let rngDet=rngTrio();
@@ -1110,6 +1152,6 @@ function runner(){
     }
 
           
-    
+}
 }
 }
