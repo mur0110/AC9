@@ -1,4 +1,4 @@
-const songPath = 'middle.mp3'; //middle was first
+const songPath = 'songs/middle.mp3'; //middle was first
 
 
 let volumeLog=0;
@@ -837,6 +837,9 @@ function runner(){
                 songAudio.pause();
             }
         }
+        else{
+            av();
+        }
 
         function av(){
 
@@ -851,8 +854,7 @@ function runner(){
             volIntervalIter++;
             advanceVolume();
         }, interDuration * volInterval * 1000);
-        volumeLog+=interDuration*volInterval*1000;
-
+        volumeLog+=interDuration*volInterval;
         volInterval = presVolInterval;
         let multVal=0;
             let rngDet=rngBin();
@@ -987,11 +989,14 @@ function runner(){
     function advanceSpeed(){
         if (speedLog>10){
             if (speedLog<duration1-2){
-                av();
+                as();
             }
             else{
                 songAudio.pause();
             }
+        }
+        else{
+            as();
         }
 
         function as(){
@@ -1005,7 +1010,7 @@ function runner(){
               speedIntervalIter++;
               advanceSpeed();
           }, interDuration * speedInterval * 1000);
-          speedLog+=interDuration*speedInterval*1000;
+          speedLog+=interDuration*speedInterval;
 
           speedInterval = presSpeedInterval;
           let multVal=0;
