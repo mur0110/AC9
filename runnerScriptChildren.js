@@ -332,7 +332,7 @@ const randomsForSpeed1=[];
 const randomsForVol2=[];
 const randomsForSpeed2=[];
 
-for (let i=0; i<2000; i++){
+for (let i=0; i<4000; i++){
     randomsForVol1.push(pickAmong19());
     randomsForSpeed1.push(pickAmong19());
     randomsForVol2.push(pickAmong31());
