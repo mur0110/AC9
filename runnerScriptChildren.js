@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; //lato was first
+const songPath = 'songs/children.mp3'; //middle was first
 
 
 let volumeLog=0;
@@ -587,7 +587,7 @@ function nextVolIntervalIter(){
 
             }
             else{
-                if (!rngRx()){
+                if (rngR()){
                     repeatV=1;
                 }
                 else{
@@ -624,7 +624,7 @@ function nextVolIntervalIter(){
 
             }
             else{
-                if (!rngRx()){
+                if (rngR()){
                     repeatV=1;
                 }
                 else{
@@ -659,7 +659,7 @@ function nextVolIntervalIter(){
 
             }
             else{
-                if (!rngRx()){
+                if (rngR()){
                     repeatV=1;
                 }
                 else{
@@ -700,7 +700,7 @@ function nextSpeedIntervalIter(){
 
             }
             else{
-                if (!rngRx()){
+                if (rngR()){
                     repeatS=1;
                 }
                 else{
@@ -736,7 +736,7 @@ function nextSpeedIntervalIter(){
 
             }
             else{
-                if (!rngRx()){
+                if (rngR()){
                     repeatS=1;
                 }
                 else{
@@ -771,7 +771,7 @@ function nextSpeedIntervalIter(){
 
             }
             else{
-                if (!rngRx()){
+                if (rngR()){
                     repeatS=1;
                 }
                 else{
