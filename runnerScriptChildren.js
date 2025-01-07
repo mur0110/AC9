@@ -39,7 +39,7 @@ function truncate(x){
     return parseFloat(y);
 }
 
-for (let i=0; i<3000000; i++){
+for (let i=0; i<1500000; i++){
     rngs.push(truncate(Math.random()));
 }
 
@@ -573,7 +573,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (rngRx()){
+                if (!rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -610,7 +610,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (rngRx()){
+                if (!rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -645,7 +645,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (rngRx()){
+                if (!rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -686,7 +686,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (rngRx()){
+                if (!rngRx()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
@@ -722,7 +722,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (rngRx()){
+                if (!rngRx()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
@@ -757,7 +757,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (rngRx()){
+                if (!rngRx()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
@@ -802,15 +802,11 @@ function eitherSpeed(){
 }
 
 function eitherVolPlain(){
-    if (rngR()){
-        modInterDuration();
-    }
+    decide23();
 }
 
 function eitherSpeedPlain(){
-    if (rngR()){
-        modInterDuration();
-    }
+    decide23();
 }
 
 function runner(){
@@ -869,17 +865,17 @@ function runner(){
               multVal=1;
             } 
 
-        if (rngRx()){
+        if (!rngRx()){
             if (rngBin()){
                 if (rngBin()){
                     randomForVolVal=randomForVolVal;
-                    if (!rngRx()){
+                    if (rngRx()){
                     eitherVolPlain();
                     }
                 }
                 else{
                     randomForVolVal=randomForVolVal * multVal;
-                    if (!rngRx()){
+                    if (rngRx()){
                     eitherVolPlain();
                     }
                 }
@@ -887,7 +883,7 @@ function runner(){
             else{
                 if (rngBin()){
                     randomForVolVal = randomForSpeedVal/2;
-                    if (!rngRx()){
+                    if (rngRx()){
                     eitherVolPlain();
                     }
                 }
@@ -1036,17 +1032,17 @@ function runner(){
           else{
             multVal=1;
           }
-          if (rngRx()){
+          if (!rngRx()){
             if (rngBin()){
                 if (rngBin()){
                     randomForSpeedVal=randomForSpeedVal;
-                    if (!rngRx()){
+                    if (rngRx()){
                     eitherSpeedPlain();
                     }
                 }
                 else{
                     randomForSpeedVal=randomForSpeedVal * multVal;
-                    if (!rngRx()){
+                    if (rngRx()){
                     eitherSpeedPlain();
                     }
                 }
@@ -1054,13 +1050,13 @@ function runner(){
             else{
                 if (rngBin()){
                     randomForSpeedVal = randomForVolVal*2;
-                    if (!rngRx()){
+                    if (rngRx()){
                     eitherSpeedPlain();
                     }
                 }
                 else{
                     randomForSpeedVal = randomForVolVal*2 * multVal;
-                    if (!rngRx()){
+                    if (rngRx()){
                     eitherSpeedPlain();
                     }
                 }
