@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; //children was first
+const songPath = 'songs/children.mp3'; //lato was first
 
 
 let volumeLog=0;
@@ -371,7 +371,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (!rngRx()){
+    if (rngR()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -463,7 +463,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (!rngRx()){
+    if (rngR()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -869,21 +869,29 @@ function runner(){
             if (rngBin()){
                 if (rngBin()){
                     randomForVolVal=randomForVolVal;
+                    if (rngRx()){
                     eitherVolPlain();
+                    }
                 }
                 else{
                     randomForVolVal=randomForVolVal * multVal;
+                    if (rngRx()){
                     eitherVolPlain();
+                    }
                 }
             }
             else{
                 if (rngBin()){
                     randomForVolVal = randomForSpeedVal/2;
+                    if (rngRx()){
                     eitherVolPlain();
+                    }
                 }
                 else{
                     randomForVolVal = randomForSpeedVal/2 * multVal;
+                    if (rngRx()){
                     eitherVolPlain();
+                    }
                 }
             }
             if (rngBin()){
@@ -1028,21 +1036,29 @@ function runner(){
             if (rngBin()){
                 if (rngBin()){
                     randomForSpeedVal=randomForSpeedVal;
+                    if (rngRx()){
                     eitherSpeedPlain();
+                    }
                 }
                 else{
                     randomForSpeedVal=randomForSpeedVal * multVal;
+                    if (rngRx()){
                     eitherSpeedPlain();
+                    }
                 }
             }
             else{
                 if (rngBin()){
                     randomForSpeedVal = randomForVolVal*2;
+                    if (rngRx()){
                     eitherSpeedPlain();
+                    }
                 }
                 else{
                     randomForSpeedVal = randomForVolVal*2 * multVal;
+                    if (rngRx()){
                     eitherSpeedPlain();
+                    }
                 }
             }
             if (rngBin()){
