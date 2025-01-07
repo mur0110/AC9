@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; //lately was first
+const songPath = 'songs/children.mp3'; //sucksto was first
 
 
 let volumeLog=0;
@@ -48,8 +48,15 @@ function modInterDuration(){
     let mVal=0;
     let mArray=[];
 
-        mArray=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53];
-        mVal=14;
+        if (rngR()){
+            mArray=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53];
+            mVal=14;
+        }
+        else{
+            mArray=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53, .59, .61, .67];
+            mVal=17;
+        }
+        
 
         interDuration = mArray[Math.floor(rngs[rngIter]*mVal)];
         rngIter++;
