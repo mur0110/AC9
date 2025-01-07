@@ -1,5 +1,4 @@
-const songPath = 'songs/children.mp3'; //lato was first
-
+const songPath = 'songs/children.mp3'; //dwm was first
 
 let volumeLog=0;
 let speedLog=0;
@@ -802,15 +801,11 @@ function eitherSpeed(){
 }
 
 function eitherVolPlain(){
-    if (rngBin()){
-        modInterDuration();
-    }
+    decide13();
 }
 
 function eitherSpeedPlain(){
-    if (rngBin()){
-        modInterDuration();
-    }
+    decide13();
 }
 
 function runner(){
