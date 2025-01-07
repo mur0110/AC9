@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; //children was first to new 13
+const songPath = 'songs/children.mp3'; //children was first
 
 
 let volumeLog=0;
@@ -581,7 +581,7 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngRx()){
+            if (rngR()){
 
                 repeatV=repeatS;
 
@@ -618,7 +618,7 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngRx()){
+            if (rngR()){
 
                 repeatV=repeatS;
 
@@ -653,7 +653,7 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngRx()){
+            if (rngR()){
 
                 repeatV=repeatS;
 
@@ -694,7 +694,7 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngRx()){
+            if (rngR()){
 
                 repeatS=repeatV;
 
@@ -730,7 +730,7 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngRx()){
+            if (rngR()){
 
                 repeatS=repeatV;
 
@@ -765,7 +765,7 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngRx()){
+            if (rngR()){
 
                 repeatS=repeatV;
 
@@ -802,11 +802,11 @@ function eitherSpeed(){
 }
 
 function eitherVolPlain(){
-    decide13();
+    decide23();
 }
 
 function eitherSpeedPlain(){
-    decide13();
+    decide23();
 }
 
 function runner(){
