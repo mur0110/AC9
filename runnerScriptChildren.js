@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; //middle was first
+const songPath = 'songs/children.mp3'; //children was first to new 13
 
 
 let volumeLog=0;
@@ -371,7 +371,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngR()){
+    if (!rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -463,7 +463,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngR()){
+    if (!rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -802,11 +802,11 @@ function eitherSpeed(){
 }
 
 function eitherVolPlain(){
-    decide13();
+    decide23();
 }
 
 function eitherSpeedPlain(){
-    decide13();
+    decide23();
 }
 
 function runner(){
