@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; //children was first to new 23
+const songPath = 'songs/children.mp3'; //children was first
 
 
 let volumeLog=0;
@@ -802,11 +802,15 @@ function eitherSpeed(){
 }
 
 function eitherVolPlain(){
-    decide23();
+    if (rngBin()){
+        modInterDuration();
+    }
 }
 
 function eitherSpeedPlain(){
-    decide23();
+    if (rngBin()){
+        modInterDuration();
+    }
 }
 
 function runner(){
