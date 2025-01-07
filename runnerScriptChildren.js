@@ -802,15 +802,11 @@ function eitherSpeed(){
 }
 
 function eitherVolPlain(){
-    if (rngBin()){
-        modInterDuration();
-    }
+    decide13();
 }
 
 function eitherSpeedPlain(){
-    if (rngBin()){
-        modInterDuration();
-    }
+    decide13();
 }
 
 function runner(){
