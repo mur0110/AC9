@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; //thewanted we own the night was first
+const songPath = 'songs/children.mp3'; //lato was first
 
 
 let volumeLog=0;
@@ -39,8 +39,26 @@ function truncate(x){
     return parseFloat(y);
 }
 
+function generateRandomNumber() {
+    // Ensure that min and max are integers
+    min = 0;
+    max = 999;
+  
+    // Create a typed array to store the random values
+    const array = new Uint32Array(1);
+  
+    // Fill the array with a cryptographically secure random value
+    window.crypto.getRandomValues(array);
+  
+    // Convert the random value to the desired range
+    const randomNumber = min + (array[0] % (max - min + 1));
+  
+    return randomNumber/1000;
+  }
+  
+
 for (let i=0; i<1500000; i++){
-    rngs.push(truncate(Math.random()));
+    rngs.push(truncate(generateRandomNumber()));
 }
 
 
