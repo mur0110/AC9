@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; //l'mour was first
+const songPath = 'songs/children.mp3'; //lato was first
 
 
 let volumeLog=0;
@@ -451,7 +451,7 @@ function redefineVolInterval(){
     }
 
 
-    if (!rngRx()){
+    if (rngRx()){
         presVolInterval = pickArrayVol(incTypeVol)[presVolIntervalIter] * multiplier;
     }
     else{
@@ -540,7 +540,7 @@ function redefineSpeedInterval(){
     }
 
 
-    if (!rngRx()){
+    if (rngRx()){
         presSpeedInterval = pickArraySpeed(incTypeSpeed)[presSpeedIntervalIter] * multiplier;
     }
     else{
@@ -901,7 +901,7 @@ function runner(){
                     }
                 }
             }
-            if (rngRx()){
+            if (!rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
             }
@@ -1068,7 +1068,7 @@ function runner(){
                     }
                 }
             }
-            if (rngRx()){
+            if (!rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
             }
