@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; //sucksto was first
+const songPath = 'songs/children.mp3'; //l'mour was first
 
 
 let volumeLog=0;
@@ -378,7 +378,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (!rngRx()){
+    if (rngR()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -470,7 +470,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (!rngRx()){
+    if (rngR()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
