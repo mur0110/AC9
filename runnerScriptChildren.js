@@ -876,29 +876,29 @@ function runner(){
             if (rngBin()){
                 if (rngBin()){
                     randomForVolVal=randomForVolVal;
-                    if (rngRx()){
+                    
                     eitherVolPlain();
-                    }
+                    
                 }
                 else{
                     randomForVolVal=randomForVolVal * multVal;
-                    if (rngRx()){
+                    
                     eitherVolPlain();
-                    }
+                    
                 }
             }
             else{
                 if (rngBin()){
                     randomForVolVal = randomForSpeedVal/2;
-                    if (rngRx()){
+                    
                     eitherVolPlain();
-                    }
+                    
                 }
                 else{
                     randomForVolVal = randomForSpeedVal/2 * multVal;
-                    if (rngRx()){
+                    
                     eitherVolPlain();
-                    }
+                    
                 }
             }
             
@@ -1043,29 +1043,29 @@ function runner(){
             if (rngBin()){
                 if (rngBin()){
                     randomForSpeedVal=randomForSpeedVal;
-                    if (rngRx()){
+    
                     eitherSpeedPlain();
-                    }
+                    
                 }
                 else{
                     randomForSpeedVal=randomForSpeedVal * multVal;
-                    if (rngRx()){
+                    
                     eitherSpeedPlain();
-                    }
+                    
                 }
             }
             else{
                 if (rngBin()){
                     randomForSpeedVal = randomForVolVal*2;
-                    if (rngRx()){
+                    
                     eitherSpeedPlain();
-                    }
+                    
                 }
                 else{
                     randomForSpeedVal = randomForVolVal*2 * multVal;
-                    if (rngRx()){
+                    
                     eitherSpeedPlain();
-                    }
+                    
                 }
             }
             
