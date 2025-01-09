@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; //middle was first
+const songPath = 'songs/children.mp3'; //children was first
 
 
 let volumeLog=0;
@@ -56,7 +56,7 @@ function generateRandomNumber() {
   }
   
 
-for (let i=0; i<5000000; i++){
+for (let i=0; i<7000000; i++){
     rngs.push(truncate(generateRandomNumber()));
 }
 
