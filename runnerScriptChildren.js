@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; //maybe gigi was first
+const songPath = 'songs/children.mp3'; //sucksto was first
 let duration1=450;
 
 
@@ -829,13 +829,13 @@ function eitherSpeed(){
 }
 
 function eitherVolPlain(){
-    if (!rngRx()){
+    if (rngRx()){
         modInterDuration();
     }
 }
 
 function eitherSpeedPlain(){
-    if (!rngRx()){
+    if (rngRx()){
         modInterDuration();
     }
 }
