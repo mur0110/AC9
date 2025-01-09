@@ -56,7 +56,7 @@ function generateRandomNumber() {
   }
   
 
-for (let i=0; i<8000000; i++){
+for (let i=0; i<5000000; i++){
     rngs.push(truncate(generateRandomNumber()));
 }
 
@@ -66,7 +66,7 @@ const randomsForSpeed1=[];
 const randomsForVol2=[];
 const randomsForSpeed2=[];
 
-for (let i=0; i<300000; i++){
+for (let i=0; i<200000; i++){
     randomsForVol1.push(pickAmong19());
     randomsForSpeed1.push(pickAmong19());
     randomsForVol2.push(pickAmong31());
