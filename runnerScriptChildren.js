@@ -473,7 +473,7 @@ function redefineVolInterval(){
         presVolInterval = pickArrayVol(incTypeVol)[presVolIntervalIter] * multiplier;
     }
     else{
-        if (rngR()){
+        if (rngRx()){
             presVolInterval = presSpeedInterval * multiplier;
         }
         else{
@@ -562,7 +562,7 @@ function redefineSpeedInterval(){
         presSpeedInterval = pickArraySpeed(incTypeSpeed)[presSpeedIntervalIter] * multiplier;
     }
     else{
-        if (rngR()){
+        if (rngRx()){
             presSpeedInterval = presVolInterval * multiplier;
         }
         else{
@@ -896,7 +896,7 @@ function runner(){
 
         if (!rngRx()){
             if (rngBin()){
-                if (rngBin()){
+                if (!rngRx()){
                     randomForVolVal=randomForVolVal;
                     
                     eitherVolPlain();
@@ -910,7 +910,7 @@ function runner(){
                 }
             }
             else{
-                if (rngBin()){
+                if (!rngRx()){
                     randomForVolVal = randomForSpeedVal/2;
                     
                     eitherVolPlain();
@@ -1063,7 +1063,7 @@ function runner(){
           }
           if (!rngRx()){
             if (rngBin()){
-                if (rngBin()){
+                if (!rngRx()){
                     randomForSpeedVal=randomForSpeedVal;
     
                     eitherSpeedPlain();
@@ -1077,7 +1077,7 @@ function runner(){
                 }
             }
             else{
-                if (rngBin()){
+                if (!rngRx()){
                     randomForSpeedVal = randomForVolVal*2;
                     
                     eitherSpeedPlain();
