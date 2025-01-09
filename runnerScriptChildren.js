@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; //idk was first
+const songPath = 'songs/children.mp3'; //middle was first
 
 
 let volumeLog=0;
@@ -10,7 +10,6 @@ const multSpeedArr1 = [.77, .81, .83, .87, .89, .93, .95, .97, .99, 1, 1.01, 1.0
 
 const multVolArr2 = [ .375, .3825, .3875, .4, .4075, .4125, .425, .4325, .4375, .45, .4575, .4625, .475, .4825, .4875, .5, .5125, .5175, .525, .5375, .5425, .55, .5625, .5675, .575, .5875, .5925, .6, .6125, .6175, .625];
 const multSpeedArr2 = [ .75, .765, .775, .8, .815, .825, .85, .865, .875, .9, .915, .925, .95, .965, .975, 1, 1.025, 1.035, 1.05, 1.075, 1.085, 1.1, 1.125, 1.135, 1.15, 1.75, 1.85, 1.2, 1.225, 1.235, 1.25];
-
 
 
 
@@ -57,8 +56,21 @@ function generateRandomNumber() {
   }
   
 
-for (let i=0; i<2500000; i++){
+for (let i=0; i<8000000; i++){
     rngs.push(truncate(generateRandomNumber()));
+}
+
+const randomsForVol1=[];
+const randomsForSpeed1=[];
+
+const randomsForVol2=[];
+const randomsForSpeed2=[];
+
+for (let i=0; i<300000; i++){
+    randomsForVol1.push(pickAmong19());
+    randomsForSpeed1.push(pickAmong19());
+    randomsForVol2.push(pickAmong31());
+    randomsForSpeed2.push(pickAmong31());
 }
 
 
@@ -351,18 +363,7 @@ const primeRaw = [17, 13, 11, 7, 5, 3, 1, 0, 1, 3, 5, 7, 11, 13, 17];
 
 
 
-const randomsForVol1=[];
-const randomsForSpeed1=[];
 
-const randomsForVol2=[];
-const randomsForSpeed2=[];
-
-for (let i=0; i<60000; i++){
-    randomsForVol1.push(pickAmong19());
-    randomsForSpeed1.push(pickAmong19());
-    randomsForVol2.push(pickAmong31());
-    randomsForSpeed2.push(pickAmong31());
-}
 
 
 
@@ -396,7 +397,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (!rngRx()){
+    if (rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -488,7 +489,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (!rngRx()){
+    if (rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
