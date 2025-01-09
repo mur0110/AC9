@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; //children was first
+const songPath = 'songs/children.mp3'; //idk was first
 
 
 let volumeLog=0;
