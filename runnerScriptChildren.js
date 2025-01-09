@@ -827,13 +827,13 @@ function eitherSpeed(){
 }
 
 function eitherVolPlain(){
-    if (rngR()){
+    if (!rngRx()){
         modInterDuration();
     }
 }
 
 function eitherSpeedPlain(){
-    if (rngR()){
+    if (!rngRx()){
         modInterDuration();
     }
 }
@@ -1077,7 +1077,7 @@ function runner(){
                 }
             }
             else{
-                if (!rngRx()){
+                if (!rngRx){
                     randomForSpeedVal = randomForVolVal*2;
                     
                     eitherSpeedPlain();
