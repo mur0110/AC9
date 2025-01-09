@@ -1,4 +1,5 @@
-const songPath = 'songs/children.mp3'; //children was first
+const songPath = 'songs/children.mp3'; //maybe gigi was first
+let duration1=450;
 
 
 let volumeLog=0;
@@ -56,7 +57,7 @@ function generateRandomNumber() {
   }
   
 
-for (let i=0; i<7000000; i++){
+for (let i=0; i<3000000; i++){
     rngs.push(truncate(generateRandomNumber()));
 }
 
@@ -66,7 +67,7 @@ const randomsForSpeed1=[];
 const randomsForVol2=[];
 const randomsForSpeed2=[];
 
-for (let i=0; i<200000; i++){
+for (let i=0; i<80000; i++){
     randomsForVol1.push(pickAmong19());
     randomsForSpeed1.push(pickAmong19());
     randomsForVol2.push(pickAmong31());
@@ -840,11 +841,8 @@ function eitherSpeedPlain(){
 }
 
 function runner(){
+
     const songAudio = new Audio(songPath);
-    let duration1=0;
-    songAudio.onloadedmetadata = () => {
-        duration1=songAudio.duration; // Duration in seconds
-      };
     // set initial vol and speed intervals
     redefineVolInterval();
     redefineSpeedInterval();
@@ -859,17 +857,15 @@ function runner(){
     
 
     function advanceVolume(){
-        if (volumeLog>10){
+
             if (volumeLog<duration1-2){
                 av();
             }
             else{
                 songAudio.pause();
             }
-        }
-        else{
-            av();
-        }
+        
+
 
         function av(){
 
@@ -1025,17 +1021,14 @@ function runner(){
     }
 
     function advanceSpeed(){
-        if (speedLog>10){
+
             if (speedLog<duration1-2){
                 as();
             }
             else{
                 songAudio.pause();
             }
-        }
-        else{
-            as();
-        }
+        
 
         function as(){
 
