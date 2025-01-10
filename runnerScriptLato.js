@@ -398,7 +398,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngRx()){
+    if (rngR()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -431,10 +431,10 @@ function redefineVolInterval(){
 
     if (!rngRx()){
         if (rngR()){
-            multiplier=5/7;
+            multiplier=multiplier*5/7;
         }
         else{
-            multiplier=7/5;
+            multiplier=multiplier*7/5;
         }
     }
 
@@ -473,10 +473,10 @@ function redefineVolInterval(){
 
     if (!rngRx()){
         if (rngR()){
-            multiplier=5/7;
+            multiplier=multiplier*5/7;
         }
         else{
-            multiplier=7/5;
+            multiplier=multiplier*7/5;
         }
     }
 
@@ -510,7 +510,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngRx()){
+    if (rngR()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -539,10 +539,10 @@ function redefineSpeedInterval(){
 
     if (!rngRx()){
         if (rngR()){
-            multiplier=5/7;
+            multiplier=multiplier*5/7;
         }
         else{
-            multiplier=7/5;
+            multiplier=multiplier*7/5;
         }
     }
 
@@ -579,10 +579,10 @@ function redefineSpeedInterval(){
 
     if (!rngRx()){
         if (rngR()){
-            multiplier=5/7;
+            multiplier=multiplier*5/7;
         }
         else{
-            multiplier=7/5;
+            multiplier=multiplier*7/5;
         }
     }
 
