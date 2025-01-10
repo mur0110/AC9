@@ -1,4 +1,4 @@
-const songPath = 'children/lato.mp3'; //lato was first
+const songPath = 'songs/lato.mp3'; //lato was first
 let duration1=450;
 
 
@@ -419,18 +419,28 @@ function redefineVolInterval(){
         multiplier=randomInt;
     }    
 
-    let when=rngBin();
-    let when2=rngBin();
 
-    if (when===0){
-        if (rngs[rngIter]*7<2){
-            rngIter++;
-            multiplier=5/7;
+
+
+    if (!rngRx()){
+        if (rngR()){
+            multiplier=1/multiplier;
         }
     }
 
-    if (when2===0){
-        if (rngBin()===0){
+
+    if (!rngRx()){
+        if (rngR()){
+            multiplier=5/7;
+        }
+        else{
+            multiplier=7/5;
+        }
+    }
+
+
+    if (!rngRx()){
+        if (rngR()){
             multiplier=1/multiplier;
         }
     }
@@ -453,15 +463,26 @@ function redefineVolInterval(){
 
     
 
-    if (when===1){
-        if (rngs[rngIter]*7<2){
-            rngIter++;
-            multiplier=5/7;
+
+    if (!rngRx()){
+        if (rngR()){
+            multiplier=1/multiplier;
         }
     }
 
-    if (when2===1){
-        if (rngBin()===0){
+
+    if (!rngRx()){
+        if (rngR()){
+            multiplier=5/7;
+        }
+        else{
+            multiplier=7/5;
+        }
+    }
+
+
+    if (!rngRx()){
+        if (rngR()){
             multiplier=1/multiplier;
         }
     }
@@ -469,7 +490,6 @@ function redefineVolInterval(){
     if (!rngRx()){
         multiplier=1;
     }
-
 
     if (rngRx()){
         presVolInterval = pickArrayVol(incTypeVol)[presVolIntervalIter] * multiplier;
@@ -510,18 +530,25 @@ function redefineSpeedInterval(){
     }    
     
     
-    let when=rngBin();
-    let when2=rngBin();
-
-    if (when===0){
-        if (rngs[rngIter]*7<2){
-            rngIter++;
-            multiplier=5/7;
+    if (!rngRx()){
+        if (rngR()){
+            multiplier=1/multiplier;
         }
     }
 
-    if (when2===0){
-        if (rngBin()===0){
+
+    if (!rngRx()){
+        if (rngR()){
+            multiplier=5/7;
+        }
+        else{
+            multiplier=7/5;
+        }
+    }
+
+
+    if (!rngRx()){
+        if (rngR()){
             multiplier=1/multiplier;
         }
     }
@@ -543,14 +570,25 @@ function redefineSpeedInterval(){
     }
 
    
-    if (when===1){
-        if (rngs[rngIter]*7<2){
-            rngIter++;
-            multiplier=5/7;
+    if (!rngRx()){
+        if (rngR()){
+            multiplier=1/multiplier;
         }
     }
-    if (when2===1){
-        if (rngBin()===0){
+
+
+    if (!rngRx()){
+        if (rngR()){
+            multiplier=5/7;
+        }
+        else{
+            multiplier=7/5;
+        }
+    }
+
+
+    if (!rngRx()){
+        if (rngR()){
             multiplier=1/multiplier;
         }
     }
