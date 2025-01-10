@@ -1,4 +1,4 @@
-const songPath = 'songs/lato.mp3'; //lato was first
+const songPath = 'children/lato.mp3'; //lato was first
 let duration1=450;
 
 
@@ -398,7 +398,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (!rngRx()){
+    if (rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -475,7 +475,7 @@ function redefineVolInterval(){
         presVolInterval = pickArrayVol(incTypeVol)[presVolIntervalIter] * multiplier;
     }
     else{
-        if (rngRx()){
+        if (rngR()){
             presVolInterval = presSpeedInterval * multiplier;
         }
         else{
@@ -490,7 +490,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (!rngRx()){
+    if (rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -564,7 +564,7 @@ function redefineSpeedInterval(){
         presSpeedInterval = pickArraySpeed(incTypeSpeed)[presSpeedIntervalIter] * multiplier;
     }
     else{
-        if (rngRx()){
+        if (rngR()){
             presSpeedInterval = presVolInterval * multiplier;
         }
         else{
@@ -840,13 +840,13 @@ function eitherSpeed(){
 }
 
 function eitherVolPlain(){
-    if (rngR()){
+    if (!rngRx()){
         modInterDuration();
     }
 }
 
 function eitherSpeedPlain(){
-    if (rngR()){
+    if (!rngRx()){
         modInterDuration();
     }
 }
@@ -904,7 +904,7 @@ function runner(){
 
         if (!rngRx()){
             if (rngBin()){
-                if (!rngRx()){
+                if (rngR()){
                     randomForVolVal=randomForVolVal;
                     
                     eitherVolPlain();
@@ -918,7 +918,7 @@ function runner(){
                 }
             }
             else{
-                if (!rngRx()){
+                if (rngR()){
                     randomForVolVal = randomForSpeedVal/2;
                     
                     eitherVolPlain();
@@ -1068,7 +1068,7 @@ function runner(){
           }
           if (!rngRx()){
             if (rngBin()){
-                if (!rngRx()){
+                if (rngR()){
                     randomForSpeedVal=randomForSpeedVal;
     
                     eitherSpeedPlain();
@@ -1082,7 +1082,7 @@ function runner(){
                 }
             }
             else{
-                if (!rngRx){
+                if (rngR){
                     randomForSpeedVal = randomForVolVal*2;
                     
                     eitherSpeedPlain();
