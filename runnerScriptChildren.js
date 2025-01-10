@@ -608,12 +608,13 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatV=repeatS;
 
             }
             else{
+                if (rngR()){
                 if (!rngRx()){
                     repeatV=1;
                 }
@@ -621,7 +622,7 @@ function nextVolIntervalIter(){
                     repeatV=1;
                     repeatS=1;
                 }
-                
+                }
             }
         }
     }
@@ -645,18 +646,20 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatV=repeatS;
 
             }
             else{
+                if (rngR()){
                 if (!rngRx()){
                     repeatV=1;
                 }
                 else{
                     repeatV=1;
                     repeatS=1;
+                }
                 }
             }
         }
@@ -680,18 +683,20 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatV=repeatS;
 
             }
             else{
+                if (rngR()){
                 if (!rngRx()){
                     repeatV=1;
                 }
                 else{
                     repeatV=1;
                     repeatS=1;
+                }
                 }
             }
         }
@@ -721,18 +726,20 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatS=repeatV;
 
             }
             else{
+                if (rngR()){
                 if (!rngRx()){
                     repeatS=1;
                 }
                 else{
                     repeatV=1;
                     repeatS=1;
+                }
                 }
             }
         }
@@ -757,18 +764,20 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatS=repeatV;
 
             }
             else{
+                if (rngR()){
                 if (!rngRx()){
                     repeatS=1;
                 }
                 else{
                     repeatV=1;
                     repeatS=1;
+                }
                 }
             }
         }
@@ -792,18 +801,20 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatS=repeatV;
 
             }
             else{
+                if (rngR()){
                 if (!rngRx()){
                     repeatS=1;
                 }
                 else{
                     repeatV=1;
                     repeatS=1;
+                }
                 }
             }
         }
