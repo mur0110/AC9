@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; //children was first
+const songPath = 'songs/children.mp3'; //lato was first
 let duration1=450;
 
 
@@ -614,7 +614,7 @@ function nextVolIntervalIter(){
 
             }
             else{
-                if (rngR()){
+                if (!rngRx()){
                     repeatV=1;
                 }
                 else{
@@ -651,7 +651,7 @@ function nextVolIntervalIter(){
 
             }
             else{
-                if (rngR()){
+                if (!rngRx()){
                     repeatV=1;
                 }
                 else{
@@ -686,7 +686,7 @@ function nextVolIntervalIter(){
 
             }
             else{
-                if (rngR()){
+                if (!rngRx()){
                     repeatV=1;
                 }
                 else{
@@ -727,7 +727,7 @@ function nextSpeedIntervalIter(){
 
             }
             else{
-                if (rngR()){
+                if (!rngRx()){
                     repeatS=1;
                 }
                 else{
@@ -763,7 +763,7 @@ function nextSpeedIntervalIter(){
 
             }
             else{
-                if (rngR()){
+                if (!rngRx()){
                     repeatS=1;
                 }
                 else{
@@ -798,7 +798,7 @@ function nextSpeedIntervalIter(){
 
             }
             else{
-                if (rngR()){
+                if (!rngRx()){
                     repeatS=1;
                 }
                 else{
