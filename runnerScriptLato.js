@@ -1,4 +1,4 @@
-const songPath = 'songs/lato.mp3'; //meetagain was first
+const songPath = 'songs/lato.mp3'; //uget was first
 let duration1=450;
 
 
@@ -646,20 +646,18 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (!rngRx()){
+            if (rngR()){
 
                 repeatV=repeatS;
 
             }
             else{
                 if (rngR()){
-                if (!rngRx()){
                     repeatV=1;
                 }
                 else{
                     repeatV=1;
                     repeatS=1;
-                }
                 }
             }
         }
@@ -684,20 +682,18 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (!rngRx()){
+            if (rngR()){
 
                 repeatV=repeatS;
 
             }
             else{
                 if (rngR()){
-                if (!rngRx()){
                     repeatV=1;
                 }
                 else{
                     repeatV=1;
                     repeatS=1;
-                }
                 }
             }
         }
@@ -721,20 +717,18 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (!rngRx()){
+            if (rngR()){
 
                 repeatV=repeatS;
 
             }
             else{
                 if (rngR()){
-                if (!rngRx()){
                     repeatV=1;
                 }
                 else{
                     repeatV=1;
                     repeatS=1;
-                }
                 }
             }
         }
@@ -764,20 +758,18 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (!rngRx()){
+            if (rngR()){
 
                 repeatS=repeatV;
 
             }
             else{
                 if (rngR()){
-                if (!rngRx()){
                     repeatS=1;
                 }
                 else{
                     repeatV=1;
                     repeatS=1;
-                }
                 }
             }
         }
@@ -802,20 +794,18 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (!rngRx()){
+            if (rngR()){
 
                 repeatS=repeatV;
 
             }
             else{
                 if (rngR()){
-                if (!rngRx()){
                     repeatS=1;
                 }
                 else{
                     repeatV=1;
                     repeatS=1;
-                }
                 }
             }
         }
@@ -839,20 +829,18 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (!rngRx()){
+            if (rngR()){
 
                 repeatS=repeatV;
 
             }
             else{
                 if (rngR()){
-                if (!rngRx()){
                     repeatS=1;
                 }
                 else{
                     repeatV=1;
                     repeatS=1;
-                }
                 }
             }
         }
@@ -878,13 +866,13 @@ function eitherSpeed(){
 }
 
 function eitherVolPlain(){
-    if (rngR()){
+    if (!rngRx()){
         modInterDuration();
     }
 }
 
 function eitherSpeedPlain(){
-    if (rngR()){
+    if (!rngRx()){
         modInterDuration();
     }
 }
