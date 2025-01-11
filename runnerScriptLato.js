@@ -1,4 +1,4 @@
-const songPath = 'songs/lato.mp3'; //goodbye was first
+const songPath = 'songs/lato.mp3'; //meetagain was first
 let duration1=450;
 
 
@@ -878,13 +878,13 @@ function eitherSpeed(){
 }
 
 function eitherVolPlain(){
-    if (!rngRx()){
+    if (rngR()){
         modInterDuration();
     }
 }
 
 function eitherSpeedPlain(){
-    if (!rngRx()){
+    if (rngR()){
         modInterDuration();
     }
 }
