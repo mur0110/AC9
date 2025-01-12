@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; //x was first
+const songPath = 'songs/children.mp3'; //infinity was first
 let duration1=450;
 
 
@@ -398,7 +398,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngR()){
+    if (!rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -495,7 +495,7 @@ function redefineVolInterval(){
         presVolInterval = pickArrayVol(incTypeVol)[presVolIntervalIter] * multiplier;
     }
     else{
-        if (!rngRx()){
+        if (rngR()){
             presVolInterval = presSpeedInterval * multiplier;
         }
         else{
@@ -510,7 +510,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngR()){
+    if (!rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -602,7 +602,7 @@ function redefineSpeedInterval(){
         presSpeedInterval = pickArraySpeed(incTypeSpeed)[presSpeedIntervalIter] * multiplier;
     }
     else{
-        if (!rngRx()){
+        if (rngR()){
             presSpeedInterval = presVolInterval * multiplier;
         }
         else{
@@ -930,7 +930,7 @@ function runner(){
 
         if (!rngRx()){
             if (!rngRx()){
-                if (rngRx()){
+                if (rngR()){
                     randomForVolVal=randomForVolVal;
                     
                     eitherVolPlain();
@@ -1094,7 +1094,7 @@ function runner(){
           }
           if (!rngRx()){
             if (!rngRx()){
-                if (rngRx()){
+                if (rngR()){
                     randomForSpeedVal=randomForSpeedVal;
     
                     eitherSpeedPlain();
