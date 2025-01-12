@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; //children was first
+const songPath = 'songs/children.mp3'; //broken was first
 let duration1=450;
 
 
@@ -495,7 +495,7 @@ function redefineVolInterval(){
         presVolInterval = pickArrayVol(incTypeVol)[presVolIntervalIter] * multiplier;
     }
     else{
-        if (rngR()){
+        if (!rngRx()){
             presVolInterval = presSpeedInterval * multiplier;
         }
         else{
@@ -602,7 +602,7 @@ function redefineSpeedInterval(){
         presSpeedInterval = pickArraySpeed(incTypeSpeed)[presSpeedIntervalIter] * multiplier;
     }
     else{
-        if (rngR()){
+        if (!rngRx()){
             presSpeedInterval = presVolInterval * multiplier;
         }
         else{
@@ -930,7 +930,7 @@ function runner(){
 
         if (!rngRx()){
             if (!rngRx()){
-                if (rngR()){
+                if (rngRx()){
                     randomForVolVal=randomForVolVal;
                     
                     eitherVolPlain();
@@ -1094,7 +1094,7 @@ function runner(){
           }
           if (!rngRx()){
             if (!rngRx()){
-                if (rngR()){
+                if (rngRx()){
                     randomForSpeedVal=randomForSpeedVal;
     
                     eitherSpeedPlain();
