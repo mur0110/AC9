@@ -398,7 +398,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngRx()){
+    if (rngR()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -510,7 +510,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngRx()){
+    if (rngR()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -866,13 +866,13 @@ function eitherSpeed(){
 }
 
 function eitherVolPlain(){
-    if (rngRx()){
+    if (!rngRx()){
         modInterDuration();
     }
 }
 
 function eitherSpeedPlain(){
-    if (rngRx()){
+    if (!rngRx()){
         modInterDuration();
     }
 }
@@ -929,7 +929,7 @@ function runner(){
             } 
 
         if (!rngRx()){
-            if (rngBin()){
+            if (!rngRx()){
                 if (rngR()){
                     randomForVolVal=randomForVolVal;
                     
@@ -1093,7 +1093,7 @@ function runner(){
             multVal=1;
           }
           if (!rngRx()){
-            if (rngBin()){
+            if (!rngRx()){
                 if (rngR()){
                     randomForSpeedVal=randomForSpeedVal;
     
@@ -1108,7 +1108,7 @@ function runner(){
                 }
             }
             else{
-                if (rngR){
+                if (rngR()){
                     randomForSpeedVal = randomForVolVal*2;
                     
                     eitherSpeedPlain();
