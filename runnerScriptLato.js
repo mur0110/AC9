@@ -1,4 +1,4 @@
-const songPath = 'songs/lato.mp3'; //uget was first
+const songPath = 'songs/lato.mp3'; //thew was first
 let duration1=450;
 
 
@@ -495,7 +495,7 @@ function redefineVolInterval(){
         presVolInterval = pickArrayVol(incTypeVol)[presVolIntervalIter] * multiplier;
     }
     else{
-        if (rngR()){
+        if (!rngRx()){
             presVolInterval = presSpeedInterval * multiplier;
         }
         else{
@@ -602,7 +602,7 @@ function redefineSpeedInterval(){
         presSpeedInterval = pickArraySpeed(incTypeSpeed)[presSpeedIntervalIter] * multiplier;
     }
     else{
-        if (rngR()){
+        if (!rngRx()){
             presSpeedInterval = presVolInterval * multiplier;
         }
         else{
@@ -929,8 +929,8 @@ function runner(){
             } 
 
         if (!rngRx()){
-            if (rngBin()){
-                if (rngR()){
+            if (rngRx()){
+                if (rngRx()){
                     randomForVolVal=randomForVolVal;
                     
                     eitherVolPlain();
@@ -944,7 +944,7 @@ function runner(){
                 }
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     randomForVolVal = randomForSpeedVal/2;
                     
                     eitherVolPlain();
@@ -1093,8 +1093,8 @@ function runner(){
             multVal=1;
           }
           if (!rngRx()){
-            if (rngBin()){
-                if (rngR()){
+            if (rngRx()){
+                if (rngRx()){
                     randomForSpeedVal=randomForSpeedVal;
     
                     eitherSpeedPlain();
@@ -1108,7 +1108,7 @@ function runner(){
                 }
             }
             else{
-                if (rngR){
+                if (rngRx){
                     randomForSpeedVal = randomForVolVal*2;
                     
                     eitherSpeedPlain();
