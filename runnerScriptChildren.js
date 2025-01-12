@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; //broken was first
+const songPath = 'songs/children.mp3'; //x was first
 let duration1=450;
 
 
