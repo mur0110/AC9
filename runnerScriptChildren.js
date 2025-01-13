@@ -398,7 +398,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (!rngRx()){
+    if (rngR()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -510,7 +510,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (!rngRx()){
+    if (rngR()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -638,7 +638,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -674,7 +674,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -709,7 +709,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -750,7 +750,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
@@ -786,7 +786,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
@@ -821,7 +821,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
