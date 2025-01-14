@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; //infinity was first
+const songPath = 'songs/children.mp3'; //children was first 
 let duration1=450;
 
 
@@ -957,9 +957,10 @@ function runner(){
                     
                 }
             }
-            
+            if (rngR()){
                 nextVolIntervalIter();
                 redefineVolInterval();
+            }
             
         }
            else{
@@ -1121,9 +1122,10 @@ function runner(){
                     
                 }
             }
-            
+                if (rngR()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
+                }
             
         }
             else{
