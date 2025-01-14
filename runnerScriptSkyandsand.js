@@ -1,4 +1,5 @@
-const songPath = 'songs/skyandsand.mp3'; //l'mour was first
+const songPath = 'songs/skyandsand.mp3'; //year3000 was first x7:16pm 1/13/2025
+let duration1=450;
 
 
 let volumeLog=0;
@@ -10,7 +11,6 @@ const multSpeedArr1 = [.77, .81, .83, .87, .89, .93, .95, .97, .99, 1, 1.01, 1.0
 
 const multVolArr2 = [ .375, .3825, .3875, .4, .4075, .4125, .425, .4325, .4375, .45, .4575, .4625, .475, .4825, .4875, .5, .5125, .5175, .525, .5375, .5425, .55, .5625, .5675, .575, .5875, .5925, .6, .6125, .6175, .625];
 const multSpeedArr2 = [ .75, .765, .775, .8, .815, .825, .85, .865, .875, .9, .915, .925, .95, .965, .975, 1, 1.025, 1.035, 1.05, 1.075, 1.085, 1.1, 1.125, 1.135, 1.15, 1.75, 1.85, 1.2, 1.225, 1.235, 1.25];
-
 
 
 
@@ -39,8 +39,39 @@ function truncate(x){
     return parseFloat(y);
 }
 
-for (let i=0; i<1500000; i++){
-    rngs.push(truncate(Math.random()));
+function generateRandomNumber() {
+    // Ensure that min and max are integers
+    min = 0;
+    max = 999;
+  
+    // Create a typed array to store the random values
+    const array = new Uint32Array(1);
+  
+    // Fill the array with a cryptographically secure random value
+    window.crypto.getRandomValues(array);
+  
+    // Convert the random value to the desired range
+    const randomNumber = min + (array[0] % (max - min + 1));
+  
+    return randomNumber/1000;
+  }
+  
+
+for (let i=0; i<3000000; i++){
+    rngs.push(truncate(generateRandomNumber()));
+}
+
+const randomsForVol1=[];
+const randomsForSpeed1=[];
+
+const randomsForVol2=[];
+const randomsForSpeed2=[];
+
+for (let i=0; i<80000; i++){
+    randomsForVol1.push(pickAmong19());
+    randomsForSpeed1.push(pickAmong19());
+    randomsForVol2.push(pickAmong31());
+    randomsForSpeed2.push(pickAmong31());
 }
 
 
@@ -333,18 +364,7 @@ const primeRaw = [17, 13, 11, 7, 5, 3, 1, 0, 1, 3, 5, 7, 11, 13, 17];
 
 
 
-const randomsForVol1=[];
-const randomsForSpeed1=[];
 
-const randomsForVol2=[];
-const randomsForSpeed2=[];
-
-for (let i=0; i<20000; i++){
-    randomsForVol1.push(pickAmong19());
-    randomsForSpeed1.push(pickAmong19());
-    randomsForVol2.push(pickAmong31());
-    randomsForSpeed2.push(pickAmong31());
-}
 
 
 
@@ -378,7 +398,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngRx()){
+    if (rngR()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -399,18 +419,28 @@ function redefineVolInterval(){
         multiplier=randomInt;
     }    
 
-    let when=rngBin();
-    let when2=rngBin();
 
-    if (when===0){
-        if (rngs[rngIter]*7<2){
-            rngIter++;
-            multiplier=5/7;
+
+
+    if (!rngRx()){
+        if (rngR()){
+            multiplier=1/multiplier;
         }
     }
 
-    if (when2===0){
-        if (rngBin()===0){
+
+    if (!rngRx()){
+        if (rngR()){
+            multiplier=multiplier*5/7;
+        }
+        else{
+            multiplier=multiplier*7/5;
+        }
+    }
+
+
+    if (!rngRx()){
+        if (rngR()){
             multiplier=1/multiplier;
         }
     }
@@ -433,15 +463,26 @@ function redefineVolInterval(){
 
     
 
-    if (when===1){
-        if (rngs[rngIter]*7<2){
-            rngIter++;
-            multiplier=5/7;
+
+    if (!rngRx()){
+        if (rngR()){
+            multiplier=1/multiplier;
         }
     }
 
-    if (when2===1){
-        if (rngBin()===0){
+
+    if (!rngRx()){
+        if (rngR()){
+            multiplier=multiplier*5/7;
+        }
+        else{
+            multiplier=multiplier*7/5;
+        }
+    }
+
+
+    if (!rngRx()){
+        if (rngR()){
             multiplier=1/multiplier;
         }
     }
@@ -450,12 +491,11 @@ function redefineVolInterval(){
         multiplier=1;
     }
 
-
     if (rngRx()){
         presVolInterval = pickArrayVol(incTypeVol)[presVolIntervalIter] * multiplier;
     }
     else{
-        if (rngBin()){
+        if (rngR()){
             presVolInterval = presSpeedInterval * multiplier;
         }
         else{
@@ -470,7 +510,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngRx()){
+    if (rngR()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -490,18 +530,25 @@ function redefineSpeedInterval(){
     }    
     
     
-    let when=rngBin();
-    let when2=rngBin();
-
-    if (when===0){
-        if (rngs[rngIter]*7<2){
-            rngIter++;
-            multiplier=5/7;
+    if (!rngRx()){
+        if (rngR()){
+            multiplier=1/multiplier;
         }
     }
 
-    if (when2===0){
-        if (rngBin()===0){
+
+    if (!rngRx()){
+        if (rngR()){
+            multiplier=multiplier*5/7;
+        }
+        else{
+            multiplier=multiplier*7/5;
+        }
+    }
+
+
+    if (!rngRx()){
+        if (rngR()){
             multiplier=1/multiplier;
         }
     }
@@ -523,14 +570,25 @@ function redefineSpeedInterval(){
     }
 
    
-    if (when===1){
-        if (rngs[rngIter]*7<2){
-            rngIter++;
-            multiplier=5/7;
+    if (!rngRx()){
+        if (rngR()){
+            multiplier=1/multiplier;
         }
     }
-    if (when2===1){
-        if (rngBin()===0){
+
+
+    if (!rngRx()){
+        if (rngR()){
+            multiplier=multiplier*5/7;
+        }
+        else{
+            multiplier=multiplier*7/5;
+        }
+    }
+
+
+    if (!rngRx()){
+        if (rngR()){
             multiplier=1/multiplier;
         }
     }
@@ -544,7 +602,7 @@ function redefineSpeedInterval(){
         presSpeedInterval = pickArraySpeed(incTypeSpeed)[presSpeedIntervalIter] * multiplier;
     }
     else{
-        if (rngBin()){
+        if (rngR()){
             presSpeedInterval = presVolInterval * multiplier;
         }
         else{
@@ -580,7 +638,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (!rngRx()){
+                if (rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -601,7 +659,6 @@ function nextVolIntervalIter(){
                     repeatV=1;
                     repeatS=1;
                 }
-                
             }
         }
     }
@@ -617,7 +674,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (!rngRx()){
+                if (rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -652,7 +709,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (!rngRx()){
+                if (rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -693,7 +750,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (!rngRx()){
+                if (rngRx()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
@@ -729,7 +786,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (!rngRx()){
+                if (rngRx()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
@@ -764,7 +821,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (!rngRx()){
+                if (rngRx()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
@@ -809,19 +866,20 @@ function eitherSpeed(){
 }
 
 function eitherVolPlain(){
-    decide23();
+    if (!rngRx()){
+        modInterDuration();
+    }
 }
 
 function eitherSpeedPlain(){
-    decide23();
+    if (!rngRx()){
+        modInterDuration();
+    }
 }
 
 function runner(){
+
     const songAudio = new Audio(songPath);
-    let duration1=0;
-    songAudio.onloadedmetadata = () => {
-        duration1=songAudio.duration; // Duration in seconds
-      };
     // set initial vol and speed intervals
     redefineVolInterval();
     redefineSpeedInterval();
@@ -836,17 +894,15 @@ function runner(){
     
 
     function advanceVolume(){
-        if (volumeLog>10){
+
             if (volumeLog<duration1-2){
                 av();
             }
             else{
                 songAudio.pause();
             }
-        }
-        else{
-            av();
-        }
+        
+
 
         function av(){
 
@@ -873,38 +929,39 @@ function runner(){
             } 
 
         if (!rngRx()){
-            if (rngBin()){
-                if (rngBin()){
+            if (!rngRx()){
+                if (rngR()){
                     randomForVolVal=randomForVolVal;
-                    if (!rngRx()){
+                    
                     eitherVolPlain();
-                    }
+                    
                 }
                 else{
                     randomForVolVal=randomForVolVal * multVal;
-                    if (!rngRx()){
+                    
                     eitherVolPlain();
-                    }
+                    
                 }
             }
             else{
-                if (rngBin()){
+                if (rngR()){
                     randomForVolVal = randomForSpeedVal/2;
-                    if (!rngRx()){
+                    
                     eitherVolPlain();
-                    }
+                    
                 }
                 else{
                     randomForVolVal = randomForSpeedVal/2 * multVal;
-                    if (!rngRx()){
+                    
                     eitherVolPlain();
-                    }
+                    
                 }
             }
-            if (!rngRx()){
+            if (rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
             }
+            
         }
            else{
            
@@ -1002,17 +1059,14 @@ function runner(){
     }
 
     function advanceSpeed(){
-        if (speedLog>10){
+
             if (speedLog<duration1-2){
                 as();
             }
             else{
                 songAudio.pause();
             }
-        }
-        else{
-            as();
-        }
+        
 
         function as(){
 
@@ -1040,38 +1094,39 @@ function runner(){
             multVal=1;
           }
           if (!rngRx()){
-            if (rngBin()){
-                if (rngBin()){
+            if (!rngRx()){
+                if (rngR()){
                     randomForSpeedVal=randomForSpeedVal;
-                    if (!rngRx()){
+    
                     eitherSpeedPlain();
-                    }
+                    
                 }
                 else{
                     randomForSpeedVal=randomForSpeedVal * multVal;
-                    if (!rngRx()){
+                    
                     eitherSpeedPlain();
-                    }
+                    
                 }
             }
             else{
-                if (rngBin()){
+                if (rngR()){
                     randomForSpeedVal = randomForVolVal*2;
-                    if (!rngRx()){
+                    
                     eitherSpeedPlain();
-                    }
+                    
                 }
                 else{
                     randomForSpeedVal = randomForVolVal*2 * multVal;
-                    if (!rngRx()){
+                    
                     eitherSpeedPlain();
-                    }
+                    
                 }
             }
-            if (!rngRx()){
+                if (rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
-            }
+                }
+            
         }
             else{
             
