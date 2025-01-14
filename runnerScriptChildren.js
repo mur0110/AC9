@@ -1,5 +1,5 @@
 const songPath = 'songs/children.mp3'; //children was first
-let duration1=450;
+let duration1=490;
 
 
 let volumeLog=0;
