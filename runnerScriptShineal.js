@@ -1,5 +1,5 @@
 const songPath = 'songs/shineal.mp3'; //shineal was first
-let duration1=450;
+let duration1=490;
 
 
 let volumeLog=0;
@@ -495,7 +495,7 @@ function redefineVolInterval(){
         presVolInterval = pickArrayVol(incTypeVol)[presVolIntervalIter] * multiplier;
     }
     else{
-        if (!rngRx()){
+        if (rngR()){
             presVolInterval = presSpeedInterval * multiplier;
         }
         else{
@@ -602,7 +602,7 @@ function redefineSpeedInterval(){
         presSpeedInterval = pickArraySpeed(incTypeSpeed)[presSpeedIntervalIter] * multiplier;
     }
     else{
-        if (!rngRx()){
+        if (rngR()){
             presSpeedInterval = presVolInterval * multiplier;
         }
         else{
@@ -638,7 +638,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -646,18 +646,20 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatV=repeatS;
 
             }
             else{
                 if (rngR()){
+                if (rngR()){
                     repeatV=1;
                 }
                 else{
                     repeatV=1;
                     repeatS=1;
+                }
                 }
             }
         }
@@ -674,7 +676,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -682,19 +684,21 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatV=repeatS;
 
             }
             else{
                 if (rngR()){
-                    repeatV=1;
-                }
-                else{
-                    repeatV=1;
-                    repeatS=1;
-                }
+                    if (rngR()){
+                        repeatV=1;
+                    }
+                    else{
+                        repeatV=1;
+                        repeatS=1;
+                    }
+                    }
             }
         }
     }
@@ -709,7 +713,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -717,19 +721,21 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatV=repeatS;
 
             }
             else{
                 if (rngR()){
-                    repeatV=1;
-                }
-                else{
-                    repeatV=1;
-                    repeatS=1;
-                }
+                    if (rngR()){
+                        repeatV=1;
+                    }
+                    else{
+                        repeatV=1;
+                        repeatS=1;
+                    }
+                    }
             }
         }
     }
@@ -750,7 +756,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
@@ -758,19 +764,21 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatS=repeatV;
 
             }
             else{
                 if (rngR()){
-                    repeatS=1;
-                }
-                else{
-                    repeatV=1;
-                    repeatS=1;
-                }
+                    if (rngR()){
+                        repeatS=1;
+                    }
+                    else{
+                        repeatV=1;
+                        repeatS=1;
+                    }
+                    }
             }
         }
     }
@@ -786,7 +794,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
@@ -794,19 +802,21 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatS=repeatV;
 
             }
             else{
                 if (rngR()){
-                    repeatS=1;
-                }
-                else{
-                    repeatV=1;
-                    repeatS=1;
-                }
+                    if (rngR()){
+                        repeatS=1;
+                    }
+                    else{
+                        repeatV=1;
+                        repeatS=1;
+                    }
+                    }
             }
         }
     }
@@ -821,7 +831,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
@@ -829,19 +839,21 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngR()){
+            if (!rngRx()){
 
                 repeatS=repeatV;
 
             }
             else{
                 if (rngR()){
-                    repeatS=1;
-                }
-                else{
-                    repeatV=1;
-                    repeatS=1;
-                }
+                    if (rngR()){
+                        repeatS=1;
+                    }
+                    else{
+                        repeatV=1;
+                        repeatS=1;
+                    }
+                    }
             }
         }
     }
@@ -929,8 +941,8 @@ function runner(){
             } 
 
         if (!rngRx()){
-            if (rngBin()){
-                if (rngRx()){
+            if (!rngRx()){
+                if (rngR()){
                     randomForVolVal=randomForVolVal;
                     
                     eitherVolPlain();
@@ -944,7 +956,7 @@ function runner(){
                 }
             }
             else{
-                if (rngRx()){
+                if (rngR()){
                     randomForVolVal = randomForSpeedVal/2;
                     
                     eitherVolPlain();
@@ -957,9 +969,10 @@ function runner(){
                     
                 }
             }
-            
+            if (rngR()){
                 nextVolIntervalIter();
                 redefineVolInterval();
+            }
             
         }
            else{
@@ -1093,7 +1106,7 @@ function runner(){
             multVal=1;
           }
           if (!rngRx()){
-            if (rngBin()){
+            if (!rngRx()){
                 if (rngR()){
                     randomForSpeedVal=randomForSpeedVal;
     
@@ -1108,7 +1121,7 @@ function runner(){
                 }
             }
             else{
-                if (rngR){
+                if (rngR()){
                     randomForSpeedVal = randomForVolVal*2;
                     
                     eitherSpeedPlain();
@@ -1121,9 +1134,10 @@ function runner(){
                     
                 }
             }
-            
+                if (rngR()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
+                }
             
         }
             else{
