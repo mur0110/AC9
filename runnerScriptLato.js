@@ -1,4 +1,4 @@
-const songPath = 'songs/lato.mp3'; //lato was first
+const songPath = 'songs/lato.mp3'; //glycerine was first
 let duration1=490;
 
 
@@ -931,7 +931,7 @@ function runner(){
             } 
 
         if (rngR()){
-            if (rngR()){
+            if (!rngRx()){
                 if (rngR()){
                     randomForVolVal=randomForVolVal;
                     
@@ -1095,7 +1095,7 @@ function runner(){
             multVal=1;
           }
           if (rngR()){
-            if (rngR()){
+            if (!rngRx()){
                 if (rngR()){
                     randomForSpeedVal=randomForSpeedVal;
     
