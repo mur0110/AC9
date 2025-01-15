@@ -1,4 +1,4 @@
-const songPath = 'songs/skyandsand.mp3'; //s&s was first
+const songPath = 'songs/skyandsand.mp3'; //riptide was first
 let duration1=490;
 
 
@@ -638,7 +638,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (rngRx()){
+                if (rngR()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -676,7 +676,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (rngRx()){
+                if (rngR()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -711,7 +711,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (rngRx()){
+                if (rngR()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -752,7 +752,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (rngRx()){
+                if (rngR()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
@@ -788,7 +788,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (rngRx()){
+                if (rngR()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
@@ -823,7 +823,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (rngRx()){
+                if (rngR()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
