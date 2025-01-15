@@ -1,4 +1,4 @@
-const songPath = 'songs/skyandsand.mp3'; //riptide was first
+const songPath = 'songs/skyandsand.mp3'; //children was first
 let duration1=490;
 
 
@@ -491,7 +491,7 @@ function redefineVolInterval(){
         multiplier=1;
     }
 
-    if (rngRx()){
+    if (rngR()){
         presVolInterval = pickArrayVol(incTypeVol)[presVolIntervalIter] * multiplier;
     }
     else{
@@ -598,7 +598,7 @@ function redefineSpeedInterval(){
     }
 
 
-    if (rngRx()){
+    if (rngR()){
         presSpeedInterval = pickArraySpeed(incTypeSpeed)[presSpeedIntervalIter] * multiplier;
     }
     else{
@@ -930,8 +930,8 @@ function runner(){
               multVal=1;
             } 
 
-        if (!rngRx()){
-            if (!rngRx()){
+        if (rngR()){
+            if (rngR()){
                 if (rngR()){
                     randomForVolVal=randomForVolVal;
                     
@@ -1094,8 +1094,8 @@ function runner(){
           else{
             multVal=1;
           }
-          if (!rngRx()){
-            if (!rngRx()){
+          if (rngR()){
+            if (rngR()){
                 if (rngR()){
                     randomForSpeedVal=randomForSpeedVal;
     
