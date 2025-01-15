@@ -1,4 +1,4 @@
-const songPath = 'songs/lato.mp3'; //adr was first
+const songPath = 'songs/lato.mp3'; //y was first
 let duration1=490;
 
 
