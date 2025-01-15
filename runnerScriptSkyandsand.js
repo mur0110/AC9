@@ -1,4 +1,4 @@
-const songPath = 'songs/skyandsand.mp3'; //skyandsand was first
+const songPath = 'songs/skyandsand.mp3'; //fazer was first
 let duration1=490;
 
 
@@ -947,10 +947,9 @@ function runner(){
                     
                 }
             }
-            if (rngR()){
+
                 nextVolIntervalIter();
                 redefineVolInterval();
-            }
             
         }
            else{
@@ -1112,10 +1111,10 @@ function runner(){
                     
                 }
             }
-                if (rngR()){
+
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
-                }
+
             
         }
             else{
