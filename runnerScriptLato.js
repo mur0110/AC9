@@ -1,4 +1,4 @@
-const songPath = 'songs/lato.mp3'; //glycerine was first
+const songPath = 'songs/lato.mp3'; //s&s was first
 let duration1=490;
 
 
