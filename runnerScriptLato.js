@@ -1,4 +1,4 @@
-const songPath = 'songs/lato.mp3'; //lato was first
+const songPath = 'songs/lato.mp3'; //adr was first
 let duration1=490;
 
 
@@ -947,10 +947,10 @@ function runner(){
                     
                 }
             }
-
+            if (rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
-            
+            }
         }
            else{
            
@@ -1111,10 +1111,10 @@ function runner(){
                     
                 }
             }
-
+            if (rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
-
+            }
             
         }
             else{
