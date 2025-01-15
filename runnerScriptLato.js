@@ -1,5 +1,5 @@
 const songPath = 'songs/lato.mp3'; //lato was first
-let duration1=450;
+let duration1=490;
 
 
 let volumeLog=0;
@@ -495,7 +495,7 @@ function redefineVolInterval(){
         presVolInterval = pickArrayVol(incTypeVol)[presVolIntervalIter] * multiplier;
     }
     else{
-        if (!rngRx()){
+        if (rngR()){
             presVolInterval = presSpeedInterval * multiplier;
         }
         else{
@@ -602,7 +602,7 @@ function redefineSpeedInterval(){
         presSpeedInterval = pickArraySpeed(incTypeSpeed)[presSpeedIntervalIter] * multiplier;
     }
     else{
-        if (!rngRx()){
+        if (rngR()){
             presSpeedInterval = presVolInterval * multiplier;
         }
         else{
@@ -638,7 +638,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -646,20 +646,20 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngR()){
 
+            let randomValT=Math.floor(Math.random()*6);
+            if (randomValT===0){
                 repeatV=repeatS;
+            }
+            else if (randomValT===1){
+                repeatV=1;
+            }
+            else if (randomValT===2){
+                repeatV=1;
+                repeatS=1;
+            }
+            else{}
 
-            }
-            else{
-                if (rngR()){
-                    repeatV=1;
-                }
-                else{
-                    repeatV=1;
-                    repeatS=1;
-                }
-            }
         }
     }
 
@@ -674,7 +674,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -682,20 +682,18 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngR()){
-
+            let randomValT=Math.floor(Math.random()*6);
+            if (randomValT===0){
                 repeatV=repeatS;
-
             }
-            else{
-                if (rngR()){
-                    repeatV=1;
-                }
-                else{
-                    repeatV=1;
-                    repeatS=1;
-                }
+            else if (randomValT===1){
+                repeatV=1;
             }
+            else if (randomValT===2){
+                repeatV=1;
+                repeatS=1;
+            }
+            else{}
         }
     }
 
@@ -709,7 +707,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -717,20 +715,18 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngR()){
-
+            let randomValT=Math.floor(Math.random()*6);
+            if (randomValT===0){
                 repeatV=repeatS;
-
             }
-            else{
-                if (rngR()){
-                    repeatV=1;
-                }
-                else{
-                    repeatV=1;
-                    repeatS=1;
-                }
+            else if (randomValT===1){
+                repeatV=1;
             }
+            else if (randomValT===2){
+                repeatV=1;
+                repeatS=1;
+            }
+            else{}
         }
     }
 
@@ -750,7 +746,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
@@ -758,20 +754,18 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngR()){
-
+            let randomValT=Math.floor(Math.random()*6);
+            if (randomValT===0){
                 repeatS=repeatV;
-
             }
-            else{
-                if (rngR()){
-                    repeatS=1;
-                }
-                else{
-                    repeatV=1;
-                    repeatS=1;
-                }
+            else if (randomValT===1){
+                repeatS=1;
             }
+            else if (randomValT===2){
+                repeatV=1;
+                repeatS=1;
+            }
+            else{}
         }
     }
 
@@ -786,7 +780,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
@@ -794,20 +788,18 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngR()){
-
+            let randomValT=Math.floor(Math.random()*6);
+            if (randomValT===0){
                 repeatS=repeatV;
-
             }
-            else{
-                if (rngR()){
-                    repeatS=1;
-                }
-                else{
-                    repeatV=1;
-                    repeatS=1;
-                }
+            else if (randomValT===1){
+                repeatS=1;
             }
+            else if (randomValT===2){
+                repeatV=1;
+                repeatS=1;
+            }
+            else{}
         }
     }
 
@@ -821,7 +813,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (rngR()){
+                if (rngRx()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
@@ -829,20 +821,18 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngR()){
-
+            let randomValT=Math.floor(Math.random()*6);
+            if (randomValT===0){
                 repeatS=repeatV;
-
             }
-            else{
-                if (rngR()){
-                    repeatS=1;
-                }
-                else{
-                    repeatV=1;
-                    repeatS=1;
-                }
+            else if (randomValT===1){
+                repeatS=1;
             }
+            else if (randomValT===2){
+                repeatV=1;
+                repeatS=1;
+            }
+            else{}
         }
     }
 
@@ -930,7 +920,7 @@ function runner(){
 
         if (!rngRx()){
             if (!rngRx()){
-                if (rngRx()){
+                if (rngR()){
                     randomForVolVal=randomForVolVal;
                     
                     eitherVolPlain();
@@ -944,7 +934,7 @@ function runner(){
                 }
             }
             else{
-                if (rngRx()){
+                if (rngR()){
                     randomForVolVal = randomForSpeedVal/2;
                     
                     eitherVolPlain();
@@ -957,7 +947,7 @@ function runner(){
                     
                 }
             }
-            
+
                 nextVolIntervalIter();
                 redefineVolInterval();
             
@@ -1094,7 +1084,7 @@ function runner(){
           }
           if (!rngRx()){
             if (!rngRx()){
-                if (rngRx()){
+                if (rngR()){
                     randomForSpeedVal=randomForSpeedVal;
     
                     eitherSpeedPlain();
@@ -1108,7 +1098,7 @@ function runner(){
                 }
             }
             else{
-                if (rngRx){
+                if (rngR()){
                     randomForSpeedVal = randomForVolVal*2;
                     
                     eitherSpeedPlain();
@@ -1121,9 +1111,10 @@ function runner(){
                     
                 }
             }
-            
+
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
+
             
         }
             else{
