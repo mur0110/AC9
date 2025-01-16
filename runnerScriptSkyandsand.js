@@ -1,4 +1,4 @@
-const songPath = 'songs/skyandsand.mp3'; //children was first
+const songPath = 'songs/skyandsand.mp3'; //s&s was first
 let duration1=490;
 
 
@@ -491,7 +491,7 @@ function redefineVolInterval(){
         multiplier=1;
     }
 
-    if (rngR()){
+    if (rngRx()){
         presVolInterval = pickArrayVol(incTypeVol)[presVolIntervalIter] * multiplier;
     }
     else{
@@ -598,7 +598,7 @@ function redefineSpeedInterval(){
     }
 
 
-    if (rngR()){
+    if (rngRx()){
         presSpeedInterval = pickArraySpeed(incTypeSpeed)[presSpeedIntervalIter] * multiplier;
     }
     else{
@@ -638,7 +638,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (rngR()){
+                if (!rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -676,7 +676,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (rngR()){
+                if (!rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -711,7 +711,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (rngR()){
+                if (!rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -752,7 +752,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (rngR()){
+                if (!rngRx()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
@@ -788,7 +788,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (rngR()){
+                if (!rngRx()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
@@ -823,7 +823,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (rngR()){
+                if (!rngRx()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
@@ -930,7 +930,7 @@ function runner(){
               multVal=1;
             } 
 
-        if (rngR()){
+        if (!rngRx()){
             if (rngR()){
                 if (rngR()){
                     randomForVolVal=randomForVolVal;
@@ -1094,7 +1094,7 @@ function runner(){
           else{
             multVal=1;
           }
-          if (rngR()){
+          if (!rngRx()){
             if (rngR()){
                 if (rngR()){
                     randomForSpeedVal=randomForSpeedVal;
