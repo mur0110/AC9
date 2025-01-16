@@ -1,4 +1,4 @@
-const songPath = 'songs/lato.mp3'; //s&s was first
+const songPath = 'songs/lato.mp3'; //lato was first
 let duration1=490;
 
 
@@ -398,7 +398,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngRx()){
+    if (rngR()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -510,7 +510,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngRx()){
+    if (rngR()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -931,7 +931,7 @@ function runner(){
             } 
 
         if (!rngRx()){
-            if (!rngRx()){
+            if (rngRx()){
                 if (rngR()){
                     randomForVolVal=randomForVolVal;
                     
@@ -1095,7 +1095,7 @@ function runner(){
             multVal=1;
           }
           if (!rngRx()){
-            if (!rngRx()){
+            if (rngRx()){
                 if (rngR()){
                     randomForSpeedVal=randomForSpeedVal;
     
