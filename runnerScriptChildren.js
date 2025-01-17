@@ -635,17 +635,8 @@ function nextVolIntervalIter(){
         else{
             presVolIntervalIter=0;
 
-            
-            if (rngR()){
-                if (rngRx()){
-                    repeatV=0;
-                }
-                else{
-                    repeatV=0;
-                    repeatS=0;
-                }
+            if (repeatV===1){
             }
-            
             else{
                 if (!rngRx()){
                     incTypeVol=incTypeSpeed;
@@ -655,8 +646,17 @@ function nextVolIntervalIter(){
                 }
             }
 
-
             if (rngR()){
+                if (rngRx()){
+                    repeatV=0;
+                }
+                else{
+                    repeatV=0;
+                    repeatS=0;
+                }
+            }
+
+            if (rngRx()){
                 if (rngRx()){
                     repeatV=1;
                 }
@@ -683,14 +683,7 @@ function nextVolIntervalIter(){
         else{
             presVolIntervalIter=0;
 
-            if (rngR()){
-                if (rngRx()){
-                    repeatV=0;
-                }
-                else{
-                    repeatV=0;
-                    repeatS=0;
-                }
+            if (repeatV===1){
             }
             else{
                 if (!rngRx()){
@@ -702,6 +695,16 @@ function nextVolIntervalIter(){
             }
 
             if (rngR()){
+                if (rngRx()){
+                    repeatV=0;
+                }
+                else{
+                    repeatV=0;
+                    repeatS=0;
+                }
+            }
+
+            if (rngRx()){
                 if (rngRx()){
                     repeatV=1;
                 }
@@ -726,15 +729,9 @@ function nextVolIntervalIter(){
         else{
             presVolIntervalIter=0;
 
-            if (rngR()){
-                if (rngRx()){
-                    repeatV=0;
-                }
-                else{
-                    repeatV=0;
-                    repeatS=0;
-                }
+            if (repeatV===1){
             }
+
             else{
                 if (!rngRx()){
                     incTypeVol=incTypeSpeed;
@@ -745,6 +742,16 @@ function nextVolIntervalIter(){
             }
 
             if (rngR()){
+                if (rngRx()){
+                    repeatV=0;
+                }
+                else{
+                    repeatV=0;
+                    repeatS=0;
+                }
+            }
+
+            if (rngRx()){
                 if (rngRx()){
                     repeatV=1;
                 }
@@ -775,14 +782,8 @@ function nextSpeedIntervalIter(){
         else{
             presSpeedIntervalIter=0;
 
-            if (rngR()){
-                if (rngRx()){
-                    repeatS=0;
-                }
-                else{
-                    repeatV=0;
-                    repeatS=0;
-                }
+            
+            if (repeatS===1){
             }
             else{
                 if (!rngRx()){
@@ -794,6 +795,15 @@ function nextSpeedIntervalIter(){
             }
 
             if (rngR()){
+                if (rngRx()){
+                    repeatS=0;
+                }
+                else{
+                    repeatV=0;
+                    repeatS=0;
+                }
+            }
+            if (rngRx()){
                 if (rngRx()){
                     repeatS=1;
                 }
@@ -819,14 +829,7 @@ function nextSpeedIntervalIter(){
         else{
             presSpeedIntervalIter=0;
 
-            if (rngR()){
-                if (rngRx()){
-                    repeatS=0;
-                }
-                else{
-                    repeatV=0;
-                    repeatS=0;
-                }
+            if (repeatS===1){
             }
             else{
                 if (!rngRx()){
@@ -838,6 +841,16 @@ function nextSpeedIntervalIter(){
             }
 
             if (rngR()){
+                if (rngRx()){
+                    repeatS=0;
+                }
+                else{
+                    repeatV=0;
+                    repeatS=0;
+                }
+            }
+
+            if (rngRx()){
                 if (rngRx()){
                     repeatS=1;
                 }
@@ -862,14 +875,7 @@ function nextSpeedIntervalIter(){
         else{
             presSpeedIntervalIter=0;
 
-            if (rngR()){
-                if (rngRx()){
-                    repeatS=0;
-                }
-                else{
-                    repeatV=0;
-                    repeatS=0;
-                }
+            if (repeatS===1){
             }
             else{
                 if (!rngRx()){
@@ -881,6 +887,16 @@ function nextSpeedIntervalIter(){
             }
 
             if (rngR()){
+                if (rngRx()){
+                    repeatS=0;
+                }
+                else{
+                    repeatV=0;
+                    repeatS=0;
+                }
+            }
+
+            if (rngRx()){
                 if (rngRx()){
                     repeatS=1;
                 }
