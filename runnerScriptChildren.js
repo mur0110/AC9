@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; //adr was first, uam first partial only 10s 12:01pm
+const songPath = 'songs/children.mp3'; //adr was first full, uam first partial only 10s 12:01pm
 let duration1=490;
 
 
