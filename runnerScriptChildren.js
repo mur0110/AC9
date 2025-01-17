@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; //adr was first full, uam first partial only 10s 12:01pm
+const songPath = 'songs/children.mp3'; //ifeel was first @ 97%
 let duration1=490;
 
 
@@ -398,7 +398,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngRx()){
+    if (!rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -510,7 +510,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngRx()){
+    if (!rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -1025,8 +1025,11 @@ function runner(){
                     
                 }
             }
+            if (!rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
+            }
+                
         }
            else{
            
@@ -1187,9 +1190,10 @@ function runner(){
                     
                 }
             }
+            if (!rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
-
+            }
             
         }
             else{
