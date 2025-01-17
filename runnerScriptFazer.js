@@ -1,4 +1,4 @@
-const songPath = 'songs/fazer.mp3'; //adr was first full, uam first partial only 10s 12:01pm
+const songPath = 'songs/fazer.mp3'; //fazer 1st
 let duration1=490;
 
 
@@ -398,7 +398,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngRx()){
+    if (rngR()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -510,7 +510,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngRx()){
+    if (rngR()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -1025,8 +1025,11 @@ function runner(){
                     
                 }
             }
+            if (!rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
+            }
+                
         }
            else{
            
@@ -1114,9 +1117,11 @@ function runner(){
             randomForVolVal = multVolArr2[randomsForVol2[randomsForVolIter]]*multVal;
             eitherVolPlain();
         }
+        if (rngRx()){
         randomsForVolIter++;
         nextVolIntervalIter();
         redefineVolInterval();
+        }
     }
 
           
@@ -1187,9 +1192,10 @@ function runner(){
                     
                 }
             }
+            if (!rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
-
+            }
             
         }
             else{
@@ -1283,9 +1289,12 @@ function runner(){
             randomForSpeedVal = multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]]*multVal;
             eitherSpeedPlain();
         }
+        
+        if (rngRx()){
         randomsForSpeedIter++;
         nextSpeedIntervalIter();
         redefineSpeedInterval();
+        }
             
     }
 
