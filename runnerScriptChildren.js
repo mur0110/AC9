@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; //ecs was 95% first
+const songPath = 'songs/children.mp3'; //children was first
 let duration1=490;
 
 
@@ -398,7 +398,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngRx()){
+    if (rngR()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -510,7 +510,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngRx()){
+    if (rngR()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -635,8 +635,17 @@ function nextVolIntervalIter(){
         else{
             presVolIntervalIter=0;
 
-            if (repeatV===1){
+            
+            if (rngR()){
+                if (rngRx()){
+                    repeatV=0;
+                }
+                else{
+                    repeatV=0;
+                    repeatS=0;
+                }
             }
+            
             else{
                 if (!rngRx()){
                     incTypeVol=incTypeSpeed;
@@ -647,17 +656,18 @@ function nextVolIntervalIter(){
             }
 
 
-            if (rngRx()){
-                let randomValT=Math.floor(Math.random()*3);
-                if (randomValT===0){
-                    repeatV=repeatS;
-                }
-                else if (randomValT===1){
+            if (rngR()){
+                if (rngRx()){
                     repeatV=1;
                 }
-                else if (randomValT===2){
-                    repeatV=1;
-                    repeatS=1;
+                else{
+                    if (rngR()){
+                        repeatV=repeatS;
+                    }
+                    else{
+                        repeatV=1;
+                        repeatS=1;
+                    }
                 }
             }
             else{}
@@ -673,7 +683,14 @@ function nextVolIntervalIter(){
         else{
             presVolIntervalIter=0;
 
-            if (repeatV===1){
+            if (rngR()){
+                if (rngRx()){
+                    repeatV=0;
+                }
+                else{
+                    repeatV=0;
+                    repeatS=0;
+                }
             }
             else{
                 if (!rngRx()){
@@ -684,17 +701,18 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngRx()){
-                let randomValT=Math.floor(Math.random()*3);
-                if (randomValT===0){
-                    repeatV=repeatS;
-                }
-                else if (randomValT===1){
+            if (rngR()){
+                if (rngRx()){
                     repeatV=1;
                 }
-                else if (randomValT===2){
-                    repeatV=1;
-                    repeatS=1;
+                else{
+                    if (rngR()){
+                        repeatV=repeatS;
+                    }
+                    else{
+                        repeatV=1;
+                        repeatS=1;
+                    }
                 }
             }
             else{}
@@ -708,7 +726,14 @@ function nextVolIntervalIter(){
         else{
             presVolIntervalIter=0;
 
-            if (repeatV===1){
+            if (rngR()){
+                if (rngRx()){
+                    repeatV=0;
+                }
+                else{
+                    repeatV=0;
+                    repeatS=0;
+                }
             }
             else{
                 if (!rngRx()){
@@ -719,17 +744,18 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngRx()){
-                let randomValT=Math.floor(Math.random()*3);
-                if (randomValT===0){
-                    repeatV=repeatS;
-                }
-                else if (randomValT===1){
+            if (rngR()){
+                if (rngRx()){
                     repeatV=1;
                 }
-                else if (randomValT===2){
-                    repeatV=1;
-                    repeatS=1;
+                else{
+                    if (rngR()){
+                        repeatV=repeatS;
+                    }
+                    else{
+                        repeatV=1;
+                        repeatS=1;
+                    }
                 }
             }
             else{}
@@ -749,7 +775,14 @@ function nextSpeedIntervalIter(){
         else{
             presSpeedIntervalIter=0;
 
-            if (repeatS===1){
+            if (rngR()){
+                if (rngRx()){
+                    repeatS=0;
+                }
+                else{
+                    repeatV=0;
+                    repeatS=0;
+                }
             }
             else{
                 if (!rngRx()){
@@ -760,17 +793,18 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngRx()){
-                let randomValT=Math.floor(Math.random()*3);
-                if (randomValT===0){
-                    repeatS=repeatV;
-                }
-                else if (randomValT===1){
+            if (rngR()){
+                if (rngRx()){
                     repeatS=1;
                 }
-                else if (randomValT===2){
-                    repeatV=1;
-                    repeatS=1;
+                else{
+                    if (rngR()){
+                        repeatS=repeatV;
+                    }
+                    else{
+                        repeatV=1;
+                        repeatS=1;
+                    }
                 }
             }
             else{}
@@ -785,7 +819,14 @@ function nextSpeedIntervalIter(){
         else{
             presSpeedIntervalIter=0;
 
-            if (repeatS===1){
+            if (rngR()){
+                if (rngRx()){
+                    repeatS=0;
+                }
+                else{
+                    repeatV=0;
+                    repeatS=0;
+                }
             }
             else{
                 if (!rngRx()){
@@ -796,17 +837,18 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngRx()){
-                let randomValT=Math.floor(Math.random()*3);
-                if (randomValT===0){
-                    repeatS=repeatV;
-                }
-                else if (randomValT===1){
+            if (rngR()){
+                if (rngRx()){
                     repeatS=1;
                 }
-                else if (randomValT===2){
-                    repeatV=1;
-                    repeatS=1;
+                else{
+                    if (rngR()){
+                        repeatS=repeatV;
+                    }
+                    else{
+                        repeatV=1;
+                        repeatS=1;
+                    }
                 }
             }
             else{}
@@ -820,7 +862,14 @@ function nextSpeedIntervalIter(){
         else{
             presSpeedIntervalIter=0;
 
-            if (repeatS===1){
+            if (rngR()){
+                if (rngRx()){
+                    repeatS=0;
+                }
+                else{
+                    repeatV=0;
+                    repeatS=0;
+                }
             }
             else{
                 if (!rngRx()){
@@ -831,17 +880,18 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngRx()){
-                let randomValT=Math.floor(Math.random()*3);
-                if (randomValT===0){
-                    repeatS=repeatV;
-                }
-                else if (randomValT===1){
+            if (rngR()){
+                if (rngRx()){
                     repeatS=1;
                 }
-                else if (randomValT===2){
-                    repeatV=1;
-                    repeatS=1;
+                else{
+                    if (rngR()){
+                        repeatS=repeatV;
+                    }
+                    else{
+                        repeatV=1;
+                        repeatS=1;
+                    }
                 }
             }
             else{}
