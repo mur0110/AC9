@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; //children was first
+const songPath = 'songs/children.mp3'; //nygl was first
 let duration1=490;
 
 
@@ -1025,10 +1025,8 @@ function runner(){
                     
                 }
             }
-            if (rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
-            }
         }
            else{
            
@@ -1189,10 +1187,9 @@ function runner(){
                     
                 }
             }
-            if (rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
-            }
+
             
         }
             else{
