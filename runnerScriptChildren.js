@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; // adr was 1st
+const songPath = 'songs/children.mp3'; // children was 1st
 let duration1=490;
 
 
