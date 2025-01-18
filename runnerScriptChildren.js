@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; // children was 1st
+const songPath = 'songs/children.mp3'; // irisgojo was 1st
 let duration1=490;
 
 
@@ -1138,11 +1138,11 @@ function runner(){
             randomForVolVal = multVolArr2[randomsForVol2[randomsForVolIter]]*multVal;
             eitherVolPlain();
         }
-        if (!rngRx()){
+        if (rngR()){
             nextVolIntervalIter();
             redefineVolInterval();
         }
-        if (!rngRx()){
+        if (rngR()){
             randomsForVolIter++;
         }
     }
@@ -1315,11 +1315,11 @@ function runner(){
             eitherSpeedPlain();
         }
         
-        if (!rngRx()){
+        if (rngR()){
             nextSpeedIntervalIter();
             redefineSpeedInterval();
         }
-        if (!rngRx()){
+        if (rngR()){
             randomsForSpeedIter++;
         }
             
