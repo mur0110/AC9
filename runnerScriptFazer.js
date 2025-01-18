@@ -1,4 +1,4 @@
-const songPath = 'songs/fazer.mp3'; // idk was 1st
+const songPath = 'songs/fazer.mp3'; // adr was 1st
 let duration1=490;
 
 
@@ -1139,9 +1139,11 @@ function runner(){
             eitherVolPlain();
         }
         if (rngR()){
-        randomsForVolIter++;
-        nextVolIntervalIter();
-        redefineVolInterval();
+            nextVolIntervalIter();
+            redefineVolInterval();
+        }
+        if (rngR()){
+            randomsForVolIter++;
         }
     }
 
@@ -1312,9 +1314,11 @@ function runner(){
         }
         
         if (rngR()){
-        randomsForSpeedIter++;
-        nextSpeedIntervalIter();
-        redefineSpeedInterval();
+            nextSpeedIntervalIter();
+            redefineSpeedInterval();
+        }
+        if (rngR()){
+            randomsForSpeedIter++;
         }
             
     }
