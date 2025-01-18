@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; // irisgojo was 1st
+const songPath = 'songs/children.mp3'; // adr was 1st
 let duration1=490;
 
 
@@ -1046,10 +1046,8 @@ function runner(){
                     
                 }
             }
-            if (rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
-            }
                 
         }
            else{
@@ -1138,11 +1136,11 @@ function runner(){
             randomForVolVal = multVolArr2[randomsForVol2[randomsForVolIter]]*multVal;
             eitherVolPlain();
         }
-        if (rngR()){
+        if (rngRx()){
             nextVolIntervalIter();
             redefineVolInterval();
         }
-        if (rngR()){
+        if (rngRx()){
             randomsForVolIter++;
         }
     }
@@ -1215,10 +1213,9 @@ function runner(){
                     
                 }
             }
-            if (rngRx()){
+
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
-            }
                 
             
             
@@ -1315,11 +1312,11 @@ function runner(){
             eitherSpeedPlain();
         }
         
-        if (rngR()){
+        if (rngRx()){
             nextSpeedIntervalIter();
             redefineSpeedInterval();
         }
-        if (rngR()){
+        if (rngRx()){
             randomsForSpeedIter++;
         }
             
