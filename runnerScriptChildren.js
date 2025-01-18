@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; // adr was 1st
+const songPath = 'songs/children.mp3'; // thew was 1st
 let duration1=490;
 
 
@@ -1046,7 +1046,7 @@ function runner(){
                     
                 }
             }
-            if (rngRx()){
+            if (!rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
             }
@@ -1215,7 +1215,7 @@ function runner(){
                 }
             }
 
-            if (rngRx()){
+            if (!rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
             }
