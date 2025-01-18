@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; // children was 1st
+const songPath = 'songs/children.mp3'; // adr was 1st
 let duration1=490;
 
 
@@ -398,7 +398,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngRx()){
+    if (rngR()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -510,7 +510,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngRx()){
+    if (rngR()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -648,7 +648,7 @@ function nextVolIntervalIter(){
 
             
 
-            if (rngRx()){
+            if (rngR()){
                 if (rngRx()){
                     repeatV=1;
                 }
@@ -664,7 +664,7 @@ function nextVolIntervalIter(){
             }
             else{}
 
-            if (rngR()){
+            if (!rngRx()){
                 if (rngRx()){
                     repeatV=0;
                 }
@@ -696,7 +696,7 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngRx()){
+            if (rngR()){
                 if (rngRx()){
                     repeatV=1;
                 }
@@ -712,7 +712,7 @@ function nextVolIntervalIter(){
             }
             else{}
 
-            if (rngR()){
+            if (!rngRx()){
                 if (rngRx()){
                     repeatV=0;
                 }
@@ -743,7 +743,7 @@ function nextVolIntervalIter(){
                 }
             }
 
-            if (rngRx()){
+            if (rngR()){
                 if (rngRx()){
                     repeatV=1;
                 }
@@ -759,7 +759,7 @@ function nextVolIntervalIter(){
             }
             else{}
 
-            if (rngR()){
+            if (!rngRx()){
                 if (rngRx()){
                     repeatV=0;
                 }
@@ -797,7 +797,7 @@ function nextSpeedIntervalIter(){
             }
 
             
-            if (rngRx()){
+            if (rngR()){
                 if (rngRx()){
                     repeatS=1;
                 }
@@ -812,7 +812,7 @@ function nextSpeedIntervalIter(){
                 }
             }
             else{}
-            if (rngR()){
+            if (!rngRx()){
                 if (rngRx()){
                     repeatS=0;
                 }
@@ -853,7 +853,7 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngRx()){
+            if (rngR()){
                 if (rngRx()){
                     repeatS=1;
                 }
@@ -868,7 +868,7 @@ function nextSpeedIntervalIter(){
                 }
             }
             else{}
-            if (rngR()){
+            if (!rngRx()){
                 if (rngRx()){
                     repeatS=0;
                 }
@@ -908,7 +908,7 @@ function nextSpeedIntervalIter(){
                 }
             }
 
-            if (rngRx()){
+            if (rngR()){
                 if (rngRx()){
                     repeatS=1;
                 }
@@ -923,7 +923,7 @@ function nextSpeedIntervalIter(){
                 }
             }
             else{}
-            if (rngR()){
+            if (!rngRx()){
                 if (rngRx()){
                     repeatS=0;
                 }
@@ -1137,11 +1137,11 @@ function runner(){
             randomForVolVal = multVolArr2[randomsForVol2[randomsForVolIter]]*multVal;
             eitherVolPlain();
         }
-        if (rngRx()){
+        if (rngR()){
             nextVolIntervalIter();
             redefineVolInterval();
         }
-        if (rngRx()){
+        if (rngR()){
             randomsForVolIter++;
         }
     }
@@ -1314,11 +1314,11 @@ function runner(){
             eitherSpeedPlain();
         }
         
-        if (rngRx()){
+        if (rngR()){
             nextSpeedIntervalIter();
             redefineSpeedInterval();
         }
-        if (rngRx()){
+        if (rngR()){
             randomsForSpeedIter++;
         }
             
