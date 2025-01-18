@@ -1,4 +1,4 @@
-const songPath = 'songs/fazer.mp3'; // summer was 1st
+const songPath = 'songs/fazer.mp3'; // adr was 1st
 let duration1=490;
 
 
@@ -398,7 +398,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngRx()){
+    if (rngR()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -510,7 +510,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngRx()){
+    if (rngR()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -1025,7 +1025,7 @@ function runner(){
                     
                 }
             }
-            if (rngR()){
+            if (rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
             }
@@ -1117,7 +1117,7 @@ function runner(){
             randomForVolVal = multVolArr2[randomsForVol2[randomsForVolIter]]*multVal;
             eitherVolPlain();
         }
-        if (rngR()){
+        if (!rngRx()){
         randomsForVolIter++;
         nextVolIntervalIter();
         redefineVolInterval();
@@ -1192,7 +1192,7 @@ function runner(){
                     
                 }
             }
-            if (rngR()){
+            if (rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
             }
@@ -1290,7 +1290,7 @@ function runner(){
             eitherSpeedPlain();
         }
         
-        if (rngR()){
+        if (!rngRx()){
         randomsForSpeedIter++;
         nextSpeedIntervalIter();
         redefineSpeedInterval();
