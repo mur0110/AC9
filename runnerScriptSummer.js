@@ -57,7 +57,7 @@ function generateRandomNumber() {
   }
   
 
-for (let i=0; i<1111111; i++){
+for (let i=0; i<900000; i++){
     rngs.push(truncate(generateRandomNumber()));
 }
 
