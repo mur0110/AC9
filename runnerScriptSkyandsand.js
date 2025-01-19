@@ -1,4 +1,4 @@
-const songPath = 'songs/skyandsand.mp3'; // SandS
+const songPath = 'songs/skyandsand.mp3'; // skyandsand #1
 let duration1=490;
 
 
@@ -961,13 +961,13 @@ function eitherSpeed(){
 }
 
 function eitherVolPlain(){
-    if (!rngRx()){
+    if (rngR()){
         modInterDuration();
     }
 }
 
 function eitherSpeedPlain(){
-    if (!rngRx()){
+    if (rngR()){
         modInterDuration();
     }
 }
@@ -1053,7 +1053,7 @@ function runner(){
                 }
             }
 
-            if (rngR()){
+            if (rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
             }
@@ -1230,7 +1230,7 @@ function runner(){
                 }
             }
 
-        if (rngR()){
+        if (rngRx()){
             nextSpeedIntervalIter();
             redefineSpeedInterval();
         }
