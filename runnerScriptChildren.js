@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; // adr was 1st
+const songPath = 'songs/children.mp3'; // thew was 1st
 let duration1=490;
 
 
@@ -1046,9 +1046,10 @@ function runner(){
                     
                 }
             }
-            
+            if (rngR()){
                 nextVolIntervalIter();
                 redefineVolInterval();
+            }
             
         }
            else{
@@ -1137,11 +1138,11 @@ function runner(){
             randomForVolVal = multVolArr2[randomsForVol2[randomsForVolIter]]*multVal;
             eitherVolPlain();
         }
-        if (rngRx()){
+        if (rngR()){
             nextVolIntervalIter();
             redefineVolInterval();
         }
-        if (rngRx()){
+        if (rngR()){
             randomsForVolIter++;
         }
     }
@@ -1215,10 +1216,10 @@ function runner(){
                 }
             }
 
-            
+            if (rngR()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
-            
+            }
             
             
         }
@@ -1314,11 +1315,11 @@ function runner(){
             eitherSpeedPlain();
         }
         
-        if (rngRx()){
+        if (rngR()){
             nextSpeedIntervalIter();
             redefineSpeedInterval();
         }
-        if (rngRx()){
+        if (rngR()){
             randomsForSpeedIter++;
         }
             
