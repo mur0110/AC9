@@ -1137,13 +1137,13 @@ function runner(){
             randomForVolVal = multVolArr2[randomsForVol2[randomsForVolIter]]*multVal;
             eitherVolPlain();
         }
-        if (rngRx()){
+        if (rngR()){
             nextVolIntervalIter();
             redefineVolInterval();
         }
             
 
-        if (rngRx()){
+        if (rngR()){
             randomsForVolIter++;
         }
 
@@ -1217,7 +1217,6 @@ function runner(){
                     
                 }
             }
-
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
 
@@ -1316,13 +1315,13 @@ function runner(){
             eitherSpeedPlain();
         }
 
-            if (rngRx()){
+            if (rngR()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
             }
             
 
-            if (rngRx()){
+            if (rngR()){
                 randomsForSpeedIter++;
             }
 
