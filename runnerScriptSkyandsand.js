@@ -1,4 +1,4 @@
-const songPath = 'skyandsand.mp3'; // sANDs 1
+const songPath = 'songs/skyandsand.mp3'; // sANDs 1
 let duration1=490;
 
 
