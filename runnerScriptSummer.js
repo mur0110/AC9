@@ -1,4 +1,4 @@
-const songPath = 'summer.mp3'; // summerCanWait 1
+const songPath = 'songs/summer.mp3'; // summerCanWait 1
 let duration1=490;
 
 
