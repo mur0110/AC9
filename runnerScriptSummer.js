@@ -1,4 +1,4 @@
-const songPath = 'songs/summer.mp3'; // summerCanWait 1
+const songPath = 'songs/summer.mp3'; // summer 1
 let duration1=490;
 
 
@@ -57,7 +57,7 @@ function generateRandomNumber() {
   }
   
 
-for (let i=0; i<4000000; i++){
+for (let i=0; i<2000000; i++){
     rngs.push(truncate(generateRandomNumber()));
 }
 
@@ -67,7 +67,7 @@ const randomsForSpeed1=[];
 const randomsForVol2=[];
 const randomsForSpeed2=[];
 
-for (let i=0; i<400000; i++){
+for (let i=0; i<20000; i++){
     randomsForVol1.push(pickAmong19());
     randomsForSpeed1.push(pickAmong19());
     randomsForVol2.push(pickAmong31());
