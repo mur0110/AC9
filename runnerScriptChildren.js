@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; // adr 1 //50% on each is more individualized variability
+const songPath = 'songs/children.mp3'; // adr 1
 let duration1=490;
 
 
@@ -1146,12 +1146,12 @@ function runner(){
         }
 
 
-        if (rngR()){
+        if (rngRx()){
             nextVolIntervalIter();
             redefineVolInterval();
   
         }
-        if (rngR()){
+        if (rngRx()){
             randomsForVolIter++;
         }
 
@@ -1325,7 +1325,7 @@ function runner(){
             eitherSpeedPlain();
         }
 
-        if (rngR()){
+        if (rngRx()){
 
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
@@ -1335,7 +1335,7 @@ function runner(){
 
                 
         }
-        if (rngR()){
+        if (rngRx()){
             randomsForSpeedIter++;
         }
 
