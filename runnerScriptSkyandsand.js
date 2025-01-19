@@ -1,4 +1,4 @@
-const songPath = 'songs/skyandsand.mp3'; // summer 1
+const songPath = 'songs/skyandsand.mp3'; //  1
 let duration1=490;
 
 
@@ -1149,14 +1149,12 @@ function runner(){
         }
 
 
-        if (rngRx()){
             nextVolIntervalIter();
             redefineVolInterval();
   
-        }
-        if (rngRx()){
+
+
             randomsForVolIter++;
-        }
 
     }
 
@@ -1330,7 +1328,7 @@ function runner(){
             }
         }
 
-        if (rngRx()){
+
 
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
@@ -1339,10 +1337,10 @@ function runner(){
 
 
                 
-        }
-        if (rngRx()){
+
+
             randomsForSpeedIter++;
-        }
+        
 
             
     }
