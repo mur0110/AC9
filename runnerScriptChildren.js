@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; // y3000 1
+const songPath = 'songs/children.mp3'; // adr 1
 let duration1=490;
 
 
@@ -462,7 +462,9 @@ function redefineVolInterval(){
     }
 
     
-
+    if (!rngRx()){
+        multiplier=1;
+    }
 
     if (!rngRx()){
         if (rngR()){
@@ -569,6 +571,9 @@ function redefineSpeedInterval(){
         
     }
 
+    if (!rngRx()){
+        multiplier=1;
+    }
    
     if (!rngRx()){
         if (rngR()){
@@ -1047,10 +1052,10 @@ function runner(){
                 }
             }
 
-            if (rngRx()){
+
                 nextVolIntervalIter();
                 redefineVolInterval();
-            }
+            
             
         }
            else{
@@ -1140,14 +1145,13 @@ function runner(){
             eitherVolPlain();
         }
 
+
+        if (rngR()){
             nextVolIntervalIter();
             redefineVolInterval();
-        
-            
-
   
             randomsForVolIter++;
-
+        }
 
     }
 
@@ -1220,10 +1224,10 @@ function runner(){
                 }
             }
 
-            if (rngRx()){
-                nextSpeedIntervalIter();
-                redefineSpeedInterval();
-            }
+
+            nextSpeedIntervalIter();
+            redefineSpeedInterval();
+
             
             
         }
@@ -1319,6 +1323,7 @@ function runner(){
             eitherSpeedPlain();
         }
 
+        if (rngR()){
 
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
@@ -1327,7 +1332,7 @@ function runner(){
 
 
                 randomsForSpeedIter++;
-
+        }
 
             
     }
