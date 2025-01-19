@@ -1,4 +1,4 @@
-const songPath = 'songs/skyandsand.mp3'; // infinity 1
+const songPath = 'songs/skyandsand.mp3'; // summer 1
 let duration1=490;
 
 
@@ -1149,12 +1149,12 @@ function runner(){
         }
 
 
-        if (rngR()){
+        if (rngRx()){
             nextVolIntervalIter();
             redefineVolInterval();
   
         }
-        if (rngR()){
+        if (rngRx()){
             randomsForVolIter++;
         }
 
@@ -1330,7 +1330,7 @@ function runner(){
             }
         }
 
-        if (rngR()){
+        if (rngRx()){
 
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
@@ -1340,7 +1340,7 @@ function runner(){
 
                 
         }
-        if (rngR()){
+        if (rngRx()){
             randomsForSpeedIter++;
         }
 
