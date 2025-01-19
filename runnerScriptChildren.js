@@ -638,7 +638,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (rngR()){
+                if (!rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -688,7 +688,7 @@ function nextVolIntervalIter(){
             if (repeatV===1){
             }
             else{
-                if (rngR()){
+                if (!rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -735,7 +735,7 @@ function nextVolIntervalIter(){
             }
 
             else{
-                if (rngR()){
+                if (!rngRx()){
                     incTypeVol=incTypeSpeed;
                 }
                 else{
@@ -788,7 +788,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (rngR()){
+                if (!rngRx()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
@@ -835,7 +835,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (rngR()){
+                if (!rngRx()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
@@ -890,7 +890,7 @@ function nextSpeedIntervalIter(){
             if (repeatS===1){
             }
             else{
-                if (rngR()){
+                if (!rngRx()){
                     incTypeSpeed=incTypeVol;
                 }
                 else{
@@ -1046,10 +1046,9 @@ function runner(){
                     
                 }
             }
-            if (rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
-            }
+
             
         }
            else{
@@ -1138,13 +1137,13 @@ function runner(){
             randomForVolVal = multVolArr2[randomsForVol2[randomsForVolIter]]*multVal;
             eitherVolPlain();
         }
-        if (rngR()){
+
             nextVolIntervalIter();
             redefineVolInterval();
-        }
-        if (rngR()){
+
+
             randomsForVolIter++;
-        }
+
     }
 
           
@@ -1216,10 +1215,9 @@ function runner(){
                 }
             }
 
-            if (rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
-            }
+
             
             
         }
@@ -1315,13 +1313,13 @@ function runner(){
             eitherSpeedPlain();
         }
         
-        if (rngR()){
+
             nextSpeedIntervalIter();
             redefineSpeedInterval();
-        }
-        if (rngR()){
+
+
             randomsForSpeedIter++;
-        }
+
             
     }
 
