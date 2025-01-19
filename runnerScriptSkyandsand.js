@@ -1,4 +1,4 @@
-const songPath = 'songs/skyandsand.mp3'; // sANDs 1
+const songPath = 'songs/skyandsand.mp3'; // infinity 1
 let duration1=490;
 
 
@@ -57,7 +57,7 @@ function generateRandomNumber() {
   }
   
 
-for (let i=0; i<3000000; i++){
+for (let i=0; i<900000; i++){
     rngs.push(truncate(generateRandomNumber()));
 }
 
@@ -67,7 +67,7 @@ const randomsForSpeed1=[];
 const randomsForVol2=[];
 const randomsForSpeed2=[];
 
-for (let i=0; i<80000; i++){
+for (let i=0; i<15000; i++){
     randomsForVol1.push(pickAmong19());
     randomsForSpeed1.push(pickAmong19());
     randomsForVol2.push(pickAmong31());
@@ -1053,10 +1053,10 @@ function runner(){
                 }
             }
 
-
+            if (rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
-            
+            }
             
         }
            else{
@@ -1149,12 +1149,12 @@ function runner(){
         }
 
 
-        if (rngRx()){
+        if (rngR()){
             nextVolIntervalIter();
             redefineVolInterval();
   
         }
-        if (rngRx()){
+        if (rngR()){
             randomsForVolIter++;
         }
 
@@ -1229,10 +1229,10 @@ function runner(){
                 }
             }
 
-
+        if (rngRx()){
             nextSpeedIntervalIter();
             redefineSpeedInterval();
-
+        }
             
             
         }
@@ -1330,7 +1330,7 @@ function runner(){
             }
         }
 
-        if (rngRx()){
+        if (rngR()){
 
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
@@ -1340,7 +1340,7 @@ function runner(){
 
                 
         }
-        if (rngRx()){
+        if (rngR()){
             randomsForSpeedIter++;
         }
 
