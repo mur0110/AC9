@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; // y3 was 1st
+const songPath = 'songs/children.mp3'; // adr 1
 let duration1=490;
 
 
@@ -1139,13 +1139,13 @@ function runner(){
             randomForVolVal = multVolArr2[randomsForVol2[randomsForVolIter]]*multVal;
             eitherVolPlain();
         }
-        if (rngR()){
+        if (!rngRx()){
             nextVolIntervalIter();
             redefineVolInterval();
         }
             
 
-        if (rngR()){
+        if (!rngRx()){
             randomsForVolIter++;
         }
 
@@ -1319,13 +1319,13 @@ function runner(){
             eitherSpeedPlain();
         }
 
-            if (rngR()){
+            if (!rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
             }
             
 
-            if (rngR()){
+            if (!rngRx()){
                 randomsForSpeedIter++;
             }
 
