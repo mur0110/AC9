@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; // fazer was 1st
+const songPath = 'songs/children.mp3'; // y3 was 1st
 let duration1=490;
 
 
@@ -1046,9 +1046,11 @@ function runner(){
                     
                 }
             }
+
+            if (rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
-
+            }
             
         }
            else{
@@ -1217,9 +1219,11 @@ function runner(){
                     
                 }
             }
+
+            if (rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
-
+            }
             
             
         }
