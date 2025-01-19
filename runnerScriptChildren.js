@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; // answerto was 1st
+const songPath = 'songs/children.mp3'; // y3000 1
 let duration1=490;
 
 
@@ -335,7 +335,7 @@ function selectNextVolArray(presVolInc){
         possibles=possibles.slice(0,11);
     }
 
-    const rngSelector=rngs[rngIter];
+    const rngSelector=Math.floor(rngs[rngIter]*12);
     rngIter++;
     incTypeVol=possibles[rngSelector];
 }
@@ -350,7 +350,7 @@ function selectNextSpeedArray(presSpeedInc){
         possibles=possibles.slice(0,11);
     }
 
-    const rngSelector=rngs[rngIter];
+    const rngSelector=Math.floor(rngs[rngIter]*12);
     rngIter++;
     incTypeSpeed=possibles[rngSelector];
 }
