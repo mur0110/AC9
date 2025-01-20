@@ -1023,7 +1023,7 @@ function runner(){
             } 
 
         if (!rngRx()){
-            if (rngRx()){
+            if (rngR()){
                 if (rngR()){
                     randomForVolVal=randomForVolVal;
                     
@@ -1192,7 +1192,7 @@ function runner(){
             multVal=1;
           }
           if (!rngRx()){
-            if (rngRx()){
+            if (rngR()){
                 if (rngR()){
                     randomForSpeedVal=randomForSpeedVal;
     
