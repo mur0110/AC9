@@ -79,13 +79,20 @@ function modInterDuration(){
     let mVal=0;
     let mArray=[];
 
-        if (rngR()){
+        let rngPick=Math.floor(rngs[rngIter]*3);
+        rngIter++;
+
+        if (rngPick===0){
             mArray=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53];
             mVal=14;
         }
-        else{
+        else if (rngPick===1){
             mArray=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53, .59, .61, .67];
             mVal=17;
+        }
+        else{
+            mArray=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43];
+            mVal=12;
         }
         
 
