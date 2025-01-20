@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; // this was 1st
+const songPath = 'songs/children.mp3'; // summer was 1st
 let duration1=490;
 
 
@@ -80,7 +80,7 @@ function modInterDuration(){
     let mArray=[];
 
 
-        if (rngRx()){
+        if (rngR()){
             mArray=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53];
             mVal=14;
         }
