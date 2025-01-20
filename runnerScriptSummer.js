@@ -1,4 +1,4 @@
-const songPath = 'songs/summer.mp3'; // summer 1
+const songPath = 'songs/summer.mp3'; // summerCanWait was 1st
 let duration1=490;
 
 
@@ -961,13 +961,13 @@ function eitherSpeed(){
 }
 
 function eitherVolPlain(){
-    if (!rngRx()){
+    if (rngR()){
         modInterDuration();
     }
 }
 
 function eitherSpeedPlain(){
-    if (!rngRx()){
+    if (rngR()){
         modInterDuration();
     }
 }
@@ -1056,7 +1056,6 @@ function runner(){
 
                 nextVolIntervalIter();
                 redefineVolInterval();
-            
             
         }
            else{
@@ -1148,12 +1147,13 @@ function runner(){
             }
         }
 
-
         if (rngRx()){
             nextVolIntervalIter();
             redefineVolInterval();
-  
         }
+            
+  
+
         if (rngRx()){
             randomsForVolIter++;
         }
@@ -1330,19 +1330,20 @@ function runner(){
             }
         }
 
-        if (rngRx()){
 
+        if (rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
-
+        }
             
 
 
                 
-        }
+
         if (rngRx()){
             randomsForSpeedIter++;
         }
+        
 
             
     }
