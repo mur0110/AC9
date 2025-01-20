@@ -1,4 +1,4 @@
-const songPath = 'alwayso.mp3'; // this was 1st
+const songPath = 'songs/alwayso.mp3'; // this was 1st
 let duration1=490;
 
 
