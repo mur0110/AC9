@@ -1,4 +1,4 @@
-const songPath = 'songs/alwayso.mp3'; // this was 1st
+const songPath = 'alwayso.mp3'; // this was 1st
 let duration1=490;
 
 
@@ -1051,7 +1051,7 @@ function runner(){
                     
                 }
             }
-            if (rngRx()){
+            if (rngR()){
                 nextVolIntervalIter();
                 redefineVolInterval();
             }
@@ -1143,13 +1143,11 @@ function runner(){
             randomForVolVal = multVolArr2[randomsForVol2[randomsForVolIter]]*multVal;
             eitherVolPlain();
         }
-        if (!rngRx()){
             nextVolIntervalIter();
             redefineVolInterval();
-        }
-        if (!rngRx()){
+
+
             randomsForVolIter++;
-        }
     }
 
           
@@ -1220,7 +1218,7 @@ function runner(){
                     
                 }
             }
-            if (rngRx()){
+            if (rngR()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
             }
@@ -1318,13 +1316,11 @@ function runner(){
             eitherSpeedPlain();
         }
         
-        if (!rngRx()){
             nextSpeedIntervalIter();
             redefineSpeedInterval();
-        }
-        if (!rngRx()){
+
             randomsForSpeedIter++;
-        }
+
             
     }
 
