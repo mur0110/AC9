@@ -1,4 +1,4 @@
-const songPath = 'songs/alwayso.mp3'; // this was 1st
+const songPath = 'songs/alwayso.mp3'; // alwayso was 1st
 let duration1=490;
 
 
@@ -398,7 +398,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngR()){
+    if (rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -447,20 +447,21 @@ function redefineVolInterval(){
 
 
 
-    if (!rngRx()){}
-    else{
-        let rngTr=rngTrio();
-        if (rngTr===0){
-            multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
-        }
-        else if (rngTr===1)
-        {
-            multiplier=multiplier**(5/7);
-        }
-        else if (rngTr===2){
-            multiplier=multiplier**(7/5);
-        }
+
+
+    let rngTr=rngQuat();
+    if (rngTr===0){
+        multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
     }
+    else if (rngTr===1)
+    {
+        multiplier=multiplier**(5/7);
+    }
+    else if (rngTr===2){
+        multiplier=multiplier**(7/5);
+    }
+    else{}
+    
 
 
     
@@ -514,7 +515,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngR()){
+    if (rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -557,20 +558,18 @@ function redefineSpeedInterval(){
         }
     }
 
-    if (!rngRx()){}
-    else{
-        let rngTr=rngTrio();
-        if (rngTr===0){
-            multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
-        }
-        else if (rngTr===1)
-        {
-            multiplier=multiplier**(5/7);
-        }
-        else if (rngTr===2){
-            multiplier=multiplier**(7/5);
-        }
+    let rngTr=rngQuat();
+    if (rngTr===0){
+        multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
     }
+    else if (rngTr===1)
+    {
+        multiplier=multiplier**(5/7);
+    }
+    else if (rngTr===2){
+        multiplier=multiplier**(7/5);
+    }
+    else{}
 
     if (!rngRx()){
         multiplier=1;
@@ -1024,7 +1023,7 @@ function runner(){
             } 
 
         if (!rngRx()){
-            if (!rngRx()){
+            if (rngRx()){
                 if (rngR()){
                     randomForVolVal=randomForVolVal;
                     
@@ -1052,15 +1051,15 @@ function runner(){
                     
                 }
             }
-
-
+            if (rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
-            
+            }
+                
         }
            else{
            
-          if (!rngRx()){
+          if (rngWhich<(1/3)){
              
             let rngDecider=rngBin();
 
@@ -1136,28 +1135,21 @@ function runner(){
 
             }
             
-        else{
-            if (rngR()){
-                randomForVolVal = multVolArr1[randomsForVol1[randomsForVolIter]]*multVal;
-                eitherVol();
-            }
-            else{
-                randomForVolVal = multVolArr2[randomsForVol2[randomsForVolIter]]*multVal;
-                eitherVolPlain();
-            }
+        else if(rngWhich<(2/3)){
+            randomForVolVal = multVolArr1[randomsForVol1[randomsForVolIter]]*multVal;
+            eitherVol();
         }
-
-        if (rngRx()){
+        else{
+            randomForVolVal = multVolArr2[randomsForVol2[randomsForVolIter]]*multVal;
+            eitherVolPlain();
+        }
+        if (rngR()){
             nextVolIntervalIter();
             redefineVolInterval();
         }
-            
-  
-
-        if (rngRx()){
+        if (rngR()){
             randomsForVolIter++;
         }
-
     }
 
           
@@ -1200,7 +1192,7 @@ function runner(){
             multVal=1;
           }
           if (!rngRx()){
-            if (!rngRx()){
+            if (rngRx()){
                 if (rngR()){
                     randomForSpeedVal=randomForSpeedVal;
     
@@ -1228,17 +1220,15 @@ function runner(){
                     
                 }
             }
-
-
-            nextSpeedIntervalIter();
-            redefineSpeedInterval();
-
-            
+            if (rngRx()){
+                nextSpeedIntervalIter();
+                redefineSpeedInterval();
+            }
             
         }
             else{
             
-          if (!rngRx()){
+          if (rngWhich<(1/3)){
             
             let rngDecider=rngBin();
 
@@ -1319,32 +1309,22 @@ function runner(){
               randomForSpeedVal = rngVS1;
               eitherSpeedPlain();
             }
+        else if(rngWhich<(2/3)){
+            randomForSpeedVal = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]]*multVal;
+            eitherSpeed();
+        }
         else{
-            if (rngR()){
-                randomForSpeedVal = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]]*multVal;
-                eitherSpeed();
-            }
-            else{
-                randomForSpeedVal = multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]]*multVal;
-                eitherSpeedPlain();
-            }
-        }
-
-
-        if (rngRx()){
-                nextSpeedIntervalIter();
-                redefineSpeedInterval();
-        }
-            
-
-
-                
-
-        if (rngRx()){
-            randomsForSpeedIter++;
+            randomForSpeedVal = multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]]*multVal;
+            eitherSpeedPlain();
         }
         
-
+        if (rngR()){
+            nextSpeedIntervalIter();
+            redefineSpeedInterval();
+        }
+        if (rngR()){
+            randomsForSpeedIter++;
+        }
             
     }
 
