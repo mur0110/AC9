@@ -472,9 +472,6 @@ function redefineVolInterval(){
 
 
     
-    if (!rngRx()){
-        multiplier=1;
-    }
 
     if (!rngRx()){
         if (rngR()){
@@ -578,9 +575,6 @@ function redefineSpeedInterval(){
     }
     else{}
 
-    if (!rngRx()){
-        multiplier=1;
-    }
    
     if (!rngRx()){
         if (rngR()){
