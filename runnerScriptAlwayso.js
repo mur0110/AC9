@@ -967,13 +967,13 @@ function eitherSpeed(){
 }
 
 function eitherVolPlain(){
-    if (rngR()){
+    if (!rngRx()){
         modInterDuration();
     }
 }
 
 function eitherSpeedPlain(){
-    if (rngR()){
+    if (!rngRx()){
         modInterDuration();
     }
 }
@@ -1058,7 +1058,7 @@ function runner(){
                     
                 }
             }
-            if (rngR()){
+            if (rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
             }
@@ -1150,11 +1150,16 @@ function runner(){
             randomForVolVal = multVolArr2[randomsForVol2[randomsForVolIter]]*multVal;
             eitherVolPlain();
         }
+
+        if (rngR()){
             nextVolIntervalIter();
             redefineVolInterval();
-
-
+        }
+        if (rngR()){
             randomsForVolIter++;
+        }
+
+
     }
 
           
@@ -1225,7 +1230,7 @@ function runner(){
                     
                 }
             }
-            if (rngR()){
+            if (rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
             }
@@ -1322,11 +1327,15 @@ function runner(){
             randomForSpeedVal = multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]]*multVal;
             eitherSpeedPlain();
         }
-        
+
+        if (rngR()){
             nextSpeedIntervalIter();
             redefineSpeedInterval();
-
+        }
+            
+        if (rngR()){
             randomsForSpeedIter++;
+        }
 
             
     }
