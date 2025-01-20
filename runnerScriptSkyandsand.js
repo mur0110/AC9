@@ -1,4 +1,4 @@
-const songPath = 'songs/skyandsand.mp3'; // 
+const songPath = 'songs/skyandsand.mp3'; // SandS was 1st
 let duration1=490;
 
 
@@ -79,13 +79,20 @@ function modInterDuration(){
     let mVal=0;
     let mArray=[];
 
-        if (rngR()){
+        let rngPick=Math.floor(rngs[rngIter]*3);
+        rngIter++;
+
+        if (rngPick===0){
             mArray=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53];
             mVal=14;
         }
-        else{
+        else if (rngPick===1){
             mArray=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43, .47, .53, .59, .61, .67];
             mVal=17;
+        }
+        else{
+            mArray=[.05, .07, .11, .13, .17, .19, .23, .29, .31, .37, .41, .43];
+            mVal=12;
         }
         
 
@@ -447,20 +454,21 @@ function redefineVolInterval(){
 
 
 
-    if (!rngRx()){}
-    else{
-        let rngTr=rngTrio();
-        if (rngTr===0){
-            multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
-        }
-        else if (rngTr===1)
-        {
-            multiplier=multiplier**(5/7);
-        }
-        else if (rngTr===2){
-            multiplier=multiplier**(7/5);
-        }
+
+
+    let rngTr=rngQuat();
+    if (rngTr===0){
+        multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
     }
+    else if (rngTr===1)
+    {
+        multiplier=multiplier**(5/7);
+    }
+    else if (rngTr===2){
+        multiplier=multiplier**(7/5);
+    }
+    else{}
+    
 
 
     
@@ -557,20 +565,18 @@ function redefineSpeedInterval(){
         }
     }
 
-    if (!rngRx()){}
-    else{
-        let rngTr=rngTrio();
-        if (rngTr===0){
-            multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
-        }
-        else if (rngTr===1)
-        {
-            multiplier=multiplier**(5/7);
-        }
-        else if (rngTr===2){
-            multiplier=multiplier**(7/5);
-        }
+    let rngTr=rngQuat();
+    if (rngTr===0){
+        multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
     }
+    else if (rngTr===1)
+    {
+        multiplier=multiplier**(5/7);
+    }
+    else if (rngTr===2){
+        multiplier=multiplier**(7/5);
+    }
+    else{}
 
     if (!rngRx()){
         multiplier=1;
@@ -961,13 +967,13 @@ function eitherSpeed(){
 }
 
 function eitherVolPlain(){
-    if (rngR()){
+    if (!rngRx()){
         modInterDuration();
     }
 }
 
 function eitherSpeedPlain(){
-    if (rngR()){
+    if (!rngRx()){
         modInterDuration();
     }
 }
@@ -1024,7 +1030,7 @@ function runner(){
             } 
 
         if (!rngRx()){
-            if (rngRx()){
+            if (rngR()){
                 if (rngR()){
                     randomForVolVal=randomForVolVal;
                     
@@ -1052,16 +1058,15 @@ function runner(){
                     
                 }
             }
-
-            if (rngRx()){
+            if (rngR()){
                 nextVolIntervalIter();
                 redefineVolInterval();
             }
-            
+                
         }
            else{
            
-          if (!rngRx()){
+          if (rngWhich<(1/3)){
              
             let rngDecider=rngBin();
 
@@ -1137,28 +1142,19 @@ function runner(){
 
             }
             
-        else{
-            if (rngR()){
-                randomForVolVal = multVolArr1[randomsForVol1[randomsForVolIter]]*multVal;
-                eitherVol();
-            }
-            else{
-                randomForVolVal = multVolArr2[randomsForVol2[randomsForVolIter]]*multVal;
-                eitherVolPlain();
-            }
+        else if(rngWhich<(2/3)){
+            randomForVolVal = multVolArr1[randomsForVol1[randomsForVolIter]]*multVal;
+            eitherVol();
         }
-
-        if (!rngRx()){
+        else{
+            randomForVolVal = multVolArr2[randomsForVol2[randomsForVolIter]]*multVal;
+            eitherVolPlain();
+        }
             nextVolIntervalIter();
             redefineVolInterval();
-        }
-            
-  
 
-        if (!rngRx()){
+
             randomsForVolIter++;
-        }
-
     }
 
           
@@ -1201,7 +1197,7 @@ function runner(){
             multVal=1;
           }
           if (!rngRx()){
-            if (rngRx()){
+            if (rngR()){
                 if (rngR()){
                     randomForSpeedVal=randomForSpeedVal;
     
@@ -1229,17 +1225,15 @@ function runner(){
                     
                 }
             }
-
-        if (rngRx()){
-            nextSpeedIntervalIter();
-            redefineSpeedInterval();
-        }
-            
+            if (rngR()){
+                nextSpeedIntervalIter();
+                redefineSpeedInterval();
+            }
             
         }
             else{
             
-          if (!rngRx()){
+          if (rngWhich<(1/3)){
             
             let rngDecider=rngBin();
 
@@ -1320,31 +1314,19 @@ function runner(){
               randomForSpeedVal = rngVS1;
               eitherSpeedPlain();
             }
+        else if(rngWhich<(2/3)){
+            randomForSpeedVal = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]]*multVal;
+            eitherSpeed();
+        }
         else{
-            if (rngR()){
-                randomForSpeedVal = multSpeedArr1[randomsForSpeed1[randomsForSpeedIter]]*multVal;
-                eitherSpeed();
-            }
-            else{
-                randomForSpeedVal = multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]]*multVal;
-                eitherSpeedPlain();
-            }
-        }
-
-
-        if (!rngRx()){
-                nextSpeedIntervalIter();
-                redefineSpeedInterval();
-        }
-            
-
-
-                
-
-        if (!rngRx()){
-            randomsForSpeedIter++;
+            randomForSpeedVal = multSpeedArr2[randomsForSpeed2[randomsForSpeedIter]]*multVal;
+            eitherSpeedPlain();
         }
         
+            nextSpeedIntervalIter();
+            redefineSpeedInterval();
+
+            randomsForSpeedIter++;
 
             
     }
