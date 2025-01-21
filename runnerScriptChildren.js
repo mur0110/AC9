@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; // summer was 1st
+const songPath = 'songs/children.mp3'; // children was 1st
 let duration1=490;
 
 
@@ -1052,10 +1052,9 @@ function runner(){
                     
                 }
             }
-            if (rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
-            }
+
                 
         }
            else{
@@ -1224,10 +1223,10 @@ function runner(){
                     
                 }
             }
-            if (rngRx()){
+
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
-            }
+
             
         }
             else{
