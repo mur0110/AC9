@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; // children was 1st
+const songPath = 'songs/children.mp3'; // child was 1st
 let duration1=490;
 
 
@@ -1052,7 +1052,7 @@ function runner(){
                     
                 }
             }
-            if (!rngRx()){
+            if (rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
             }
@@ -1147,11 +1147,14 @@ function runner(){
             eitherVolPlain();
         }
 
+        if (!rngRx()){
             nextVolIntervalIter();
             redefineVolInterval();
-
+        }
+            
+        if (!rngRx()){
             randomsForVolIter++;
-
+        }
 
 
     }
@@ -1224,7 +1227,7 @@ function runner(){
                     
                 }
             }
-            if (!rngRx()){
+            if (rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
             }
@@ -1324,13 +1327,17 @@ function runner(){
             eitherSpeedPlain();
         }
 
-
+        if (!rngRx()){
             nextSpeedIntervalIter();
             redefineSpeedInterval();
-
+        }
             
 
+            
+        if (!rngRx()){
             randomsForSpeedIter++;
+
+        }
 
 
             
