@@ -1150,7 +1150,6 @@ function runner(){
             nextVolIntervalIter();
             redefineVolInterval();
 
-
             randomsForVolIter++;
 
 
@@ -1331,6 +1330,7 @@ function runner(){
 
             
 
+            randomsForSpeedIter++;
 
 
             
