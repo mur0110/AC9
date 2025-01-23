@@ -1342,7 +1342,7 @@ function runner(){
             eitherSpeedPlain();
         }
 
-        if (rngRx){
+        if (rngRx()){
             nextSpeedIntervalIter();
             redefineSpeedInterval();
         }
