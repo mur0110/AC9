@@ -1067,7 +1067,7 @@ function runner(){
                     
                 }
             }
-            if (rngRx()){
+            if (!rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
             }
@@ -1162,12 +1162,12 @@ function runner(){
             eitherVolPlain();
         }
 
-        if (rngRx()){
+        if (!rngRx()){
             nextVolIntervalIter();
             redefineVolInterval();
         }
             
-        if (rngRx()){
+        if (!rngRx()){
             randomsForVolIter++;
         }
 
@@ -1242,7 +1242,7 @@ function runner(){
                     
                 }
             }
-            if (rngRx()){
+            if (!rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
             }
@@ -1342,11 +1342,11 @@ function runner(){
             eitherSpeedPlain();
         }
 
-        if (rngRx()){
+        if (!rngRx()){
             nextSpeedIntervalIter();
             redefineSpeedInterval();
         }
-        if (rngRx()){
+        if (!rngRx()){
             randomsForSpeedIter++;
         }
 
