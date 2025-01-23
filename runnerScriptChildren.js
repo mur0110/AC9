@@ -339,7 +339,7 @@ function selectNextVolArray(presVolInc){
         possibles=possibles.slice(0,where) + possibles.slice(where+1);
     }
     else{
-        possibles=possibles.slice(0,11);
+        possibles=possibles.slice(0);
     }
 
     const rngSelector=Math.floor(rngs[rngIter]*12);
@@ -354,7 +354,7 @@ function selectNextSpeedArray(presSpeedInc){
         possibles=possibles.slice(0,where) + possibles.slice(where+1);
     }
     else{
-        possibles=possibles.slice(0,11);
+        possibles=possibles.slice(0);
     }
 
     const rngSelector=Math.floor(rngs[rngIter]*12);
