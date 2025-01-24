@@ -462,11 +462,8 @@ function redefineVolInterval(){
 
 
 
-    if (!rngRx()){
 
-    }
-    else{
-        let rngTr=rngTrio();
+        let rngTr=rngQuat();
         if (rngTr===0){
             multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
         }
@@ -477,7 +474,8 @@ function redefineVolInterval(){
         else if (rngTr===2){
             multiplier=multiplier**(7/5);
         }
-    }
+        else{}
+
     
     
 
@@ -573,11 +571,7 @@ function redefineSpeedInterval(){
         }
     }
 
-    if (!rngRx()){
-
-    }
-    else{
-        let rngTr=rngTrio();
+    let rngTr=rngQuat();
         if (rngTr===0){
             multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
         }
@@ -588,7 +582,7 @@ function redefineSpeedInterval(){
         else if (rngTr===2){
             multiplier=multiplier**(7/5);
         }
-    }
+        else{}
 
    
     if (!rngRx()){
