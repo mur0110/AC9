@@ -411,7 +411,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngR()){
+    if (rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -528,7 +528,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngR()){
+    if (rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
         rngIter++;
     }
@@ -1156,12 +1156,12 @@ function runner(){
             eitherVolPlain();
         }
 
-        if (rngRx()){
+        if (!rngRx()){
             nextVolIntervalIter();
             redefineVolInterval();
         }
             
-        if (rngRx()){
+        if (!rngRx()){
             randomsForVolIter++;
         }
 
@@ -1335,11 +1335,11 @@ function runner(){
             eitherSpeedPlain();
         }
 
-        if (rngRx()){
+        if (!rngRx()){
             nextSpeedIntervalIter();
             redefineSpeedInterval();
         }
-        if (rngRx()){
+        if (!rngRx()){
             randomsForSpeedIter++;
         }
 
