@@ -57,7 +57,7 @@ function generateRandomNumber() {
   }
   
 
-for (let i=0; i<1900000; i++){
+for (let i=0; i<900000; i++){
     rngs.push(truncate(generateRandomNumber()));
 }
 
@@ -67,7 +67,7 @@ const randomsForSpeed1=[];
 const randomsForVol2=[];
 const randomsForSpeed2=[];
 
-for (let i=0; i<25000; i++){
+for (let i=0; i<15000; i++){
     randomsForVol1.push(pickAmong19());
     randomsForSpeed1.push(pickAmong19());
     randomsForVol2.push(pickAmong31());
@@ -1061,10 +1061,8 @@ function runner(){
                     
                 }
             }
-            if (rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
-            }
                 
 
                 
@@ -1158,12 +1156,14 @@ function runner(){
             eitherVolPlain();
         }
 
+        if (rngRx()){
             nextVolIntervalIter();
             redefineVolInterval();
-
+        }
             
-
+        if (rngRx()){
             randomsForVolIter++;
+        }
 
 
 
@@ -1237,10 +1237,9 @@ function runner(){
                     
                 }
             }
-            if (rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
-            }
+
                 
 
                 
@@ -1339,13 +1338,13 @@ function runner(){
             eitherSpeedPlain();
         }
 
-
+        if (rngRx()){
             nextSpeedIntervalIter();
             redefineSpeedInterval();
-
-
+        }
+        if (rngRx()){
             randomsForSpeedIter++;
-
+        }
 
 
 
