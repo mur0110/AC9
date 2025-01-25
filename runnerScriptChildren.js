@@ -1158,14 +1158,13 @@ function runner(){
             eitherVolPlain();
         }
 
-        if (!rngRx()){
             nextVolIntervalIter();
             redefineVolInterval();
-        }
+
             
-        if (!rngRx()){
+
             randomsForVolIter++;
-        }
+
 
 
     }
@@ -1340,13 +1339,13 @@ function runner(){
             eitherSpeedPlain();
         }
 
-        if (!rngRx()){
+
             nextSpeedIntervalIter();
             redefineSpeedInterval();
-        }
-        if (!rngRx()){
+
+
             randomsForSpeedIter++;
-        }
+
 
 
 
