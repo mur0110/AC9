@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; // children was 1st
+const songPath = 'songs/children.mp3'; // skyandsand was 1st
 let duration1=490;
 
 
@@ -1164,11 +1164,13 @@ function runner(){
             eitherVolPlain();
         }
 
+        if (rngRx()){
             nextVolIntervalIter();
             redefineVolInterval();
-            
+        }
+        if (rngRx()){
             randomsForVolIter++;
-
+        }
 
 
     }
@@ -1343,12 +1345,13 @@ function runner(){
             eitherSpeedPlain();
         }
 
- 
+        if (rngRx()){
             nextSpeedIntervalIter();
             redefineSpeedInterval();
-
+        }
+        if (rngRx()){
             randomsForSpeedIter++;
-
+        }
 
 
 
