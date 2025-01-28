@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; // skyandsand was 1st
+const songPath = 'songs/children.mp3'; // children was 1st
 let duration1=490;
 
 
@@ -56,7 +56,7 @@ function generateRandomNumber() {
     return randomNumber/1000;
   }
   
-// not 200k
+
 for (let i=0; i<250000; i++){
     rngs.push(truncate(generateRandomNumber()));
 }
@@ -1042,7 +1042,7 @@ function runner(){
                     
                 }
             }
-            if (rngR()){
+            if (!rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
             }
@@ -1217,7 +1217,7 @@ function runner(){
                     
                 }
             }
-            if (rngR()){
+            if (!rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
             }
