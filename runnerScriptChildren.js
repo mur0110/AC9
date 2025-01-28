@@ -35,7 +35,7 @@ let wasRepeatSpeed=0;
 
 function truncate(x){
     let y=String(x);
-    y=y.slice(0,5);
+    y=y.slice(0,7);
     return parseFloat(y);
 }
 
