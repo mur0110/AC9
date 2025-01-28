@@ -1,4 +1,4 @@
-const songPath = 'children.mp3'; // skyandsand was 1st
+const songPath = 'songs/children.mp3'; // skyandsand was 1st
 let duration1=490;
 
 
@@ -35,7 +35,7 @@ let wasRepeatSpeed=0;
 
 function truncate(x){
     let y=String(x);
-    y=y.slice(0,5);
+    y=y.slice(0,4);
     return parseFloat(y);
 }
 
@@ -57,7 +57,7 @@ function generateRandomNumber() {
   }
   
 
-for (let i=0; i<230000; i++){
+for (let i=0; i<250000; i++){
     rngs.push(truncate(generateRandomNumber()));
 }
 
