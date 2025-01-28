@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; // children was 1st
+const songPath = 'songs/children.mp3'; // skyandsand was 1st
 let duration1=490;
 
 
@@ -42,7 +42,7 @@ function truncate(x){
 function generateRandomNumber() {
     // Ensure that min and max are integers
     min = 0;
-    max = 199;
+    max = 349;
   
     // Create a typed array to store the random values
     const array = new Uint32Array(1);
@@ -53,7 +53,7 @@ function generateRandomNumber() {
     // Convert the random value to the desired range
     const randomNumber = min + (array[0] % (max - min + 1));
   
-    return randomNumber/200;
+    return randomNumber/350;
   }
   
 
