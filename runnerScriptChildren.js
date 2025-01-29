@@ -35,11 +35,8 @@ let wasRepeatSpeed=0;
 
 function truncate(x){
     let y=String(x);
-    y=y.slice(0,5);
-    y=parseFloat(y);
-    y=y.toFixed(2);
-    y=parseFloat(y);
-    return y;
+    y=y.slice(2,5);
+    return parseInt(y);
 }
 
 function generateRandomNumber() {
@@ -82,7 +79,7 @@ function modInterDuration(){
     let mVal=0;
     let mArray=[];
 
-        let rngPick=Math.floor(rngs[rngIter]*3);
+        let rngPick=Math.floor(rngs[rngIter]/1000 *3);
         rngIter++;
 
         if (rngPick===0){
@@ -99,7 +96,7 @@ function modInterDuration(){
         }
         
 
-        interDuration = mArray[Math.floor(rngs[rngIter]*mVal)];
+        interDuration = mArray[Math.floor(rngs[rngIter]/1000 *mVal)];
         rngIter++;
 
 }
@@ -108,57 +105,57 @@ function modInterDuration(){
 
 
 function rngBin(){
-    const val = Math.floor(rngs[rngIter]*2);
+    const val = Math.floor(rngs[rngIter]/1000 *2);
     rngIter++;
     return val;
 }
 function rngTrio(){
-    const val = Math.floor(rngs[rngIter]*3);
+    const val = Math.floor(rngs[rngIter]/1000 *3);
     rngIter++;
     return val;
 }
 function rngQuat(){
-    const val = Math.floor(rngs[rngIter]*4);
+    const val = Math.floor(rngs[rngIter]/1000 *4);
     rngIter++;
     return val;
 }
 function rngPent(){
-    const val = Math.floor(rngs[rngIter]*5);
+    const val = Math.floor(rngs[rngIter]/1000 *5);
     rngIter++;
     return val;
 }
 function rngHex(){
-    const val = Math.floor(rngs[rngIter]*6);
+    const val = Math.floor(rngs[rngIter]/1000 *6);
     rngIter++;
     return val;
 }
 function rngSep(){
-    const val = Math.floor(rngs[rngIter]*7);
+    const val = Math.floor(rngs[rngIter]/1000 *7);
     rngIter++;
     return val;
 }
 function rngOct(){
-    const val = Math.floor(rngs[rngIter]*8);
+    const val = Math.floor(rngs[rngIter]/1000 *8);
     rngIter++;
     return val;
 }
 function rng10(){
-    const val = Math.floor(rngs[rngIter]*10);
+    const val = Math.floor(rngs[rngIter]/1000 *10);
     rngIter++;
     return val;
 }
 function rng14(){
-    const val = Math.floor(rngs[rngIter]*14);
+    const val = Math.floor(rngs[rngIter]/1000 *14);
     rngIter++;
     return val;
 }
 function rng16(){
-    const val = Math.floor(rngs[rngIter]*16);
+    const val = Math.floor(rngs[rngIter]/1000 *16);
     rngIter++;
     return val;
 }
 function rng12(){
-    const val = Math.floor(rngs[rngIter]*12);
+    const val = Math.floor(rngs[rngIter]/1000 *12);
     rngIter++;
     return val;
 }
@@ -175,7 +172,7 @@ function rngR(){
 }
 
 function rngRx(){
-    if (rngs[rngIter]*7>2){
+    if (rngs[rngIter]/1000 *7>2){
         rngIter++;
         return 1;
     }
@@ -322,7 +319,7 @@ function selectNextVolArray(presVolInc){
         possibles=possibles.slice(0,11);
     }
 
-    const rngSelector=Math.floor(rngs[rngIter]*11);
+    const rngSelector=Math.floor(rngs[rngIter]/1000 *11);
     rngIter++;
     incTypeVol=possibles[rngSelector];
 }
@@ -340,7 +337,7 @@ function selectNextSpeedArray(presSpeedInc){
         possibles=possibles.slice(0,11);
     }
 
-    const rngSelector=Math.floor(rngs[rngIter]*11);
+    const rngSelector=Math.floor(rngs[rngIter]/1000 *11);
     rngIter++;
     incTypeSpeed=possibles[rngSelector];
 }
@@ -384,17 +381,17 @@ let speedInterval = presSpeedInterval;
 
 function redefineVolInterval(){
     let multiplier=0;
-    let arrayHold=pickArrayVol(Math.floor(rngs[rngIter]*12));
+    let arrayHold=pickArrayVol(Math.floor(rngs[rngIter]/1000 *12));
     rngIter++;
     let randomInt=0;
 
     if (!rngRx()){
-        randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
+        randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]/1000 *arrayHold.length)]);
         rngIter++;
     }
     else{
         let range1=[2,3,4,2.5,3.5,5];
-        randomInt=range1[Math.floor(rngs[rngIter]*6)];
+        randomInt=range1[Math.floor(rngs[rngIter]/1000 *6)];
         rngIter++;
     }
 
@@ -506,17 +503,17 @@ function redefineVolInterval(){
 
 function redefineSpeedInterval(){
     let multiplier=0;
-    let arrayHold=pickArrayVol(Math.floor(rngs[rngIter]*12));
+    let arrayHold=pickArrayVol(Math.floor(rngs[rngIter]/1000 *12));
     rngIter++;
     let randomInt=0;
 
     if (!rngRx()){
-        randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]*arrayHold.length)]);
+        randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]/1000 *arrayHold.length)]);
         rngIter++;
     }
     else{
         let range1=[2,3,4,2.5,3.5,5];
-        randomInt=range1[Math.floor(rngs[rngIter]*6)];
+        randomInt=range1[Math.floor(rngs[rngIter]/1000 *6)];
         rngIter++;
     }
     
@@ -615,13 +612,13 @@ function redefineSpeedInterval(){
 
 
 function pickAmong19(){
-    const val = Math.floor(rngs[rngIter] * 19);
+    const val = Math.floor(rngs[rngIter]/1000 * 19);
     rngIter++;
     return val;
 }
 
 function pickAmong31(){
-    const val = Math.floor(rngs[rngIter] * 31);
+    const val = Math.floor(rngs[rngIter]/1000 * 31);
     rngIter++;
     return val;
 }
@@ -997,7 +994,7 @@ function runner(){
         
 
         // rngWhich
-        let rngWhich=rngs[rngIter];
+        let rngWhich=rngs[rngIter]/1000;
         rngIter++;
 
         setTimeout(function(){
@@ -1170,7 +1167,7 @@ function runner(){
 
 
 
-          let rngWhich=rngs[rngIter];
+          let rngWhich=rngs[rngIter]/1000;
           rngIter++;
           setTimeout(function(){
               songAudio.playbackRate = randomForSpeedVal;
