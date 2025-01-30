@@ -42,7 +42,7 @@ function truncate(x){
 function generateRandomNumber() {
     // Ensure that min and max are integers
     min = 0;
-    max = 224;
+    max = 849;
   
     // Create a typed array to store the random values
     const array = new Uint32Array(1);
@@ -53,7 +53,7 @@ function generateRandomNumber() {
     // Convert the random value to the desired range
     const randomNumber = min + (array[0] % (max - min + 1));
   
-    return randomNumber/225;
+    return randomNumber/850;
   }
   
 
