@@ -6,8 +6,8 @@ let volumeLog=0;
 let speedLog=0;
 
 
-const multVolArr1 = [.385, .405, .415, .435 ,.445, .465, .475, .485, .495, .5, .505, .515, .525, .535, .555, .565, .585, .595, .615];
-const multSpeedArr1 = [.77, .81, .83, .87, .89, .93, .95, .97, .99, 1, 1.01, 1.03, 1.05, 1.07, 1.11, 1.13, 1.17, 1.19, 1.23]; // 5,7,1,11 off of +-.13
+const multVolArr1 = [.385, .405, .415, .435 ,.445, .465, .475, .485, .49, .5, .51, .515, .525, .535, .555, .565, .585, .595, .615];
+const multSpeedArr1 = [.77, .81, .83, .87, .89, .93, .95, .97, .98, 1, 1.02, 1.03, 1.05, 1.07, 1.11, 1.13, 1.17, 1.19, 1.23]; // 5,7,1,11 off of +-.13
 
 const multVolArr2 = [ .375, .3825, .3875, .4, .4075, .4125, .425, .4325, .4375, .45, .4575, .4625, .475, .4825, .4875, .5, .5125, .5175, .525, .5375, .5425, .55, .5625, .5675, .575, .5875, .5925, .6, .6125, .6175, .625];
 const multSpeedArr2 = [ .75, .765, .775, .8, .815, .825, .85, .865, .875, .9, .915, .925, .95, .965, .975, 1, 1.025, 1.035, 1.05, 1.075, 1.085, 1.1, 1.125, 1.135, 1.15, 1.75, 1.85, 1.2, 1.225, 1.235, 1.25];
@@ -42,7 +42,7 @@ function truncate(x){
 function generateRandomNumber() {
     // Ensure that min and max are integers
     min = 0;
-    max = 1728;
+    max = 2416;
   
     // Create a typed array to store the random values
     const array = new Uint32Array(1);
@@ -53,7 +53,7 @@ function generateRandomNumber() {
     // Convert the random value to the desired range
     const randomNumber = min + (array[0] % (max - min + 1));
   
-    return randomNumber/1729;
+    return randomNumber/2417;
   }
   
 
