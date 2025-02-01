@@ -1,4 +1,4 @@
-const songPath = 'songs/children.mp3'; // sky was 1st
+const songPath = 'songs/children.mp3'; // children was 1st
 let duration1=490;
 
 
@@ -42,7 +42,7 @@ function truncate(x){
 function generateRandomNumber() {
     // Ensure that min and max are integers
     min = 0;
-    max = 2416;
+    max = 999;
   
     // Create a typed array to store the random values
     const array = new Uint32Array(1);
@@ -53,7 +53,7 @@ function generateRandomNumber() {
     // Convert the random value to the desired range
     const randomNumber = min + (array[0] % (max - min + 1));
   
-    return randomNumber/2417;
+    return randomNumber/1000;
   }
   
 
@@ -1042,7 +1042,7 @@ function runner(){
                     
                 }
             }
-            if (!rngRx()){
+            if (rngR()){
                 nextVolIntervalIter();
                 redefineVolInterval();
             }
@@ -1138,11 +1138,11 @@ function runner(){
             eitherVolPlain();
         }
 
-        if (!rngRx()){
+        if (rngRx()){
             nextVolIntervalIter();
             redefineVolInterval();
         }
-        if (!rngRx()){
+        if (rngRx()){
             randomsForVolIter++;
         }
 
@@ -1217,7 +1217,7 @@ function runner(){
                     
                 }
             }
-            if (!rngRx()){
+            if (rngR()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
             }
@@ -1319,11 +1319,11 @@ function runner(){
             eitherSpeedPlain();
         }
 
-        if (!rngRx()){
+        if (rngRx()){
             nextSpeedIntervalIter();
             redefineSpeedInterval();
         }
-        if (!rngRx()){
+        if (rngRx()){
             randomsForSpeedIter++;
         }
 
