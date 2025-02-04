@@ -42,7 +42,7 @@ function truncate(x){
 function generateRandomNumber() {
     // Ensure that min and max are integers
     min = 0;
-    max = 104;
+    max = 999;
   
     // Create a typed array to store the random values
     const array = new Uint32Array(1);
@@ -53,7 +53,7 @@ function generateRandomNumber() {
     // Convert the random value to the desired range
     const randomNumber = min + (array[0] % (max - min + 1));
   
-    return randomNumber/105;
+    return randomNumber/1000;
   }
   
 
@@ -385,7 +385,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngR()){
+    if (!rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]/1000 *arrayHold.length)]);
         rngIter++;
     }
@@ -507,7 +507,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngR()){
+    if (!rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]/1000 *arrayHold.length)]);
         rngIter++;
     }
