@@ -1042,10 +1042,8 @@ function runner(){
                     
                 }
             }
-            if (rngR()){
                 nextVolIntervalIter();
                 redefineVolInterval();
-            }
                 
 
                 
@@ -1227,10 +1225,8 @@ function runner(){
                     
                 }
             }
-            if (rngR()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
-            }
                 
 
             
