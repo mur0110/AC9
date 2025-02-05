@@ -437,21 +437,20 @@ function redefineVolInterval(){
 
 
 
-
-        if (!rngRx()){}
-        else{
-            let rngTr=rngTrio();
-            if (rngTr===0){
-                multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
-            }
-            else if (rngTr===1)
-            {
-                multiplier=multiplier**(5/7);
-            }
-            else if (rngTr===2){
-                multiplier=multiplier**(7/5);
-            }
-        }
+        
+    let rngTr=rngQuat();
+    if (rngTr===0){
+        multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
+    }
+    else if (rngTr===1)
+    {
+        multiplier=multiplier**(5/7);
+    }
+    else if (rngTr===2){
+        multiplier=multiplier**(7/5);
+    }
+    else{}
+        
         
 
 
@@ -550,20 +549,18 @@ function redefineSpeedInterval(){
         }
     }
 
-    if (!rngRx()){}
-    else{
-        let rngTr=rngTrio();
-        if (rngTr===0){
-            multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
-        }
-        else if (rngTr===1)
-        {
-            multiplier=multiplier**(5/7);
-        }
-        else if (rngTr===2){
-            multiplier=multiplier**(7/5);
-        }
+    let rngTr=rngQuat();
+    if (rngTr===0){
+        multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
     }
+    else if (rngTr===1)
+    {
+        multiplier=multiplier**(5/7);
+    }
+    else if (rngTr===2){
+        multiplier=multiplier**(7/5);
+    }
+    else{}
 
    
     if (!rngRx()){
