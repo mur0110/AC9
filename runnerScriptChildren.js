@@ -1,4 +1,4 @@
-const songPath = 'children.mp3'; //  children was 1st
+const songPath = 'yolo.mp3'; //  children was 1st
 let duration1=490;
 
 
@@ -1043,7 +1043,7 @@ function runner(){
                     
                 }
             }
-            if (rngRx()){
+            if (rngR()){
                 nextVolIntervalIter();
                 redefineVolInterval();
             }
@@ -1226,7 +1226,7 @@ function runner(){
                     
                 }
             }
-            if (rngRx()){
+            if (rngR()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
             }
