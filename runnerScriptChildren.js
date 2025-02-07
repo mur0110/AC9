@@ -1,4 +1,4 @@
-const songPath = 'yolo.mp3'; //  children was 1st
+const songPath = 'yolo.mp3'; //  yolo was 1st (actually)
 let duration1=490;
 
 
