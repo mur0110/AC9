@@ -1,4 +1,4 @@
-const songPath = 'georgiao.mp3'; //  children was 1st
+const songPath = 'children.mp3'; //  children was 1st
 let duration1=490;
 
 
@@ -385,7 +385,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngRx()){
+    if (!rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]/1000 *arrayHold.length)]);
         rngIter++;
     }
@@ -508,7 +508,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngRx()){
+    if (!rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]/1000 *arrayHold.length)]);
         rngIter++;
     }
@@ -952,13 +952,13 @@ function eitherSpeed(){
 }
 
 function eitherVolPlain(){
-    if (rngR()){
+    if (rngRx()){
         modInterDuration();
     }
 }
 
 function eitherSpeedPlain(){
-    if (rngR()){
+    if (rngRx()){
         modInterDuration();
     }
 }
@@ -1043,10 +1043,8 @@ function runner(){
                     
                 }
             }
-            if (!rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
-            }
                 
                 
 
@@ -1140,16 +1138,16 @@ function runner(){
 
 
         if (rngR()){
-            if (!rngRx()){
+            if (rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
             }
-            if (!rngRx()){
+            if (rngRx()){
                 randomsForVolIter++;
             }
         }
         else{
-            if (!rngRx()){
+            if (rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
                 randomsForVolIter++;
@@ -1228,10 +1226,8 @@ function runner(){
                     
                 }
             }
-            if (!rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
-            }
                 
 
         }
@@ -1329,16 +1325,16 @@ function runner(){
 
 
         if (rngR()){
-            if (!rngRx()){
+            if (rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
             }
-            if (!rngRx()){
+            if (rngRx()){
                 randomsForSpeedIter++;
             }
         }
         else{
-            if (!rngRx()){
+            if (rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
                 randomsForSpeedIter++;
