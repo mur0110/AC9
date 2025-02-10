@@ -1,4 +1,4 @@
-const songPath = 'ifeel.mp3'; //  ifeelgoodaboutThis was 1st
+const songPath = 'ifeel.mp3'; //  ifeel was 1st
 let duration1=490;
 
 
@@ -1134,16 +1134,16 @@ function runner(){
 
 
         if (rngR()){
-            if (rngRx()){
+            if (rngR()){
                 nextVolIntervalIter();
                 redefineVolInterval();
             }
-            if (rngRx()){
+            if (rngR()){
                 randomsForVolIter++;
             }
         }
         else{
-            if (rngRx()){
+            if (rngR()){
                 nextVolIntervalIter();
                 redefineVolInterval();
                 randomsForVolIter++;
@@ -1323,16 +1323,16 @@ function runner(){
 
 
         if (rngR()){
-            if (rngRx()){
+            if (rngR()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
             }
-            if (rngRx()){
+            if (rngR()){
                 randomsForSpeedIter++;
             }
         }
         else{
-            if (rngRx()){
+            if (rngR()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
                 randomsForSpeedIter++;
