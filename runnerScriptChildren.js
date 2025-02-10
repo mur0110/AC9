@@ -1,4 +1,4 @@
-const songPath = 'children.mp3'; //  children was 1st
+const songPath = 'ifeel.mp3'; //  children was 1st
 let duration1=490;
 
 
@@ -1039,10 +1039,8 @@ function runner(){
                     
                 }
             }
-            if (rngR()){
                 nextVolIntervalIter();
                 redefineVolInterval();
-            }
                 
 
         }
@@ -1223,10 +1221,8 @@ function runner(){
                     
                 }
             }
-            if (rngR()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
-            }
 
 
         }
