@@ -385,7 +385,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngR()){
+    if (rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]/1000 *arrayHold.length)]);
         rngIter++;
     }
@@ -506,7 +506,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngR()){
+    if (rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]/1000 *arrayHold.length)]);
         rngIter++;
     }
@@ -1021,8 +1021,11 @@ function runner(){
                     
                 }
             }
+            if (rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
+            }
+                
                 
 
         }
@@ -1115,16 +1118,16 @@ function runner(){
 
 
         if (rngR()){
-            if (rngRx()){
+            if (rngR()){
                 nextVolIntervalIter();
                 redefineVolInterval();
             }
-            if (rngRx()){
+            if (rngR()){
                 randomsForVolIter++;
             }
         }
         else{
-            if (rngRx()){
+            if (rngR()){
                 nextVolIntervalIter();
                 redefineVolInterval();
                 randomsForVolIter++;
@@ -1203,8 +1206,11 @@ function runner(){
                     
                 }
             }
+            if (rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
+            }
+                
 
         }
             else{
@@ -1301,16 +1307,16 @@ function runner(){
 
 
         if (rngR()){
-            if (rngRx()){
+            if (rngR()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
             }
-            if (rngRx()){
+            if (rngR()){
                 randomsForSpeedIter++;
             }
         }
         else{
-            if (rngRx()){
+            if (rngR()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
                 randomsForSpeedIter++;
