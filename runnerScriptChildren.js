@@ -1267,12 +1267,15 @@ function runner(){
                 if (rngBin() === 0){
                     if (rngBin()===0){
                         let multVal2=0;
-                        let multVal2Rng=Math.floor(rngs[rngIter]*2);
+                        let multVal2Rng=Math.floor(rngs[rngIter]*3);
                         if (multVal2Rng===0){
                             multVal2=1;
                         }
-                        else{
+                        else if (multVal2Rng===1){
                             multVal2=.7143;
+                        }
+                        else{
+                            multVal2=7/5;
                         }
                         if (rngR()){
                             if (multVal===.7143){
@@ -1299,12 +1302,15 @@ function runner(){
                 else {
                     if (rngR()){
                         let multVal2=0;
-                        let multVal2Rng=Math.floor(rngs[rngIter]*2);
+                        let multVal2Rng=Math.floor(rngs[rngIter]*3);
                         if (multVal2Rng===0){
                             multVal2=1;
                         }
-                        else{
+                        else if (multVal2Rng===1){
                             multVal2=.7143;
+                        }
+                        else{
+                            multVal2=7/5;
                         }
                         if (rngR()){
                             if (multVal===.7143){
