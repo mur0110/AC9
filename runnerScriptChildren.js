@@ -385,7 +385,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngRx()){
+    if (!rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]/1000 *arrayHold.length)]);
         rngIter++;
     }
@@ -508,7 +508,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngRx()){
+    if (!rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]/1000 *arrayHold.length)]);
         rngIter++;
     }
@@ -934,13 +934,13 @@ function eitherSpeed(){
 }
 
 function eitherVolPlain(){
-    if (rngRx()){
+    if (rngR()){
         modInterDuration();
     }
 }
 
 function eitherSpeedPlain(){
-    if (rngRx()){
+    if (rngR()){
         modInterDuration();
     }
 }
@@ -1054,35 +1054,61 @@ function runner(){
                 
                 if (rngBin() === 0){
                     if (rngBin()===0){
-                        if (rngBin()===0){
+                        let multVal2=0;
+                        let multVal2Rng=Math.floor(rngs[rngIter]*2);
+                        if (multVal2Rng===0){
+                            multVal2=1;
+                        }
+                        else{
+                            multVal2=.7143;
+                        }
+                        if (rngR()){
                             if (multVal===.7143){
-                                rngVS1=(dp3**multVal)*(.62/1.5947) * multVal;
+                                rngVS1=(dp3**multVal)*(.62/1.5947) * multVal2;
                             }
                             else{
-                                rngVS1=dp3*(.62/1.922) * multVal;
+                                rngVS1=(dp3)*(.62/1.922) * multVal2;
                             }
                         }
                         else{
-                            rngVS1=dp3*(.62/1.922) * multVal;
+                            if (multVal2===.7143){
+                                rngVS1=(dp3**multVal2)*(.62/1.5947) * multVal;
+                            }
+                            else{
+                                rngVS1=(dp3)*(.62/1.922) * multVal;
+                            }
                         }
+
                     }
                     else{
                         rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(.62/1.269) * multVal;
                     }
                 }
                 else {
-                    if (rngBin()===0){
-                        if (rngBin()===0){
+                    if (rngR()){
+                        let multVal2=0;
+                        let multVal2Rng=Math.floor(rngs[rngIter]*2);
+                        if (multVal2Rng===0){
+                            multVal2=1;
+                        }
+                        else{
+                            multVal2=.7143;
+                        }
+                        if (rngR()){
                             if (multVal===.7143){
-                                rngVS1=(dp4**multVal)*(.62/1.3598) * multVal;
+                                rngVS1=(dp4**multVal)*(.62/1.3598) * multVal2;
                             }
                             else{
-                                rngVS1=dp4*(.62/1.5377) * multVal;
+                                rngVS1=(dp4)*(.62/1.5377) * multVal2;
                             }
                         }
                         else{
-                            rngVS1=dp4*(.62/1.5377) * multVal;
-
+                            if (multVal2===.7143){
+                                rngVS1=(dp4*multVal2)*(.62/1.3598) * multVal;
+                            }
+                            else{
+                                rngVS1=(dp4)*(.62/1.5377) * multVal;
+                            }
                         }
                     }
                     else{
@@ -1240,35 +1266,61 @@ function runner(){
                 
                 if (rngBin() === 0){
                     if (rngBin()===0){
-                        if (rngBin()===0){
+                        let multVal2=0;
+                        let multVal2Rng=Math.floor(rngs[rngIter]*2);
+                        if (multVal2Rng===0){
+                            multVal2=1;
+                        }
+                        else{
+                            multVal2=.7143;
+                        }
+                        if (rngR()){
                             if (multVal===.7143){
-                                rngVS1=(dp3**multVal)*(1.24/1.5947) * multVal;
+                                rngVS1=(dp3**multVal)*(1.24/1.5947) * multVal2;
                             }
                             else{
-                                rngVS1=dp3*(1.24/1.922) * multVal;
+                                rngVS1=(dp3)*(1.24/1.922) * multVal2;
                             }
                         }
                         else{
-                            rngVS1=dp3*(1.24/1.922) * multVal;
+                            if (multVal2===.7143){
+                                rngVS1=(dp3**multVal2)*(1.24/1.5947) * multVal;
+                            }
+                            else{
+                                rngVS1=(dp3)*(1.24/1.922) * multVal;
+                            }
                         }
+
                     }
                     else{
                         rngVS1=((dp3**(1/3)+dp3**(1/2)+dp3**(1/4))/3)*(1.24/1.269) * multVal;
                     }
                 }
                 else {
-                    if (rngBin()===0){
-                        if (rngBin()===0){
+                    if (rngR()){
+                        let multVal2=0;
+                        let multVal2Rng=Math.floor(rngs[rngIter]*2);
+                        if (multVal2Rng===0){
+                            multVal2=1;
+                        }
+                        else{
+                            multVal2=.7143;
+                        }
+                        if (rngR()){
                             if (multVal===.7143){
-                                rngVS1=(dp4**multVal)*(1.24/1.3598) * multVal;
+                                rngVS1=(dp4**multVal)*(1.24/1.3598) * multVal2;
                             }
                             else{
-                                rngVS1=dp4*(1.24/1.5377) * multVal;
+                                rngVS1=(dp4)*(1.24/1.5377) * multVal2;
                             }
                         }
                         else{
-                            rngVS1=dp4*(1.24/1.5377) * multVal;
-
+                            if (multVal2===.7143){
+                                rngVS1=(dp4*multVal2)*(1.24/1.3598) * multVal;
+                            }
+                            else{
+                                rngVS1=(dp4)*(1.24/1.5377) * multVal;
+                            }
                         }
                     }
                     else{
