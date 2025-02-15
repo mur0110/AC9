@@ -1,4 +1,4 @@
-const songPath = 'ifeel.mp3'; //  ifeel was 1st
+const songPath = 'ifeel.mp3'; //  summer was 1st
 let duration1=490;
 
 
@@ -1025,7 +1025,7 @@ function runner(){
                     
                 }
             }
-            if (rngRx()){
+            if (rngR()){
                 nextVolIntervalIter();
                 redefineVolInterval();
             }
@@ -1234,7 +1234,7 @@ function runner(){
                     
                 }
             }
-            if (rngRx()){
+            if (rngR()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
             }
