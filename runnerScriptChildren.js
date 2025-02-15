@@ -438,18 +438,20 @@ function redefineVolInterval(){
 
 
         
-    let rngTr=rngQuat();
-    if (rngTr===0){
-        multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
-    }
-    else if (rngTr===1)
-    {
-        multiplier=multiplier**(5/7);
-    }
-    else if (rngTr===2){
-        multiplier=multiplier**(7/5);
-    }
-    else{}
+    if (!rngRx()){}
+        else{
+            let rngTr=rngTrio();
+            if (rngTr===0){
+                multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
+            }
+            else if (rngTr===1)
+            {
+                multiplier=multiplier**(5/7);
+            }
+            else if (rngTr===2){
+                multiplier=multiplier**(7/5);
+            }
+        }
         
         
 
@@ -549,18 +551,20 @@ function redefineSpeedInterval(){
         }
     }
 
-    let rngTr=rngQuat();
-    if (rngTr===0){
-        multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
-    }
-    else if (rngTr===1)
-    {
-        multiplier=multiplier**(5/7);
-    }
-    else if (rngTr===2){
-        multiplier=multiplier**(7/5);
-    }
-    else{}
+    if (!rngRx()){}
+        else{
+            let rngTr=rngTrio();
+            if (rngTr===0){
+                multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
+            }
+            else if (rngTr===1)
+            {
+                multiplier=multiplier**(5/7);
+            }
+            else if (rngTr===2){
+                multiplier=multiplier**(7/5);
+            }
+        }
 
    
     if (!rngRx()){
@@ -1021,7 +1025,7 @@ function runner(){
                     
                 }
             }
-            if (rngR()){
+            if (rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
             }
@@ -1142,16 +1146,16 @@ function runner(){
 
 
         if (rngR()){
-            if (rngRx()){
+            if (rngR()){
                 nextVolIntervalIter();
                 redefineVolInterval();
             }
-            if (rngRx()){
+            if (rngR()){
                 randomsForVolIter++;
             }
         }
         else{
-            if (rngRx()){
+            if (rngR()){
                 nextVolIntervalIter();
                 redefineVolInterval();
                 randomsForVolIter++;
@@ -1230,10 +1234,11 @@ function runner(){
                     
                 }
             }
-            if (rngR()){
+            if (rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
             }
+                
 
         }
             else{
@@ -1362,16 +1367,16 @@ function runner(){
 
 
         if (rngR()){
-            if (rngRx()){
+            if (rngR()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
             }
-            if (rngRx()){
+            if (rngR()){
                 randomsForSpeedIter++;
             }
         }
         else{
-            if (rngRx()){
+            if (rngR()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
                 randomsForSpeedIter++;
