@@ -1,4 +1,4 @@
-const songPath = 'irisgojo.mp3'; //  summer was 1st
+const songPath = 'time.mp3'; //  time was 1st
 let duration1=490;
 
 
