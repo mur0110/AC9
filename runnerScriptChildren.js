@@ -1,4 +1,4 @@
-const songPath = 'circles.mp3'; //  summer was 1st
+const songPath = 'time.mp3'; //  summer was 1st
 let duration1=490;
 
 
@@ -385,7 +385,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (!rngRx()){
+    if (rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]/1000 *arrayHold.length)]);
         rngIter++;
     }
@@ -510,7 +510,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (!rngRx()){
+    if (rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]/1000 *arrayHold.length)]);
         rngIter++;
     }
@@ -1027,7 +1027,7 @@ function runner(){
                     
                 }
             }
-            if (!rngRx()){
+            if (rngR()){
                 nextVolIntervalIter();
                 redefineVolInterval();
             }
@@ -1149,16 +1149,16 @@ function runner(){
 
 
         if (rngR()){
-            if (rngR()){
+            if (rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
             }
-            if (rngR()){
+            if (rngRx()){
                 randomsForVolIter++;
             }
         }
         else{
-            if (rngR()){
+            if (rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
                 randomsForVolIter++;
@@ -1237,7 +1237,7 @@ function runner(){
                     
                 }
             }
-            if (!rngRx()){
+            if (rngR()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
             }
@@ -1372,16 +1372,16 @@ function runner(){
 
 
         if (rngR()){
-            if (rngR()){
+            if (rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
             }
-            if (rngR()){
+            if (rngRx()){
                 randomsForSpeedIter++;
             }
         }
         else{
-            if (rngR()){
+            if (rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
                 randomsForSpeedIter++;
