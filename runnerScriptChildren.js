@@ -385,7 +385,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngR()){
+    if (!rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]/1000 *arrayHold.length)]);
         rngIter++;
     }
@@ -439,18 +439,20 @@ function redefineVolInterval(){
 
         
 
-    let rngTr=rngQuat();
-        if (rngTr===0){
-            multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
+    if (!rngRx()){}
+        else{
+            let rngTr=rngTrio();
+            if (rngTr===0){
+                multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
+            }
+            else if (rngTr===1)
+            {
+                multiplier=multiplier**(5/7);
+            }
+            else if (rngTr===2){
+                multiplier=multiplier**(7/5);
+            }
         }
-        else if (rngTr===1)
-        {
-            multiplier=multiplier**(5/7);
-        }
-        else if (rngTr===2){
-            multiplier=multiplier**(7/5);
-        }
-        else{}
         
         
         
@@ -508,7 +510,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngR()){
+    if (!rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]/1000 *arrayHold.length)]);
         rngIter++;
     }
@@ -551,18 +553,20 @@ function redefineSpeedInterval(){
         }
     }
 
-    let rngTr=rngQuat();
-        if (rngTr===0){
-            multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
+    if (!rngRx()){}
+        else{
+            let rngTr=rngTrio();
+            if (rngTr===0){
+                multiplier=(multiplier**(1/2) + multiplier**(1/3) + multiplier**(1/4))/3;
+            }
+            else if (rngTr===1)
+            {
+                multiplier=multiplier**(5/7);
+            }
+            else if (rngTr===2){
+                multiplier=multiplier**(7/5);
+            }
         }
-        else if (rngTr===1)
-        {
-            multiplier=multiplier**(5/7);
-        }
-        else if (rngTr===2){
-            multiplier=multiplier**(7/5);
-        }
-        else{}
 
    
     if (!rngRx()){
@@ -1144,16 +1148,16 @@ function runner(){
 
 
         if (rngR()){
-            if (rngR()){
+            if (!rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
             }
-            if (rngR()){
+            if (!rngRx()){
                 randomsForVolIter++;
             }
         }
         else{
-            if (rngR()){
+            if (!rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
                 randomsForVolIter++;
@@ -1365,16 +1369,16 @@ function runner(){
 
 
         if (rngR()){
-            if (rngR()){
+            if (!rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
             }
-            if (rngR()){
+            if (!rngRx()){
                 randomsForSpeedIter++;
             }
         }
         else{
-            if (rngR()){
+            if (!rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
                 randomsForSpeedIter++;
