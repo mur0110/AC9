@@ -1,4 +1,4 @@
-const songPath = 'wherei.mp3'; //  summer was 1st
+const songPath = 'atlashands.mp3'; //  summer was 1st
 let duration1=490;
 
 
@@ -385,7 +385,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (!rngRx()){
+    if (rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]/1000 *arrayHold.length)]);
         rngIter++;
     }
@@ -508,7 +508,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (!rngRx()){
+    if (rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]/1000 *arrayHold.length)]);
         rngIter++;
     }
