@@ -614,7 +614,7 @@ function redefineSpeedInterval(){
 }
 
 
-function pickAmong19(){
+function pickAmong21(){
     const val = Math.floor(rngs[rngIter]/1000 * 21);
     rngIter++;
     return val;
