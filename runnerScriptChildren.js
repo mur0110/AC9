@@ -6,8 +6,8 @@ let volumeLog=0;
 let speedLog=0;
 
 
-const multVolArr1 = [.385, .405, .415, .435 ,.445, .465, .475, .485, .49, .5, .51, .515, .525, .535, .555, .565, .585, .595, .615];
-const multSpeedArr1 = [.77, .81, .83, .87, .89, .93, .95, .97, .98, 1, 1.02, 1.03, 1.05, 1.07, 1.11, 1.13, 1.17, 1.19, 1.23]; // 5,7,1,11 off of +-.13
+const multVolArr1 = [.385, .405, .415, .435 ,.445, .465, .475, .485, .49, .495, .5, .505, .51, .515, .525, .535, .555, .565, .585, .595, .615];
+const multSpeedArr1 = [.77, .81, .83, .87, .89, .93, .95, .97, .98, .99, 1, 1.01, 1.02, 1.03, 1.05, 1.07, 1.11, 1.13, 1.17, 1.19, 1.23]; // 5,7,1,11 off of +-.13
 
 const multVolArr2 = [ .375, .3825, .3875, .4, .4075, .4125, .425, .4325, .4375, .45, .4575, .4625, .475, .4825, .4875, .5, .5125, .5175, .525, .5375, .5425, .55, .5625, .5675, .575, .5875, .5925, .6, .6125, .6175, .625];
 const multSpeedArr2 = [ .75, .765, .775, .8, .815, .825, .85, .865, .875, .9, .915, .925, .95, .965, .975, 1, 1.025, 1.035, 1.05, 1.075, 1.085, 1.1, 1.125, 1.135, 1.15, 1.75, 1.85, 1.2, 1.225, 1.235, 1.25];
@@ -385,7 +385,7 @@ function redefineVolInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngR()){
+    if (!rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]/1000 *arrayHold.length)]);
         rngIter++;
     }
@@ -510,7 +510,7 @@ function redefineSpeedInterval(){
     rngIter++;
     let randomInt=0;
 
-    if (rngR()){
+    if (!rngRx()){
         randomInt=Math.floor(arrayHold[Math.floor(rngs[rngIter]/1000 *arrayHold.length)]);
         rngIter++;
     }
@@ -936,13 +936,13 @@ function eitherSpeed(){
 }
 
 function eitherVolPlain(){
-    if (rngRx()){
+    if (rngR()){
         modInterDuration();
     }
 }
 
 function eitherSpeedPlain(){
-    if (rngRx()){
+    if (rngR()){
         modInterDuration();
     }
 }
@@ -1148,16 +1148,16 @@ function runner(){
 
 
         if (rngR()){
-            if (!rngRx()){
+            if (rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
             }
-            if (!rngRx()){
+            if (rngRx()){
                 randomsForVolIter++;
             }
         }
         else{
-            if (!rngRx()){
+            if (rngRx()){
                 nextVolIntervalIter();
                 redefineVolInterval();
                 randomsForVolIter++;
@@ -1369,16 +1369,16 @@ function runner(){
 
 
         if (rngR()){
-            if (!rngRx()){
+            if (rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
             }
-            if (!rngRx()){
+            if (rngRx()){
                 randomsForSpeedIter++;
             }
         }
         else{
-            if (!rngRx()){
+            if (rngRx()){
                 nextSpeedIntervalIter();
                 redefineSpeedInterval();
                 randomsForSpeedIter++;
