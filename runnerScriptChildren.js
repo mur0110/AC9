@@ -68,8 +68,8 @@ const randomsForVol2=[];
 const randomsForSpeed2=[];
 
 for (let i=0; i<7000; i++){
-    randomsForVol1.push(pickAmong19());
-    randomsForSpeed1.push(pickAmong19());
+    randomsForVol1.push(pickAmong21());
+    randomsForSpeed1.push(pickAmong21());
     randomsForVol2.push(pickAmong31());
     randomsForSpeed2.push(pickAmong31());
 }
@@ -615,7 +615,7 @@ function redefineSpeedInterval(){
 
 
 function pickAmong19(){
-    const val = Math.floor(rngs[rngIter]/1000 * 19);
+    const val = Math.floor(rngs[rngIter]/1000 * 21);
     rngIter++;
     return val;
 }
