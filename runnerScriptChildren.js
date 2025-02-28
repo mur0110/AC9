@@ -936,13 +936,13 @@ function eitherSpeed(){
 }
 
 function eitherVolPlain(){
-    if (!rngRx()){
+    if (rngRx()){
         modInterDuration();
     }
 }
 
 function eitherSpeedPlain(){
-    if (!rngRx()){
+    if (rngRx()){
         modInterDuration();
     }
 }
